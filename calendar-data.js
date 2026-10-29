@@ -1,0 +1,1 @@
+window.AVAILABLE_DATES = ["2026-10-28", "2026-10-29"];

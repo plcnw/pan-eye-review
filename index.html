@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b100e">
+  <meta name="description" content="盘眼短线复盘工作台，以原文保留、场景复原和次日验证为核心。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>盘眼 · 短线复盘工作台</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#today" aria-label="盘眼首页">
+        <span class="brand-mark">盘</span>
+        <span class="brand-copy">
+          <strong>盘眼</strong>
+          <small>SHORT-CYCLE REVIEW</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="主要功能">
+        <button class="nav-item is-active" type="button" data-view="today">
+          <span class="nav-index">01</span>
+          <span>刺大复盘</span>
+        </button>
+        <button class="nav-item" type="button" data-view="screen">
+          <span class="nav-index">02</span>
+          <span>全市场初筛</span>
+        </button>
+        <button class="nav-item" type="button" data-view="sector">
+          <span class="nav-index">03</span>
+          <span>板块发酵</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-note">
+        <span class="sync-dot" aria-hidden="true"></span>
+        <div>
+          <strong id="syncTitle">今日原文已同步</strong>
+          <span id="sidebarPublishedAt">15:55 · 延边刺客</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">
+          <span>复盘台</span>
+          <span class="slash">/</span>
+          <span id="breadcrumbDate">2026.10.29</span>
+          <span class="slash">/</span>
+          <span>收盘</span>
+        </div>
+        <div class="top-actions">
+          <div class="calendar-control">
+            <button class="quiet-button calendar-trigger" id="calendarButton" type="button" aria-expanded="false" aria-controls="calendarPopover">
+              日历
+              <span id="calendarDateLabel">10.29</span>
+            </button>
+            <div class="calendar-popover" id="calendarPopover" hidden>
+              <div class="calendar-head">
+                <div>
+                  <span>复盘日历</span>
+                  <strong id="calendarMonthLabel">2026年10月</strong>
+                </div>
+                <button type="button" id="calendarClose" aria-label="关闭日历">×</button>
+              </div>
+              <div class="calendar-weekdays" aria-hidden="true">
+                <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+              </div>
+              <div class="calendar-grid" id="calendarGrid"></div>
+              <p class="calendar-hint">亮点日期表示已经抓取并生成复盘。</p>
+            </div>
+          </div>
+          <button class="quiet-button annotation-toggle" id="annotationToggle" type="button" aria-pressed="false">
+            <span class="toggle-line" aria-hidden="true"></span>
+            行情旁注
+          </button>
+          <button class="quiet-button teach-ai-trigger" id="teachAiButton" type="button">
+            <span class="teach-ai-mark" aria-hidden="true">＋</span>
+            教 AI
+          </button>
+          <a class="quiet-button source-link js-source-link" href="https://www.tgb.cn/a/2whZxAUbj2p" target="_blank" rel="noreferrer">
+            查看原文
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </header>
+
+      <section class="review-header" id="today">
+        <div>
+          <div class="review-kicker">
+            <span class="live-mark" aria-hidden="true"></span>
+            <span id="headerDate">2026.10.29 · 收盘复盘</span>
+            <span id="publishedAt">15:55 已抓取</span>
+          </div>
+          <h1 id="pageTitle">刺大复盘</h1>
+          <p id="reviewSummary">机器人不及预期，资金转向航天；消费、冰雪和应用处于轮动试错。</p>
+        </div>
+        <a class="header-source js-source-link" href="https://www.tgb.cn/a/2whZxAUbj2p" target="_blank" rel="noreferrer">
+          <span id="headerAuthor">延边刺客</span>
+          <strong>查看原帖 ↗</strong>
+        </a>
+      </section>
+
+      <section class="index-line" id="indexLine" aria-label="市场指数快照"></section>
+      <section class="metric-strip" id="metricStrip" aria-label="今日结构摘要"></section>
+
+      <div class="view-tabs" role="tablist" aria-label="复盘视图">
+        <button class="view-tab is-active" id="tab-today" type="button" role="tab" aria-selected="true" aria-controls="view-today" data-view="today">复盘总览</button>
+        <button class="view-tab" id="tab-article" type="button" role="tab" aria-selected="false" aria-controls="view-article" data-view="article">原文脉络</button>
+        <button class="view-tab" id="tab-questions" type="button" role="tab" aria-selected="false" aria-controls="view-questions" data-view="questions">思考题</button>
+      </div>
+
+      <section class="view is-active" id="view-today" role="tabpanel" aria-labelledby="tab-today">
+        <div class="view-heading compact-heading">
+          <div>
+            <span class="eyebrow">TODAY'S STRUCTURE</span>
+            <h2>梯队与气质</h2>
+          </div>
+          <p>每只股票只有一个统一身份。点击股票，可展开原帖对它的全部相关表述。</p>
+        </div>
+
+        <div class="structure-layout">
+          <section class="review-panel ladder-panel">
+            <header class="panel-heading">
+              <div>
+                <span class="panel-index">01</span>
+              <h3>连板梯队</h3>
+              </div>
+              <span class="panel-count" id="ladderCount">10 只 · 四板至二板</span>
+            </header>
+            <div class="ladder-connected" id="ladderBoard"></div>
+            <div class="inline-risk">
+              <span>高度结构</span>
+              <p id="ladderRisk">原文列出四板、三板、二板。</p>
+            </div>
+          </section>
+
+          <section class="review-panel quality-panel">
+            <header class="panel-heading">
+              <div>
+                <span class="panel-index">02</span>
+                <h3>气质股</h3>
+              </div>
+              <span class="panel-count">2 只</span>
+            </header>
+            <div class="quality-list" id="qualityList"></div>
+            <p class="panel-footnote">气质评分是原作者的主观评价，与连板高度分开保存。</p>
+          </section>
+        </div>
+
+        <section class="review-panel cross-reference-panel">
+          <header class="panel-heading">
+            <div>
+              <span class="panel-index">03</span>
+              <h3>交叉提及</h3>
+            </div>
+            <span class="panel-count">点开后查看完整语料</span>
+          </header>
+          <div class="cross-reference" id="crossReference"></div>
+        </section>
+
+        <button class="questions-entry" type="button" data-view="questions">
+          <span>
+            <small>03 / QUESTIONS</small>
+            <strong id="questionEntryText">从原文问题继续推演明日交易关系。</strong>
+          </span>
+          <span class="entry-arrow">进入思考题 ↗</span>
+        </button>
+      </section>
+
+      <section class="view" id="view-screen" role="tabpanel" aria-labelledby="tab-screen" hidden>
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">MARKET SCREEN</span>
+            <h2>全市场初筛</h2>
+          </div>
+          <p>先执行硬性条件，再保留二板以上梯队例外。行情共振识别将在分钟数据接入后加入。</p>
+        </div>
+        <div class="screen-summary" id="screenSummary"></div>
+        <div class="screen-rulebar">
+          <span>硬筛规则</span>
+          <p>流通市值 30–250 亿 · 首板命中疑似 A 杀则剔除 · 二板以上不自动否决</p>
+        </div>
+        <div class="screen-toolbar">
+          <div class="screen-filters" role="group" aria-label="筛选结果">
+            <button class="screen-filter is-active" type="button" data-screen-filter="kept">保留</button>
+            <button class="screen-filter" type="button" data-screen-filter="first">首板候选</button>
+            <button class="screen-filter" type="button" data-screen-filter="exception">梯队例外</button>
+            <button class="screen-filter" type="button" data-screen-filter="excluded">硬性剔除</button>
+            <button class="screen-filter" type="button" data-screen-filter="all">全部</button>
+          </div>
+          <span class="screen-caption" id="screenCaption">按筛后结果排序</span>
+        </div>
+        <div class="screen-list" id="screenList"></div>
+        <div class="screen-failures" id="screenFailures" hidden></div>
+      </section>
+
+      <section class="view" id="view-sector" role="tabpanel" aria-label="板块发酵" hidden>
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">SECTOR PULSE</span>
+            <h2>板块高度与发酵</h2>
+          </div>
+          <p>宽度、高度、晋级与原文证据合并展示。上涨宽度不等于持续性，资金外溢仍需分钟数据确认。</p>
+        </div>
+        <div class="sector-summary" id="sectorSummary"></div>
+        <section class="funnel-panel">
+          <header class="panel-heading">
+            <div>
+              <span class="panel-index">01</span>
+              <h3>昨日 → 今日晋级</h3>
+            </div>
+            <span class="panel-count">按昨日梯队基数计算</span>
+          </header>
+          <div class="funnel-list" id="funnelList"></div>
+        </section>
+        <section class="sector-panel">
+          <header class="panel-heading">
+            <div>
+              <span class="panel-index">02</span>
+              <h3>板块强度</h3>
+            </div>
+            <span class="panel-count">按文章涨停宽度排序</span>
+          </header>
+          <div class="sector-list" id="sectorList"></div>
+        </section>
+        <div class="sector-method">
+          <span>口径</span>
+          <p>板块成员来自当日文章明确归类；高度来自连板梯队。当前不把单一“主力净流入”当作资金事实。</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-article" role="tabpanel" aria-labelledby="tab-article" hidden>
+        <div class="article-layout">
+          <aside class="article-index">
+            <span class="eyebrow">ORIGINAL TEXT</span>
+            <h2>原文脉络</h2>
+            <p>保持发表顺序，原文中未被填写的“首封时间”也原样保留。</p>
+            <nav id="articleIndex" aria-label="文章目录"></nav>
+            <a href="https://www.tgb.cn/a/2whZxAUbj2p" class="quiet-button js-source-link" target="_blank" rel="noreferrer">打开淘股吧原文 ↗</a>
+          </aside>
+          <article class="article-paper">
+            <header class="paper-header">
+              <span class="paper-date" id="paperDate">2026.10.29 · 15:55</span>
+              <h2 id="paperTitle">1029</h2>
+              <p id="paperAuthor">延边刺客</p>
+            </header>
+            <div id="originalArticle"></div>
+            <footer class="paper-footer">
+              <span>来源：淘股吧 · 延边刺客</span>
+              <a href="https://www.tgb.cn/a/2whZxAUbj2p" class="js-source-link" target="_blank" rel="noreferrer">查看原帖 ↗</a>
+            </footer>
+          </article>
+        </div>
+      </section>
+
+      <section class="view" id="view-questions" role="tabpanel" aria-labelledby="tab-questions" hidden>
+        <div class="view-heading">
+          <div>
+            <span class="eyebrow">OPEN QUESTIONS</span>
+            <h2>思考题</h2>
+          </div>
+          <p>问题中的股票可以直接打开，查看它们在梯队、气质股和原文中的全部相关表述。</p>
+        </div>
+
+        <div class="observation-ribbon" id="observationRibbon"></div>
+        <div class="question-layout" id="questionsGrid"></div>
+
+        <div class="save-bar">
+          <div>
+            <span class="save-status" id="saveStatus" aria-live="polite">尚未保存今日推演</span>
+            <small>答案只保存在此设备的浏览器中。</small>
+          </div>
+          <button class="primary-button" id="saveAnswers" type="button">保存今日推演</button>
+        </div>
+      </section>
+
+      <footer class="workspace-footer">
+        <span id="marketSource">盘眼 · 本地原型</span>
+        <span>原文观点仅代表原作者，不构成投资建议。</span>
+      </footer>
+    </main>
+  </div>
+
+  <aside class="stock-drawer" id="stockDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="股票详情">
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="关闭详情">×</button>
+    <span class="eyebrow">STOCK DOSSIER</span>
+    <div id="drawerContent"></div>
+  </aside>
+  <div class="drawer-scrim" id="drawerScrim" hidden></div>
+
+  <aside class="teaching-drawer" id="teachingDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="teachingTitle">
+    <button class="drawer-close" id="teachingClose" type="button" aria-label="关闭 AI 校准">×</button>
+    <header class="teaching-header">
+      <span class="eyebrow">AI CALIBRATION</span>
+      <h2 id="teachingTitle">教 AI</h2>
+      <p>这些术语和压缩表达不会出现在用户页面中。你在这里纠正的语义，会成为 AI 下一次解析的参考。</p>
+    </header>
+
+    <form class="teaching-form" id="teachingForm">
+      <label class="teaching-field">
+        <span>AI 哪里理解错了</span>
+        <textarea id="teachingContext" rows="3" placeholder="例如：这里“药箱”只是医药股票集合，不是指数判断。"></textarea>
+      </label>
+      <label class="teaching-field">
+        <span>正确理解</span>
+        <textarea id="teachingCorrection" rows="4" placeholder="写出你希望 AI 以后如何理解、如何关联股票。"></textarea>
+      </label>
+      <div class="teaching-form-grid">
+        <label class="teaching-field">
+          <span>涉及词语或股票</span>
+          <input id="teachingTerm" type="text" placeholder="例如：900 / S / 药箱">
+        </label>
+        <label class="teaching-field">
+          <span>知识类型</span>
+          <select id="teachingType">
+            <option value="术语解释">术语解释</option>
+            <option value="固定别名">固定别名</option>
+            <option value="动态股票池">动态股票池</option>
+            <option value="资金关系">资金关系</option>
+            <option value="个股评价">个股评价</option>
+            <option value="其他">其他</option>
+          </select>
+        </label>
+      </div>
+      <label class="teaching-field">
+        <span>适用范围</span>
+        <select id="teachingScope">
+          <option value="全部复盘">全部复盘</option>
+          <option value="仅延边刺客">仅延边刺客</option>
+          <option value="仅本次文章">仅本次文章</option>
+        </select>
+      </label>
+      <div class="teaching-actions">
+        <span id="teachingStatus" aria-live="polite">等待输入校准</span>
+        <button class="primary-button" type="submit">保存为 AI 规则</button>
+      </div>
+    </form>
+
+    <section class="learned-rules">
+      <header>
+        <div>
+          <span class="eyebrow">LEARNED CONTEXT</span>
+          <h3>已教给 AI</h3>
+        </div>
+        <button class="quiet-button" id="exportTeaching" type="button">导出 JSON ↗</button>
+      </header>
+      <div class="learned-rule-list" id="learnedRuleList"></div>
+    </section>
+  </aside>
+  <div class="teaching-scrim" id="teachingScrim" hidden></div>
+
+  <script src="review-data.js"></script>
+  <script src="market-data.js"></script>
+  <script src="history-data.js"></script>
+  <script src="screen-data.js"></script>
+  <script src="sector-data.js"></script>
+  <script src="calendar-data.js"></script>
+  <script src="app-daily.js"></script>
+</body>
+</html>

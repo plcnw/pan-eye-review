@@ -1,0 +1,16 @@
+{
+  "name": "盘眼 · 短线复盘",
+  "short_name": "盘眼",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b100e",
+  "theme_color": "#0b100e",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
