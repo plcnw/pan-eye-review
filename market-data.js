@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-29T22:49:12+08:00",
+  "capturedAt": "2026-10-29T23:04:08+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -198,21 +198,6 @@ window.MARKET_DATA = {
       "floatMarketCapYi": 49.39,
       "inFloatCapRange": true,
       "quoteTime": "20261029161415"
-    },
-    {
-      "name": "华鑫股份",
-      "code": "600621",
-      "quoteId": "1.600621",
-      "requestedName": "华鑫",
-      "apiName": "华鑫股份",
-      "price": 12.35,
-      "previousClose": 13.41,
-      "changePercent": -7.9,
-      "turnoverRate": 4.88,
-      "totalMarketCapYi": 131.02,
-      "floatMarketCapYi": 131.02,
-      "inFloatCapRange": true,
-      "quoteTime": "20261029161500"
     },
     {
       "name": "厦门信达",
