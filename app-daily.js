@@ -158,6 +158,8 @@ const calendarButton = $("#calendarButton");
 const calendarPopover = $("#calendarPopover");
 const refreshButton = $("#refreshButton");
 const refreshPopover = $("#refreshPopover");
+const refreshStatus = $("#refreshStatus");
+const refreshApiBase = String(window.PAN_EYE_REFRESH_API || "").replace(/\/+$/, "");
 const availableDates = window.AVAILABLE_DATES || [review.meta.date];
 const [calendarYear, calendarMonth] = review.meta.date.split("-").map(Number);
 
@@ -202,6 +204,13 @@ function closeRefresh() {
   refreshButton.setAttribute("aria-expanded", "false");
 }
 
+function setRefreshStatus(message = "", state = "") {
+  refreshStatus.textContent = message;
+  refreshStatus.classList.toggle("is-success", state === "success");
+  refreshStatus.classList.toggle("is-error", state === "error");
+  refreshStatus.hidden = !message;
+}
+
 function positionMobilePopover(popover, trigger) {
   popover.classList.remove("is-mobile-anchored");
   popover.style.removeProperty("--mobile-popover-left");
@@ -232,6 +241,7 @@ refreshButton.addEventListener("click", () => {
   closeCalendar();
   const opening = refreshPopover.hidden;
   refreshPopover.hidden = !opening;
+  if (opening) setRefreshStatus();
   if (opening) positionMobilePopover(refreshPopover, refreshButton);
   refreshButton.setAttribute("aria-expanded", String(opening));
 });
@@ -242,13 +252,47 @@ window.addEventListener("resize", () => {
 });
 
 $$("[data-refresh-scope]").forEach((button) => {
-  button.addEventListener("click", () => {
-    window.open(
-      "https://github.com/plcnw/pan-eye-review/actions/workflows/daily-review.yml",
-      "_blank",
-      "noopener"
-    );
-    closeRefresh();
+  button.addEventListener("click", async () => {
+    const scope = button.dataset.refreshScope;
+    if (!refreshApiBase) {
+      window.open(
+        "https://github.com/plcnw/pan-eye-review/actions/workflows/daily-review.yml",
+        "_blank",
+        "noopener"
+      );
+      closeRefresh();
+      return;
+    }
+
+    button.disabled = true;
+    setRefreshStatus("正在提交…");
+    try {
+      const response = await fetch(`${refreshApiBase}/refresh`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          scope,
+          date: review.meta.date
+        })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(result.error || `提交失败 (${response.status})`);
+      }
+      setRefreshStatus(
+        scope === "article"
+          ? "文章刷新已提交，约 1–2 分钟后重新打开本页。"
+          : "行情刷新已提交，约 1–2 分钟后重新打开本页。",
+        "success"
+      );
+    } catch (error) {
+      setRefreshStatus(
+        `提交失败：${error instanceof Error ? error.message : "网络异常"}`,
+        "error"
+      );
+    } finally {
+      button.disabled = false;
+    }
   });
 });
 
