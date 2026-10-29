@@ -1,11 +1,12 @@
 window.HISTORY_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-29T20:34:44+08:00",
+  "capturedAt": "2026-10-29T22:36:03+08:00",
   "source": "腾讯历史日线（前复权）",
   "method": "连续至少两个涨停后，断板日下跌超过5%、高开后盘中回落超过5%，或断板后两日累计下跌超过8%。结果仅作为疑似证据。",
   "stocks": [
     {
       "name": "一鸣食品",
+      "requestedName": "一鸣食品",
       "apiName": "一鸣食品",
       "code": "605179",
       "quoteId": "1.605179",
@@ -4739,6 +4740,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "上海沪工",
+      "requestedName": "上海沪工",
       "apiName": "上海沪工",
       "code": "603131",
       "quoteId": "1.603131",
@@ -9440,6 +9442,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "上海港湾",
+      "requestedName": "上海港湾",
       "apiName": "上海港湾",
       "code": "605598",
       "quoteId": "1.605598",
@@ -14163,6 +14166,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "东方海洋",
+      "requestedName": "东方海洋",
       "apiName": "东方海洋",
       "code": "002086",
       "quoteId": "0.002086",
@@ -18895,6 +18899,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "东贝集团",
+      "requestedName": "东贝集团",
       "apiName": "东贝集团",
       "code": "601956",
       "quoteId": "1.601956",
@@ -23608,6 +23613,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "中国卫星",
+      "requestedName": "中国卫星",
       "apiName": "中国卫星",
       "code": "600118",
       "quoteId": "1.600118",
@@ -28309,6 +28315,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "中远海特",
+      "requestedName": "中远海特",
       "apiName": "中远海特",
       "code": "600428",
       "quoteId": "1.600428",
@@ -33010,6 +33017,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "传智教育",
+      "requestedName": "传智教育",
       "apiName": "传智教育",
       "code": "003032",
       "quoteId": "0.003032",
@@ -37713,6 +37721,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "光洋股份",
+      "requestedName": "光洋股份",
       "apiName": "光洋股份",
       "code": "002708",
       "quoteId": "0.002708",
@@ -42425,6 +42434,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "冰山冷热",
+      "requestedName": "冰山冷热",
       "apiName": "冰山冷热",
       "code": "000530",
       "quoteId": "0.000530",
@@ -47148,6 +47158,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "厦门信达",
+      "requestedName": "厦门信达",
       "apiName": "厦门信达",
       "code": "000701",
       "quoteId": "0.000701",
@@ -51840,6 +51851,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "友阿股份",
+      "requestedName": "友阿股份",
       "apiName": "友阿股份",
       "code": "002277",
       "quoteId": "0.002277",
@@ -56532,6 +56544,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "和泰机电",
+      "requestedName": "和泰机电",
       "apiName": "和泰机电",
       "code": "001225",
       "quoteId": "0.001225",
@@ -61233,6 +61246,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "大业股份",
+      "requestedName": "大业",
       "apiName": "大业股份",
       "code": "603278",
       "quoteId": "1.603278",
@@ -65967,6 +65981,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "天顺风能",
+      "requestedName": "天顺风能",
       "apiName": "天顺风能",
       "code": "002531",
       "quoteId": "0.002531",
@@ -70659,6 +70674,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "宇晶股份",
+      "requestedName": "宇晶股份",
       "apiName": "宇晶股份",
       "code": "002943",
       "quoteId": "0.002943",
@@ -75360,6 +75376,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "实丰文化",
+      "requestedName": "实丰文化",
       "apiName": "实丰文化",
       "code": "002862",
       "quoteId": "0.002862",
@@ -80061,6 +80078,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "山东矿机",
+      "requestedName": "山东矿机",
       "apiName": "山东矿机",
       "code": "002526",
       "quoteId": "0.002526",
@@ -84773,6 +84791,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "巴比食品",
+      "requestedName": "巴比食品",
       "apiName": "巴比食品",
       "code": "605338",
       "quoteId": "1.605338",
@@ -89474,6 +89493,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "开滦股份",
+      "requestedName": "开滦股份",
       "apiName": "开滦股份",
       "code": "600997",
       "quoteId": "1.600997",
@@ -94175,6 +94195,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "惠发食品",
+      "requestedName": "惠发食品",
       "apiName": "惠发食品",
       "code": "603536",
       "quoteId": "1.603536",
@@ -98887,6 +98908,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "慈文传媒",
+      "requestedName": "慈文",
       "apiName": "慈文传媒",
       "code": "002343",
       "quoteId": "0.002343",
@@ -103609,6 +103631,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "文投控股",
+      "requestedName": "文投控股",
       "apiName": "文投控股",
       "code": "600715",
       "quoteId": "1.600715",
@@ -108310,6 +108333,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "新华传媒",
+      "requestedName": "新华传媒",
       "apiName": "新华传媒",
       "code": "600825",
       "quoteId": "1.600825",
@@ -113043,6 +113067,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "桂林三金",
+      "requestedName": "桂林三金",
       "apiName": "桂林三金",
       "code": "002275",
       "quoteId": "0.002275",
@@ -117735,6 +117760,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "横店影视",
+      "requestedName": "横店影视",
       "apiName": "横店影视",
       "code": "603103",
       "quoteId": "1.603103",
@@ -122470,6 +122496,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "海阳科技",
+      "requestedName": "海阳科技",
       "apiName": "海阳科技",
       "code": "603382",
       "quoteId": "1.603382",
@@ -125506,6 +125533,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "澳洋健康",
+      "requestedName": "澳洋健康",
       "apiName": "澳洋健康",
       "code": "002172",
       "quoteId": "0.002172",
@@ -130229,6 +130257,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "爱建集团",
+      "requestedName": "爱建集团",
       "apiName": "爱建集团",
       "code": "600643",
       "quoteId": "1.600643",
@@ -134942,6 +134971,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "盛洋科技",
+      "requestedName": "盛洋科技",
       "apiName": "盛洋科技",
       "code": "603703",
       "quoteId": "1.603703",
@@ -139655,6 +139685,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "祥源文旅",
+      "requestedName": "祥源文旅",
       "apiName": "祥源文旅",
       "code": "600576",
       "quoteId": "1.600576",
@@ -144356,6 +144387,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "福建金森",
+      "requestedName": "福建金森",
       "apiName": "福建金森",
       "code": "002679",
       "quoteId": "0.002679",
@@ -149072,6 +149104,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "联明股份",
+      "requestedName": "联明股份",
       "apiName": "联明股份",
       "code": "603006",
       "quoteId": "1.603006",
@@ -153784,6 +153817,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "航天晨光",
+      "requestedName": "航天晨光",
       "apiName": "航天晨光",
       "code": "600501",
       "quoteId": "1.600501",
@@ -158485,6 +158519,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "襄阳轴承",
+      "requestedName": "襄阳",
       "apiName": "襄阳轴承",
       "code": "000678",
       "quoteId": "0.000678",
@@ -163218,6 +163253,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "西部材料",
+      "requestedName": "西部材料",
       "apiName": "西部材料",
       "code": "002149",
       "quoteId": "0.002149",
@@ -167930,6 +167966,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "邵阳液压",
+      "requestedName": "邵阳液压",
       "apiName": "邵阳液压",
       "code": "301079",
       "quoteId": "0.301079",
@@ -172622,6 +172659,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "钧达股份",
+      "requestedName": "钧达股份",
       "apiName": "钧达股份",
       "code": "002865",
       "quoteId": "0.002865",
@@ -177314,6 +177352,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "阳光照明",
+      "requestedName": "阳光照明",
       "apiName": "阳光照明",
       "code": "600261",
       "quoteId": "1.600261",
@@ -182026,6 +182065,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "青岛食品",
+      "requestedName": "青岛食品",
       "apiName": "青岛食品",
       "code": "001219",
       "quoteId": "0.001219",
@@ -186727,6 +186767,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "顺灏股份",
+      "requestedName": "顺灏股份",
       "apiName": "顺灏股份",
       "code": "002565",
       "quoteId": "0.002565",
@@ -191439,6 +191480,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "龙江交通",
+      "requestedName": "龙江交通",
       "apiName": "龙江交通",
       "code": "601188",
       "quoteId": "1.601188",
@@ -196152,6 +196194,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "龙溪股份",
+      "requestedName": "龙溪股份",
       "apiName": "龙溪股份",
       "code": "600592",
       "quoteId": "1.600592",

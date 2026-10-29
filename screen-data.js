@@ -1,11 +1,11 @@
 window.SCREEN_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-29T20:43:02+08:00",
+  "capturedAt": "2026-10-29T22:37:22+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
   "marketCount": 5576,
   "limitUpCount": 43,
   "capPassCount": 31,
-  "hardExcludedCount": 12,
+  "hardExcludedCount": 13,
   "candidateCount": 18,
   "exceptionCount": 9,
   "rules": {
@@ -819,6 +819,54 @@ window.SCREEN_DATA = {
       ],
       "hasSuspectedAKill": true,
       "historySource": "cached"
+    },
+    {
+      "symbol": "sh603843",
+      "code": "603843",
+      "name": "*ST正平",
+      "price": 5.63,
+      "changePercent": 8.897,
+      "turnoverRate": 3.14078,
+      "amount": 118327718.0,
+      "floatMarketCapYi": 39.39,
+      "totalMarketCapYi": 39.39,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 4.5,
+      "aKillEvents": [
+        {
+          "runStart": "2026-03-11",
+          "runEnd": "2026-03-17",
+          "runLength": 5,
+          "breakDate": "2026-03-18",
+          "evidence": [
+            "断板日高开 5.01% 后盘中回落 -5.28%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-03-26",
+          "runEnd": "2026-04-03",
+          "runLength": 2,
+          "breakDate": "2026-04-07",
+          "evidence": [
+            "断板后两日累计下跌 -9.69%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-07-10",
+          "runEnd": "2026-07-13",
+          "runLength": 2,
+          "breakDate": "2026-07-14",
+          "evidence": [
+            "断板当日下跌 -5.45%"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "live"
     }
   ],
   "exceptions": [
@@ -1043,7 +1091,5 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     }
   ],
-  "failures": [
-    "*ST正平: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh603843,day,,,520,qfq"
-  ]
+  "failures": []
 };

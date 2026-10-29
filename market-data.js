@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-29T20:32:47+08:00",
+  "capturedAt": "2026-10-29T22:35:53+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -563,7 +563,7 @@ window.MARKET_DATA = {
       "name": "襄阳轴承",
       "code": "000678",
       "quoteId": "0.000678",
-      "requestedName": "襄阳轴承",
+      "requestedName": "襄阳",
       "apiName": "襄阳轴承",
       "price": 18.75,
       "previousClose": 17.61,
@@ -695,5 +695,7 @@ window.MARKET_DATA = {
       "quoteTime": "20261029161444"
     }
   ],
-  "unmatched": []
+  "unmatched": [
+    "上海金融"
+  ]
 };

@@ -1,101 +1,204 @@
 window.SECTOR_DATA = {
-  date: "2026-10-29",
-  capturedAt: "2026-10-29T20:43:00+08:00",
-  market: {
-    limitUpCount: 43,
-    firstBoardCount: 29,
-    maxHeight: 4,
-    articleCoveredLimitUps: 39
+  "date": "2026-10-29",
+  "market": {
+    "limitUpCount": 0,
+    "firstBoardCount": 29,
+    "maxHeight": 4,
+    "articleCoveredLimitUps": 39
   },
-  ladderFunnel: [
-    { from: "首板", to: "二板", base: 63, promoted: 6, rate: 9.52 },
-    { from: "二板", to: "三板", base: 5, promoted: 2, rate: 40.0 },
-    { from: "三板", to: "四板", base: 2, promoted: 2, rate: 100.0 }
-  ],
-  sectors: [
+  "ladderFunnel": [
     {
-      id: "aerospace",
-      name: "航天",
-      stage: "发酵中",
-      count: 12,
-      firstBoardCount: 10,
-      maxHeight: 2,
-      tone: "active",
-      members: ["龙溪股份", "阳光照明", "顺灏股份", "邵阳液压", "钧达股份", "上海港湾", "盛洋科技", "中国卫星", "航天晨光", "西部材料", "上海沪工", "宇晶股份"],
-      evidence: "机器人不及预期，发酵新品种。持续性角度看沪工即可，理论上是加速预期。",
-      nextWatch: "沪工封单强度；机器人是否回流争夺辨识度。"
+      "level": 4,
+      "count": 2,
+      "stocks": [
+        "青岛食品",
+        "光洋股份"
+      ]
     },
     {
-      id: "consumer",
-      name: "消费",
-      stage: "高标发酵",
-      count: 5,
-      firstBoardCount: 4,
-      maxHeight: 4,
-      tone: "strong",
-      members: ["友阿股份", "巴比食品", "惠发食品", "一鸣食品", "青岛食品"],
-      evidence: "青岛食品超预期发酵；青岛承接能力不明，一路顺风顺水上来。",
-      nextWatch: "青岛四板换手承接；开板换手是机会还是风险。"
+      "level": 3,
+      "count": 2,
+      "stocks": [
+        "文投控股",
+        "东贝集团"
+      ]
     },
     {
-      id: "application",
-      name: "应用 / 传媒",
-      stage: "分歧修复",
-      count: 3,
-      firstBoardCount: 2,
-      maxHeight: 3,
-      tone: "mixed",
-      members: ["传智教育", "横店影视", "文投控股"],
-      evidence: "文投是身位但是烂板；首板表现好一点的话可以取而代之。",
-      nextWatch: "文投能否止弱转强；首板是否出现取代者。"
+      "level": 2,
+      "count": 6,
+      "stocks": [
+        "澳洋健康",
+        "山东矿机",
+        "实丰文化",
+        "宇晶股份",
+        "联明股份",
+        "上海沪工"
+      ]
     },
     {
-      id: "ice",
-      name: "冰雪",
-      stage: "避险轮动",
-      count: 4,
-      firstBoardCount: 3,
-      maxHeight: 3,
-      tone: "rotation",
-      members: ["龙江交通", "冰山冷热", "祥源文旅", "东贝集团"],
-      evidence: "不排除是东贝发酵；板块曾经一日游，避险属性。",
-      nextWatch: "东贝封单与冰雪首板晋级；警惕一日游。"
-    },
-    {
-      id: "robot",
-      name: "机器人",
-      stage: "退潮活口",
-      count: 2,
-      firstBoardCount: 0,
-      maxHeight: 3,
-      tone: "risk",
-      members: ["东贝集团", "山东矿机"],
-      evidence: "机器人不及预期；东贝是机器人活口，但发酵的是东北冰雪。",
-      nextWatch: "是否回流；若回流，航天与消费承接会受挤压。"
-    },
-    {
-      id: "logistics",
-      name: "物流",
-      stage: "低位试盘",
-      count: 2,
-      firstBoardCount: 2,
-      maxHeight: 1,
-      tone: "weak",
-      members: ["中远海特", "厦门信达"],
-      evidence: "模型制作，贸易战模型。应该是，不然没理由拉升。",
-      nextWatch: "次日能否继续扩散；当前缺少高位确认。"
-    },
-    {
-      id: "risk-off",
-      name: "避险独苗",
-      stage: "分散轮动",
-      count: 8,
-      firstBoardCount: 8,
-      maxHeight: 1,
-      tone: "rotation",
-      members: ["爱建集团", "开滦股份", "桂林三金", "和泰机电", "海阳科技", "福建金森", "天顺风能", "东方海洋"],
-      evidence: "独苗逻辑清晰点明今日指数走势，覆盖金融、煤炭、医药、农业、风电与羊字联想。",
-      nextWatch: "观察避险方向是否形成集中度，而不是继续发散。"
+      "level": 1,
+      "count": 29,
+      "stocks": [
+        "龙溪股份",
+        "阳光照明",
+        "顺灏股份",
+        "邵阳液压",
+        "钧达股份",
+        "上海港湾",
+        "盛洋科技",
+        "中国卫星",
+        "航天晨光",
+        "西部材料",
+        "友阿股份",
+        "巴比食品",
+        "惠发食品",
+        "一鸣食品",
+        "龙江交通",
+        "冰山冷热",
+        "祥源文旅",
+        "中远海特",
+        "厦门信达",
+        "传智教育",
+        "横店影视",
+        "爱建集团",
+        "上海金融",
+        "开滦股份",
+        "桂林三金",
+        "和泰机电",
+        "海阳科技",
+        "福建金森",
+        "天顺风能",
+        "东方海洋"
+      ]
     }
-  ]
+  ],
+  "sectors": [
+    {
+      "id": "aerospace",
+      "name": "航天",
+      "stage": "启动",
+      "count": 10,
+      "firstBoardCount": 10,
+      "maxHeight": 2,
+      "tone": "active",
+      "members": [
+        "龙溪股份",
+        "阳光照明",
+        "顺灏股份",
+        "邵阳液压",
+        "钧达股份",
+        "上海港湾",
+        "盛洋科技",
+        "中国卫星",
+        "航天晨光",
+        "西部材料",
+        "宇晶股份",
+        "上海沪工"
+      ],
+      "evidence": "首板航天分组10只；二板宇晶股份航天悟道板伴飞、上海沪工上海航天主升；首板总结“机器人切航天，无奈之举”。",
+      "nextWatch": "持续性角度看沪工即可，理论上是加速预期，封单大的话，自然小弟跟着喝汤了；前提是机器人不能回流争辨识度。"
+    },
+    {
+      "id": "consumption",
+      "name": "消费",
+      "stage": "发酵",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 4,
+      "tone": "strong",
+      "members": [
+        "友阿股份",
+        "巴比食品",
+        "惠发食品",
+        "一鸣食品",
+        "青岛食品"
+      ],
+      "evidence": "首板消费4只；四板青岛食品；首板总结“消费，冰雪，应用反复轮动”；“青岛食品超预期发酵”。",
+      "nextWatch": "让青岛检验一下成色先；明天要检验一下承接，如果无对手的情况下墨迹走势，那不行。"
+    },
+    {
+      "id": "ice_snow",
+      "name": "冰雪",
+      "stage": "分歧",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 3,
+      "tone": "mixed",
+      "members": [
+        "龙江交通",
+        "冰山冷热",
+        "祥源文旅",
+        "东贝集团"
+      ],
+      "evidence": "首板冰雪3只；三板东贝集团“发酵的是东北冰雪”；“不排除是东贝发酵”“板块曾经一日游，避险属性”“持续性不明”。",
+      "nextWatch": "持续性不明，如果只是东贝需要，那首板没啥能聊的。"
+    },
+    {
+      "id": "logistics",
+      "name": "物流",
+      "stage": "启动",
+      "count": 2,
+      "firstBoardCount": 2,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "中远海特",
+        "厦门信达"
+      ],
+      "evidence": "首板物流2只；“模型制作，贸易战模型。应该是，不然没理由拉升。”",
+      "nextWatch": "原文未给出持续性判断。"
+    },
+    {
+      "id": "application",
+      "name": "应用",
+      "stage": "轮动",
+      "count": 2,
+      "firstBoardCount": 2,
+      "maxHeight": 3,
+      "tone": "mixed",
+      "members": [
+        "传智教育",
+        "横店影视",
+        "文投控股",
+        "新华传媒"
+      ],
+      "evidence": "首板应用2只；三板文投控股“烂板吸金”；“新华传媒横盘发育中，时不时拉一个维护热度很正常”“文投是身位，但是烂板，首板表现好点话可以取而代之”。",
+      "nextWatch": "文投控股还能抢救一下，对手是东贝机器人；如果青岛赢了机器人，那就不需要它来证明了。"
+    },
+    {
+      "id": "robot",
+      "name": "机器人",
+      "stage": "退潮",
+      "count": 3,
+      "firstBoardCount": 1,
+      "maxHeight": 3,
+      "tone": "risk",
+      "members": [
+        "和泰机电",
+        "山东矿机",
+        "东贝集团"
+      ],
+      "evidence": "首板和泰机电“机器人，炸光了”；二板山东矿机“山东机器人补涨”；三板东贝集团“机器人活口”；“机器人不及预期，发酵新品种”“机器人切航天，无奈之举”。",
+      "nextWatch": "机器人不能回流争辨识度；机器人或者算力回流，你还信吗？"
+    },
+    {
+      "id": "risk_hedge",
+      "name": "避险独苗",
+      "stage": "轮动",
+      "count": 5,
+      "firstBoardCount": 5,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "开滦股份",
+        "桂林三金",
+        "福建金森",
+        "天顺风能",
+        "东方海洋"
+      ],
+      "evidence": "开滦股份煤炭避险属性；桂林三金医药避险属性；福建金森农业避险属性；天顺风能风电避险属性；东方海洋羊字避险属性。",
+      "nextWatch": "如果避险品种发扬光大，哪个避险属性你最喜欢？比如羊？消费？煤炭等等。"
+    }
+  ],
+  "capturedAt": "2026-10-29T22:35:38+08:00"
 };
