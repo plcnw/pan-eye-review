@@ -4426,6 +4426,16 @@ textarea:focus-visible {
 }
 
 @media (max-width: 620px) {
+  .refresh-popover.is-mobile-anchored,
+  .calendar-popover.is-mobile-anchored {
+    position: fixed;
+    top: var(--mobile-popover-top);
+    right: auto;
+    left: var(--mobile-popover-left);
+    max-height: calc(100vh - var(--mobile-popover-top) - 14px);
+    overflow-y: auto;
+  }
+
   .teach-ai-trigger {
     padding-inline: 10px;
   }
