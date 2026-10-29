@@ -20,7 +20,8 @@ jobs:
           unzip -o pan-eye-source.zip -d staging
           cp -a staging/. .
           rm -rf staging pan-eye-source.zip
-          rm -f .github/workflows/bootstrap.yml
+          mkdir -p workflow-templates
+          mv .github/workflows/daily-review.yml workflow-templates/daily-review.yml
           git config user.name "pan-eye-bot"
           git config user.email "pan-eye-bot@users.noreply.github.com"
           git add -A
