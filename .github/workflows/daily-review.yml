@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  models: read
 
 concurrency:
   group: daily-pan-eye-review
@@ -16,6 +17,10 @@ concurrency:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      AI_API_KEY: ${{ secrets.AI_API_KEY || github.token }}
+      AI_API_URL: ${{ vars.AI_API_URL || 'https://models.github.ai/inference' }}
+      AI_MODEL: ${{ vars.AI_MODEL || 'openai/gpt-4.1-mini' }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -29,13 +34,12 @@ jobs:
         run: pip install lxml
 
       - name: Build daily review
-        env:
-          AI_API_KEY: ${{ secrets.AI_API_KEY }}
-          AI_API_URL: ${{ vars.AI_API_URL }}
-          AI_MODEL: ${{ vars.AI_MODEL }}
         run: |
           TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
-          python scripts/update_daily.py             --date "$TRIAL_DATE"             --wait-retries 5             --wait-seconds 300
+          python scripts/update_daily.py \
+            --date "$TRIAL_DATE" \
+            --wait-retries 5 \
+            --wait-seconds 300
 
       - name: Persist review data and archive
         run: |
