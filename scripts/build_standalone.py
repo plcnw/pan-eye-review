@@ -35,6 +35,7 @@ history_data = (root / "history-data.js").read_text(encoding="utf-8")
 screen_data = (root / "screen-data.js").read_text(encoding="utf-8")
 sector_data = (root / "sector-data.js").read_text(encoding="utf-8")
 calendar_data_js = (root / "calendar-data.js").read_text(encoding="utf-8")
+refresh_config_js = (root / "refresh-config.js").read_text(encoding="utf-8")
 daily_js = (root / "app-daily.js").read_text(encoding="utf-8")
 
 html = html.replace(
@@ -56,6 +57,7 @@ html = html.replace(
     '  <script src="screen-data.js"></script>\n'
     '  <script src="sector-data.js"></script>\n'
     '  <script src="calendar-data.js"></script>\n'
+    '  <script src="refresh-config.js"></script>\n'
     '  <script src="app-daily.js"></script>\n',
     f"  <script>\n{review_data}\n  </script>\n"
     f"  <script>\n{market_data}\n  </script>\n"
@@ -63,6 +65,7 @@ html = html.replace(
     f"  <script>\n{screen_data}\n  </script>\n"
     f"  <script>\n{sector_data}\n  </script>\n"
     f"  <script>\n{calendar_data_js}\n  </script>\n"
+    f"  <script>\n{refresh_config_js}\n  </script>\n"
     f"  <script>\n{daily_js}\n  </script>\n",
 )
 
