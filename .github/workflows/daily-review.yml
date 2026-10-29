@@ -2,6 +2,21 @@ name: Daily Pan Eye Review
 
 on:
   workflow_dispatch:
+    inputs:
+      refresh_scope:
+        description: "刷新范围"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - article
+          - market
+      review_date:
+        description: "日期 YYYY-MM-DD；留空使用上海时区当天"
+        required: false
+        default: ""
+        type: string
   schedule:
     # 17:00 Asia/Shanghai, Monday to Friday
     - cron: "0 9 * * 1-5"
@@ -49,16 +64,24 @@ jobs:
           AI_API_URL: ${{ vars.AI_API_URL }}
           AI_MODEL: ${{ vars.AI_MODEL }}
         run: |
-          TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
+          TRIAL_DATE="${{ inputs.review_date }}"
+          if [ -z "$TRIAL_DATE" ]; then
+            TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
+          fi
+          REFRESH_SCOPE="${{ inputs.refresh_scope || 'all' }}"
           python scripts/update_daily.py \
             --date "$TRIAL_DATE" \
+            --scope "$REFRESH_SCOPE" \
             --wait-retries 5 \
             --wait-seconds 300
 
       - name: Normalize AI output and rebuild site
         if: steps.ai-config.outputs.ready == 'true'
         run: |
-          TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
+          TRIAL_DATE="${{ inputs.review_date }}"
+          if [ -z "$TRIAL_DATE" ]; then
+            TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
+          fi
           python normalize_review.py --date "$TRIAL_DATE" --root .
           python scripts/build_review_data.py --date "$TRIAL_DATE" --root .
           python scripts/build_standalone.py --date "$TRIAL_DATE"
@@ -66,10 +89,14 @@ jobs:
       - name: Persist review data and archive
         if: steps.ai-config.outputs.ready == 'true'
         run: |
+          TRIAL_DATE="${{ inputs.review_date }}"
+          if [ -z "$TRIAL_DATE" ]; then
+            TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
+          fi
           git config user.name "pan-eye-bot"
           git config user.email "pan-eye-bot@users.noreply.github.com"
           git add data docs archive calendar-data.js review-data.js market-data.js history-data.js screen-data.js sector-data.js
           if ! git diff --cached --quiet; then
-            git commit -m "data: add daily review $(TZ=Asia/Shanghai date +%F)"
+            git commit -m "data: add daily review $TRIAL_DATE"
             git push
           fi
