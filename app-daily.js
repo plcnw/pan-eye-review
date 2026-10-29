@@ -202,10 +202,29 @@ function closeRefresh() {
   refreshButton.setAttribute("aria-expanded", "false");
 }
 
+function positionMobilePopover(popover, trigger) {
+  popover.classList.remove("is-mobile-anchored");
+  popover.style.removeProperty("--mobile-popover-left");
+  popover.style.removeProperty("--mobile-popover-top");
+  popover.style.removeProperty("width");
+  if (!window.matchMedia("(max-width: 620px)").matches) return;
+
+  const rect = trigger.getBoundingClientRect();
+  const maxWidth = popover === refreshPopover ? 246 : 286;
+  const width = Math.min(maxWidth, window.innerWidth - 28);
+  const centeredLeft = rect.left + rect.width / 2 - width / 2;
+  const left = Math.max(14, Math.min(centeredLeft, window.innerWidth - width - 14));
+  popover.style.setProperty("--mobile-popover-left", `${Math.round(left)}px`);
+  popover.style.setProperty("--mobile-popover-top", `${Math.round(rect.bottom + 9)}px`);
+  popover.style.width = `${Math.round(width)}px`;
+  popover.classList.add("is-mobile-anchored");
+}
+
 calendarButton.addEventListener("click", () => {
   closeRefresh();
   const opening = calendarPopover.hidden;
   calendarPopover.hidden = !opening;
+  if (opening) positionMobilePopover(calendarPopover, calendarButton);
   calendarButton.setAttribute("aria-expanded", String(opening));
 });
 
@@ -213,7 +232,13 @@ refreshButton.addEventListener("click", () => {
   closeCalendar();
   const opening = refreshPopover.hidden;
   refreshPopover.hidden = !opening;
+  if (opening) positionMobilePopover(refreshPopover, refreshButton);
   refreshButton.setAttribute("aria-expanded", String(opening));
+});
+
+window.addEventListener("resize", () => {
+  if (!calendarPopover.hidden) positionMobilePopover(calendarPopover, calendarButton);
+  if (!refreshPopover.hidden) positionMobilePopover(refreshPopover, refreshButton);
 });
 
 $$("[data-refresh-scope]").forEach((button) => {
