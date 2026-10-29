@@ -1,0 +1,7 @@
+name = "pan-eye-refresh-api"
+main = "src/index.js"
+compatibility_date = "2026-10-29"
+
+[vars]
+ALLOWED_ORIGINS = "https://plcnw.github.io,http://127.0.0.1:4173,http://localhost:4173"
+WORKFLOW_REF = "main"
