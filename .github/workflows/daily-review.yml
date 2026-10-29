@@ -55,6 +55,14 @@ jobs:
             --wait-retries 5 \
             --wait-seconds 300
 
+      - name: Normalize AI output and rebuild site
+        if: steps.ai-config.outputs.ready == 'true'
+        run: |
+          TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
+          python normalize_review.py --date "$TRIAL_DATE" --root .
+          python scripts/build_review_data.py --date "$TRIAL_DATE" --root .
+          python scripts/build_standalone.py --date "$TRIAL_DATE"
+
       - name: Persist review data and archive
         if: steps.ai-config.outputs.ready == 'true'
         run: |
