@@ -60,6 +60,30 @@
           <span>收盘</span>
         </div>
         <div class="top-actions">
+          <div class="refresh-control">
+            <button class="quiet-button refresh-trigger" id="refreshButton" type="button" aria-expanded="false" aria-controls="refreshPopover">
+              <span aria-hidden="true">↻</span>
+              刷新
+            </button>
+            <div class="refresh-popover" id="refreshPopover" hidden>
+              <div class="refresh-head">
+                <strong>重新获取</strong>
+                <small>抓取由 GitHub Actions 在线执行</small>
+              </div>
+              <button type="button" data-refresh-scope="article">
+                <span>重抓文章</span>
+                <small>淘股吧原文 + DeepSeek 解析</small>
+              </button>
+              <button type="button" data-refresh-scope="market">
+                <span>重抓行情</span>
+                <small>行情、K 线、A 杀行为与初筛</small>
+              </button>
+              <button type="button" id="reloadPage">
+                <span>刷新当前页面</span>
+                <small>加载已经生成的最新内容</small>
+              </button>
+            </div>
+          </div>
           <div class="calendar-control">
             <button class="quiet-button calendar-trigger" id="calendarButton" type="button" aria-expanded="false" aria-controls="calendarPopover">
               日历

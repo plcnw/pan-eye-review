@@ -290,6 +290,78 @@ textarea:focus-visible {
   position: relative;
 }
 
+.refresh-control {
+  position: relative;
+}
+
+.refresh-trigger > span {
+  color: var(--mint);
+  font-size: 15px;
+}
+
+.refresh-popover {
+  position: absolute;
+  z-index: 42;
+  top: calc(100% + 9px);
+  right: 0;
+  width: 246px;
+  padding: 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 13px;
+  background: #151d19;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+}
+
+.refresh-head {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 5px 6px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.refresh-head strong {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.refresh-head small {
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.refresh-popover > button {
+  width: 100%;
+  padding: 10px 6px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.refresh-popover > button:last-child {
+  border-bottom: 0;
+}
+
+.refresh-popover > button:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.refresh-popover > button span {
+  color: var(--white);
+  font-size: 10px;
+}
+
+.refresh-popover > button small {
+  color: var(--muted);
+  font-size: 8px;
+}
+
 .calendar-trigger span {
   color: var(--muted);
   font-family: ui-monospace, "Cascadia Code", monospace;
@@ -3583,6 +3655,13 @@ textarea:focus-visible {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   padding-top: 19px;
+}
+
+.funnel-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
 }
 
 .funnel-step {

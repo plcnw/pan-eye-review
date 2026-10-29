@@ -156,6 +156,8 @@ $$(".js-source-link").forEach((link) => {
 
 const calendarButton = $("#calendarButton");
 const calendarPopover = $("#calendarPopover");
+const refreshButton = $("#refreshButton");
+const refreshPopover = $("#refreshPopover");
 const availableDates = window.AVAILABLE_DATES || [review.meta.date];
 const [calendarYear, calendarMonth] = review.meta.date.split("-").map(Number);
 
@@ -195,11 +197,37 @@ function closeCalendar() {
   calendarButton.setAttribute("aria-expanded", "false");
 }
 
+function closeRefresh() {
+  refreshPopover.hidden = true;
+  refreshButton.setAttribute("aria-expanded", "false");
+}
+
 calendarButton.addEventListener("click", () => {
+  closeRefresh();
   const opening = calendarPopover.hidden;
   calendarPopover.hidden = !opening;
   calendarButton.setAttribute("aria-expanded", String(opening));
 });
+
+refreshButton.addEventListener("click", () => {
+  closeCalendar();
+  const opening = refreshPopover.hidden;
+  refreshPopover.hidden = !opening;
+  refreshButton.setAttribute("aria-expanded", String(opening));
+});
+
+$$("[data-refresh-scope]").forEach((button) => {
+  button.addEventListener("click", () => {
+    window.open(
+      "https://github.com/plcnw/pan-eye-review/actions/workflows/daily-review.yml",
+      "_blank",
+      "noopener"
+    );
+    closeRefresh();
+  });
+});
+
+$("#reloadPage").addEventListener("click", () => window.location.reload());
 
 $("#calendarClose").addEventListener("click", closeCalendar);
 $("#calendarGrid").addEventListener("click", (event) => {
@@ -226,10 +254,17 @@ document.addEventListener("click", (event) => {
   ) {
     closeCalendar();
   }
+  if (
+    !refreshPopover.hidden &&
+    !event.target.closest(".refresh-control")
+  ) {
+    closeRefresh();
+  }
 });
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !calendarPopover.hidden) closeCalendar();
+  if (event.key === "Escape" && !refreshPopover.hidden) closeRefresh();
 });
 
 renderCalendar();
@@ -655,16 +690,18 @@ if (sectorSnapshot) {
     </div>
   `).join("");
 
-  $("#funnelList").innerHTML = sectorSnapshot.ladderFunnel.map((item) => `
-    <div class="funnel-step">
-      <span>${escapeHtml(item.from)} → ${escapeHtml(item.to)}</span>
-      <strong>${item.promoted}<small> / ${item.base}</small></strong>
-      <div class="funnel-track" aria-hidden="true">
-        <i style="width:${Math.min(100, item.rate)}%"></i>
-      </div>
-      <em>${item.rate.toFixed(2)}%</em>
-    </div>
-  `).join("");
+  $("#funnelList").innerHTML = sectorSnapshot.ladderFunnel?.length
+    ? sectorSnapshot.ladderFunnel.map((item) => `
+        <div class="funnel-step">
+          <span>${escapeHtml(item.from)} → ${escapeHtml(item.to)}</span>
+          <strong>${item.promoted}<small> / ${item.base}</small></strong>
+          <div class="funnel-track" aria-hidden="true">
+            <i style="width:${Math.min(100, item.rate)}%"></i>
+          </div>
+          <em>${item.rate.toFixed(2)}%</em>
+        </div>
+      `).join("")
+    : '<p class="funnel-empty">首次抓取尚无可对比的前一交易日，明日起自动计算晋级率。</p>';
 
   const maxSectorCount = Math.max(...sectorSnapshot.sectors.map((sector) => sector.count));
   $("#sectorList").innerHTML = sectorSnapshot.sectors.map((sector) => `
