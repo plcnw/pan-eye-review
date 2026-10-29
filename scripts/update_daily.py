@@ -37,40 +37,59 @@ def main() -> None:
         default=300,
         help="每次重试间隔秒数",
     )
+    parser.add_argument(
+        "--scope",
+        choices=("all", "article", "market"),
+        default="all",
+        help="刷新范围：文章与行情、仅文章或仅行情",
+    )
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent.parent
     scripts = root / "scripts"
     raw_path = root / "data" / "raw" / f"{args.date}.json"
 
-    for attempt in range(max(1, args.wait_retries + 1)):
-        try:
-            run(
-                scripts / "fetch_tgb.py",
-                "--date",
-                args.date,
-                "--output-dir",
-                str(root / "data" / "raw"),
-            )
-            break
-        except subprocess.CalledProcessError:
-            if attempt >= args.wait_retries:
-                raise
-            print(
-                f"当日文章尚未可抓取，{args.wait_seconds} 秒后重试 "
-                f"({attempt + 1}/{args.wait_retries})",
-                flush=True,
-            )
-            time.sleep(args.wait_seconds)
+    if args.scope in ("all", "article"):
+        for attempt in range(max(1, args.wait_retries + 1)):
+            try:
+                run(
+                    scripts / "fetch_tgb.py",
+                    "--date",
+                    args.date,
+                    "--output-dir",
+                    str(root / "data" / "raw"),
+                )
+                break
+            except subprocess.CalledProcessError:
+                if attempt >= args.wait_retries:
+                    raise
+                print(
+                    f"当日文章尚未可抓取，{args.wait_seconds} 秒后重试 "
+                    f"({attempt + 1}/{args.wait_retries})",
+                    flush=True,
+                )
+                time.sleep(args.wait_seconds)
 
-    if not raw_path.exists():
-        raise RuntimeError("抓取完成但没有生成原文快照")
+        if not raw_path.exists():
+            raise RuntimeError("抓取完成但没有生成原文快照")
+        run(scripts / "ai_structure.py", "--date", args.date, "--root", str(root))
 
-    run(scripts / "ai_structure.py", "--date", args.date, "--root", str(root))
+    if args.scope in ("all", "market"):
+        run(scripts / "fetch_market.py", "--date", args.date, "--root", str(root))
+        run(scripts / "fetch_history.py", "--date", args.date, "--root", str(root))
+        run(scripts / "screen_market.py", "--date", args.date, "--root", str(root))
+
+    required = [
+        root / "data" / "raw" / f"{args.date}.json",
+        root / "data" / "review" / f"{args.date}.json",
+        root / "data" / "sector" / f"{args.date}.json",
+        root / "data" / "market" / f"{args.date}.json",
+        root / "data" / "history" / f"{args.date}.json",
+        root / "data" / "screen" / f"{args.date}.json",
+    ]
+    if all(path.exists() for path in required):
+        run(scripts / "normalize_review.py", "--date", args.date, "--root", str(root))
     run(scripts / "build_review_data.py", "--date", args.date, "--root", str(root))
-    run(scripts / "fetch_market.py", "--date", args.date, "--root", str(root))
-    run(scripts / "fetch_history.py", "--date", args.date, "--root", str(root))
-    run(scripts / "screen_market.py", "--date", args.date, "--root", str(root))
     run(scripts / "build_standalone.py", "--date", args.date)
 
     print(f"每日复盘生成完成：{args.date}")
