@@ -1,0 +1,16 @@
+{
+  "name": "pan-eye-refresh-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "upload-api": "node scripts/upload.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.155.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "workerd@1.20261023.1": true
+  }
+}
