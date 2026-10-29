@@ -1,6 +1,6 @@
 window.SCREEN_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-29T23:12:14+08:00",
+  "capturedAt": "2026-10-29T23:15:24+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
   "marketCount": 5576,
   "limitUpCount": 43,

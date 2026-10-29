@@ -4437,6 +4437,16 @@ textarea:focus-visible {
 }
 
 @media (max-width: 620px) {
+  .refresh-popover.is-mobile-anchored,
+  .calendar-popover.is-mobile-anchored {
+    position: fixed;
+    top: var(--mobile-popover-top);
+    right: auto;
+    left: var(--mobile-popover-left);
+    max-height: calc(100vh - var(--mobile-popover-top) - 14px);
+    overflow-y: auto;
+  }
+
   .teach-ai-trigger {
     padding-inline: 10px;
   }
@@ -4517,11 +4527,11 @@ textarea:focus-visible {
               </div>
               <button type="button" data-refresh-scope="article">
                 <span>重抓文章</span>
-                <small>淘股吧原文 + DeepSeek 解析</small>
+                <small>打开后选择 article：原文 + AI 解析</small>
               </button>
               <button type="button" data-refresh-scope="market">
                 <span>重抓行情</span>
-                <small>行情、K 线、A 杀行为与初筛</small>
+                <small>打开后选择 market：行情 + K 线 + 初筛</small>
               </button>
               <button type="button" id="reloadPage">
                 <span>刷新当前页面</span>
@@ -5882,7 +5892,7 @@ window.REVIEW_DATA = {
   <script>
 window.MARKET_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-29T23:10:42+08:00",
+  "capturedAt": "2026-10-29T23:14:21+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -6586,7 +6596,7 @@ window.MARKET_DATA = {
   <script>
 window.HISTORY_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-29T23:10:52+08:00",
+  "capturedAt": "2026-10-29T23:14:30+08:00",
   "source": "腾讯历史日线（前复权）",
   "method": "连续至少两个涨停后，断板日下跌超过5%、高开后盘中回落超过5%，或断板后两日累计下跌超过8%。结果仅作为疑似证据。",
   "stocks": [
@@ -207501,7 +207511,7 @@ window.HISTORY_DATA = {
   <script>
 window.SCREEN_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-29T23:12:14+08:00",
+  "capturedAt": "2026-10-29T23:15:24+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
   "marketCount": 5576,
   "limitUpCount": 43,
@@ -208911,10 +208921,29 @@ function closeRefresh() {
   refreshButton.setAttribute("aria-expanded", "false");
 }
 
+function positionMobilePopover(popover, trigger) {
+  popover.classList.remove("is-mobile-anchored");
+  popover.style.removeProperty("--mobile-popover-left");
+  popover.style.removeProperty("--mobile-popover-top");
+  popover.style.removeProperty("width");
+  if (!window.matchMedia("(max-width: 620px)").matches) return;
+
+  const rect = trigger.getBoundingClientRect();
+  const maxWidth = popover === refreshPopover ? 246 : 286;
+  const width = Math.min(maxWidth, window.innerWidth - 28);
+  const centeredLeft = rect.left + rect.width / 2 - width / 2;
+  const left = Math.max(14, Math.min(centeredLeft, window.innerWidth - width - 14));
+  popover.style.setProperty("--mobile-popover-left", `${Math.round(left)}px`);
+  popover.style.setProperty("--mobile-popover-top", `${Math.round(rect.bottom + 9)}px`);
+  popover.style.width = `${Math.round(width)}px`;
+  popover.classList.add("is-mobile-anchored");
+}
+
 calendarButton.addEventListener("click", () => {
   closeRefresh();
   const opening = calendarPopover.hidden;
   calendarPopover.hidden = !opening;
+  if (opening) positionMobilePopover(calendarPopover, calendarButton);
   calendarButton.setAttribute("aria-expanded", String(opening));
 });
 
@@ -208922,7 +208951,13 @@ refreshButton.addEventListener("click", () => {
   closeCalendar();
   const opening = refreshPopover.hidden;
   refreshPopover.hidden = !opening;
+  if (opening) positionMobilePopover(refreshPopover, refreshButton);
   refreshButton.setAttribute("aria-expanded", String(opening));
+});
+
+window.addEventListener("resize", () => {
+  if (!calendarPopover.hidden) positionMobilePopover(calendarPopover, calendarButton);
+  if (!refreshPopover.hidden) positionMobilePopover(refreshPopover, refreshButton);
 });
 
 $$("[data-refresh-scope]").forEach((button) => {
