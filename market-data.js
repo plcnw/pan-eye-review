@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
   "date": "2026-10-29",
-  "capturedAt": "2026-10-30T00:01:36+08:00",
+  "capturedAt": "2026-10-30T00:05:49+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
