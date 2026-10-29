@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  models: read
 
 concurrency:
   group: daily-pan-eye-review
@@ -17,10 +16,6 @@ concurrency:
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      AI_API_KEY: ${{ secrets.AI_API_KEY || github.token }}
-      AI_API_URL: ${{ vars.AI_API_URL || 'https://models.github.ai/inference' }}
-      AI_MODEL: ${{ vars.AI_MODEL || 'openai/gpt-4.1-mini' }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -33,7 +28,26 @@ jobs:
       - name: Install dependencies
         run: pip install lxml
 
+      - name: Check AI configuration
+        id: ai-config
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_API_URL: ${{ vars.AI_API_URL }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
+        run: |
+          if [ -z "$AI_API_KEY" ] || [ -z "$AI_API_URL" ] || [ -z "$AI_MODEL" ]; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "AI credentials are not configured; the current public site remains unchanged." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build daily review
+        if: steps.ai-config.outputs.ready == 'true'
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_API_URL: ${{ vars.AI_API_URL }}
+          AI_MODEL: ${{ vars.AI_MODEL }}
         run: |
           TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
           python scripts/update_daily.py \
@@ -42,6 +56,7 @@ jobs:
             --wait-seconds 300
 
       - name: Persist review data and archive
+        if: steps.ai-config.outputs.ready == 'true'
         run: |
           git config user.name "pan-eye-bot"
           git config user.email "pan-eye-bot@users.noreply.github.com"
