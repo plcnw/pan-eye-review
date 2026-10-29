@@ -135,32 +135,16 @@ def normalize(
         )
     review["metrics"] = metrics
 
-    valid_names = set((review.get("dossiers") or {}).keys())
     market_names = {
         stock.get("requestedName")
         for stock in market.get("stocks", [])
         if stock.get("requestedName")
     }
-    invalid_names = set(market.get("unmatched", []))
-    valid_names.update(
-        stock.get("requestedName")
-        for stock in (
-            list(screen.get("candidates", []))
-            + list(screen.get("hardExcluded", []))
-        )
-        if stock.get("requestedName")
-    )
-    for stock in first_stocks:
-        valid_names.add(stock)
-    for level in ladder:
-        for stock in level.get("stocks", []):
-            valid_names.add(stock.get("name"))
-
     cross_references = []
     for name in review.get("crossReferences", []):
         if not name or name in first_stocks or name in ladder_names:
             continue
-        if name not in market_names and not any(name in valid for valid in valid_names):
+        if name not in market_names:
             continue
         if name not in cross_references:
             cross_references.append(name)
