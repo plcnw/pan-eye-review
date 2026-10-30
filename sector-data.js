@@ -1,138 +1,171 @@
 window.SECTOR_DATA = {
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "market": {
-    "limitUpCount": 43,
-    "firstBoardCount": 29,
-    "maxHeight": 4,
-    "articleCoveredLimitUps": 39
+    "limitUpCount": 53,
+    "firstBoardCount": 38,
+    "maxHeight": 5,
+    "articleCoveredLimitUps": 47
   },
-  "ladderFunnel": [],
+  "ladderFunnel": [
+    {
+      "from": "1板",
+      "to": "2板",
+      "base": 29,
+      "promoted": 6,
+      "rate": 20.69
+    },
+    {
+      "from": "2板",
+      "to": "3板",
+      "base": 6,
+      "promoted": 2,
+      "rate": 33.33
+    },
+    {
+      "from": "3板",
+      "to": "4板",
+      "base": 2,
+      "promoted": 0,
+      "rate": 0.0
+    },
+    {
+      "from": "4板",
+      "to": "5板",
+      "base": 2,
+      "promoted": 1,
+      "rate": 50.0
+    }
+  ],
   "sectors": [
     {
-      "id": "aerospace",
-      "name": "航天",
+      "id": "agriculture",
+      "name": "农业",
       "stage": "启动",
-      "count": 12,
-      "firstBoardCount": 10,
-      "maxHeight": 2,
-      "tone": "active",
+      "count": 2,
+      "firstBoardCount": 2,
+      "maxHeight": 1,
+      "tone": "mixed",
       "members": [
-        "龙溪股份",
-        "阳光照明",
-        "顺灏股份",
-        "邵阳液压",
-        "钧达股份",
-        "上海港湾",
-        "盛洋科技",
-        "中国卫星",
-        "航天晨光",
-        "西部材料",
-        "上海沪工",
-        "宇晶股份"
+        "天鹅股份",
+        "红太阳"
       ],
-      "evidence": "首板航天10只；二板上海沪工上海航天主升、宇晶股份航天悟道板伴飞；机器人切航天，无奈之举。",
-      "nextWatch": "持续性角度看沪工即可，理论上是加速预期，封单大的话，自然小弟跟着喝汤了。"
+      "evidence": "避险品种，符合指数走势发酵。午后未能进一步强化，差点意思。持续性被医药压制中，且二板也有东方农业。",
+      "nextWatch": "观察避险属性是否持续，以及医药方向的压制情况。"
     },
     {
       "id": "consumer",
       "name": "消费",
       "stage": "发酵",
-      "count": 5,
-      "firstBoardCount": 4,
-      "maxHeight": 4,
-      "tone": "strong",
+      "count": 11,
+      "firstBoardCount": 11,
+      "maxHeight": 1,
+      "tone": "active",
       "members": [
-        "友阿股份",
-        "巴比食品",
-        "惠发食品",
-        "一鸣食品",
-        "青岛食品"
+        "黑芝麻",
+        "合百集团",
+        "迎驾贡酒",
+        "泉阳泉",
+        "皇台酒业",
+        "古井贡酒",
+        "好想你",
+        "浙江东日",
+        "泸州老窖",
+        "首旅酒店",
+        "新乳业"
       ],
-      "evidence": "首板消费4只；青岛食品超预期发酵；四板青岛食品明天要检验承接。",
-      "nextWatch": "让青岛检验一下成色先；明天开板换手是捡漏还是风险。"
+      "evidence": "青岛超预期发酵。青岛助攻情况下还午后炸板，这点不符合原理。理论上青岛不能拉胯，不然还得重新开始拉。白酒和算力是死对头，看避险属性。持续性不明，需要青岛超预期行为，因为大股东是青岛啤酒，压制全部酒类乳业等。",
+      "nextWatch": "观察青岛食品溢价表态，若青岛不能超预期，消费方向可能证伪。"
     },
     {
-      "id": "ice_snow",
-      "name": "冰雪",
-      "stage": "分歧",
-      "count": 4,
-      "firstBoardCount": 3,
-      "maxHeight": 3,
+      "id": "medicine",
+      "name": "医药",
+      "stage": "启动",
+      "count": 7,
+      "firstBoardCount": 7,
+      "maxHeight": 1,
       "tone": "mixed",
       "members": [
-        "龙江交通",
-        "冰山冷热",
-        "祥源文旅",
-        "东贝集团"
+        "永安药业",
+        "羚锐制药",
+        "九安医疗",
+        "阳普医疗",
+        "大参林",
+        "百花医药",
+        "万邦医药"
       ],
-      "evidence": "首板冰雪3只；东贝集团三板机器人活口但发酵的是东北冰雪；板块曾经一日游，避险属性。",
-      "nextWatch": "持续性不明，如果只是东贝需要，那首板没啥能聊的。"
+      "evidence": "只能说澳洋有想法。澳洋走出来是因为羊。纯医药你得看三金。理论上是避险属性，符合日内环境发酵。持续性不明，受指数回流影响大。",
+      "nextWatch": "观察指数回流情况对医药避险属性的影响，以及澳洋健康、桂林三金的带动性。"
     },
     {
-      "id": "logistics",
-      "name": "物流",
+      "id": "three_water",
+      "name": "三点水",
       "stage": "启动",
-      "count": 2,
-      "firstBoardCount": 2,
+      "count": 4,
+      "firstBoardCount": 4,
       "maxHeight": 1,
       "tone": "rotation",
       "members": [
-        "中远海特",
-        "厦门信达"
+        "洪通燃气",
+        "中电港",
+        "津滨发展",
+        "锦江航运"
       ],
-      "evidence": "首板物流2只；模型制作，贸易战模型。",
-      "nextWatch": "应该是，不然没理由拉升。"
-    },
-    {
-      "id": "application",
-      "name": "应用",
-      "stage": "轮动",
-      "count": 3,
-      "firstBoardCount": 2,
-      "maxHeight": 3,
-      "tone": "rotation",
-      "members": [
-        "传智教育",
-        "横店影视",
-        "文投控股"
-      ],
-      "evidence": "首板应用2只；文投控股三板烂板吸金；新华传媒横盘发育中。",
-      "nextWatch": "文投是身位，但是烂板，首板表现好点话可以取而代之。"
+      "evidence": "如果不这样归类，你看不懂。最终目的是加强洋字发酵。个股跨服聊天，行业不同，只能个别独立出去等悟道板。持续性不明。",
+      "nextWatch": "观察洋字发酵的持续性，以及个股能否独立走出悟道板。"
     },
     {
       "id": "robot",
       "name": "机器人",
-      "stage": "退潮",
-      "count": 2,
-      "firstBoardCount": 1,
-      "maxHeight": 3,
-      "tone": "risk",
+      "stage": "分歧",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 1,
+      "tone": "weak",
       "members": [
-        "和泰机电",
-        "山东矿机",
-        "东贝集团"
+        "必易微",
+        "派斯林",
+        "沈阳机床",
+        "天元智能"
       ],
-      "evidence": "机器人不及预期；和泰机电炸光了；东贝集团机器人活口但封单异常；山东矿机机器人补涨。",
-      "nextWatch": "机器人不能回流争辨识度；机器人或者算力回流，你还信吗？"
+      "evidence": "说实话，力度越来越弱，或许节点也不对。新鲜感也在不断透支，宇树不动都不动。持续性不明，食之无味，弃之可惜。",
+      "nextWatch": "观察宇树等核心标的动向，以及机器人方向能否出现新节点。"
     },
     {
-      "id": "hedge",
-      "name": "避险",
+      "id": "computing_hardware",
+      "name": "算力硬件",
+      "stage": "启动",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "金安国纪",
+        "澳弘电子",
+        "满坤科技",
+        "扬子新材"
+      ],
+      "evidence": "指数回流先锋。指数回流也不见得能连板。参考第二条，直接跳过。",
+      "nextWatch": "观察指数回流情况，但连板预期不高。"
+    },
+    {
+      "id": "single",
+      "name": "其余形式独苗",
       "stage": "轮动",
-      "count": 5,
-      "firstBoardCount": 5,
+      "count": 6,
+      "firstBoardCount": 6,
       "maxHeight": 1,
       "tone": "rotation",
       "members": [
-        "开滦股份",
-        "桂林三金",
-        "福建金森",
-        "天顺风能",
-        "东方海洋"
+        "地素时尚",
+        "欧圣电气",
+        "智度股份",
+        "鲁阳节能",
+        "黑牡丹",
+        "上海洗霸"
       ],
-      "evidence": "开滦股份煤炭避险属性；桂林三金医药避险属性；福建金森农业避险属性；天顺风能风电避险属性；东方海洋羊字避险属性。",
-      "nextWatch": "如果避险品种发扬光大，哪个避险属性你最喜欢？比如羊？消费？煤炭等等。"
+      "evidence": "地素时尚，上海补涨，理论上是实丰做了切换。欧圣电气，扫地机器人？不清楚啥暗示。智度股份，ai应用，救新华传媒？漏单了。鲁阳节能，山东补涨，缺题材风口。黑牡丹，黑推黑也行，江苏基建推扬子也行。上海洗霸，上海锂电，拉升原因不明，节点像护盘。",
+      "nextWatch": "观察独苗个股能否形成板块效应，以及补涨节点的持续性。"
     }
   ],
-  "capturedAt": "2026-10-29T23:18:41+08:00"
+  "capturedAt": "2026-10-30T23:24:12+08:00"
 };
