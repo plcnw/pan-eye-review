@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
   "date": "2026-10-30",
-  "capturedAt": "2026-10-30T23:24:28+08:00",
+  "capturedAt": "2026-10-31T12:43:58+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -27,8 +27,8 @@ window.MARKET_DATA = {
       "previousClose": 11138.2,
       "changePercent": -2.73,
       "turnoverRate": 2.46,
-      "totalMarketCapYi": 363487.26,
-      "floatMarketCapYi": 309060.0,
+      "totalMarketCapYi": 363487.27,
+      "floatMarketCapYi": 309060.01,
       "inFloatCapRange": false,
       "quoteTime": "20261030161418",
       "name": "深证成指",
@@ -53,6 +53,13 @@ window.MARKET_DATA = {
       "name": "万邦医药",
       "code": "301520",
       "quoteId": "0.301520",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "万邦医药",
+          "code": "301520"
+        }
+      ],
       "requestedName": "万邦医药",
       "apiName": "万邦医药",
       "price": 60.06,
@@ -68,6 +75,13 @@ window.MARKET_DATA = {
       "name": "上海沪工",
       "code": "603131",
       "quoteId": "1.603131",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "上海沪工",
+          "code": "603131"
+        }
+      ],
       "requestedName": "上海沪工",
       "apiName": "上海沪工",
       "price": 17.55,
@@ -83,6 +97,13 @@ window.MARKET_DATA = {
       "name": "上海洗霸",
       "code": "603200",
       "quoteId": "1.603200",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "上海洗霸",
+          "code": "603200"
+        }
+      ],
       "requestedName": "上海洗霸",
       "apiName": "上海洗霸",
       "price": 51.72,
@@ -98,6 +119,13 @@ window.MARKET_DATA = {
       "name": "东方海洋",
       "code": "002086",
       "quoteId": "0.002086",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "东方海洋",
+          "code": "002086"
+        }
+      ],
       "requestedName": "东方海洋",
       "apiName": "东方海洋",
       "price": 2.83,
@@ -113,6 +141,13 @@ window.MARKET_DATA = {
       "name": "中电港",
       "code": "001287",
       "quoteId": "0.001287",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "中电港",
+          "code": "001287"
+        }
+      ],
       "requestedName": "中电港",
       "apiName": "中电港",
       "price": 20.24,
@@ -128,6 +163,13 @@ window.MARKET_DATA = {
       "name": "九安医疗",
       "code": "002432",
       "quoteId": "0.002432",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "九安医疗",
+          "code": "002432"
+        }
+      ],
       "requestedName": "九安医疗",
       "apiName": "九安医疗",
       "price": 56.24,
@@ -143,6 +185,13 @@ window.MARKET_DATA = {
       "name": "上海九百",
       "code": "600838",
       "quoteId": "1.600838",
+      "matchType": "search",
+      "alternatives": [
+        {
+          "name": "上海九百",
+          "code": "600838"
+        }
+      ],
       "requestedName": "九百",
       "apiName": "上海九百",
       "price": 12.27,
@@ -158,6 +207,13 @@ window.MARKET_DATA = {
       "name": "传智教育",
       "code": "003032",
       "quoteId": "0.003032",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "传智教育",
+          "code": "003032"
+        }
+      ],
       "requestedName": "传智教育",
       "apiName": "传智教育",
       "price": 9.96,
@@ -173,6 +229,13 @@ window.MARKET_DATA = {
       "name": "古井贡酒",
       "code": "000596",
       "quoteId": "0.000596",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "古井贡酒",
+          "code": "000596"
+        }
+      ],
       "requestedName": "古井贡酒",
       "apiName": "古井贡酒",
       "price": 95.7,
@@ -188,6 +251,13 @@ window.MARKET_DATA = {
       "name": "合百集团",
       "code": "000417",
       "quoteId": "0.000417",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "合百集团",
+          "code": "000417"
+        }
+      ],
       "requestedName": "合百集团",
       "apiName": "合百集团",
       "price": 5.7,
@@ -203,6 +273,13 @@ window.MARKET_DATA = {
       "name": "地素时尚",
       "code": "603587",
       "quoteId": "1.603587",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "地素时尚",
+          "code": "603587"
+        }
+      ],
       "requestedName": "地素时尚",
       "apiName": "地素时尚",
       "price": 12.9,
@@ -218,6 +295,13 @@ window.MARKET_DATA = {
       "name": "大业股份",
       "code": "603278",
       "quoteId": "1.603278",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "大业股份",
+          "code": "603278"
+        }
+      ],
       "requestedName": "大业",
       "apiName": "大业股份",
       "price": 19.52,
@@ -233,6 +317,13 @@ window.MARKET_DATA = {
       "name": "大参林",
       "code": "603233",
       "quoteId": "1.603233",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "大参林",
+          "code": "603233"
+        }
+      ],
       "requestedName": "大参林",
       "apiName": "大参林",
       "price": 20.26,
@@ -248,6 +339,13 @@ window.MARKET_DATA = {
       "name": "天元智能",
       "code": "603273",
       "quoteId": "1.603273",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "天元智能",
+          "code": "603273"
+        }
+      ],
       "requestedName": "天元智能",
       "apiName": "天元智能",
       "price": 15.6,
@@ -263,6 +361,13 @@ window.MARKET_DATA = {
       "name": "天鹅股份",
       "code": "603029",
       "quoteId": "1.603029",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "天鹅股份",
+          "code": "603029"
+        }
+      ],
       "requestedName": "天鹅",
       "apiName": "天鹅股份",
       "price": 16.05,
@@ -278,6 +383,13 @@ window.MARKET_DATA = {
       "name": "天鹅股份",
       "code": "603029",
       "quoteId": "1.603029",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "天鹅股份",
+          "code": "603029"
+        }
+      ],
       "requestedName": "天鹅股份",
       "apiName": "天鹅股份",
       "price": 16.05,
@@ -293,6 +405,13 @@ window.MARKET_DATA = {
       "name": "好想你",
       "code": "002582",
       "quoteId": "0.002582",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "好想你",
+          "code": "002582"
+        }
+      ],
       "requestedName": "好想你",
       "apiName": "好想你",
       "price": 9.93,
@@ -308,6 +427,13 @@ window.MARKET_DATA = {
       "name": "实丰文化",
       "code": "002862",
       "quoteId": "0.002862",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "实丰文化",
+          "code": "002862"
+        }
+      ],
       "requestedName": "实丰",
       "apiName": "实丰文化",
       "price": 15.23,
@@ -323,6 +449,13 @@ window.MARKET_DATA = {
       "name": "巴比食品",
       "code": "605338",
       "quoteId": "1.605338",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "巴比食品",
+          "code": "605338"
+        }
+      ],
       "requestedName": "巴比食品",
       "apiName": "巴比食品",
       "price": 20.88,
@@ -338,6 +471,13 @@ window.MARKET_DATA = {
       "name": "扬子新材",
       "code": "002652",
       "quoteId": "0.002652",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "扬子新材",
+          "code": "002652"
+        }
+      ],
       "requestedName": "扬子新材",
       "apiName": "扬子新材",
       "price": 3.91,
@@ -353,6 +493,13 @@ window.MARKET_DATA = {
       "name": "新乳业",
       "code": "002946",
       "quoteId": "0.002946",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "新乳业",
+          "code": "002946"
+        }
+      ],
       "requestedName": "新乳业",
       "apiName": "新乳业",
       "price": 15.82,
@@ -368,6 +515,13 @@ window.MARKET_DATA = {
       "name": "新华传媒",
       "code": "600825",
       "quoteId": "1.600825",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "新华传媒",
+          "code": "600825"
+        }
+      ],
       "requestedName": "新华传媒",
       "apiName": "新华传媒",
       "price": 13.36,
@@ -383,6 +537,13 @@ window.MARKET_DATA = {
       "name": "智度股份",
       "code": "000676",
       "quoteId": "0.000676",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "智度股份",
+          "code": "000676"
+        }
+      ],
       "requestedName": "智度股份",
       "apiName": "智度股份",
       "price": 6.61,
@@ -398,6 +559,13 @@ window.MARKET_DATA = {
       "name": "桂林三金",
       "code": "002275",
       "quoteId": "0.002275",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "桂林三金",
+          "code": "002275"
+        }
+      ],
       "requestedName": "桂林三金",
       "apiName": "桂林三金",
       "price": 14.98,
@@ -413,6 +581,13 @@ window.MARKET_DATA = {
       "name": "欧圣电气",
       "code": "301187",
       "quoteId": "0.301187",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "欧圣电气",
+          "code": "301187"
+        }
+      ],
       "requestedName": "欧圣电气",
       "apiName": "欧圣电气",
       "price": 16.8,
@@ -428,6 +603,13 @@ window.MARKET_DATA = {
       "name": "永安药业",
       "code": "002365",
       "quoteId": "0.002365",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "永安药业",
+          "code": "002365"
+        }
+      ],
       "requestedName": "永安药业",
       "apiName": "永安药业",
       "price": 12.23,
@@ -443,6 +625,13 @@ window.MARKET_DATA = {
       "name": "沈阳机床",
       "code": "000410",
       "quoteId": "0.000410",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "沈阳机床",
+          "code": "000410"
+        }
+      ],
       "requestedName": "沈阳机床",
       "apiName": "沈阳机床",
       "price": 5.37,
@@ -458,6 +647,13 @@ window.MARKET_DATA = {
       "name": "泉阳泉",
       "code": "600189",
       "quoteId": "1.600189",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "泉阳泉",
+          "code": "600189"
+        }
+      ],
       "requestedName": "泉阳泉",
       "apiName": "泉阳泉",
       "price": 8.84,
@@ -473,6 +669,13 @@ window.MARKET_DATA = {
       "name": "泸州老窖",
       "code": "000568",
       "quoteId": "0.000568",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "泸州老窖",
+          "code": "000568"
+        }
+      ],
       "requestedName": "泸州老窖",
       "apiName": "泸州老窖",
       "price": 77.07,
@@ -488,6 +691,13 @@ window.MARKET_DATA = {
       "name": "津滨发展",
       "code": "000897",
       "quoteId": "0.000897",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "津滨发展",
+          "code": "000897"
+        }
+      ],
       "requestedName": "津滨发展",
       "apiName": "津滨发展",
       "price": 1.84,
@@ -503,6 +713,13 @@ window.MARKET_DATA = {
       "name": "洪通燃气",
       "code": "605169",
       "quoteId": "1.605169",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "洪通燃气",
+          "code": "605169"
+        }
+      ],
       "requestedName": "洪通燃气",
       "apiName": "洪通燃气",
       "price": 12.78,
@@ -518,6 +735,13 @@ window.MARKET_DATA = {
       "name": "派斯林",
       "code": "600215",
       "quoteId": "1.600215",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "派斯林",
+          "code": "600215"
+        }
+      ],
       "requestedName": "派斯林",
       "apiName": "派斯林",
       "price": 6.37,
@@ -533,6 +757,13 @@ window.MARKET_DATA = {
       "name": "浙江东日",
       "code": "600113",
       "quoteId": "1.600113",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "浙江东日",
+          "code": "600113"
+        }
+      ],
       "requestedName": "浙江东日",
       "apiName": "浙江东日",
       "price": 24.62,
@@ -548,6 +779,13 @@ window.MARKET_DATA = {
       "name": "满坤科技",
       "code": "301132",
       "quoteId": "0.301132",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "满坤科技",
+          "code": "301132"
+        }
+      ],
       "requestedName": "满坤科技",
       "apiName": "满坤科技",
       "price": 56.08,
@@ -563,6 +801,13 @@ window.MARKET_DATA = {
       "name": "澳弘电子",
       "code": "605058",
       "quoteId": "1.605058",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "澳弘电子",
+          "code": "605058"
+        }
+      ],
       "requestedName": "澳弘电子",
       "apiName": "澳弘电子",
       "price": 50.26,
@@ -578,6 +823,13 @@ window.MARKET_DATA = {
       "name": "澳洋健康",
       "code": "002172",
       "quoteId": "0.002172",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "澳洋健康",
+          "code": "002172"
+        }
+      ],
       "requestedName": "澳洋健康",
       "apiName": "澳洋健康",
       "price": 5.91,
@@ -593,6 +845,13 @@ window.MARKET_DATA = {
       "name": "百花医药",
       "code": "600721",
       "quoteId": "1.600721",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "百花医药",
+          "code": "600721"
+        }
+      ],
       "requestedName": "百花医药",
       "apiName": "百花医药",
       "price": 9.83,
@@ -608,6 +867,13 @@ window.MARKET_DATA = {
       "name": "皇台酒业",
       "code": "000995",
       "quoteId": "0.000995",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "皇台酒业",
+          "code": "000995"
+        }
+      ],
       "requestedName": "皇台酒业",
       "apiName": "皇台酒业",
       "price": 14.18,
@@ -623,6 +889,13 @@ window.MARKET_DATA = {
       "name": "盛洋科技",
       "code": "603703",
       "quoteId": "1.603703",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "盛洋科技",
+          "code": "603703"
+        }
+      ],
       "requestedName": "盛洋科技",
       "apiName": "盛洋科技",
       "price": 11.95,
@@ -638,6 +911,13 @@ window.MARKET_DATA = {
       "name": "红太阳",
       "code": "000525",
       "quoteId": "0.000525",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "红太阳",
+          "code": "000525"
+        }
+      ],
       "requestedName": "红太阳",
       "apiName": "红太阳",
       "price": 4.49,
@@ -653,6 +933,13 @@ window.MARKET_DATA = {
       "name": "羚锐制药",
       "code": "600285",
       "quoteId": "1.600285",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "羚锐制药",
+          "code": "600285"
+        }
+      ],
       "requestedName": "羚锐制药",
       "apiName": "羚锐制药",
       "price": 22.0,
@@ -668,6 +955,13 @@ window.MARKET_DATA = {
       "name": "迎驾贡酒",
       "code": "603198",
       "quoteId": "1.603198",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "迎驾贡酒",
+          "code": "603198"
+        }
+      ],
       "requestedName": "迎驾贡酒",
       "apiName": "迎驾贡酒",
       "price": 44.47,
@@ -683,6 +977,13 @@ window.MARKET_DATA = {
       "name": "金安国纪",
       "code": "002636",
       "quoteId": "0.002636",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "金安国纪",
+          "code": "002636"
+        }
+      ],
       "requestedName": "金安国纪",
       "apiName": "金安国纪",
       "price": 63.68,
@@ -698,6 +999,13 @@ window.MARKET_DATA = {
       "name": "锦江航运",
       "code": "601083",
       "quoteId": "1.601083",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "锦江航运",
+          "code": "601083"
+        }
+      ],
       "requestedName": "锦江航运",
       "apiName": "锦江航运",
       "price": 13.93,
@@ -713,6 +1021,13 @@ window.MARKET_DATA = {
       "name": "阳光照明",
       "code": "600261",
       "quoteId": "1.600261",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "阳光照明",
+          "code": "600261"
+        }
+      ],
       "requestedName": "阳光照明",
       "apiName": "阳光照明",
       "price": 4.09,
@@ -728,6 +1043,13 @@ window.MARKET_DATA = {
       "name": "阳普医疗",
       "code": "300030",
       "quoteId": "0.300030",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "阳普医疗",
+          "code": "300030"
+        }
+      ],
       "requestedName": "阳普医疗",
       "apiName": "阳普医疗",
       "price": 7.31,
@@ -743,6 +1065,13 @@ window.MARKET_DATA = {
       "name": "青岛食品",
       "code": "001219",
       "quoteId": "0.001219",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "青岛食品",
+          "code": "001219"
+        }
+      ],
       "requestedName": "青岛食品",
       "apiName": "青岛食品",
       "price": 19.94,
@@ -758,6 +1087,13 @@ window.MARKET_DATA = {
       "name": "首旅酒店",
       "code": "600258",
       "quoteId": "1.600258",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "首旅酒店",
+          "code": "600258"
+        }
+      ],
       "requestedName": "首旅酒店",
       "apiName": "首旅酒店",
       "price": 12.43,
@@ -773,6 +1109,13 @@ window.MARKET_DATA = {
       "name": "鲁阳节能",
       "code": "002088",
       "quoteId": "0.002088",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "鲁阳节能",
+          "code": "002088"
+        }
+      ],
       "requestedName": "鲁阳节能",
       "apiName": "鲁阳节能",
       "price": 7.74,
@@ -788,6 +1131,13 @@ window.MARKET_DATA = {
       "name": "黑牡丹",
       "code": "600510",
       "quoteId": "1.600510",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "黑牡丹",
+          "code": "600510"
+        }
+      ],
       "requestedName": "黑牡丹",
       "apiName": "黑牡丹",
       "price": 6.46,
@@ -803,6 +1153,13 @@ window.MARKET_DATA = {
       "name": "黑芝麻",
       "code": "000716",
       "quoteId": "0.000716",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "黑芝麻",
+          "code": "000716"
+        }
+      ],
       "requestedName": "黑芝麻",
       "apiName": "黑芝麻",
       "price": 5.24,

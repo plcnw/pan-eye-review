@@ -1,6 +1,6 @@
 {
   "date": "2026-10-30",
-  "capturedAt": "2026-10-30T23:24:37+08:00",
+  "capturedAt": "2026-10-31T12:44:10+08:00",
   "source": "腾讯历史日线（前复权）",
   "method": "连续至少两个涨停后，断板日下跌超过5%、高开后盘中回落超过5%，或断板后两日累计下跌超过8%。结果仅作为疑似证据。",
   "stocks": [
@@ -4703,7 +4703,7 @@
       "apiName": "上海九百",
       "code": "600838",
       "quoteId": "1.600838",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -4721,22 +4721,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 5.554,
-          "close": 5.454,
-          "high": 5.554,
-          "low": 5.444,
-          "volume": 27699.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 5.434,
           "close": 5.514,
           "high": 5.514,
           "low": 5.434,
           "volume": 18255.0,
-          "changePercent": 1.1
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -9417,20 +9408,11 @@
       "apiName": "上海沪工",
       "code": "603131",
       "quoteId": "1.603131",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [],
       "hasSuspectedAKill": false,
       "bars": [
-        {
-          "date": "2024-09-02",
-          "open": 13.538,
-          "close": 13.018,
-          "high": 13.538,
-          "low": 12.998,
-          "volume": 110993.0,
-          "changePercent": 0.0
-        },
         {
           "date": "2024-09-03",
           "open": 12.938,
@@ -9438,7 +9420,7 @@
           "high": 13.278,
           "low": 12.818,
           "volume": 71982.0,
-          "changePercent": 1.46
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -18823,7 +18805,7 @@
       "apiName": "东方海洋",
       "code": "002086",
       "quoteId": "0.002086",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -18860,22 +18842,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 2.03,
-          "close": 1.97,
-          "high": 2.05,
-          "low": 1.97,
-          "volume": 52703.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 1.95,
           "close": 1.95,
           "high": 1.99,
           "low": 1.94,
           "volume": 49010.0,
-          "changePercent": -1.02
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -28260,7 +28233,7 @@
       "apiName": "九安医疗",
       "code": "002432",
       "quoteId": "0.002432",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -28278,22 +28251,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 40.484,
-          "close": 39.294,
-          "high": 40.894,
-          "low": 39.254,
-          "volume": 59045.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 39.284,
           "close": 39.554,
           "high": 40.124,
           "low": 39.124,
           "volume": 34044.0,
-          "changePercent": 0.66
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -32974,7 +32938,7 @@
       "apiName": "传智教育",
       "code": "003032",
       "quoteId": "0.003032",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -32991,22 +32955,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-08-29",
-          "open": 7.85,
-          "close": 8.14,
-          "high": 8.23,
-          "low": 7.8,
-          "volume": 133601.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-08-30",
           "open": 8.12,
           "close": 8.39,
           "high": 8.57,
           "low": 8.1,
           "volume": 214079.0,
-          "changePercent": 3.07
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-02",
@@ -37687,7 +37642,7 @@
       "apiName": "古井贡酒",
       "code": "000596",
       "quoteId": "0.000596",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -37705,22 +37660,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 160.81,
-          "close": 154.8,
-          "high": 162.49,
-          "low": 154.8,
-          "volume": 21479.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 154.77,
           "close": 157.7,
           "high": 159.27,
           "low": 153.6,
           "volume": 13322.0,
-          "changePercent": 1.87
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -51821,7 +51767,7 @@
       "apiName": "大业股份",
       "code": "603278",
       "quoteId": "1.603278",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -51860,22 +51806,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 5.29,
-          "close": 5.14,
-          "high": 5.34,
-          "low": 5.13,
-          "volume": 88105.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 5.16,
           "close": 5.17,
           "high": 5.23,
           "low": 5.13,
           "volume": 54565.0,
-          "changePercent": 0.58
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -84761,20 +84698,11 @@
       "apiName": "巴比食品",
       "code": "605338",
       "quoteId": "1.605338",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [],
       "hasSuspectedAKill": false,
       "bars": [
-        {
-          "date": "2024-09-02",
-          "open": 12.01,
-          "close": 11.68,
-          "high": 12.23,
-          "low": 11.67,
-          "volume": 24244.0,
-          "changePercent": 0.0
-        },
         {
           "date": "2024-09-03",
           "open": 11.71,
@@ -84782,7 +84710,7 @@
           "high": 11.84,
           "low": 11.5,
           "volume": 14978.0,
-          "changePercent": 0.43
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -98883,7 +98811,7 @@
       "apiName": "新华传媒",
       "code": "600825",
       "quoteId": "1.600825",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -98921,22 +98849,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-08-14",
-          "open": 3.725,
-          "close": 3.755,
-          "high": 3.785,
-          "low": 3.715,
-          "volume": 66638.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-08-15",
           "open": 3.745,
           "close": 3.835,
           "high": 3.855,
           "low": 3.705,
           "volume": 92203.0,
-          "changePercent": 2.13
+          "changePercent": 0.0
         },
         {
           "date": "2024-08-16",
@@ -108332,20 +108251,11 @@
       "apiName": "桂林三金",
       "code": "002275",
       "quoteId": "0.002275",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [],
       "hasSuspectedAKill": false,
       "bars": [
-        {
-          "date": "2024-09-02",
-          "open": 12.17,
-          "close": 12.35,
-          "high": 12.52,
-          "low": 12.12,
-          "volume": 50594.0,
-          "changePercent": 0.0
-        },
         {
           "date": "2024-09-03",
           "open": 12.27,
@@ -108353,7 +108263,7 @@
           "high": 12.8,
           "low": 12.25,
           "volume": 40287.0,
-          "changePercent": 1.05
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -131838,20 +131748,11 @@
       "apiName": "泸州老窖",
       "code": "000568",
       "quoteId": "0.000568",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [],
       "hasSuspectedAKill": false,
       "bars": [
-        {
-          "date": "2024-09-02",
-          "open": 104.275,
-          "close": 100.775,
-          "high": 104.275,
-          "low": 100.775,
-          "volume": 164041.0,
-          "changePercent": 0.0
-        },
         {
           "date": "2024-09-03",
           "open": 102.175,
@@ -131859,7 +131760,7 @@
           "high": 103.505,
           "low": 100.845,
           "volume": 90716.0,
-          "changePercent": 1.72
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -164765,7 +164666,7 @@
       "apiName": "澳洋健康",
       "code": "002172",
       "quoteId": "0.002172",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -164793,22 +164694,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-08-26",
-          "open": 2.4,
-          "close": 2.48,
-          "high": 2.48,
-          "low": 2.36,
-          "volume": 111403.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-08-27",
           "open": 2.45,
           "close": 2.34,
           "high": 2.5,
           "low": 2.32,
           "volume": 244501.0,
-          "changePercent": -5.65
+          "changePercent": 0.0
         },
         {
           "date": "2024-08-28",
@@ -174205,7 +174097,7 @@
       "apiName": "皇台酒业",
       "code": "000995",
       "quoteId": "0.000995",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -174223,22 +174115,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 8.53,
-          "close": 8.29,
-          "high": 8.59,
-          "low": 8.28,
-          "volume": 44669.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 8.33,
           "close": 8.5,
           "high": 8.64,
           "low": 8.29,
           "volume": 37664.0,
-          "changePercent": 2.53
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -178919,7 +178802,7 @@
       "apiName": "盛洋科技",
       "code": "603703",
       "quoteId": "1.603703",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -178937,22 +178820,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 9.4,
-          "close": 9.24,
-          "high": 9.56,
-          "low": 9.21,
-          "volume": 39151.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 9.2,
           "close": 9.61,
           "high": 9.83,
           "low": 9.19,
           "volume": 89948.0,
-          "changePercent": 4.0
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -197724,7 +197598,7 @@
       "apiName": "金安国纪",
       "code": "002636",
       "quoteId": "0.002636",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -197752,22 +197626,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 6.77,
-          "close": 6.84,
-          "high": 7.01,
-          "low": 6.64,
-          "volume": 339594.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 6.62,
           "close": 6.49,
           "high": 6.81,
           "low": 6.45,
           "volume": 367826.0,
-          "changePercent": -5.12
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -207163,7 +207028,7 @@
       "apiName": "阳光照明",
       "code": "600261",
       "quoteId": "1.600261",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -207180,22 +207045,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-02",
-          "open": 2.3,
-          "close": 2.22,
-          "high": 2.31,
-          "low": 2.21,
-          "volume": 153814.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-03",
           "open": 2.22,
           "close": 2.2,
           "high": 2.25,
           "low": 2.2,
           "volume": 76552.0,
-          "changePercent": -0.9
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
@@ -216591,20 +216447,11 @@
       "apiName": "青岛食品",
       "code": "001219",
       "quoteId": "0.001219",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [],
       "hasSuspectedAKill": false,
       "bars": [
-        {
-          "date": "2024-09-02",
-          "open": 10.97,
-          "close": 10.64,
-          "high": 11.17,
-          "low": 10.42,
-          "volume": 85983.0,
-          "changePercent": 0.0
-        },
         {
           "date": "2024-09-03",
           "open": 10.64,
@@ -216612,7 +216459,7 @@
           "high": 10.85,
           "low": 10.55,
           "volume": 65254.0,
-          "changePercent": 0.09
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-04",
