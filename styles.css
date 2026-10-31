@@ -2972,6 +2972,23 @@ textarea:focus-visible {
   border-color: rgba(239, 100, 83, 0.32);
 }
 
+.cross-stock.is-pending {
+  border-style: dashed;
+  cursor: default;
+}
+
+.cross-stock.is-pending:hover {
+  border-color: var(--line);
+}
+
+.cross-stock.is-pending strong {
+  color: var(--muted-strong);
+}
+
+.cross-stock.is-pending span {
+  color: var(--gold);
+}
+
 .cross-stock strong {
   font-family: var(--serif);
   font-size: 16px;

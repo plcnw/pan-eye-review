@@ -49,6 +49,12 @@ def resolve_stock(name: str) -> dict | None:
         "name": selected.get("Name"),
         "code": selected.get("Code"),
         "quoteId": selected.get("QuoteID"),
+        "matchType": "exact" if exact else "prefix" if prefix else "search",
+        "alternatives": [
+            {"name": row.get("Name"), "code": row.get("Code")}
+            for row in stocks[:8]
+            if row.get("Name") and row.get("Code")
+        ],
     }
 
 

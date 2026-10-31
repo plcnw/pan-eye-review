@@ -5,6 +5,8 @@ import json
 import re
 from pathlib import Path
 
+from entity_resolution import apply_entity_resolution, resolve_entities
+
 
 def parse_first_board(lines: list[str]) -> list[dict]:
     try:
@@ -113,6 +115,17 @@ def normalize(
         level["label"] = f"{value}板"
     review["ladder"] = ladder
 
+    lexicon_path = Path(__file__).resolve().parent.parent / "knowledge" / "short-line-lexicon.json"
+    lexicon = (
+        json.loads(lexicon_path.read_text(encoding="utf-8"))
+        if lexicon_path.exists()
+        else {}
+    )
+    entity_resolution = resolve_entities(
+        review, sector, market, lexicon, previous_review
+    )
+    apply_entity_resolution(review, entity_resolution, sector)
+
     first_stocks = {
         stock for theme in review["themes"] for stock in theme.get("stocks", [])
     }
@@ -135,16 +148,9 @@ def normalize(
         )
     review["metrics"] = metrics
 
-    market_names = {
-        stock.get("requestedName")
-        for stock in market.get("stocks", [])
-        if stock.get("requestedName")
-    }
     cross_references = []
     for name in review.get("crossReferences", []):
         if not name or name in first_stocks or name in ladder_names:
-            continue
-        if name not in market_names:
             continue
         if name not in cross_references:
             cross_references.append(name)

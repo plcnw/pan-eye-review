@@ -2,12 +2,20 @@ const review = window.REVIEW_DATA;
 const sourceUrl = review.meta.sourceUrl;
 const stockDossiers = review.dossiers;
 const marketSnapshot = window.MARKET_DATA || null;
-const marketByStock = new Map(
-  (marketSnapshot?.stocks || []).map((stock) => [stock.requestedName, stock])
-);
+const marketByStock = new Map();
+const marketCandidatesByName = new Map();
+(marketSnapshot?.stocks || []).forEach((stock) => {
+  [stock.name, stock.requestedName, stock.apiName].filter(Boolean).forEach((name) => {
+    if (!marketByStock.has(name)) marketByStock.set(name, stock);
+    const candidates = marketCandidatesByName.get(name) || [];
+    if (!candidates.some((item) => item.code === stock.code)) candidates.push(stock);
+    marketCandidatesByName.set(name, candidates);
+  });
+});
 const marketByCode = new Map(
   (marketSnapshot?.stocks || []).map((stock) => [stock.code, stock])
 );
+const entityMentions = review.entityResolution?.mentions || {};
 const historySnapshot = window.HISTORY_DATA || null;
 const historyByStock = new Map();
 (historySnapshot?.stocks || []).forEach((stock) => {
@@ -64,8 +72,39 @@ function signedPercent(value) {
   return `${Number(value) > 0 ? "+" : ""}${Number(value).toFixed(2)}%`;
 }
 
+function resolveMention(name) {
+  const resolution = entityMentions[name];
+  if (resolution) return resolution;
+  const candidates = marketCandidatesByName.get(name) || [];
+  if (candidates.length === 1) {
+    return {
+      raw: name,
+      canonical: candidates[0].name,
+      status: "resolved",
+      confidence: 0.9,
+      basis: ["行情简称唯一匹配"],
+      candidates: candidates.map((stock) => ({
+        name: stock.name,
+        code: stock.code
+      }))
+    };
+  }
+  return null;
+}
+
+function canonicalStockName(name) {
+  const resolution = resolveMention(name);
+  return resolution?.status === "resolved" && resolution.canonical
+    ? resolution.canonical
+    : name;
+}
+
 function marketFor(name) {
-  return marketByStock.get(name) || screenedByStock.get(name) || null;
+  const canonical = canonicalStockName(name);
+  const candidates = marketCandidatesByName.get(canonical) || [];
+  if (candidates.length === 1) return candidates[0];
+  if (candidates.length > 1) return null;
+  return marketByStock.get(canonical) || screenedByStock.get(canonical) || null;
 }
 
 function historyFor(name) {
@@ -452,11 +491,24 @@ function findThemeStock(name) {
 }
 
 function getDossier(name) {
-  if (stockDossiers[name]) return stockDossiers[name];
-  if (findThemeStock(name)) return findThemeStock(name);
+  const canonicalName = canonicalStockName(name);
+  if (stockDossiers[canonicalName]) return stockDossiers[canonicalName];
+  if (findThemeStock(canonicalName)) return findThemeStock(canonicalName);
 
-  const screened = screenedByStock.get(name);
-  if (!screened) return null;
+  const screened = screenedByStock.get(canonicalName);
+  if (!screened) {
+    const resolution = resolveMention(name);
+    const candidates = resolution?.candidates?.map((item) => item.name).filter(Boolean) || [];
+    return {
+      level: "待确认",
+      brief: candidates.length
+        ? `原文提及“${name}”，候选：${candidates.join("、")}。`
+        : `原文提及“${name}”，暂未找到唯一股票。`,
+      flags: ["待确认"],
+      mentions: [["原帖提及", name]],
+      related: []
+    };
+  }
   const boardLabel =
     screened.boardHeight == null ? "历史待核验" : `${screened.boardHeight}板`;
   const excluded = screenSnapshot.hardExcluded.some((stock) => stock.name === name);
@@ -535,10 +587,30 @@ $("#qualityList").innerHTML = review.qualities.map((item) => {
 
 $("#crossReference").innerHTML = review.crossReferences.map((name) => {
   const profile = getDossier(name);
+  const resolution = resolveMention(name);
+  const candidates = resolution?.candidates?.map((item) => item.name).filter(Boolean) || [];
+  const pending = resolution && resolution.status !== "resolved";
+  if (pending) {
+    const detail = candidates.length
+      ? `候选：${candidates.join(" / ")}`
+      : resolution.status === "group"
+        ? "动态股票池"
+        : resolution.status === "theme"
+          ? "板块方向"
+        : "待确认";
+    return `
+      <span class="cross-stock is-pending" data-entity-status="${escapeHtml(resolution.status)}">
+        <strong>${escapeHtml(name)}</strong>
+        <span>${escapeHtml(detail)}</span>
+      </span>
+    `;
+  }
+  const canonicalName = canonicalStockName(name);
+  const aliasNote = canonicalName !== name ? `原文“${name}” · ` : "";
   return `
-    <button class="cross-stock" type="button" data-stock="${escapeHtml(name)}">
-      <strong>${escapeHtml(name)}</strong>
-      <span>${escapeHtml(profile.flags.join(" · "))}</span>
+    <button class="cross-stock" type="button" data-stock="${escapeHtml(canonicalName)}">
+      <strong>${escapeHtml(canonicalName)}</strong>
+      <span>${escapeHtml(aliasNote + (profile ? profile.flags.join(" · ") : "原帖提及"))}</span>
     </button>
   `;
 }).join("");

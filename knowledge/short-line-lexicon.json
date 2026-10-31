@@ -10,6 +10,20 @@
   ],
   "terms": [
     {
+      "term": "天鹅",
+      "type": "fixed_alias",
+      "resolution": "天鹅股份",
+      "meaning": "作者在短线语境中用简称指代天鹅股份。",
+      "sources": ["用户确认", "2026-10-30 复盘原文"]
+    },
+    {
+      "term": "青岛",
+      "type": "contextual_alias",
+      "resolution": "青岛食品 / 青岛啤酒",
+      "meaning": "存在多个候选，必须结合当日梯队、板块和原文语境决定，不能固定映射。",
+      "sources": ["用户确认", "2026-10-30 复盘原文"]
+    },
+    {
       "term": "900",
       "type": "fixed_alias",
       "resolution": "上海九百",
@@ -29,6 +43,41 @@
       "resolution": "医药方向股票集合",
       "meaning": "短线复盘中的经典板块隐喻。具体对应主升不得自动补写。",
       "sources": ["2026-10-28 复盘原文", "短线社区常见语境"]
+    },
+    {
+      "term": "航天",
+      "type": "sector_metaphor",
+      "resolution": "航天方向股票集合",
+      "meaning": "板块方向，不等同于某一只股票。",
+      "sources": ["盘眼复盘语料"]
+    },
+    {
+      "term": "机器人",
+      "type": "sector_metaphor",
+      "resolution": "机器人方向股票集合",
+      "meaning": "板块方向，不等同于某一只股票。",
+      "sources": ["盘眼复盘语料"]
+    },
+    {
+      "term": "算力硬件",
+      "type": "sector_metaphor",
+      "resolution": "算力硬件方向股票集合",
+      "meaning": "板块方向，不等同于某一只股票。",
+      "sources": ["盘眼复盘语料"]
+    },
+    {
+      "term": "消费",
+      "type": "sector_metaphor",
+      "resolution": "消费方向股票集合",
+      "meaning": "板块方向，不等同于某一只股票。",
+      "sources": ["盘眼复盘语料"]
+    },
+    {
+      "term": "冰雪",
+      "type": "sector_metaphor",
+      "resolution": "冰雪方向股票集合",
+      "meaning": "板块方向，不等同于某一只股票。",
+      "sources": ["盘眼复盘语料"]
     },
     {
       "term": "敌对",
