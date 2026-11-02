@@ -5,6 +5,8 @@ import json
 import os
 import re
 import sys
+import time
+import urllib.error
 import urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -88,6 +90,16 @@ SYSTEM_PROMPT = """
 }
 """.strip()
 
+COMPACT_OUTPUT_RULES = """
+
+本次输出必须使用精简模式，优先保证 JSON 完整闭合：
+1. 每个 theme 的 notes 最多保留 3 条，只保留最有交易价值的内容。
+2. summary、crossReferences、articleSections 各数组最多 4 项；questions 最多 6 项。
+3. 每个 dossier 的 mentions 最多 2 条，每条原文引语不超过 80 个汉字；brief 不超过 50 个汉字。
+4. 不在多个栏目重复同一段长原文；保留股票名称、所属栏目和判断即可。
+5. 不得因为精简而漏掉梯队、气质股、观察计划和思考题中的股票。
+""".strip()
+
 
 def extract_json(text: str) -> dict:
     cleaned = text.strip()
@@ -97,7 +109,15 @@ def extract_json(text: str) -> dict:
     return json.loads(cleaned)
 
 
-def call_model(endpoint: str, api_key: str, model: str, article: dict, lexicon: dict) -> dict:
+def call_model(
+    endpoint: str,
+    api_key: str,
+    model: str,
+    article: dict,
+    lexicon: dict,
+    max_tokens: int,
+    compact: bool,
+) -> dict:
     previous_path = Path(article["_root"]) / "data" / "review" / f"{article['previousDate']}.json"
     previous = None
     if previous_path.exists():
@@ -114,17 +134,20 @@ def call_model(endpoint: str, api_key: str, model: str, article: dict, lexicon: 
         },
         "internalLexicon": lexicon,
     }
+    system_prompt = SYSTEM_PROMPT
+    if compact:
+        system_prompt = f"{SYSTEM_PROMPT}\n\n{COMPACT_OUTPUT_RULES}"
     payload = {
         "model": model,
         "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": system_prompt},
             {
                 "role": "user",
                 "content": json.dumps(user_content, ensure_ascii=False, indent=2),
             },
         ],
         "temperature": 0.1,
-        "max_tokens": 16000,
+        "max_tokens": max_tokens,
         "response_format": {"type": "json_object"},
     }
     request = urllib.request.Request(
@@ -139,7 +162,12 @@ def call_model(endpoint: str, api_key: str, model: str, article: dict, lexicon: 
     )
     with urllib.request.urlopen(request, timeout=180) as response:
         result = json.loads(response.read().decode("utf-8"))
-    content = result["choices"][0]["message"]["content"]
+    choice = result["choices"][0]
+    if choice.get("finish_reason") == "length":
+        raise RuntimeError(
+            f"AI 输出达到 {max_tokens} token 上限，JSON 被截断"
+        )
+    content = choice["message"]["content"]
     return extract_json(content)
 
 
@@ -203,10 +231,45 @@ def main() -> None:
         if api_url.rstrip("/").endswith("/chat/completions")
         else api_url.rstrip("/") + "/chat/completions"
     )
-    result = call_model(endpoint, api_key, model, raw, lexicon)
-    review = result["review"]
-    sector = result["sector"]
-    validate(review, sector)
+    max_tokens = int(os.getenv("AI_MAX_TOKENS", "32000"))
+    result = None
+    review = None
+    sector = None
+    last_error: Exception | None = None
+    for attempt, compact in enumerate((False, True), start=1):
+        try:
+            result = call_model(
+                endpoint,
+                api_key,
+                model,
+                raw,
+                lexicon,
+                max_tokens=max_tokens,
+                compact=compact,
+            )
+            review = result["review"]
+            sector = result["sector"]
+            validate(review, sector)
+            break
+        except (
+            IndexError,
+            KeyError,
+            TypeError,
+            ValueError,
+            RuntimeError,
+            urllib.error.URLError,
+            TimeoutError,
+        ) as exc:
+            last_error = exc
+            print(
+                f"AI 第 {attempt} 次生成未完成：{exc}",
+                file=sys.stderr,
+                flush=True,
+            )
+            if attempt == 1:
+                time.sleep(2)
+    if result is None or review is None or sector is None:
+        raise RuntimeError("AI 连续两次未能生成有效复盘") from last_error
 
     review["meta"].update(
         {
