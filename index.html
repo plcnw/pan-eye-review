@@ -70,13 +70,17 @@
                 <strong>重新获取</strong>
                 <small>抓取由 GitHub Actions 在线执行</small>
               </div>
+              <button class="refresh-primary" type="button" data-refresh-scope="all">
+                <span>同步今日</span>
+                <small>按北京日期抓取原文、行情和初筛</small>
+              </button>
               <button type="button" data-refresh-scope="article">
                 <span>重抓文章</span>
-                <small>打开后选择 article：原文 + AI 解析</small>
+                <small>当前复盘日期 · 原文 + AI 解析</small>
               </button>
               <button type="button" data-refresh-scope="market">
                 <span>重抓行情</span>
-                <small>打开后选择 market：行情 + K 线 + 初筛</small>
+                <small>当前复盘日期 · 行情 + K 线 + 初筛</small>
               </button>
               <button type="button" id="reloadPage">
                 <span>刷新当前页面</span>
@@ -92,9 +96,13 @@
             </button>
             <div class="calendar-popover" id="calendarPopover" hidden>
               <div class="calendar-head">
-                <div>
+                <div class="calendar-head-copy">
                   <span>复盘日历</span>
-                  <strong id="calendarMonthLabel">2026年10月</strong>
+                  <div class="calendar-month-line">
+                    <button type="button" id="calendarPrev" aria-label="上个月">‹</button>
+                    <strong id="calendarMonthLabel">2026年10月</strong>
+                    <button type="button" id="calendarNext" aria-label="下个月">›</button>
+                  </div>
                 </div>
                 <button type="button" id="calendarClose" aria-label="关闭日历">×</button>
               </div>

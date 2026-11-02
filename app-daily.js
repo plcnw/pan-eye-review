@@ -200,7 +200,20 @@ const refreshPopover = $("#refreshPopover");
 const refreshStatus = $("#refreshStatus");
 const refreshApiBase = String(window.PAN_EYE_REFRESH_API || "").replace(/\/+$/, "");
 const availableDates = window.AVAILABLE_DATES || [review.meta.date];
-const [calendarYear, calendarMonth] = review.meta.date.split("-").map(Number);
+const [initialCalendarYear, initialCalendarMonth] = review.meta.date.split("-").map(Number);
+let calendarYear = initialCalendarYear;
+let calendarMonth = initialCalendarMonth;
+
+function shanghaiDate() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(new Date());
+  const value = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${value.year}-${value.month}-${value.day}`;
+}
 
 function renderCalendar() {
   const monthDate = new Date(calendarYear, calendarMonth - 1, 1);
@@ -293,6 +306,7 @@ window.addEventListener("resize", () => {
 $$("[data-refresh-scope]").forEach((button) => {
   button.addEventListener("click", async () => {
     const scope = button.dataset.refreshScope;
+    const targetDate = scope === "all" ? shanghaiDate() : review.meta.date;
     if (!refreshApiBase) {
       window.open(
         "https://github.com/plcnw/pan-eye-review/actions/workflows/daily-review.yml",
@@ -311,7 +325,7 @@ $$("[data-refresh-scope]").forEach((button) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           scope,
-          date: review.meta.date
+          date: targetDate
         })
       });
       const result = await response.json().catch(() => ({}));
@@ -319,9 +333,11 @@ $$("[data-refresh-scope]").forEach((button) => {
         throw new Error(result.error || `提交失败 (${response.status})`);
       }
       setRefreshStatus(
-        scope === "article"
-          ? "文章刷新已提交，约 1–2 分钟后重新打开本页。"
-          : "行情刷新已提交，约 1–2 分钟后重新打开本页。",
+        scope === "all"
+          ? `${targetDate} 全量刷新已提交，约 1–2 分钟后刷新当前页面。`
+          : scope === "article"
+            ? `${targetDate} 文章刷新已提交，约 1–2 分钟后刷新当前页面。`
+            : `${targetDate} 行情刷新已提交，约 1–2 分钟后刷新当前页面。`,
         "success"
       );
     } catch (error) {
@@ -335,9 +351,25 @@ $$("[data-refresh-scope]").forEach((button) => {
   });
 });
 
-$("#reloadPage").addEventListener("click", () => window.location.reload());
+$("#reloadPage").addEventListener("click", () => {
+  const target = new URL(window.location.href);
+  target.searchParams.set("_refresh", String(Date.now()));
+  window.location.replace(target);
+});
 
 $("#calendarClose").addEventListener("click", closeCalendar);
+$("#calendarPrev").addEventListener("click", () => {
+  const previous = new Date(calendarYear, calendarMonth - 2, 1);
+  calendarYear = previous.getFullYear();
+  calendarMonth = previous.getMonth() + 1;
+  renderCalendar();
+});
+$("#calendarNext").addEventListener("click", () => {
+  const next = new Date(calendarYear, calendarMonth, 1);
+  calendarYear = next.getFullYear();
+  calendarMonth = next.getMonth() + 1;
+  renderCalendar();
+});
 $("#calendarGrid").addEventListener("click", (event) => {
   const dateButton = event.target.closest("[data-calendar-date]");
   if (!dateButton) return;
