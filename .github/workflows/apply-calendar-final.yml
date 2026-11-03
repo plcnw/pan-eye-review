@@ -1,0 +1,44 @@
+name: Apply final archive calendar fix
+
+on:
+  push:
+    paths:
+      - .github/workflows/apply-calendar-final.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use latest main
+        run: |
+          git fetch origin main
+          git switch --force-create main origin/main
+
+      - name: Apply final calendar bundle
+        run: |
+          base64 -d > /tmp/pan-eye-calendar-final.tar.gz <<'BUNDLE'
+          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
+          BUNDLE
+          tar -xzf /tmp/pan-eye-calendar-final.tar.gz -C .
+
+      - name: Validate and rebuild historical calendars
+        run: |
+          python -m py_compile scripts/build_standalone.py
+          LATEST_DATE=$(find data/review -name '*.json' -printf '%f\n' | sort | tail -1 | sed 's/\.json$//')
+          python scripts/build_standalone.py --date "$LATEST_DATE"
+
+      - name: Commit final calendar fix
+        run: |
+          git config user.name "pan-eye-bot"
+          git config user.email "pan-eye-bot@users.noreply.github.com"
+          git add scripts/build_standalone.py index.html calendar-data.js archive docs
+          if ! git diff --cached --quiet; then
+            git commit -m "fix: unify archive navigation and remove loading flash"
+            git push
+          fi
