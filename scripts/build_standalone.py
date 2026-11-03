@@ -1,5 +1,6 @@
 import argparse
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -83,6 +84,27 @@ online_html = html.replace(
 (site_dir / "index.html").write_text(online_html, encoding="utf-8")
 for date_file in archive_dir.glob("*.html"):
     shutil.copy2(date_file, site_archive_dir / date_file.name)
+
+# Historical snapshots are intentionally immutable for their review content,
+# but their calendar index must include dates published after the snapshot.
+calendar_pattern = re.compile(
+    r"window\.AVAILABLE_DATES\s*=\s*\[[^\]]*\];"
+)
+for archive_file in [
+    *archive_dir.glob("*.html"),
+    *site_archive_dir.glob("*.html"),
+]:
+    archive_html = archive_file.read_text(encoding="utf-8")
+    refreshed_html, replacements = calendar_pattern.subn(
+        calendar_data.strip(),
+        archive_html,
+        count=1,
+    )
+    if replacements:
+        archive_file.write_text(refreshed_html, encoding="utf-8")
+    else:
+        print(f"WARNING: calendar index not found in {archive_file}")
+
 (site_dir / "_headers").write_text(
     "/*\n"
     "  X-Content-Type-Options: nosniff\n"
