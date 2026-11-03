@@ -3278,6 +3278,42 @@ textarea:focus-visible {
 }
 
   </style>
+
+<style id="legacy-archive-calendar-style">
+.legacy-calendar { position: relative; }
+.legacy-calendar summary {
+  min-height: 36px; padding: 0 13px; border: 1px solid var(--line);
+  border-radius: 10px; background: rgba(255, 255, 255, 0.025);
+  color: var(--muted-strong); display: inline-flex; align-items: center;
+  gap: 7px; font-size: 11px; cursor: pointer; list-style: none;
+}
+.legacy-calendar summary::-webkit-details-marker { display: none; }
+.legacy-calendar summary span {
+  color: var(--muted); font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 9px;
+}
+.legacy-calendar[open] summary {
+  color: var(--white); border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.05);
+}
+.legacy-calendar-menu {
+  position: absolute; z-index: 50; top: calc(100% + 8px); right: 0;
+  width: 178px; padding: 8px; border: 1px solid var(--line-strong);
+  border-radius: 12px; background: #151d19;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+}
+.legacy-calendar-menu a,
+.legacy-calendar-menu span {
+  min-height: 34px; padding: 0 10px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: space-between;
+  color: var(--muted-strong); font-size: 10px; text-decoration: none;
+}
+.legacy-calendar-menu a:hover { color: var(--white); background: rgba(255,255,255,.045); }
+.legacy-calendar-menu span { color: var(--gold); background: var(--gold-soft); }
+@media (max-width: 620px) {
+  .legacy-calendar-menu { position: fixed; top: 72px; right: 14px; left: 14px; width: auto; }
+}
+</style>
 </head>
 <body>
   <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -3339,7 +3375,7 @@ textarea:focus-visible {
             查看原文
             <span aria-hidden="true">↗</span>
           </a>
-        </div>
+        <details class="legacy-calendar"><summary>日历 <span>10.28</span></summary><div class="legacy-calendar-menu"><span>10月28日 · 当前</span><a href="2026-10-29.html">10月29日</a><a href="2026-10-30.html">10月30日</a><a href="2026-11-02.html">11月02日</a><a href="2026-11-03.html">11月03日</a></div></details></div>
       </header>
 
       <section class="review-header" id="today">

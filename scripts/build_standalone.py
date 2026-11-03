@@ -90,11 +90,95 @@ for date_file in archive_dir.glob("*.html"):
 calendar_pattern = re.compile(
     r"window\.AVAILABLE_DATES\s*=\s*\[[^\]]*\];"
 )
+
+placeholder_patterns = [
+    (
+        re.compile(r'(<span id="breadcrumbDate">)[^<]*(</span>)'),
+        r"\1--.--\2",
+    ),
+    (
+        re.compile(r'(<span id="calendarDateLabel">)[^<]*(</span>)'),
+        r"\1--.--\2",
+    ),
+    (
+        re.compile(r'(<strong id="calendarMonthLabel">)[^<]*(</strong>)'),
+        r"\1加载中\2",
+    ),
+    (
+        re.compile(r'(<span id="headerDate">)[^<]*(</span>)'),
+        r"\1复盘加载中\2",
+    ),
+    (
+        re.compile(r'(<span id="publishedAt">)[^<]*(</span>)'),
+        r"\1加载中\2",
+    ),
+    (
+        re.compile(r'(<span class="paper-date" id="paperDate">)[^<]*(</span>)'),
+        r"\1--.--\2",
+    ),
+    (
+        re.compile(r'(<h2 id="paperTitle">)[^<]*(</h2>)'),
+        r"\1复盘加载中\2",
+    ),
+]
+
+online_index_path = site_dir / "index.html"
+online_index = online_index_path.read_text(encoding="utf-8")
+for pattern, replacement in placeholder_patterns:
+    online_index = pattern.sub(replacement, online_index, count=1)
+online_index_path.write_text(online_index, encoding="utf-8")
+
+if output.exists():
+    standalone_html = output.read_text(encoding="utf-8")
+    for pattern, replacement in placeholder_patterns:
+        standalone_html = pattern.sub(replacement, standalone_html, count=1)
+    output.write_text(standalone_html, encoding="utf-8")
+
+legacy_calendar_style = """
+<style id="legacy-archive-calendar-style">
+.legacy-calendar { position: relative; }
+.legacy-calendar summary {
+  min-height: 36px; padding: 0 13px; border: 1px solid var(--line);
+  border-radius: 10px; background: rgba(255, 255, 255, 0.025);
+  color: var(--muted-strong); display: inline-flex; align-items: center;
+  gap: 7px; font-size: 11px; cursor: pointer; list-style: none;
+}
+.legacy-calendar summary::-webkit-details-marker { display: none; }
+.legacy-calendar summary span {
+  color: var(--muted); font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 9px;
+}
+.legacy-calendar[open] summary {
+  color: var(--white); border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.05);
+}
+.legacy-calendar-menu {
+  position: absolute; z-index: 50; top: calc(100% + 8px); right: 0;
+  width: 178px; padding: 8px; border: 1px solid var(--line-strong);
+  border-radius: 12px; background: #151d19;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+}
+.legacy-calendar-menu a,
+.legacy-calendar-menu span {
+  min-height: 34px; padding: 0 10px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: space-between;
+  color: var(--muted-strong); font-size: 10px; text-decoration: none;
+}
+.legacy-calendar-menu a:hover { color: var(--white); background: rgba(255,255,255,.045); }
+.legacy-calendar-menu span { color: var(--gold); background: var(--gold-soft); }
+@media (max-width: 620px) {
+  .legacy-calendar-menu { position: fixed; top: 72px; right: 14px; left: 14px; width: auto; }
+}
+</style>
+"""
+
 for archive_file in [
     *archive_dir.glob("*.html"),
     *site_archive_dir.glob("*.html"),
 ]:
     archive_html = archive_file.read_text(encoding="utf-8")
+    for pattern, replacement in placeholder_patterns:
+        archive_html = pattern.sub(replacement, archive_html, count=1)
     refreshed_html, replacements = calendar_pattern.subn(
         calendar_data.strip(),
         archive_html,
@@ -103,7 +187,47 @@ for archive_file in [
     if replacements:
         archive_file.write_text(refreshed_html, encoding="utf-8")
     else:
-        print(f"WARNING: calendar index not found in {archive_file}")
+        archive_html = re.sub(
+            r'<style id="legacy-archive-calendar-style">[\s\S]*?</style>',
+            "",
+            archive_html,
+            count=1,
+        )
+        archive_html = re.sub(
+            r'<details class="legacy-calendar">[\s\S]*?</details>',
+            "",
+            archive_html,
+            count=1,
+        )
+        page_links = "".join(
+            (
+                f'<span>{date[5:7]}月{date[8:10]}日 · 当前</span>'
+                if date == archive_file.stem
+                else f'<a href="{date}.html">{date[5:7]}月{date[8:10]}日</a>'
+            )
+            for date in available_dates
+        )
+        page_calendar = (
+            '<details class="legacy-calendar">'
+            f"<summary>日历 <span>{archive_file.stem[5:7]}.{archive_file.stem[8:10]}</span></summary>"
+            f'<div class="legacy-calendar-menu">{page_links}</div>'
+            "</details>"
+        )
+        archive_html = archive_html.replace(
+            "</head>",
+            legacy_calendar_style + "</head>",
+            1,
+        )
+        archive_html, inserted = re.subn(
+            r'(<div class="top-actions">)([\s\S]*?)(</div>)',
+            rf"\1\2{page_calendar}\3",
+            archive_html,
+            count=1,
+        )
+        if inserted:
+            archive_file.write_text(archive_html, encoding="utf-8")
+        else:
+            print(f"WARNING: calendar navigation could not be added to {archive_file}")
 
 (site_dir / "_headers").write_text(
     "/*\n"
