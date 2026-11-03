@@ -3279,43 +3279,66 @@ textarea:focus-visible {
 
   </style>
 
-<style id="legacy-archive-calendar-style">
-.legacy-calendar { position: relative; }
-.legacy-calendar summary {
-  min-height: 36px; padding: 0 13px; border: 1px solid var(--line);
-  border-radius: 10px; background: rgba(255, 255, 255, 0.025);
-  color: var(--muted-strong); display: inline-flex; align-items: center;
-  gap: 7px; font-size: 11px; cursor: pointer; list-style: none;
-}
-.legacy-calendar summary::-webkit-details-marker { display: none; }
-.legacy-calendar summary span {
+
+
+<style id="archive-calendar-style">
+body.has-archive-calendar .top-actions > .calendar-control { display: none !important; }
+.archive-calendar-control { position: relative; }
+.archive-calendar-trigger > span {
   color: var(--muted); font-family: ui-monospace, "Cascadia Code", monospace;
   font-size: 9px;
 }
-.legacy-calendar[open] summary {
-  color: var(--white); border-color: var(--line-strong);
-  background: rgba(255, 255, 255, 0.05);
-}
-.legacy-calendar-menu {
-  position: absolute; z-index: 50; top: calc(100% + 8px); right: 0;
-  width: 178px; padding: 8px; border: 1px solid var(--line-strong);
-  border-radius: 12px; background: #151d19;
+.archive-calendar-popover {
+  position: absolute; z-index: 50; top: calc(100% + 9px); right: 0;
+  width: 286px; padding: 12px; border: 1px solid var(--line-strong);
+  border-radius: 13px; background: #151d19;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
 }
-.legacy-calendar-menu a,
-.legacy-calendar-menu span {
-  min-height: 34px; padding: 0 10px; border-radius: 8px;
+.archive-calendar-head {
   display: flex; align-items: center; justify-content: space-between;
-  color: var(--muted-strong); font-size: 10px; text-decoration: none;
+  gap: 8px; padding: 2px 2px 10px; border-bottom: 1px solid var(--line);
 }
-.legacy-calendar-menu a:hover { color: var(--white); background: rgba(255,255,255,.045); }
-.legacy-calendar-menu span { color: var(--gold); background: var(--gold-soft); }
+.archive-calendar-head > button {
+  width: 26px; height: 26px; padding: 0; border-radius: 7px;
+}
+.archive-calendar-head strong {
+  color: var(--white); font-family: var(--serif); font-size: 14px;
+  font-weight: 500;
+}
+.archive-calendar-week,
+.archive-calendar-grid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+}
+.archive-calendar-week { margin: 10px 0 5px; }
+.archive-calendar-week span {
+  color: var(--muted); font-size: 8px; text-align: center;
+}
+.archive-calendar-day {
+  aspect-ratio: 1; min-width: 0; padding: 0; border-radius: 7px;
+  border: 1px solid transparent; background: transparent;
+  color: var(--muted); font-size: 9px;
+}
+.archive-calendar-day.is-available {
+  color: var(--muted-strong); border-color: var(--line);
+  background: rgba(255, 255, 255, 0.025); cursor: pointer;
+}
+.archive-calendar-day.is-available:hover {
+  color: var(--white); border-color: var(--line-strong);
+}
+.archive-calendar-day.is-current {
+  color: #1a0d0a; border-color: var(--red); background: var(--red);
+}
+.archive-calendar-day:disabled { opacity: 0.45; }
+.archive-calendar-day.is-empty { visibility: hidden; }
 @media (max-width: 620px) {
-  .legacy-calendar-menu { position: fixed; top: 72px; right: 14px; left: 14px; width: auto; }
+  .archive-calendar-popover {
+    position: fixed; top: 72px; right: 14px; left: 14px; width: auto;
+    max-height: calc(100vh - 86px); overflow-y: auto;
+  }
 }
 </style>
 </head>
-<body>
+<body class="has-archive-calendar">
   <div class="ambient ambient-a" aria-hidden="true"></div>
   <div class="ambient ambient-b" aria-hidden="true"></div>
 
@@ -3375,7 +3398,25 @@ textarea:focus-visible {
             查看原文
             <span aria-hidden="true">↗</span>
           </a>
-        <details class="legacy-calendar"><summary>日历 <span>10.28</span></summary><div class="legacy-calendar-menu"><span>10月28日 · 当前</span><a href="2026-10-29.html">10月29日</a><a href="2026-10-30.html">10月30日</a><a href="2026-11-02.html">11月02日</a><a href="2026-11-03.html">11月03日</a></div></details></div>
+        
+<div class="archive-calendar-control">
+  <button class="quiet-button archive-calendar-trigger" id="archiveCalendarButton" type="button" aria-expanded="false">
+    日历 <span>10.28</span>
+  </button>
+  <div class="archive-calendar-popover" id="archiveCalendarPopover" hidden>
+    <div class="archive-calendar-head">
+      <button type="button" id="archiveCalendarPrev" aria-label="上个月">‹</button>
+      <strong id="archiveCalendarMonth">加载中</strong>
+      <button type="button" id="archiveCalendarNext" aria-label="下个月">›</button>
+    </div>
+    <div class="archive-calendar-week" aria-hidden="true">
+      <span>一</span><span>二</span><span>三</span><span>四</span>
+      <span>五</span><span>六</span><span>日</span>
+    </div>
+    <div class="archive-calendar-grid" id="archiveCalendarGrid"></div>
+  </div>
+</div>
+</div>
       </header>
 
       <section class="review-header" id="today">
@@ -4406,5 +4447,72 @@ document.getElementById("saveAnswers").addEventListener("click", () => {
 
   </script>
   <a href="../index.html" style="position:fixed;z-index:999;left:18px;bottom:18px;padding:9px 13px;border:1px solid rgba(255,255,255,.18);border-radius:9px;background:#151d19;color:#f5f3ec;font:11px 'Microsoft YaHei',sans-serif;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.3)">← 返回日历</a>
+
+<script id="archive-calendar-script">
+(() => {
+  const dates = ["2026-10-28", "2026-10-29", "2026-10-30", "2026-11-02", "2026-11-03"];
+  const current = "2026-10-28";
+  const button = document.getElementById("archiveCalendarButton");
+  const popover = document.getElementById("archiveCalendarPopover");
+  const grid = document.getElementById("archiveCalendarGrid");
+  const label = document.getElementById("archiveCalendarMonth");
+  let year = Number(current.slice(0, 4));
+  let month = Number(current.slice(5, 7));
+
+  const close = () => {
+    popover.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+  };
+
+  const render = () => {
+    label.textContent = `${year}年${month}月`;
+    const first = new Date(year, month - 1, 1);
+    const offset = (first.getDay() + 6) % 7;
+    const days = new Date(year, month, 0).getDate();
+    const cells = Array.from({ length: offset }, () => '<span class="archive-calendar-day is-empty"></span>');
+    for (let day = 1; day <= days; day += 1) {
+      const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+      const available = dates.includes(date);
+      const classes = [
+        "archive-calendar-day",
+        available ? "is-available" : "",
+        date === current ? "is-current" : ""
+      ].filter(Boolean).join(" ");
+      cells.push(`<button class="${classes}" type="button" data-date="${date}" ${available ? "" : "disabled"}>${day}</button>`);
+    }
+    grid.innerHTML = cells.join("");
+  };
+
+  button.addEventListener("click", () => {
+    const opening = popover.hidden;
+    popover.hidden = !opening;
+    button.setAttribute("aria-expanded", String(opening));
+  });
+  document.getElementById("archiveCalendarPrev").addEventListener("click", () => {
+    const previous = new Date(year, month - 2, 1);
+    year = previous.getFullYear();
+    month = previous.getMonth() + 1;
+    render();
+  });
+  document.getElementById("archiveCalendarNext").addEventListener("click", () => {
+    const next = new Date(year, month, 1);
+    year = next.getFullYear();
+    month = next.getMonth() + 1;
+    render();
+  });
+  grid.addEventListener("click", (event) => {
+    const day = event.target.closest("[data-date]");
+    if (!day || day.disabled) return;
+    window.location.href = `${day.dataset.date}.html`;
+  });
+  document.addEventListener("click", (event) => {
+    if (!popover.hidden && !event.target.closest(".archive-calendar-control")) close();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !popover.hidden) close();
+  });
+  render();
+})();
+</script>
 </body>
 </html>
