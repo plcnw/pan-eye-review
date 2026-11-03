@@ -1,0 +1,44 @@
+name: Apply archive calendar refresh
+
+on:
+  push:
+    paths:
+      - .github/workflows/apply-calendar-archive.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use latest main
+        run: |
+          git fetch origin main
+          git switch --force-create main origin/main
+
+      - name: Apply archive calendar bundle
+        run: |
+          base64 -d > /tmp/pan-eye-calendar-archive.tar.gz <<'BUNDLE'
+          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
+          BUNDLE
+          tar -xzf /tmp/pan-eye-calendar-archive.tar.gz -C .
+
+      - name: Validate calendar fix
+        run: |
+          python -m py_compile scripts/build_standalone.py
+          LATEST_DATE=$(find data/review -name '*.json' -printf '%f\n' | sort | tail -1 | sed 's/\.json$//')
+          python scripts/build_standalone.py --date "$LATEST_DATE"
+
+      - name: Commit refreshed historical calendars
+        run: |
+          git config user.name "pan-eye-bot"
+          git config user.email "pan-eye-bot@users.noreply.github.com"
+          git add scripts/build_standalone.py calendar-data.js archive docs
+          if ! git diff --cached --quiet; then
+            git commit -m "fix: refresh calendar links in historical reviews"
+            git push
+          fi
