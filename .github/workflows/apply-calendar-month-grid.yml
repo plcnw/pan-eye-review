@@ -1,0 +1,45 @@
+name: Apply archive month calendar
+
+on:
+  push:
+    paths:
+      - .github/workflows/apply-calendar-month-grid.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use latest main
+        run: |
+          git fetch origin main
+          git switch --force-create main origin/main
+
+      - name: Apply month calendar bundle
+        run: |
+          base64 -d > /tmp/pan-eye-calendar-month.tar.gz <<'BUNDLE'
+          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
+          BUNDLE
+          tar -xzf /tmp/pan-eye-calendar-month.tar.gz -C .
+
+      - name: Validate and rebuild archive calendars
+        run: |
+          python -m py_compile scripts/build_standalone.py
+          LATEST_DATE=$(find data/review -name '*.json' -printf '%f\n' | sort | tail -1 | sed 's/\.json$//')
+          python scripts/build_standalone.py --date "$LATEST_DATE"
+
+      - name: Commit month calendar fix
+        run: |
+          git config user.name "pan-eye-bot"
+          git config user.email "pan-eye-bot@users.noreply.github.com"
+          git add scripts/build_standalone.py index.html calendar-data.js archive docs
+          if ! git diff --cached --quiet; then
+            git commit -m "fix: add month navigation to legacy archive calendars"
+            git push
+          fi
