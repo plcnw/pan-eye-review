@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
   "date": "2026-11-04",
-  "capturedAt": "2026-11-04T17:27:22+08:00",
+  "capturedAt": "2026-11-04T18:21:51+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -14,8 +14,8 @@ window.MARKET_DATA = {
       "previousClose": 3608.1,
       "changePercent": 2.16,
       "turnoverRate": 1.23,
-      "totalMarketCapYi": 645633.14,
-      "floatMarketCapYi": 577754.47,
+      "totalMarketCapYi": 645633.25,
+      "floatMarketCapYi": 577754.54,
       "inFloatCapRange": false,
       "quoteTime": "20261104161400",
       "name": "上证指数",
@@ -757,14 +757,14 @@ window.MARKET_DATA = {
       "name": "圣阳股份",
       "code": "002580",
       "quoteId": "0.002580",
-      "matchType": "prefix",
+      "matchType": "exact",
       "alternatives": [
         {
           "name": "圣阳股份",
           "code": "002580"
         }
       ],
-      "requestedName": "圣阳",
+      "requestedName": "圣阳股份",
       "apiName": "圣阳股份",
       "price": 19.05,
       "previousClose": 18.67,
@@ -2583,20 +2583,20 @@ window.MARKET_DATA = {
   "unmatched": [
     "京仪装备",
     "华峰测控",
-    "芯源微",
     "中科飞测",
     "滕信精密",
+    "芯源微",
     "强一股份",
     "富创精密",
-    "拓荆科技",
     "思瑞浦",
     "正帆科技",
     "高凯技术",
+    "拓荆科技",
     "艾能聚",
     "索辰科技",
     "金冠电气",
     "云锗",
-    "连板换手弱转强",
-    "宇树"
+    "宇树",
+    "连板换手弱转强"
   ]
 };

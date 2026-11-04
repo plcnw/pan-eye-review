@@ -38,7 +38,7 @@ window.SECTOR_DATA = {
   ],
   "sectors": [
     {
-      "id": "chip_computing",
+      "id": "chip",
       "name": "芯片（算力硬件）",
       "stage": "启动",
       "count": 56,
@@ -103,14 +103,14 @@ window.SECTOR_DATA = {
         "飞龙股份",
         "兴森科技"
       ],
-      "evidence": "芯片（算力硬件）首板名单；算力回归，井喷式发酵；持续性角度看，发酵用力过猛，一日游配置。",
-      "nextWatch": "观察一字板助攻方向；算力是否一日游；三板节点是否证伪。"
+      "evidence": "芯片（算力硬件）首板名单；算力回归，井喷式发酵。",
+      "nextWatch": "观察一字板助攻方向；持续性角度看，发酵用力过猛，一日游配置。"
     },
     {
       "id": "media",
       "name": "传媒",
       "stage": "分歧",
-      "count": 7,
+      "count": 4,
       "firstBoardCount": 4,
       "maxHeight": 3,
       "tone": "mixed",
@@ -118,19 +118,16 @@ window.SECTOR_DATA = {
         "引力传媒",
         "德才股份",
         "中信出版",
-        "郑中设计",
-        "大晟文化",
-        "浙文影业",
-        "龙版传媒"
+        "郑中设计"
       ],
-      "evidence": "大晟一字板续强带动发酵回流；回流强度不敢恭维；大晟发酵和一字板封单不符，理论上得换手；浙文尾盘漏单。",
-      "nextWatch": "观察大晟换手承接情况；传媒回流强度。"
+      "evidence": "大晟一字板续强带动发酵回流；回流强度不敢恭维。",
+      "nextWatch": "观察二三板溢价表态情况，指数回暖，争龙头。"
     },
     {
-      "id": "photovoltaic",
+      "id": "solar",
       "name": "光伏",
       "stage": "轮动",
-      "count": 7,
+      "count": 5,
       "firstBoardCount": 5,
       "maxHeight": 2,
       "tone": "rotation",
@@ -139,12 +136,10 @@ window.SECTOR_DATA = {
         "中利集团",
         "海源复材",
         "艾能聚",
-        "开勒股份",
-        "永臻股份",
-        "闽发铝业"
+        "开勒股份"
       ],
       "evidence": "午后集中发酵，可惜被算力影响进程；理论上永臻闽发是身位；持续性角度看，工具人气氛组概率大。",
-      "nextWatch": "观察永臻股份能否起带头作用；光伏是否新主角。"
+      "nextWatch": "观察永臻股份能否起带头作用。"
     },
     {
       "id": "medicine",
@@ -163,13 +158,13 @@ window.SECTOR_DATA = {
         "昭衍新药"
       ],
       "evidence": "当药箱看待；药箱推主升也是种笨方法；如果题材要主升，机器人和传媒得让位。",
-      "nextWatch": "观察医药是否让位给主升题材。"
+      "nextWatch": "观察医药是否让位。"
     },
     {
       "id": "robot",
       "name": "机器人",
       "stage": "轮动",
-      "count": 13,
+      "count": 12,
       "firstBoardCount": 12,
       "maxHeight": 2,
       "tone": "rotation",
@@ -185,27 +180,25 @@ window.SECTOR_DATA = {
         "三联锻造",
         "浙江黎明",
         "均胜电子",
-        "春光科技",
-        "永臻股份"
+        "春光科技"
       ],
       "evidence": "机器人狗腿子之一，传媒锂电不作为，启动宇树；基本都是回锅肉形式了；持续性角度看，永臻是身位优势，得起带头作用。",
-      "nextWatch": "观察永臻股份能否起带头作用；机器人是否灵那么一下。"
+      "nextWatch": "观察永臻股份能否起带头作用。"
     },
     {
       "id": "new_stock",
       "name": "次新",
       "stage": "启动",
-      "count": 3,
+      "count": 2,
       "firstBoardCount": 2,
       "maxHeight": 2,
       "tone": "active",
       "members": [
         "海安集团",
-        "锡华科技",
-        "马矿股份"
+        "锡华科技"
       ],
-      "evidence": "永臻发酵，毋庸置疑的；马矿股份次新伴飞。",
-      "nextWatch": "观察次新伴飞持续性。"
+      "evidence": "永臻发酵，毋庸置疑的。",
+      "nextWatch": "观察锡华科技与华瓷的对比。"
     },
     {
       "id": "gold",
@@ -232,7 +225,7 @@ window.SECTOR_DATA = {
         "白银有色"
       ],
       "evidence": "中午传出选举预期变化，美债收益率下行、美元走弱，触发了这波黄金+算力一起拉；持续性角度看，是算力这次伴生题材。",
-      "nextWatch": "观察黄金与算力杠铃策略的持续性。"
+      "nextWatch": "观察黄金与算力的伴生关系。"
     },
     {
       "id": "single",
@@ -255,5 +248,5 @@ window.SECTOR_DATA = {
       "nextWatch": "观察独苗是否形成板块效应。"
     }
   ],
-  "capturedAt": "2026-11-04T17:26:53+08:00"
+  "capturedAt": "2026-11-04T18:21:23+08:00"
 };

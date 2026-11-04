@@ -1,6 +1,6 @@
 window.HISTORY_DATA = {
   "date": "2026-11-04",
-  "capturedAt": "2026-11-04T17:27:50+08:00",
+  "capturedAt": "2026-11-04T18:22:18+08:00",
   "source": "腾讯历史日线（前复权）",
   "method": "连续至少两个涨停后，断板日下跌超过5%、高开后盘中回落超过5%，或断板后两日累计下跌超过8%。结果仅作为疑似证据。",
   "stocks": [
@@ -146077,7 +146077,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "圣阳股份",
-      "requestedName": "圣阳",
+      "requestedName": "圣阳股份",
       "apiName": "圣阳股份",
       "code": "002580",
       "quoteId": "0.002580",
@@ -169673,7 +169673,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "大晟文化",
-      "requestedName": "大晟",
+      "requestedName": "大晟文化",
       "apiName": "大晟文化",
       "code": "600892",
       "quoteId": "1.600892",
@@ -174397,7 +174397,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "大晟文化",
-      "requestedName": "大晟文化",
+      "requestedName": "大晟",
       "apiName": "大晟文化",
       "code": "600892",
       "quoteId": "1.600892",
@@ -212098,7 +212098,7 @@ window.HISTORY_DATA = {
       "apiName": "广聚能源",
       "code": "000096",
       "quoteId": "0.000096",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -212137,22 +212137,13 @@ window.HISTORY_DATA = {
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-05",
-          "open": 8.71,
-          "close": 8.73,
-          "high": 8.78,
-          "low": 8.61,
-          "volume": 58682.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-06",
           "open": 8.74,
           "close": 8.6,
           "high": 8.81,
           "low": 8.58,
           "volume": 57167.0,
-          "changePercent": -1.49
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-09",
@@ -469806,7 +469797,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "锡华科技",
-      "requestedName": "锡华科技",
+      "requestedName": "锡华",
       "apiName": "锡华科技",
       "code": "603248",
       "quoteId": "1.603248",
@@ -471714,7 +471705,7 @@ window.HISTORY_DATA = {
     },
     {
       "name": "锡华科技",
-      "requestedName": "锡华",
+      "requestedName": "锡华科技",
       "apiName": "锡华科技",
       "code": "603248",
       "quoteId": "1.603248",
