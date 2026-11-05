@@ -1,252 +1,253 @@
 window.SECTOR_DATA = {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "market": {
-    "limitUpCount": 141,
-    "firstBoardCount": 106,
-    "maxHeight": 3,
-    "articleCoveredLimitUps": 119
+    "limitUpCount": 102,
+    "firstBoardCount": 62,
+    "maxHeight": 4,
+    "articleCoveredLimitUps": 83
   },
   "ladderFunnel": [
     {
       "from": "1板",
       "to": "2板",
-      "base": 33,
-      "promoted": 6,
-      "rate": 18.18
+      "base": 106,
+      "promoted": 16,
+      "rate": 15.09
     },
     {
       "from": "2板",
       "to": "3板",
-      "base": 13,
-      "promoted": 6,
-      "rate": 46.15
+      "base": 7,
+      "promoted": 2,
+      "rate": 28.57
     },
     {
       "from": "3板",
       "to": "4板",
-      "base": 1,
-      "promoted": 0,
-      "rate": 0.0
-    },
-    {
-      "from": "4板",
-      "to": "5板",
-      "base": 2,
-      "promoted": 0,
-      "rate": 0.0
+      "base": 6,
+      "promoted": 2,
+      "rate": 33.33
     }
   ],
   "sectors": [
     {
-      "id": "chip",
-      "name": "芯片（算力硬件）",
-      "stage": "启动",
-      "count": 56,
-      "firstBoardCount": 56,
-      "maxHeight": 1,
-      "tone": "active",
-      "members": [
-        "金螳螂",
-        "云南锗业",
-        "新亚制程",
-        "新洁能",
-        "托伦斯",
-        "先导基电",
-        "航发科技",
-        "雅克科技",
-        "京仪装备",
-        "三利谱",
-        "平安电工",
-        "金安国纪",
-        "北方华创",
-        "通富微电",
-        "有研新材",
-        "华峰测控",
-        "金海通",
-        "和远气体",
-        "芯源微",
-        "博杰股份",
-        "中科飞测",
-        "光智科技",
-        "智微智能",
-        "滕信精密",
-        "瑞芯微",
-        "兴业科技",
-        "东方钽业",
-        "强一股份",
-        "华盛昌",
-        "杰瑞股份",
-        "大族激光",
-        "江丰电子",
-        "华正新材",
-        "长电科技",
-        "中钨高新",
-        "快克智能",
-        "光华科技",
-        "长源东谷",
-        "东材科技",
-        "海星股份",
-        "福晶科技",
-        "思瑞浦",
-        "深南电路",
-        "富创精密",
-        "赛腾股份",
-        "广合科技",
-        "拓荆科技",
-        "博迁新材",
-        "沃格光电",
-        "正帆科技",
-        "宏和科技",
-        "沪电股份",
-        "高凯技术",
-        "中恒电气",
-        "飞龙股份",
-        "兴森科技"
-      ],
-      "evidence": "芯片（算力硬件）首板名单；算力回归，井喷式发酵。",
-      "nextWatch": "观察一字板助攻方向；持续性角度看，发酵用力过猛，一日游配置。"
-    },
-    {
-      "id": "media",
-      "name": "传媒",
-      "stage": "分歧",
-      "count": 4,
-      "firstBoardCount": 4,
-      "maxHeight": 3,
-      "tone": "mixed",
-      "members": [
-        "引力传媒",
-        "德才股份",
-        "中信出版",
-        "郑中设计"
-      ],
-      "evidence": "大晟一字板续强带动发酵回流；回流强度不敢恭维。",
-      "nextWatch": "观察二三板溢价表态情况，指数回暖，争龙头。"
-    },
-    {
       "id": "solar",
       "name": "光伏",
-      "stage": "轮动",
-      "count": 5,
-      "firstBoardCount": 5,
-      "maxHeight": 2,
-      "tone": "rotation",
+      "stage": "发酵",
+      "count": 12,
+      "firstBoardCount": 12,
+      "maxHeight": 4,
+      "tone": "active",
       "members": [
-        "贝特利",
-        "中利集团",
-        "海源复材",
-        "艾能聚",
-        "开勒股份"
+        "赛伍技术",
+        "协鑫集成",
+        "时创能源",
+        "双良节能",
+        "欧晶科技",
+        "森特股份",
+        "东南网架",
+        "钧达股份",
+        "弘元绿能",
+        "英力特",
+        "金刚光伏",
+        "维通利"
       ],
-      "evidence": "午后集中发酵，可惜被算力影响进程；理论上永臻闽发是身位；持续性角度看，工具人气氛组概率大。",
-      "nextWatch": "观察永臻股份能否起带头作用。"
+      "evidence": "选举结果后的预判性风口。拉升节奏还行，但是午后发酵没跟进。锂电核电电网等有响应，但是炸的也多。持续性角度看，既然是跷跷板反应，你看算力硬件做就行，此消彼长就是。",
+      "nextWatch": "观察光伏与传媒应用的擂台结果，以及闽发铝业、永臻股份的板块效应。"
     },
     {
-      "id": "medicine",
-      "name": "医药",
+      "id": "application",
+      "name": "应用",
+      "stage": "分歧",
+      "count": 9,
+      "firstBoardCount": 9,
+      "maxHeight": 4,
+      "tone": "mixed",
+      "members": [
+        "浙文互联",
+        "利欧股份",
+        "福时控股",
+        "威派格",
+        "吉视传媒",
+        "博纳影业",
+        "慈文传媒",
+        "正和生态",
+        "品茗科技"
+      ],
+      "evidence": "浙文一字板发酵。浙文为何一字板，不知道。浙文午后又漏单，后排注意兑现风险。浙文如果能主动分歧好过盘中被动分歧。题材持续性不明，多次反复，没故事，没高度，一味的硬顶后出货。",
+      "nextWatch": "观察浙文影业能否主动分歧，以及后排兑现风险。"
+    },
+    {
+      "id": "consumer",
+      "name": "消费",
       "stage": "轮动",
       "count": 6,
       "firstBoardCount": 6,
       "maxHeight": 1,
       "tone": "rotation",
       "members": [
-        "桂林三金",
-        "金陵药业",
-        "凯莱英",
-        "众生药业",
-        "药明康德",
-        "昭衍新药"
+        "南侨食品",
+        "皇台酒业",
+        "国光连锁",
+        "锦和商管",
+        "百大集团",
+        "华天酒店"
       ],
-      "evidence": "当药箱看待；药箱推主升也是种笨方法；如果题材要主升，机器人和传媒得让位。",
-      "nextWatch": "观察医药是否让位。"
+      "evidence": "过渡期轮动。主要目的就是抱团前高标为主，九阳的羊玩了很久了，大差不差的手法。持续性角度看，轮动为主，见缝插针卡辨识度。",
+      "nextWatch": "观察轮动节奏和辨识度卡位。"
+    },
+    {
+      "id": "edge",
+      "name": "端侧",
+      "stage": "启动",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 2,
+      "tone": "weak",
+      "members": [
+        "国光电器",
+        "润欣科技",
+        "博通集成",
+        "日海智能"
+      ],
+      "evidence": "根据以往模型制作看，好像都是二三板后自爆。持续性不明，缺故事风口。",
+      "nextWatch": "观察是否如模型般二三板后自爆。"
+    },
+    {
+      "id": "grid_nuclear",
+      "name": "电网+核电",
+      "stage": "轮动",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "顺钠股份",
+        "华电辽能",
+        "久立特材",
+        "纽威股份"
+      ],
+      "evidence": "光伏量能外溢。主角是光伏，直接跳过也可以，想搞辨识度高的弄趋势也可以，看你风格。",
+      "nextWatch": "作为光伏量能外溢方向观察。"
+    },
+    {
+      "id": "medicine",
+      "name": "医药",
+      "stage": "轮动",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "贝瑞基因",
+        "福瑞医科",
+        "康弘药业"
+      ],
+      "evidence": "药箱，不解释。",
+      "nextWatch": "药箱轮动。"
+    },
+    {
+      "id": "compute_rental",
+      "name": "算力租赁",
+      "stage": "分歧",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 1,
+      "tone": "risk",
+      "members": [
+        "润建股份",
+        "海南瑞泽",
+        "青云科技",
+        "中嘉博创"
+      ],
+      "evidence": "算力硬件又跌了，我不清楚主控的脑回路，拉算力租赁的意义是什么。无法给与评价。",
+      "nextWatch": "观察算力硬件与租赁的背离。"
     },
     {
       "id": "robot",
       "name": "机器人",
       "stage": "轮动",
-      "count": 12,
-      "firstBoardCount": 12,
+      "count": 7,
+      "firstBoardCount": 7,
       "maxHeight": 2,
       "tone": "rotation",
       "members": [
-        "征和工业",
-        "福莱新材",
-        "兆威机电",
-        "索辰科技",
-        "凯迪股份",
-        "大千生态",
-        "中马传动",
-        "柯力传感",
-        "三联锻造",
-        "浙江黎明",
-        "均胜电子",
-        "春光科技"
+        "麦迪科技",
+        "达实智能",
+        "狮头股份",
+        "模塑科技",
+        "肇民科技",
+        "中邮科技",
+        "精研科技"
       ],
-      "evidence": "机器人狗腿子之一，传媒锂电不作为，启动宇树；基本都是回锅肉形式了；持续性角度看，永臻是身位优势，得起带头作用。",
-      "nextWatch": "观察永臻股份能否起带头作用。"
+      "evidence": "和消费差不多意思，不重复解读。",
+      "nextWatch": "同消费轮动。"
     },
     {
-      "id": "new_stock",
-      "name": "次新",
+      "id": "tech_hardware",
+      "name": "科技硬件",
       "stage": "启动",
-      "count": 2,
-      "firstBoardCount": 2,
-      "maxHeight": 2,
-      "tone": "active",
-      "members": [
-        "海安集团",
-        "锡华科技"
-      ],
-      "evidence": "永臻发酵，毋庸置疑的。",
-      "nextWatch": "观察锡华科技与华瓷的对比。"
-    },
-    {
-      "id": "gold",
-      "name": "黄金",
-      "stage": "启动",
-      "count": 14,
-      "firstBoardCount": 14,
+      "count": 3,
+      "firstBoardCount": 3,
       "maxHeight": 1,
-      "tone": "active",
+      "tone": "weak",
       "members": [
-        "盛达资源",
-        "赤峰黄金",
-        "深中华a",
-        "四川黄金",
-        "山金国际",
-        "招金黄金",
-        "晓程科技",
-        "南矿集团",
-        "西部黄金",
-        "兴业银锡",
-        "湖南白银",
-        "山东黄金",
-        "湖南黄金",
-        "白银有色"
+        "联合化学",
+        "祥和实业",
+        "永新光学"
       ],
-      "evidence": "中午传出选举预期变化，美债收益率下行、美元走弱，触发了这波黄金+算力一起拉；持续性角度看，是算力这次伴生题材。",
-      "nextWatch": "观察黄金与算力的伴生关系。"
+      "evidence": "光刻胶，电容，光刻机。选股思路是国产+上游路线，自保弄热度为主，不激进。持续性不明。",
+      "nextWatch": "观察持续性。"
+    },
+    {
+      "id": "yang",
+      "name": "羊",
+      "stage": "轮动",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 3,
+      "tone": "rotation",
+      "members": [
+        "东方海洋",
+        "阳光照明",
+        "安阳钢铁"
+      ],
+      "evidence": "算力错了，自然混沌期玄学又回来了。持续性不明。",
+      "nextWatch": "观察玄学持续性。"
+    },
+    {
+      "id": "real_estate",
+      "name": "房地产",
+      "stage": "轮动",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "京投发展",
+        "深深房A",
+        "三棵树",
+        "梦百合"
+      ],
+      "evidence": "不排除是金螳螂发酵。没必要给螳螂卖命做工具人。",
+      "nextWatch": "观察是否与金螳螂联动。"
     },
     {
       "id": "single",
       "name": "其余形式独苗",
       "stage": "轮动",
-      "count": 7,
-      "firstBoardCount": 7,
+      "count": 3,
+      "firstBoardCount": 3,
       "maxHeight": 1,
       "tone": "rotation",
       "members": [
-        "广聚能源",
-        "万向德农",
-        "顺灏股份",
-        "冰山冷热",
-        "来伊份",
-        "金冠电气",
-        "春晖智控"
+        "北新路桥",
+        "鼎盛新材",
+        "邦基科技"
       ],
-      "evidence": "独苗新增新面孔多，怀疑首板节点供应有布局，但是这个周期还在新华传媒模型里。",
-      "nextWatch": "观察独苗是否形成板块效应。"
+      "evidence": "北新路桥，停战预期+落选预期，受算力影响。鼎盛新材，江苏新能源推江苏主升，合理。邦基科技，山东饲料，给山东羊加油用。",
+      "nextWatch": "独苗轮动。"
     }
   ],
-  "capturedAt": "2026-11-04T18:21:23+08:00"
+  "capturedAt": "2026-11-05T18:26:14+08:00"
 };
