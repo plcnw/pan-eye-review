@@ -282,10 +282,49 @@
         <div class="view-heading opportunity-view-heading">
           <div>
             <span class="eyebrow">TRADING OPPORTUNITY ANALYSIS</span>
-            <h2>机会推演</h2>
+            <h2>涨停路径推演</h2>
           </div>
-          <p>从一个市场事件出发，把自己的交易路径、成立条件和失效条件拆开记录。系统不替你生成交易结论。</p>
+          <p>从今日涨停池选取结构事件，建立多条交易路径；次日用真实盘面逐条验证，而不是事后写日记。</p>
         </div>
+
+        <section class="opportunity-verification" aria-label="次日验证队列">
+          <header>
+            <div>
+              <span>NEXT-DAY VERIFICATION</span>
+              <h3>次日验证队列</h3>
+            </div>
+            <strong id="opportunityPendingCount">0 条待验证</strong>
+          </header>
+          <div class="opportunity-verification-list" id="opportunityVerificationQueue"></div>
+        </section>
+
+        <section class="opportunity-pool-panel" id="opportunityPoolPanel" hidden>
+          <header class="opportunity-pool-head">
+            <div>
+              <span id="opportunityPoolDate">今日涨停池</span>
+              <h3>选择要推演的结构事件</h3>
+              <p>可多选同身位、同板块或晋级/断板组合。事件名称与上下文由所选股票自动生成。</p>
+            </div>
+            <button class="opportunity-pool-close" id="opportunityPoolClose" type="button" aria-label="关闭涨停池">×</button>
+          </header>
+          <div class="opportunity-pool-tools">
+            <input id="opportunityPoolSearch" type="search" placeholder="搜索股票名称或代码">
+            <div class="opportunity-pool-filters" role="group" aria-label="按板高筛选">
+              <button class="is-active" type="button" data-pool-filter="all">全部</button>
+              <button type="button" data-pool-filter="first">首板</button>
+              <button type="button" data-pool-filter="second">二板+</button>
+              <button type="button" data-pool-filter="high">三板+</button>
+            </div>
+          </div>
+          <div class="opportunity-pool-list" id="opportunityPoolList"></div>
+          <footer class="opportunity-pool-footer">
+            <div>
+              <span>已选 <strong id="opportunityPoolSelectedCount">0</strong> 只</span>
+              <div class="opportunity-pool-selected" id="opportunityPoolSelected"></div>
+            </div>
+            <button class="primary-button" id="opportunityCreateFromPool" type="button" disabled>建立推演</button>
+          </footer>
+        </section>
 
         <div class="opportunity-layout">
           <aside class="opportunity-history" aria-label="历史推演事件">
@@ -311,9 +350,9 @@
             <section class="opportunity-empty" id="opportunityEmpty">
               <div class="opportunity-empty-inner">
                 <div class="opportunity-empty-mark">演</div>
-                <h2>从市场事件开始</h2>
-                <p>例如“四进五竞争”：晋级票的高度延续、板块扩散、断板修复、同身位竞争者，都可以成为独立机会方向。</p>
-                <button class="primary-button" id="opportunityEmptyNew" type="button">新建第一个事件</button>
+                <h2>从今日涨停池选股</h2>
+                <p>例如选择四板晋级票和同身位断板票，自动形成“同身位竞争”事件，再分别推演高度、扩散、修复和情绪传导路径。</p>
+                <button class="primary-button" id="opportunityEmptyNew" type="button">打开今日涨停池</button>
               </div>
             </section>
 
@@ -321,49 +360,32 @@
               <section class="opportunity-event-sheet">
                 <header class="opportunity-event-head">
                   <div>
-                    <span class="opportunity-event-kicker">MARKET EVENT</span>
+                    <span class="opportunity-event-kicker">LIMIT-UP EVENT</span>
                     <h2 id="opportunityEventHeading">未命名事件</h2>
+                    <p class="opportunity-event-context" id="opportunityEventContext"></p>
                   </div>
                   <div class="opportunity-event-tools">
                     <span class="opportunity-save-state is-saved" id="opportunitySaveState" aria-live="polite">尚未保存</span>
                     <button class="opportunity-delete-event" id="opportunityDeleteEvent" type="button">删除事件</button>
                   </div>
                 </header>
-
-                <div class="opportunity-fields opportunity-event-fields">
-                  <label class="opportunity-field opportunity-event-title">
-                    <span>事件标题</span>
-                    <input id="opportunityEventTitle" type="text" data-event-field="title" placeholder="例如：高位四进五竞争">
-                  </label>
-                  <label class="opportunity-field">
-                    <span>事件日期</span>
-                    <input id="opportunityEventDate" type="date" data-event-field="date">
-                  </label>
-                </div>
-                <div class="opportunity-fields">
-                  <label class="opportunity-field">
-                    <span>事件背景</span>
-                    <textarea id="opportunityEventBackground" rows="3" data-event-field="background" placeholder="发生了什么？谁晋级、谁失败，市场当时处于什么情绪阶段？"></textarea>
-                  </label>
-                  <div class="opportunity-field-row">
-                    <label class="opportunity-field">
-                      <span>涉及股票</span>
-                      <input id="opportunityEventStocks" type="text" data-event-field="stocks" placeholder="用逗号或顿号分隔，例如：A股票、B股票">
-                    </label>
-                    <label class="opportunity-field">
-                      <span>相关板块</span>
-                      <input id="opportunityEventSectors" type="text" data-event-field="sectors" placeholder="例如：机器人、航天">
-                    </label>
-                  </div>
-                </div>
+                <div class="opportunity-event-stocks" id="opportunityEventStocks"></div>
               </section>
 
               <div class="opportunity-card-section-head">
                 <div>
-                  <span>OPPORTUNITY MAP</span>
-                  <h3 id="opportunityCount">0 个机会方向</h3>
+                  <span>LOGIC CHAINS</span>
+                  <h3 id="opportunityCount">0 条推演路径</h3>
                 </div>
-                <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增机会</button>
+                <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 自由路径</button>
+              </div>
+              <div class="opportunity-path-templates" id="opportunityPathTemplates">
+                <span>快速建立路径</span>
+                <button type="button" data-path-template="core">核心高度</button>
+                <button type="button" data-path-template="peer">同身位竞争</button>
+                <button type="button" data-path-template="sector">板块扩散</button>
+                <button type="button" data-path-template="repair">分歧修复</button>
+                <button type="button" data-path-template="emotion">情绪传导</button>
               </div>
               <div class="opportunity-cards" id="opportunityCards"></div>
             </div>

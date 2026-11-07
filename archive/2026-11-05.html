@@ -4534,6 +4534,300 @@ textarea:focus-visible {
   margin-bottom: 18px;
 }
 
+.opportunity-verification {
+  margin-bottom: 14px;
+  padding: 16px 18px;
+  border: 1px solid rgba(214, 183, 110, 0.2);
+  border-radius: 15px;
+  background:
+    linear-gradient(100deg, rgba(214, 183, 110, 0.08), transparent 52%),
+    var(--ink-raised);
+}
+
+.opportunity-verification > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.opportunity-verification > header div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.opportunity-verification > header span {
+  color: var(--gold);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.opportunity-verification > header h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.opportunity-verification > header > strong {
+  color: var(--muted-strong);
+  font-size: 9px;
+  font-weight: 500;
+}
+
+.opportunity-verification-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.opportunity-verification-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.opportunity-verification-item {
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.022);
+  text-align: left;
+  cursor: pointer;
+}
+
+.opportunity-verification-item:hover {
+  border-color: rgba(214, 183, 110, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.opportunity-verification-item span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.opportunity-verification-item span em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.opportunity-verification-item strong {
+  display: block;
+  margin-top: 7px;
+  overflow: hidden;
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.opportunity-pool-panel {
+  margin-bottom: 14px;
+  padding: 20px;
+  border: 1px solid rgba(239, 100, 83, 0.26);
+  border-radius: 17px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(239, 100, 83, 0.12), transparent 30%),
+    #111815;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+.opportunity-pool-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.opportunity-pool-head span {
+  color: var(--red);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.opportunity-pool-head h3 {
+  margin: 6px 0 0;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.opportunity-pool-head p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.opportunity-pool-close {
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.opportunity-pool-tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.opportunity-pool-tools input {
+  width: min(320px, 100%);
+  min-height: 36px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--white);
+  font-size: 10px;
+}
+
+.opportunity-pool-filters {
+  display: flex;
+  gap: 5px;
+}
+
+.opportunity-pool-filters button {
+  min-height: 31px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.opportunity-pool-filters button.is-active {
+  color: var(--red);
+  border-color: rgba(239, 100, 83, 0.28);
+  background: var(--red-soft);
+}
+
+.opportunity-pool-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+  max-height: 330px;
+  margin-top: 12px;
+  overflow-y: auto;
+  padding-right: 3px;
+  scrollbar-width: thin;
+}
+
+.opportunity-pool-stock {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted-strong);
+  text-align: left;
+  cursor: pointer;
+}
+
+.opportunity-pool-stock:hover {
+  border-color: var(--line-strong);
+}
+
+.opportunity-pool-stock.is-selected {
+  border-color: rgba(108, 218, 175, 0.38);
+  background: var(--mint-soft);
+  color: var(--white);
+}
+
+.opportunity-pool-stock strong {
+  display: block;
+  overflow: hidden;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.opportunity-pool-stock span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 5px;
+  color: var(--muted);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 8px;
+}
+
+.opportunity-pool-stock em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.opportunity-pool-empty {
+  grid-column: 1 / -1;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 9px;
+  text-align: center;
+}
+
+.opportunity-pool-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.opportunity-pool-footer > div {
+  min-width: 0;
+}
+
+.opportunity-pool-footer > div > span {
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.opportunity-pool-footer > div > span strong {
+  color: var(--mint);
+  font-weight: 600;
+}
+
+.opportunity-pool-selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.opportunity-pool-selected span {
+  padding: 5px 8px;
+  border: 1px solid rgba(108, 218, 175, 0.25);
+  border-radius: 999px;
+  background: var(--mint-soft);
+  color: var(--mint);
+  font-size: 8px;
+}
+
 .opportunity-layout {
   display: grid;
   grid-template-columns: 246px minmax(0, 1fr);
@@ -4785,6 +5079,48 @@ textarea:focus-visible {
   font-weight: 500;
 }
 
+.opportunity-event-context {
+  max-width: 680px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.opportunity-event-stocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.opportunity-event-stock {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.025);
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+}
+
+.opportunity-event-stock strong {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.opportunity-event-stock span {
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.opportunity-event-stock em {
+  color: var(--gold);
+  font-size: 8px;
+  font-style: normal;
+}
+
 .opportunity-event-tools {
   display: flex;
   align-items: center;
@@ -4891,6 +5227,37 @@ textarea:focus-visible {
   margin-top: 4px;
 }
 
+.opportunity-path-templates {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.opportunity-path-templates > span {
+  margin-right: 4px;
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.opportunity-path-templates button {
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted-strong);
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.opportunity-path-templates button:hover {
+  color: var(--white);
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.035);
+}
+
 .opportunity-card-section-head > div {
   display: flex;
   align-items: baseline;
@@ -4989,6 +5356,28 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
+.opportunity-path-status {
+  margin-left: auto;
+  padding: 4px 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 7px;
+  white-space: nowrap;
+}
+
+.opportunity-path-status.is-confirmed {
+  color: var(--mint);
+  border-color: rgba(108, 218, 175, 0.28);
+  background: var(--mint-soft);
+}
+
+.opportunity-path-status.is-invalid {
+  color: var(--red);
+  border-color: rgba(239, 100, 83, 0.28);
+  background: var(--red-soft);
+}
+
 .opportunity-card-chevron {
   color: var(--muted);
   font-size: 12px;
@@ -5019,6 +5408,72 @@ textarea:focus-visible {
   margin-top: 15px;
 }
 
+.opportunity-chain-stage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0 9px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.06em;
+}
+
+.opportunity-chain-stage::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  background: var(--red-soft);
+}
+
+.opportunity-chain-stage.is-verify::before {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.opportunity-verification-editor {
+  margin-top: 14px;
+  padding: 13px;
+  border: 1px solid rgba(214, 183, 110, 0.2);
+  border-radius: 11px;
+  background: rgba(214, 183, 110, 0.045);
+}
+
+.opportunity-status-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.opportunity-status-controls button {
+  min-height: 31px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.opportunity-status-controls button.is-active[data-status="pending"] {
+  color: var(--gold);
+  border-color: rgba(214, 183, 110, 0.3);
+  background: var(--gold-soft);
+}
+
+.opportunity-status-controls button.is-active[data-status="confirmed"] {
+  color: var(--mint);
+  border-color: rgba(108, 218, 175, 0.3);
+  background: var(--mint-soft);
+}
+
+.opportunity-status-controls button.is-active[data-status="invalid"] {
+  color: var(--red);
+  border-color: rgba(239, 100, 83, 0.3);
+  background: var(--red-soft);
+}
+
 .opportunity-condition-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5047,6 +5502,14 @@ textarea:focus-visible {
   .opportunity-event-fields {
     grid-template-columns: 1fr;
   }
+
+  .opportunity-pool-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .opportunity-verification-list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 760px) {
@@ -5070,6 +5533,28 @@ textarea:focus-visible {
 
   .opportunity-event-tools {
     justify-content: space-between;
+  }
+
+  .opportunity-pool-tools,
+  .opportunity-pool-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .opportunity-pool-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .opportunity-verification-list {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-card-head {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .opportunity-path-status {
+    display: none;
   }
 
   .opportunity-field-row,
@@ -5353,10 +5838,49 @@ textarea:focus-visible {
         <div class="view-heading opportunity-view-heading">
           <div>
             <span class="eyebrow">TRADING OPPORTUNITY ANALYSIS</span>
-            <h2>机会推演</h2>
+            <h2>涨停路径推演</h2>
           </div>
-          <p>从一个市场事件出发，把自己的交易路径、成立条件和失效条件拆开记录。系统不替你生成交易结论。</p>
+          <p>从今日涨停池选取结构事件，建立多条交易路径；次日用真实盘面逐条验证，而不是事后写日记。</p>
         </div>
+
+        <section class="opportunity-verification" aria-label="次日验证队列">
+          <header>
+            <div>
+              <span>NEXT-DAY VERIFICATION</span>
+              <h3>次日验证队列</h3>
+            </div>
+            <strong id="opportunityPendingCount">0 条待验证</strong>
+          </header>
+          <div class="opportunity-verification-list" id="opportunityVerificationQueue"></div>
+        </section>
+
+        <section class="opportunity-pool-panel" id="opportunityPoolPanel" hidden>
+          <header class="opportunity-pool-head">
+            <div>
+              <span id="opportunityPoolDate">今日涨停池</span>
+              <h3>选择要推演的结构事件</h3>
+              <p>可多选同身位、同板块或晋级/断板组合。事件名称与上下文由所选股票自动生成。</p>
+            </div>
+            <button class="opportunity-pool-close" id="opportunityPoolClose" type="button" aria-label="关闭涨停池">×</button>
+          </header>
+          <div class="opportunity-pool-tools">
+            <input id="opportunityPoolSearch" type="search" placeholder="搜索股票名称或代码">
+            <div class="opportunity-pool-filters" role="group" aria-label="按板高筛选">
+              <button class="is-active" type="button" data-pool-filter="all">全部</button>
+              <button type="button" data-pool-filter="first">首板</button>
+              <button type="button" data-pool-filter="second">二板+</button>
+              <button type="button" data-pool-filter="high">三板+</button>
+            </div>
+          </div>
+          <div class="opportunity-pool-list" id="opportunityPoolList"></div>
+          <footer class="opportunity-pool-footer">
+            <div>
+              <span>已选 <strong id="opportunityPoolSelectedCount">0</strong> 只</span>
+              <div class="opportunity-pool-selected" id="opportunityPoolSelected"></div>
+            </div>
+            <button class="primary-button" id="opportunityCreateFromPool" type="button" disabled>建立推演</button>
+          </footer>
+        </section>
 
         <div class="opportunity-layout">
           <aside class="opportunity-history" aria-label="历史推演事件">
@@ -5382,9 +5906,9 @@ textarea:focus-visible {
             <section class="opportunity-empty" id="opportunityEmpty">
               <div class="opportunity-empty-inner">
                 <div class="opportunity-empty-mark">演</div>
-                <h2>从市场事件开始</h2>
-                <p>例如“四进五竞争”：晋级票的高度延续、板块扩散、断板修复、同身位竞争者，都可以成为独立机会方向。</p>
-                <button class="primary-button" id="opportunityEmptyNew" type="button">新建第一个事件</button>
+                <h2>从今日涨停池选股</h2>
+                <p>例如选择四板晋级票和同身位断板票，自动形成“同身位竞争”事件，再分别推演高度、扩散、修复和情绪传导路径。</p>
+                <button class="primary-button" id="opportunityEmptyNew" type="button">打开今日涨停池</button>
               </div>
             </section>
 
@@ -5392,49 +5916,32 @@ textarea:focus-visible {
               <section class="opportunity-event-sheet">
                 <header class="opportunity-event-head">
                   <div>
-                    <span class="opportunity-event-kicker">MARKET EVENT</span>
+                    <span class="opportunity-event-kicker">LIMIT-UP EVENT</span>
                     <h2 id="opportunityEventHeading">未命名事件</h2>
+                    <p class="opportunity-event-context" id="opportunityEventContext"></p>
                   </div>
                   <div class="opportunity-event-tools">
                     <span class="opportunity-save-state is-saved" id="opportunitySaveState" aria-live="polite">尚未保存</span>
                     <button class="opportunity-delete-event" id="opportunityDeleteEvent" type="button">删除事件</button>
                   </div>
                 </header>
-
-                <div class="opportunity-fields opportunity-event-fields">
-                  <label class="opportunity-field opportunity-event-title">
-                    <span>事件标题</span>
-                    <input id="opportunityEventTitle" type="text" data-event-field="title" placeholder="例如：高位四进五竞争">
-                  </label>
-                  <label class="opportunity-field">
-                    <span>事件日期</span>
-                    <input id="opportunityEventDate" type="date" data-event-field="date">
-                  </label>
-                </div>
-                <div class="opportunity-fields">
-                  <label class="opportunity-field">
-                    <span>事件背景</span>
-                    <textarea id="opportunityEventBackground" rows="3" data-event-field="background" placeholder="发生了什么？谁晋级、谁失败，市场当时处于什么情绪阶段？"></textarea>
-                  </label>
-                  <div class="opportunity-field-row">
-                    <label class="opportunity-field">
-                      <span>涉及股票</span>
-                      <input id="opportunityEventStocks" type="text" data-event-field="stocks" placeholder="用逗号或顿号分隔，例如：A股票、B股票">
-                    </label>
-                    <label class="opportunity-field">
-                      <span>相关板块</span>
-                      <input id="opportunityEventSectors" type="text" data-event-field="sectors" placeholder="例如：机器人、航天">
-                    </label>
-                  </div>
-                </div>
+                <div class="opportunity-event-stocks" id="opportunityEventStocks"></div>
               </section>
 
               <div class="opportunity-card-section-head">
                 <div>
-                  <span>OPPORTUNITY MAP</span>
-                  <h3 id="opportunityCount">0 个机会方向</h3>
+                  <span>LOGIC CHAINS</span>
+                  <h3 id="opportunityCount">0 条推演路径</h3>
                 </div>
-                <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增机会</button>
+                <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 自由路径</button>
+              </div>
+              <div class="opportunity-path-templates" id="opportunityPathTemplates">
+                <span>快速建立路径</span>
+                <button type="button" data-path-template="core">核心高度</button>
+                <button type="button" data-path-template="peer">同身位竞争</button>
+                <button type="button" data-path-template="sector">板块扩散</button>
+                <button type="button" data-path-template="repair">分歧修复</button>
+                <button type="button" data-path-template="emotion">情绪传导</button>
               </div>
               <div class="opportunity-cards" id="opportunityCards"></div>
             </div>
@@ -380608,19 +381115,36 @@ $("#saveAnswers").addEventListener("click", () => {
   </script>
   <script>
 (() => {
-  const STORAGE_KEY = "pan-eye-opportunities-v1";
-  const SELECTED_KEY = "pan-eye-opportunities-selected-v1";
+  const STORAGE_KEY = "pan-eye-opportunities-v2";
+  const LEGACY_STORAGE_KEY = "pan-eye-opportunities-v1";
+  const SELECTED_KEY = "pan-eye-opportunities-selected-v2";
+  const LEGACY_SELECTED_KEY = "pan-eye-opportunities-selected-v1";
   const root = document.getElementById("view-opportunities");
   if (!root) return;
+
+  const review = window.REVIEW_DATA || { meta: {}, themes: [], ladder: [] };
+  const screen = window.SCREEN_DATA || null;
+  const sectors = window.SECTOR_DATA?.sectors || [];
+  const poolDate = screen?.date || review.meta?.date || "";
 
   const eventList = document.getElementById("opportunityEventList");
   const emptyState = document.getElementById("opportunityEmpty");
   const editor = document.getElementById("opportunityEditor");
   const eventTitleHeading = document.getElementById("opportunityEventHeading");
+  const eventContext = document.getElementById("opportunityEventContext");
+  const eventStocksRoot = document.getElementById("opportunityEventStocks");
   const saveState = document.getElementById("opportunitySaveState");
   const opportunityCount = document.getElementById("opportunityCount");
   const cardsRoot = document.getElementById("opportunityCards");
   const importInput = document.getElementById("opportunityImportInput");
+  const poolPanel = document.getElementById("opportunityPoolPanel");
+  const poolList = document.getElementById("opportunityPoolList");
+  const poolSearch = document.getElementById("opportunityPoolSearch");
+  const poolSelectedRoot = document.getElementById("opportunityPoolSelected");
+  const poolSelectedCount = document.getElementById("opportunityPoolSelectedCount");
+  const createFromPoolButton = document.getElementById("opportunityCreateFromPool");
+  const verificationQueue = document.getElementById("opportunityVerificationQueue");
+  const pendingCount = document.getElementById("opportunityPendingCount");
 
   const escaped = (value) =>
     String(value ?? "")
@@ -380655,49 +381179,182 @@ $("#saveAnswers").addEventListener("click", () => {
     })}`;
   };
 
-  const normalizeOpportunity = (item = {}) => ({
-    id: item.id || uid("opportunity"),
-    name: String(item.name || ""),
-    logic: String(item.logic || ""),
-    targets: String(item.targets || ""),
-    trigger: String(item.trigger || ""),
-    invalidation: String(item.invalidation || ""),
-    notes: String(item.notes || ""),
-    createdAt: item.createdAt || new Date().toISOString(),
-    updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
-  });
+  const normalizeNameList = (value) => {
+    if (Array.isArray(value)) return value.map(String).filter(Boolean);
+    return String(value || "")
+      .split(/[、,，\s]+/)
+      .map((name) => name.trim())
+      .filter(Boolean);
+  };
 
-  const normalizeEvent = (item = {}) => ({
-    id: item.id || uid("event"),
-    title: String(item.title || ""),
-    date: String(item.date || shanghaiDate()).slice(0, 10),
-    background: String(item.background || ""),
-    stocks: Array.isArray(item.stocks) ? item.stocks.join("、") : String(item.stocks || ""),
-    sectors: Array.isArray(item.sectors) ? item.sectors.join("、") : String(item.sectors || ""),
-    opportunities: Array.isArray(item.opportunities)
-      ? item.opportunities.map(normalizeOpportunity)
-      : [],
-    createdAt: item.createdAt || new Date().toISOString(),
-    updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
-  });
+  const sectorsForStock = (name) => {
+    const result = [];
+    for (const sector of sectors) {
+      if ((sector.members || []).includes(name)) result.push(sector.name);
+    }
+    for (const theme of review.themes || []) {
+      if ((theme.stocks || []).includes(name)) result.push(theme.name);
+    }
+    return [...new Set(result)];
+  };
+
+  const buildLimitUpPool = () => {
+    const byName = new Map();
+    const add = (stock, overrides = {}) => {
+      const name = String(stock?.name || "").trim();
+      if (!name) return;
+      const existing = byName.get(name) || { name };
+      const stockSectors = sectorsForStock(name);
+      byName.set(name, {
+        ...existing,
+        ...stock,
+        ...overrides,
+        name,
+        boardHeight:
+          overrides.boardHeight ?? stock?.boardHeight ?? existing.boardHeight ?? 1,
+        sectors: [...new Set([
+          ...(existing.sectors || []),
+          ...stockSectors,
+          ...(overrides.sectors || [])
+        ])]
+      });
+    };
+
+    for (const stock of [
+      ...(screen?.candidates || []),
+      ...(screen?.hardExcluded || []),
+      ...(screen?.exceptions || [])
+    ]) {
+      add(stock);
+    }
+    for (const level of review.ladder || []) {
+      for (const stock of level.stocks || []) {
+        add(stock, { boardHeight: Number(level.level) || 1, role: stock.role || "" });
+      }
+    }
+    for (const theme of review.themes || []) {
+      for (const name of theme.stocks || []) {
+        add({ name, boardHeight: 1, sector: theme.name });
+      }
+    }
+
+    return [...byName.values()].sort((a, b) => {
+      const boardDiff = (b.boardHeight || 0) - (a.boardHeight || 0);
+      return boardDiff || a.name.localeCompare(b.name, "zh-CN");
+    });
+  };
+
+  const limitUpPool = buildLimitUpPool();
+  const poolByName = new Map(limitUpPool.map((stock) => [stock.name, stock]));
+
+  const shortNames = (names, limit = 3) => {
+    const values = names.filter(Boolean);
+    if (values.length <= limit) return values.join(" / ");
+    return `${values.slice(0, limit).join(" / ")} 等${values.length}只`;
+  };
+
+  const suggestTitle = (stocks) => {
+    const names = stocks.map((stock) => stock.name);
+    const heights = stocks.map((stock) => Number(stock.boardHeight) || 1);
+    const maxHeight = Math.max(...heights, 1);
+    const sameHeight = new Set(heights).size === 1;
+    if (stocks.length === 1) {
+      return `${stocks[0].name} · ${maxHeight}板高度路径`;
+    }
+    if (sameHeight && stocks.length > 1) {
+      return `${shortNames(names)} · ${maxHeight}板同身位竞争`;
+    }
+    return `${shortNames(names)} · 涨停结构推演`;
+  };
+
+  const buildEventContext = (stocks) => {
+    const groups = stocks.map(
+      (stock) =>
+        `${stock.name}${stock.boardHeight ? ` ${stock.boardHeight}板` : ""}${
+          stock.sectors?.[0] ? `（${stock.sectors[0]}）` : ""
+        }`
+    );
+    const relatedSectors = [...new Set(stocks.flatMap((stock) => stock.sectors || []))];
+    return `${poolDate} 涨停池：${groups.join("、")}${
+      relatedSectors.length ? `。相关方向：${relatedSectors.join("、")}` : ""
+    }。`;
+  };
+
+  const normalizeOpportunity = (item = {}) => {
+    const status = ["pending", "confirmed", "invalid"].includes(item.status)
+      ? item.status
+      : "pending";
+    return {
+      id: item.id || uid("path"),
+      template: String(item.template || "free"),
+      name: String(item.name || ""),
+      logic: String(item.logic || ""),
+      targets: String(item.targets || ""),
+      trigger: String(item.trigger || ""),
+      invalidation: String(item.invalidation || ""),
+      notes: String(item.notes || ""),
+      status,
+      verification: String(item.verification || ""),
+      verifiedAt: item.verifiedAt || "",
+      createdAt: item.createdAt || new Date().toISOString(),
+      updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
+    };
+  };
+
+  const normalizeEvent = (item = {}) => {
+    const names = normalizeNameList(
+      item.selectedStocks?.map?.((stock) => stock.name) || item.stocks
+    );
+    const selectedStocks = (
+      Array.isArray(item.selectedStocks) && item.selectedStocks.length
+        ? item.selectedStocks
+        : names.map((name) => poolByName.get(name) || { name, boardHeight: 1, sectors: [] })
+    ).map((stock) => ({
+      name: String(stock.name || ""),
+      code: String(stock.code || ""),
+      boardHeight: Number(stock.boardHeight) || 1,
+      sectors: Array.isArray(stock.sectors) ? stock.sectors : []
+    }));
+    const fallbackTitle = selectedStocks.length
+      ? suggestTitle(selectedStocks)
+      : "未命名涨停事件";
+    return {
+      id: item.id || uid("event"),
+      title: String(item.title || fallbackTitle),
+      sourceDate: String(item.sourceDate || item.date || poolDate || shanghaiDate()).slice(0, 10),
+      context: String(item.context || item.background || buildEventContext(selectedStocks)),
+      selectedStocks,
+      opportunities: Array.isArray(item.opportunities)
+        ? item.opportunities.map(normalizeOpportunity)
+        : [],
+      createdAt: item.createdAt || new Date().toISOString(),
+      updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
+    };
+  };
 
   const loadState = () => {
     try {
-      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      const current = localStorage.getItem(STORAGE_KEY);
+      const legacy = current ? null : localStorage.getItem(LEGACY_STORAGE_KEY);
+      const parsed = JSON.parse(current || legacy || "{}");
       return {
-        version: 1,
+        version: 2,
         events: Array.isArray(parsed.events) ? parsed.events.map(normalizeEvent) : []
       };
     } catch {
-      return { version: 1, events: [] };
+      return { version: 2, events: [] };
     }
   };
 
   let state = loadState();
-  let selectedId = localStorage.getItem(SELECTED_KEY);
+  let selectedId =
+    localStorage.getItem(SELECTED_KEY) ||
+    localStorage.getItem(LEGACY_SELECTED_KEY);
   const expanded = new Set();
   let saveTimer = null;
   let lastStorageError = "";
+  let poolFilter = "all";
+  const selectedPool = new Set();
 
   if (!state.events.some((event) => event.id === selectedId)) {
     selectedId = state.events[0]?.id || null;
@@ -380711,7 +381368,11 @@ $("#saveAnswers").addEventListener("click", () => {
     saveState.classList.toggle("is-saved", saved);
   };
 
-  const persist = ({ refreshList = true } = {}) => {
+  const touchEvent = (event) => {
+    event.updatedAt = new Date().toISOString();
+  };
+
+  const persist = ({ refreshList = true, refreshQueue = true } = {}) => {
     window.clearTimeout(saveTimer);
     saveTimer = null;
     try {
@@ -380719,13 +381380,14 @@ $("#saveAnswers").addEventListener("click", () => {
       if (selectedId) localStorage.setItem(SELECTED_KEY, selectedId);
       else localStorage.removeItem(SELECTED_KEY);
       lastStorageError = "";
-      const now = state.events.find((event) => event.id === selectedId)?.updatedAt;
+      const now = selectedEvent()?.updatedAt;
       setSaveState(formatSavedAt(now), true);
     } catch {
       lastStorageError = "浏览器存储不可用，请先导出备份";
       setSaveState(lastStorageError, false);
     }
     if (refreshList) renderHistory();
+    if (refreshQueue) renderVerificationQueue();
   };
 
   const scheduleSave = () => {
@@ -380734,38 +381396,76 @@ $("#saveAnswers").addEventListener("click", () => {
     saveTimer = window.setTimeout(() => persist(), 260);
   };
 
-  const touchEvent = (event) => {
-    event.updatedAt = new Date().toISOString();
-  };
-
   const sortedEvents = () =>
     [...state.events].sort((a, b) => {
-      const byDate = b.date.localeCompare(a.date);
+      const byDate = b.sourceDate.localeCompare(a.sourceDate);
       return byDate || b.updatedAt.localeCompare(a.updatedAt);
     });
+
+  const statusCounts = (event) => ({
+    pending: event.opportunities.filter((item) => item.status === "pending").length,
+    confirmed: event.opportunities.filter((item) => item.status === "confirmed").length,
+    invalid: event.opportunities.filter((item) => item.status === "invalid").length
+  });
 
   const renderHistory = () => {
     const events = sortedEvents();
     if (!events.length) {
-      eventList.innerHTML = '<p class="opportunity-event-empty">还没有推演事件。<br>从一次晋级竞争、断板或板块异动开始记录。</p>';
+      eventList.innerHTML = '<p class="opportunity-event-empty">还没有涨停路径。先从今日涨停池选出一组结构事件。</p>';
       return;
     }
+    eventList.innerHTML = events.map((event) => {
+      const counts = statusCounts(event);
+      return `
+        <button class="opportunity-event-item ${event.id === selectedId ? "is-active" : ""}"
+          type="button" data-opportunity-event="${escaped(event.id)}">
+          <span class="opportunity-event-item-top">
+            <span>${escaped(event.sourceDate)}</span>
+            <em>${counts.pending} 待验证 · ${counts.confirmed} 兑现</em>
+          </span>
+          <strong>${escaped(event.title)}</strong>
+          <p>${escaped(event.selectedStocks.map((stock) => stock.name).join(" / ") || "未选择标的")}</p>
+        </button>
+      `;
+    }).join("");
+  };
 
-    eventList.innerHTML = events.map((event) => `
-      <button class="opportunity-event-item ${event.id === selectedId ? "is-active" : ""}"
-        type="button" data-opportunity-event="${escaped(event.id)}">
-        <span class="opportunity-event-item-top">
-          <span>${escaped(event.date)}</span>
-          <em>${event.opportunities.length} 个方向</em>
+  const renderVerificationQueue = () => {
+    const today = shanghaiDate();
+    const pendingItems = sortedEvents().flatMap((event) => {
+      if (event.sourceDate >= today) return [];
+      return event.opportunities
+        .filter((item) => item.status === "pending")
+        .map((item) => ({ event, item }));
+    });
+    pendingCount.textContent = `${pendingItems.length} 条待验证`;
+    if (!pendingItems.length) {
+      verificationQueue.innerHTML = '<p class="opportunity-verification-empty">没有跨日待验证路径。今天新建的路径，明日起会进入这里。</p>';
+      return;
+    }
+    const grouped = new Map();
+    for (const entry of pendingItems) {
+      const group = grouped.get(entry.event.id) || { event: entry.event, items: [] };
+      group.items.push(entry.item);
+      grouped.set(entry.event.id, group);
+    }
+    verificationQueue.innerHTML = [...grouped.values()].slice(0, 6).map(({ event, items }) => `
+      <button class="opportunity-verification-item" type="button"
+        data-verification-event="${escaped(event.id)}">
+        <span>
+          <span>${escaped(event.sourceDate)} · ${escaped(event.title)}</span>
+          <em>${items.length} 条</em>
         </span>
-        <strong>${escaped(event.title || "未命名事件")}</strong>
-        <p>${escaped(event.background || "尚无事件背景")}</p>
+        <strong>${escaped(items.map((item) => item.name || "未命名路径").join(" / "))}</strong>
       </button>
     `).join("");
   };
 
-  const fieldValue = (name, value) => `value="${escaped(value || "")}"`;
+  const fieldValue = (value) => `value="${escaped(value || "")}"`;
   const textValue = (text) => escaped(text || "");
+
+  const statusLabel = (status) =>
+    status === "confirmed" ? "已兑现" : status === "invalid" ? "已失效" : "待验证";
 
   const renderOpportunityCard = (opportunity, index) => {
     const isExpanded = expanded.has(opportunity.id);
@@ -380778,28 +381478,36 @@ $("#saveAnswers").addEventListener("click", () => {
             aria-expanded="${isExpanded}">
             <span class="opportunity-card-index">${String(index + 1).padStart(2, "0")}</span>
             <span class="opportunity-card-summary">
-              <strong>${escaped(opportunity.name || "未命名机会")}</strong>
+              <strong>${escaped(opportunity.name || "未命名路径")}</strong>
               <span>${escaped(opportunity.targets || "尚未填写观察对象")}</span>
+            </span>
+            <span class="opportunity-path-status is-${escaped(opportunity.status)}">
+              ${statusLabel(opportunity.status)}
             </span>
             <span class="opportunity-card-chevron" aria-hidden="true">⌄</span>
           </button>
           <button class="opportunity-delete-card" type="button"
             data-opportunity-delete="${escaped(opportunity.id)}"
-            aria-label="删除这条机会">×</button>
+            aria-label="删除这条路径">×</button>
         </header>
         <div class="opportunity-card-body" ${isExpanded ? "" : "hidden"}>
+          <div class="opportunity-chain-stage">01 · 路径假设</div>
           <div class="opportunity-fields">
             <label class="opportunity-field">
-              <span>机会名称</span>
+              <span>路径名称</span>
               <input type="text" data-opportunity-field="name"
-                ${fieldValue("name", opportunity.name)}
-                placeholder="例如：观察晋级票的高度延续">
+                ${fieldValue(opportunity.name)}
+                placeholder="例如：晋级票高度延续">
             </label>
             <label class="opportunity-field">
               <span>推演逻辑</span>
               <textarea rows="4" data-opportunity-field="logic"
-                placeholder="为什么这个市场事件可能产生这种机会？">${textValue(opportunity.logic)}</textarea>
+                placeholder="为什么这个涨停结构可能产生这种交易路径？">${textValue(opportunity.logic)}</textarea>
             </label>
+          </div>
+
+          <div class="opportunity-chain-stage">02 · 观察与证伪</div>
+          <div class="opportunity-fields">
             <label class="opportunity-field">
               <span>观察对象</span>
               <textarea rows="2" data-opportunity-field="targets"
@@ -380809,20 +381517,43 @@ $("#saveAnswers").addEventListener("click", () => {
               <label class="opportunity-field">
                 <span>成立条件</span>
                 <textarea rows="3" data-opportunity-field="trigger"
-                  placeholder="出现什么盘面现象，说明逻辑正在兑现？">${textValue(opportunity.trigger)}</textarea>
+                  placeholder="出现什么盘面现象，说明路径正在兑现？">${textValue(opportunity.trigger)}</textarea>
               </label>
               <label class="opportunity-field">
                 <span>失效条件</span>
                 <textarea rows="3" data-opportunity-field="invalidation"
-                  placeholder="出现什么现象，说明原逻辑不再成立？">${textValue(opportunity.invalidation)}</textarea>
+                  placeholder="出现什么现象，说明路径不成立？">${textValue(opportunity.invalidation)}</textarea>
               </label>
             </div>
-            <label class="opportunity-field">
-              <span>补充思考</span>
-              <textarea rows="3" data-opportunity-field="notes"
-                placeholder="后续盘面观察、竞价表现或需要验证的细节">${textValue(opportunity.notes)}</textarea>
-            </label>
           </div>
+
+          <div class="opportunity-chain-stage is-verify">03 · 次日验证</div>
+          <div class="opportunity-verification-editor">
+            <div class="opportunity-status-controls" role="group" aria-label="路径验证状态">
+              ${[
+                ["pending", "待验证"],
+                ["confirmed", "已兑现"],
+                ["invalid", "已失效"]
+              ].map(([status, label]) => `
+                <button type="button" data-opportunity-status="${status}"
+                  class="${opportunity.status === status ? "is-active" : ""}"
+                  data-status="${status}">${label}</button>
+              `).join("")}
+            </div>
+            <label class="opportunity-field">
+              <span>实际盘面结果</span>
+              <textarea rows="3" data-opportunity-field="verification"
+                placeholder="第二天实际发生了什么？哪条逻辑被盘面确认，哪条被证伪？">${textValue(opportunity.verification)}</textarea>
+            </label>
+            ${opportunity.verifiedAt ? `<small class="opportunity-verified-at">最后验证：${escaped(formatSavedAt(opportunity.verifiedAt))}</small>` : ""}
+          </div>
+
+          <div class="opportunity-chain-stage">04 · 补充思考</div>
+          <label class="opportunity-field">
+            <span>复盘补充</span>
+            <textarea rows="3" data-opportunity-field="notes"
+              placeholder="还有什么需要继续跟踪？">${textValue(opportunity.notes)}</textarea>
+          </label>
         </div>
       </article>
     `;
@@ -380834,60 +381565,176 @@ $("#saveAnswers").addEventListener("click", () => {
     editor.hidden = !event;
     if (!event) return;
 
-    eventTitleHeading.textContent = event.title || "未命名事件";
-    document.getElementById("opportunityEventTitle").value = event.title;
-    document.getElementById("opportunityEventDate").value = event.date;
-    document.getElementById("opportunityEventBackground").value = event.background;
-    document.getElementById("opportunityEventStocks").value = event.stocks;
-    document.getElementById("opportunityEventSectors").value = event.sectors;
-    opportunityCount.textContent = `${event.opportunities.length} 个机会方向`;
+    eventTitleHeading.textContent = event.title;
+    eventContext.textContent = event.context;
+    eventStocksRoot.innerHTML = event.selectedStocks.map((stock) => `
+      <span class="opportunity-event-stock">
+        <strong>${escaped(stock.name)}</strong>
+        <span>${escaped(stock.code || "")}</span>
+        <em>${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}</em>
+      </span>
+    `).join("");
+    const counts = statusCounts(event);
+    opportunityCount.textContent =
+      `${event.opportunities.length} 条路径 · ${counts.pending} 待验证 / ${counts.confirmed} 兑现 / ${counts.invalid} 失效`;
     setSaveState(
       lastStorageError || formatSavedAt(event.updatedAt),
       !lastStorageError
     );
-
     cardsRoot.innerHTML = event.opportunities.length
       ? event.opportunities.map(renderOpportunityCard).join("")
-      : '<div class="opportunity-card-empty">这个事件还没有机会方向。点击“新增机会”，从一个观察角度开始推演。</div>';
+      : '<div class="opportunity-card-empty">这个事件还没有路径。用上方模板快速建立，也可以添加自由路径。</div>';
   };
 
   const renderAll = () => {
     renderHistory();
+    renderVerificationQueue();
     renderEditor();
   };
 
-  const createEvent = () => {
-    const timestamp = new Date().toISOString();
-    const event = normalizeEvent({
-      id: uid("event"),
-      title: "",
-      date: shanghaiDate(),
-      background: "",
-      stocks: "",
-      sectors: "",
-      opportunities: [],
-      createdAt: timestamp,
-      updatedAt: timestamp
+  const renderPool = () => {
+    const term = poolSearch.value.trim().toLowerCase();
+    const filtered = limitUpPool.filter((stock) => {
+      const matchesTerm =
+        !term ||
+        stock.name.toLowerCase().includes(term) ||
+        String(stock.code || "").includes(term);
+      const board = Number(stock.boardHeight) || 1;
+      const matchesFilter =
+        poolFilter === "all" ||
+        (poolFilter === "first" && board === 1) ||
+        (poolFilter === "second" && board >= 2) ||
+        (poolFilter === "high" && board >= 3);
+      return matchesTerm && matchesFilter;
     });
-    state.events.unshift(event);
-    selectedId = event.id;
-    expanded.clear();
-    persist({ refreshList: false });
-    renderAll();
+
+    poolList.innerHTML = filtered.length
+      ? filtered.map((stock) => `
+          <button class="opportunity-pool-stock ${selectedPool.has(stock.name) ? "is-selected" : ""}"
+            type="button" data-pool-stock="${escaped(stock.name)}">
+            <strong>${escaped(stock.name)}</strong>
+            <span>
+              <span>${escaped(stock.code || "")}</span>
+              <em>${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}</em>
+            </span>
+          </button>
+        `).join("")
+      : '<p class="opportunity-pool-empty">没有符合条件的涨停股。</p>';
+    renderPoolSelected();
+  };
+
+  const renderPoolSelected = () => {
+    const chosen = [...selectedPool]
+      .map((name) => poolByName.get(name))
+      .filter(Boolean);
+    poolSelectedCount.textContent = String(chosen.length);
+    poolSelectedRoot.innerHTML = chosen
+      .map((stock) => `<span>${escaped(stock.name)} · ${stock.boardHeight}板</span>`)
+      .join("");
+    createFromPoolButton.disabled = chosen.length === 0;
+  };
+
+  const openPool = () => {
+    selectedPool.clear();
+    poolSearch.value = "";
+    poolFilter = "all";
+    document.querySelectorAll("[data-pool-filter]").forEach((button) => {
+      button.classList.toggle("is-active", button.dataset.poolFilter === "all");
+    });
+    poolPanel.hidden = false;
+    renderPool();
     requestAnimationFrame(() => {
-      document.getElementById("opportunityEventTitle").focus();
+      poolPanel.scrollIntoView({ block: "start", behavior: "smooth" });
+      poolSearch.focus();
     });
   };
 
-  const addOpportunity = () => {
+  const closePool = () => {
+    poolPanel.hidden = true;
+  };
+
+  const desiredPeers = (event) => {
+    const selectedNames = new Set(event.selectedStocks.map((stock) => stock.name));
+    const maxBoard = Math.max(...event.selectedStocks.map((stock) => stock.boardHeight), 1);
+    return limitUpPool
+      .filter(
+        (stock) =>
+          stock.boardHeight === maxBoard &&
+          (selectedNames.has(stock.name) || stock.boardHeight >= 2)
+      )
+      .map((stock) => stock.name);
+  };
+
+  const desiredSectorTargets = (event) => {
+    const targetSectors = new Set(event.selectedStocks.flatMap((stock) => stock.sectors || []));
+    return limitUpPool
+      .filter((stock) => (stock.sectors || []).some((sector) => targetSectors.has(sector)))
+      .map((stock) => stock.name);
+  };
+
+  const templateOpportunity = (template, event) => {
+    const selectedNames = event.selectedStocks.map((stock) => stock.name);
+    const maxBoard = Math.max(...event.selectedStocks.map((stock) => stock.boardHeight), 1);
+    const configs = {
+      core: {
+        name: "核心高度延续",
+        targets: selectedNames.join("、"),
+        logic: "",
+        trigger: "",
+        invalidation: ""
+      },
+      peer: {
+        name: "同身位竞争",
+        targets: desiredPeers(event).join("、"),
+        logic: "",
+        trigger: "",
+        invalidation: ""
+      },
+      sector: {
+        name: "板块扩散与补涨",
+        targets: desiredSectorTargets(event).slice(0, 20).join("、"),
+        logic: "",
+        trigger: "",
+        invalidation: ""
+      },
+      repair: {
+        name: "分歧后的修复",
+        targets: selectedNames.join("、"),
+        logic: "",
+        trigger: "",
+        invalidation: ""
+      },
+      emotion: {
+        name: "市场情绪传导",
+        targets: `最高板 ${maxBoard} 板 / 同身位溢价 / 断板反馈`,
+        logic: "",
+        trigger: "",
+        invalidation: ""
+      },
+      free: {
+        name: "",
+        targets: "",
+        logic: "",
+        trigger: "",
+        invalidation: ""
+      }
+    };
+    const config = configs[template] || configs.free;
+    const now = new Date().toISOString();
+    return normalizeOpportunity({
+      id: uid("path"),
+      template,
+      ...config,
+      status: "pending",
+      createdAt: now,
+      updatedAt: now
+    });
+  };
+
+  const addPath = (template = "free") => {
     const event = selectedEvent();
     if (!event) return;
-    const timestamp = new Date().toISOString();
-    const opportunity = normalizeOpportunity({
-      id: uid("opportunity"),
-      createdAt: timestamp,
-      updatedAt: timestamp
-    });
+    const opportunity = templateOpportunity(template, event);
     event.opportunities.push(opportunity);
     expanded.add(opportunity.id);
     touchEvent(event);
@@ -380902,15 +381749,52 @@ $("#saveAnswers").addEventListener("click", () => {
     });
   };
 
+  const createEventFromPool = () => {
+    const selectedStocks = [...selectedPool]
+      .map((name) => poolByName.get(name))
+      .filter(Boolean)
+      .map((stock) => ({
+        name: stock.name,
+        code: stock.code || "",
+        boardHeight: Number(stock.boardHeight) || 1,
+        sectors: stock.sectors || []
+      }));
+    if (!selectedStocks.length) return;
+
+    const timestamp = new Date().toISOString();
+    const event = normalizeEvent({
+      id: uid("event"),
+      title: suggestTitle(selectedStocks),
+      sourceDate: poolDate || shanghaiDate(),
+      context: buildEventContext(selectedStocks),
+      selectedStocks,
+      opportunities: [],
+      createdAt: timestamp,
+      updatedAt: timestamp
+    });
+    const initialTemplate =
+      selectedStocks.length > 1 &&
+      new Set(selectedStocks.map((stock) => stock.boardHeight)).size === 1
+        ? "peer"
+        : "core";
+    event.opportunities.push(templateOpportunity(initialTemplate, event));
+    state.events.unshift(event);
+    selectedId = event.id;
+    expanded.clear();
+    expanded.add(event.opportunities[0].id);
+    persist({ refreshList: false, refreshQueue: false });
+    closePool();
+    renderAll();
+  };
+
   const deleteOpportunity = (id) => {
     const event = selectedEvent();
     if (!event) return;
     const target = event.opportunities.find((item) => item.id === id);
     if (!target) return;
-    const confirmed = window.confirm(
-      `删除“${target.name || "未命名机会"}”？同一事件下的其他机会不会受到影响。`
-    );
-    if (!confirmed) return;
+    if (!window.confirm(`删除路径“${target.name || "未命名路径"}”？其他路径不会受到影响。`)) {
+      return;
+    }
     event.opportunities = event.opportunities.filter((item) => item.id !== id);
     expanded.delete(id);
     touchEvent(event);
@@ -380922,23 +381806,12 @@ $("#saveAnswers").addEventListener("click", () => {
   const deleteEvent = () => {
     const event = selectedEvent();
     if (!event) return;
-    if (!window.confirm(`删除事件“${event.title || "未命名事件"}”及其全部机会推演？`)) {
-      return;
-    }
+    if (!window.confirm(`删除事件“${event.title}”及其全部路径？`)) return;
     state.events = state.events.filter((item) => item.id !== event.id);
     selectedId = sortedEvents()[0]?.id || null;
     expanded.clear();
     persist({ refreshList: false });
     renderAll();
-  };
-
-  const updateEventField = (field, value) => {
-    const event = selectedEvent();
-    if (!event || !(field in event)) return;
-    event[field] = value;
-    touchEvent(event);
-    if (field === "title") eventTitleHeading.textContent = value || "未命名事件";
-    scheduleSave();
   };
 
   const updateOpportunityField = (card, field, value) => {
@@ -380953,7 +381826,7 @@ $("#saveAnswers").addEventListener("click", () => {
     touchEvent(event);
     if (field === "name") {
       card.querySelector(".opportunity-card-summary strong").textContent =
-        value || "未命名机会";
+        value || "未命名路径";
     }
     if (field === "targets") {
       card.querySelector(".opportunity-card-summary span").textContent =
@@ -380962,9 +381835,24 @@ $("#saveAnswers").addEventListener("click", () => {
     scheduleSave();
   };
 
+  const updateStatus = (id, status) => {
+    const event = selectedEvent();
+    if (!event) return;
+    const opportunity = event.opportunities.find((item) => item.id === id);
+    if (!opportunity) return;
+    opportunity.status = status;
+    opportunity.verifiedAt = new Date().toISOString();
+    opportunity.updatedAt = opportunity.verifiedAt;
+    touchEvent(event);
+    persist({ refreshList: false });
+    renderHistory();
+    renderVerificationQueue();
+    renderEditor();
+  };
+
   const exportData = () => {
     const payload = {
-      version: 1,
+      version: 2,
       exportedAt: new Date().toISOString(),
       events: state.events
     };
@@ -380987,8 +381875,9 @@ $("#saveAnswers").addEventListener("click", () => {
       const incoming = Array.isArray(parsed.events) ? parsed.events : [];
       if (!incoming.length) throw new Error("文件中没有事件");
       if (!window.confirm(`导入 ${incoming.length} 个事件并替换当前记录？`)) return;
-      state = { version: 1, events: incoming.map(normalizeEvent) };
+      state = { version: 2, events: incoming.map(normalizeEvent) };
       selectedId = sortedEvents()[0]?.id || null;
+      expanded.clear();
       persist({ refreshList: false });
       renderAll();
       setSaveState("备份已导入", true);
@@ -381002,15 +381891,41 @@ $("#saveAnswers").addEventListener("click", () => {
     }
   };
 
-  document.getElementById("opportunityNewEvent").addEventListener("click", createEvent);
-  document.getElementById("opportunityEmptyNew").addEventListener("click", createEvent);
-  document.getElementById("opportunityAddCard").addEventListener("click", addOpportunity);
+  document.getElementById("opportunityNewEvent").addEventListener("click", openPool);
+  document.getElementById("opportunityEmptyNew").addEventListener("click", openPool);
+  document.getElementById("opportunityPoolClose").addEventListener("click", closePool);
+  document.getElementById("opportunityCreateFromPool").addEventListener(
+    "click",
+    createEventFromPool
+  );
+  document.getElementById("opportunityAddCard").addEventListener("click", () =>
+    addPath("free")
+  );
   document.getElementById("opportunityDeleteEvent").addEventListener("click", deleteEvent);
   document.getElementById("opportunityExport").addEventListener("click", exportData);
   document.getElementById("opportunityImport").addEventListener("click", () => {
     importInput.click();
   });
   importInput.addEventListener("change", () => importData(importInput.files?.[0]));
+
+  poolSearch.addEventListener("input", renderPool);
+  document.querySelectorAll("[data-pool-filter]").forEach((button) => {
+    button.addEventListener("click", () => {
+      poolFilter = button.dataset.poolFilter;
+      document.querySelectorAll("[data-pool-filter]").forEach((item) => {
+        item.classList.toggle("is-active", item === button);
+      });
+      renderPool();
+    });
+  });
+  poolList.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-pool-stock]");
+    if (!button) return;
+    const name = button.dataset.poolStock;
+    if (selectedPool.has(name)) selectedPool.delete(name);
+    else selectedPool.add(name);
+    renderPool();
+  });
 
   eventList.addEventListener("click", (event) => {
     const button = event.target.closest("[data-opportunity-event]");
@@ -381019,6 +381934,25 @@ $("#saveAnswers").addEventListener("click", () => {
     expanded.clear();
     localStorage.setItem(SELECTED_KEY, selectedId);
     renderAll();
+  });
+
+  verificationQueue.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-verification-event]");
+    if (!button) return;
+    selectedId = button.dataset.verificationEvent;
+    const target = selectedEvent();
+    expanded.clear();
+    target?.opportunities
+      .filter((item) => item.status === "pending")
+      .forEach((item) => expanded.add(item.id));
+    localStorage.setItem(SELECTED_KEY, selectedId);
+    renderAll();
+    editor.scrollIntoView({ block: "start", behavior: "smooth" });
+  });
+
+  document.getElementById("opportunityPathTemplates").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-path-template]");
+    if (button) addPath(button.dataset.pathTemplate);
   });
 
   cardsRoot.addEventListener("click", (event) => {
@@ -381030,29 +381964,29 @@ $("#saveAnswers").addEventListener("click", () => {
       renderEditor();
       return;
     }
+    const statusButton = event.target.closest("[data-opportunity-status]");
+    if (statusButton) {
+      const card = statusButton.closest("[data-opportunity-id]");
+      updateStatus(card.dataset.opportunityId, statusButton.dataset.opportunityStatus);
+      return;
+    }
     const remove = event.target.closest("[data-opportunity-delete]");
     if (remove) deleteOpportunity(remove.dataset.opportunityDelete);
   });
 
   editor.addEventListener("input", (event) => {
-    const eventField = event.target.closest("[data-event-field]");
-    if (eventField) {
-      updateEventField(eventField.dataset.eventField, eventField.value);
-      return;
-    }
     const opportunityField = event.target.closest("[data-opportunity-field]");
-    if (opportunityField) {
-      updateOpportunityField(
-        opportunityField.closest("[data-opportunity-id]"),
-        opportunityField.dataset.opportunityField,
-        opportunityField.value
-      );
-    }
+    if (!opportunityField) return;
+    updateOpportunityField(
+      opportunityField.closest("[data-opportunity-id]"),
+      opportunityField.dataset.opportunityField,
+      opportunityField.value
+    );
   });
 
   editor.addEventListener("change", () => persist());
   window.addEventListener("beforeunload", () => {
-    if (saveTimer) persist({ refreshList: false });
+    if (saveTimer) persist({ refreshList: false, refreshQueue: false });
   });
 
   window.addEventListener("storage", (event) => {
@@ -381064,6 +381998,8 @@ $("#saveAnswers").addEventListener("click", () => {
     renderAll();
   });
 
+  document.getElementById("opportunityPoolDate").textContent =
+    `${poolDate || "今日"} 涨停池 · 已抓取 ${limitUpPool.length} 只`;
   renderAll();
 
   const requestedView =
