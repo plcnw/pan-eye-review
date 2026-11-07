@@ -26,6 +26,7 @@
   const poolSearch = document.getElementById("opportunityPoolSearch");
   const poolSelectedRoot = document.getElementById("opportunityPoolSelected");
   const poolSelectedCount = document.getElementById("opportunityPoolSelectedCount");
+  const scenarioFeedback = document.getElementById("opportunityScenarioFeedback");
   const createFromPoolButton = document.getElementById("opportunityCreateFromPool");
   const verificationQueue = document.getElementById("opportunityVerificationQueue");
   const pendingCount = document.getElementById("opportunityPendingCount");
@@ -544,16 +545,22 @@
     });
 
     poolList.innerHTML = filtered.length
-      ? filtered.map((stock) => `
-          <button class="opportunity-pool-stock ${selectedPool.has(stock.name) ? "is-selected" : ""}"
+      ? filtered.map((stock) => {
+          const outcome = selectedPool.get(stock.name);
+          const selectedClass = selectedPool.has(stock.name)
+            ? `is-selected ${outcome ? `is-selected-${outcome}` : ""}`
+            : "";
+          return `
+          <button class="opportunity-pool-stock ${selectedClass}"
             type="button" data-pool-stock="${escaped(stock.name)}">
             <strong>${escaped(stock.name)}</strong>
             <span>
               <span>${escaped(stock.code || "")}</span>
-              <em>${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}</em>
+              <em>${selectedPool.has(stock.name) ? `已选 · ${outcomeLabel(outcome)}` : `${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}`}</em>
             </span>
           </button>
-        `).join("")
+        `;
+        }).join("")
       : '<p class="opportunity-pool-empty">没有符合条件的涨停股。</p>';
     renderPoolSelected();
   };
@@ -565,15 +572,17 @@
     poolSelectedCount.textContent = String(chosen.length);
     poolSelectedRoot.innerHTML = chosen
       .map(({ stock, outcome }) => `
-        <div class="opportunity-scenario-row">
+        <div class="opportunity-scenario-row ${outcome ? `is-${outcome}` : ""}">
           <span>${escaped(stock.name)} <em>${stock.boardHeight}板</em></span>
           <div class="scenario-outcomes">
             <button type="button" data-scenario-outcome="promote"
               data-stock-name="${escaped(stock.name)}"
-              class="${outcome === "promote" ? "is-active" : ""}">晋级</button>
+              aria-pressed="${outcome === "promote"}"
+              class="${outcome === "promote" ? "is-active" : ""}">${outcome === "promote" ? "✓ " : ""}晋级</button>
             <button type="button" data-scenario-outcome="break"
               data-stock-name="${escaped(stock.name)}"
-              class="${outcome === "break" ? "is-active" : ""}">断板</button>
+              aria-pressed="${outcome === "break"}"
+              class="${outcome === "break" ? "is-active" : ""}">${outcome === "break" ? "✓ " : ""}断板</button>
           </div>
           <button class="opportunity-scenario-remove" type="button"
             data-scenario-remove="${escaped(stock.name)}" aria-label="移除${escaped(stock.name)}">×</button>
@@ -582,6 +591,18 @@
       .join("");
     createFromPoolButton.disabled =
       chosen.length === 0 || chosen.some((item) => !item.outcome);
+    scenarioFeedback.classList.remove("is-ready", "is-waiting");
+    if (!chosen.length) {
+      scenarioFeedback.textContent = "先选择第一只股票，再设置晋级或断板。";
+    } else if (chosen.some((item) => !item.outcome)) {
+      const waiting = chosen.find((item) => !item.outcome)?.stock.name;
+      scenarioFeedback.textContent = `已选 ${chosen.length} 只，请为${waiting ? `“${waiting}”` : "剩余股票"}设置晋级或断板。`;
+      scenarioFeedback.classList.add("is-waiting");
+    } else {
+      scenarioFeedback.textContent =
+        `情景已设置：${chosen.map((item) => `${item.stock.name}${outcomeLabel(item.outcome)}`).join(" → ")}。`;
+      scenarioFeedback.classList.add("is-ready");
+    }
   };
 
   const openPool = (event = null) => {
@@ -937,7 +958,7 @@
     if (outcomeButton) {
       const name = outcomeButton.dataset.stockName;
       selectedPool.set(name, outcomeButton.dataset.scenarioOutcome);
-      renderPoolSelected();
+      renderPool();
       return;
     }
     const remove = event.target.closest("[data-scenario-remove]");

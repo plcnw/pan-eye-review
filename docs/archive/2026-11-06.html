@@ -4754,6 +4754,18 @@ textarea:focus-visible {
   color: var(--white);
 }
 
+.opportunity-pool-stock.is-selected-promote {
+  border-color: rgba(108, 218, 175, 0.55);
+  background: rgba(108, 218, 175, 0.13);
+  box-shadow: inset 3px 0 0 var(--mint);
+}
+
+.opportunity-pool-stock.is-selected-break {
+  border-color: rgba(239, 100, 83, 0.5);
+  background: rgba(239, 100, 83, 0.1);
+  box-shadow: inset 3px 0 0 var(--red);
+}
+
 .opportunity-pool-stock strong {
   display: block;
   overflow: hidden;
@@ -4819,6 +4831,21 @@ textarea:focus-visible {
   margin-top: 7px;
 }
 
+.opportunity-scenario-feedback {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.opportunity-scenario-feedback.is-ready {
+  color: var(--mint);
+}
+
+.opportunity-scenario-feedback.is-waiting {
+  color: var(--gold);
+}
+
 .opportunity-scenario-row {
   display: grid;
   grid-template-columns: minmax(140px, 1fr) auto auto;
@@ -4828,6 +4855,16 @@ textarea:focus-visible {
   border: 1px solid var(--line);
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.025);
+}
+
+.opportunity-scenario-row.is-promote {
+  border-color: rgba(108, 218, 175, 0.32);
+  background: rgba(108, 218, 175, 0.075);
+}
+
+.opportunity-scenario-row.is-break {
+  border-color: rgba(239, 100, 83, 0.3);
+  background: rgba(239, 100, 83, 0.07);
 }
 
 .opportunity-scenario-row > span {
@@ -4865,12 +4902,16 @@ textarea:focus-visible {
   color: var(--mint);
   border-color: rgba(108, 218, 175, 0.3);
   background: var(--mint-soft);
+  box-shadow: 0 0 0 2px rgba(108, 218, 175, 0.08);
+  font-weight: 600;
 }
 
 .opportunity-scenario-row .scenario-outcomes button[data-outcome="break"].is-active {
   color: var(--red);
   border-color: rgba(239, 100, 83, 0.3);
   background: var(--red-soft);
+  box-shadow: 0 0 0 2px rgba(239, 100, 83, 0.08);
+  font-weight: 600;
 }
 
 .opportunity-scenario-remove {
@@ -5972,6 +6013,9 @@ textarea:focus-visible {
           <footer class="opportunity-pool-footer">
             <div>
               <span>已选 <strong id="opportunityPoolSelectedCount">0</strong> 只</span>
+              <p class="opportunity-scenario-feedback" id="opportunityScenarioFeedback" aria-live="polite">
+                先选择第一只股票，再设置晋级或断板。
+              </p>
               <div class="opportunity-pool-selected" id="opportunityPoolSelected"></div>
             </div>
             <button class="primary-button" id="opportunityCreateFromPool" type="button" disabled>建立明日预演</button>
@@ -182113,6 +182157,7 @@ $("#saveAnswers").addEventListener("click", () => {
   const poolSearch = document.getElementById("opportunityPoolSearch");
   const poolSelectedRoot = document.getElementById("opportunityPoolSelected");
   const poolSelectedCount = document.getElementById("opportunityPoolSelectedCount");
+  const scenarioFeedback = document.getElementById("opportunityScenarioFeedback");
   const createFromPoolButton = document.getElementById("opportunityCreateFromPool");
   const verificationQueue = document.getElementById("opportunityVerificationQueue");
   const pendingCount = document.getElementById("opportunityPendingCount");
@@ -182631,16 +182676,22 @@ $("#saveAnswers").addEventListener("click", () => {
     });
 
     poolList.innerHTML = filtered.length
-      ? filtered.map((stock) => `
-          <button class="opportunity-pool-stock ${selectedPool.has(stock.name) ? "is-selected" : ""}"
+      ? filtered.map((stock) => {
+          const outcome = selectedPool.get(stock.name);
+          const selectedClass = selectedPool.has(stock.name)
+            ? `is-selected ${outcome ? `is-selected-${outcome}` : ""}`
+            : "";
+          return `
+          <button class="opportunity-pool-stock ${selectedClass}"
             type="button" data-pool-stock="${escaped(stock.name)}">
             <strong>${escaped(stock.name)}</strong>
             <span>
               <span>${escaped(stock.code || "")}</span>
-              <em>${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}</em>
+              <em>${selectedPool.has(stock.name) ? `已选 · ${outcomeLabel(outcome)}` : `${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}`}</em>
             </span>
           </button>
-        `).join("")
+        `;
+        }).join("")
       : '<p class="opportunity-pool-empty">没有符合条件的涨停股。</p>';
     renderPoolSelected();
   };
@@ -182652,15 +182703,17 @@ $("#saveAnswers").addEventListener("click", () => {
     poolSelectedCount.textContent = String(chosen.length);
     poolSelectedRoot.innerHTML = chosen
       .map(({ stock, outcome }) => `
-        <div class="opportunity-scenario-row">
+        <div class="opportunity-scenario-row ${outcome ? `is-${outcome}` : ""}">
           <span>${escaped(stock.name)} <em>${stock.boardHeight}板</em></span>
           <div class="scenario-outcomes">
             <button type="button" data-scenario-outcome="promote"
               data-stock-name="${escaped(stock.name)}"
-              class="${outcome === "promote" ? "is-active" : ""}">晋级</button>
+              aria-pressed="${outcome === "promote"}"
+              class="${outcome === "promote" ? "is-active" : ""}">${outcome === "promote" ? "✓ " : ""}晋级</button>
             <button type="button" data-scenario-outcome="break"
               data-stock-name="${escaped(stock.name)}"
-              class="${outcome === "break" ? "is-active" : ""}">断板</button>
+              aria-pressed="${outcome === "break"}"
+              class="${outcome === "break" ? "is-active" : ""}">${outcome === "break" ? "✓ " : ""}断板</button>
           </div>
           <button class="opportunity-scenario-remove" type="button"
             data-scenario-remove="${escaped(stock.name)}" aria-label="移除${escaped(stock.name)}">×</button>
@@ -182669,6 +182722,18 @@ $("#saveAnswers").addEventListener("click", () => {
       .join("");
     createFromPoolButton.disabled =
       chosen.length === 0 || chosen.some((item) => !item.outcome);
+    scenarioFeedback.classList.remove("is-ready", "is-waiting");
+    if (!chosen.length) {
+      scenarioFeedback.textContent = "先选择第一只股票，再设置晋级或断板。";
+    } else if (chosen.some((item) => !item.outcome)) {
+      const waiting = chosen.find((item) => !item.outcome)?.stock.name;
+      scenarioFeedback.textContent = `已选 ${chosen.length} 只，请为${waiting ? `“${waiting}”` : "剩余股票"}设置晋级或断板。`;
+      scenarioFeedback.classList.add("is-waiting");
+    } else {
+      scenarioFeedback.textContent =
+        `情景已设置：${chosen.map((item) => `${item.stock.name}${outcomeLabel(item.outcome)}`).join(" → ")}。`;
+      scenarioFeedback.classList.add("is-ready");
+    }
   };
 
   const openPool = (event = null) => {
@@ -183024,7 +183089,7 @@ $("#saveAnswers").addEventListener("click", () => {
     if (outcomeButton) {
       const name = outcomeButton.dataset.stockName;
       selectedPool.set(name, outcomeButton.dataset.scenarioOutcome);
-      renderPoolSelected();
+      renderPool();
       return;
     }
     const remove = event.target.closest("[data-scenario-remove]");

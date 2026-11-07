@@ -222,6 +222,18 @@
   color: var(--white);
 }
 
+.opportunity-pool-stock.is-selected-promote {
+  border-color: rgba(108, 218, 175, 0.55);
+  background: rgba(108, 218, 175, 0.13);
+  box-shadow: inset 3px 0 0 var(--mint);
+}
+
+.opportunity-pool-stock.is-selected-break {
+  border-color: rgba(239, 100, 83, 0.5);
+  background: rgba(239, 100, 83, 0.1);
+  box-shadow: inset 3px 0 0 var(--red);
+}
+
 .opportunity-pool-stock strong {
   display: block;
   overflow: hidden;
@@ -287,6 +299,21 @@
   margin-top: 7px;
 }
 
+.opportunity-scenario-feedback {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.opportunity-scenario-feedback.is-ready {
+  color: var(--mint);
+}
+
+.opportunity-scenario-feedback.is-waiting {
+  color: var(--gold);
+}
+
 .opportunity-scenario-row {
   display: grid;
   grid-template-columns: minmax(140px, 1fr) auto auto;
@@ -296,6 +323,16 @@
   border: 1px solid var(--line);
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.025);
+}
+
+.opportunity-scenario-row.is-promote {
+  border-color: rgba(108, 218, 175, 0.32);
+  background: rgba(108, 218, 175, 0.075);
+}
+
+.opportunity-scenario-row.is-break {
+  border-color: rgba(239, 100, 83, 0.3);
+  background: rgba(239, 100, 83, 0.07);
 }
 
 .opportunity-scenario-row > span {
@@ -333,12 +370,16 @@
   color: var(--mint);
   border-color: rgba(108, 218, 175, 0.3);
   background: var(--mint-soft);
+  box-shadow: 0 0 0 2px rgba(108, 218, 175, 0.08);
+  font-weight: 600;
 }
 
 .opportunity-scenario-row .scenario-outcomes button[data-outcome="break"].is-active {
   color: var(--red);
   border-color: rgba(239, 100, 83, 0.3);
   background: var(--red-soft);
+  box-shadow: 0 0 0 2px rgba(239, 100, 83, 0.08);
+  font-weight: 600;
 }
 
 .opportunity-scenario-remove {
