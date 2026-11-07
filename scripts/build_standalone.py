@@ -30,6 +30,7 @@ calendar_data = (
 
 html = (root / "index.html").read_text(encoding="utf-8")
 css = (root / "styles.css").read_text(encoding="utf-8")
+opportunities_css = (root / "opportunities.css").read_text(encoding="utf-8")
 review_data = (root / "review-data.js").read_text(encoding="utf-8")
 market_data = (root / "market-data.js").read_text(encoding="utf-8")
 history_data = (root / "history-data.js").read_text(encoding="utf-8")
@@ -38,6 +39,7 @@ sector_data = (root / "sector-data.js").read_text(encoding="utf-8")
 calendar_data_js = (root / "calendar-data.js").read_text(encoding="utf-8")
 refresh_config_js = (root / "refresh-config.js").read_text(encoding="utf-8")
 daily_js = (root / "app-daily.js").read_text(encoding="utf-8")
+opportunities_js = (root / "opportunities.js").read_text(encoding="utf-8")
 
 html = html.replace(
     '  <link rel="icon" href="favicon.svg" type="image/svg+xml">\n',
@@ -48,8 +50,9 @@ html = html.replace(
     "",
 )
 html = html.replace(
-    '  <link rel="stylesheet" href="styles.css">\n',
-    f"  <style>\n{css}\n  </style>\n",
+    '  <link rel="stylesheet" href="styles.css">\n'
+    '  <link rel="stylesheet" href="opportunities.css">\n',
+    f"  <style>\n{css}\n{opportunities_css}\n  </style>\n",
 )
 html = html.replace(
     '  <script src="review-data.js"></script>\n'
@@ -59,7 +62,8 @@ html = html.replace(
     '  <script src="sector-data.js"></script>\n'
     '  <script src="calendar-data.js"></script>\n'
     '  <script src="refresh-config.js"></script>\n'
-    '  <script src="app-daily.js"></script>\n',
+    '  <script src="app-daily.js"></script>\n'
+    '  <script src="opportunities.js"></script>\n',
     f"  <script>\n{review_data}\n  </script>\n"
     f"  <script>\n{market_data}\n  </script>\n"
     f"  <script>\n{history_data}\n  </script>\n"
@@ -67,7 +71,8 @@ html = html.replace(
     f"  <script>\n{sector_data}\n  </script>\n"
     f"  <script>\n{calendar_data_js}\n  </script>\n"
     f"  <script>\n{refresh_config_js}\n  </script>\n"
-    f"  <script>\n{daily_js}\n  </script>\n",
+    f"  <script>\n{daily_js}\n  </script>\n"
+    f"  <script>\n{opportunities_js}\n  </script>\n",
 )
 
 output.write_text(html, encoding="utf-8")

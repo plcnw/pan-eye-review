@@ -4530,6 +4530,558 @@ textarea:focus-visible {
   }
 }
 
+.opportunity-view-heading {
+  margin-bottom: 18px;
+}
+
+.opportunity-layout {
+  display: grid;
+  grid-template-columns: 246px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.opportunity-history {
+  position: sticky;
+  top: 62px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(17, 24, 21, 0.92);
+  overflow: hidden;
+}
+
+.opportunity-history-head {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.opportunity-history-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.opportunity-history-title span {
+  color: var(--gold);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.opportunity-history-title strong {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.opportunity-new-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid rgba(108, 218, 175, 0.3);
+  border-radius: 9px;
+  background: var(--mint-soft);
+  color: var(--mint);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.opportunity-history-caption {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.opportunity-event-list {
+  max-height: min(58vh, 570px);
+  overflow-y: auto;
+  padding: 7px;
+  scrollbar-width: thin;
+}
+
+.opportunity-event-item {
+  width: 100%;
+  padding: 12px 11px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--muted-strong);
+  text-align: left;
+  cursor: pointer;
+}
+
+.opportunity-event-item + .opportunity-event-item {
+  margin-top: 3px;
+}
+
+.opportunity-event-item:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: var(--line);
+}
+
+.opportunity-event-item.is-active {
+  border-color: rgba(239, 100, 83, 0.26);
+  background: var(--red-soft);
+}
+
+.opportunity-event-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.opportunity-event-item-top span {
+  color: var(--muted);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 8px;
+}
+
+.opportunity-event-item-top em {
+  color: var(--gold);
+  font-size: 8px;
+  font-style: normal;
+}
+
+.opportunity-event-item strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.opportunity-event-item p {
+  display: -webkit-box;
+  margin: 6px 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.opportunity-event-empty {
+  padding: 28px 14px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.opportunity-data-tools {
+  padding: 10px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.opportunity-data-tools button,
+.opportunity-data-tools label {
+  min-height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.opportunity-data-tools button:hover,
+.opportunity-data-tools label:hover {
+  color: var(--white);
+  border-color: var(--line-strong);
+}
+
+.opportunity-workspace {
+  min-width: 0;
+}
+
+.opportunity-empty {
+  min-height: 480px;
+  padding: 52px 30px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(239, 100, 83, 0.1), transparent 34%),
+    var(--ink-raised);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.opportunity-empty-inner {
+  max-width: 430px;
+}
+
+.opportunity-empty-mark {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+  border: 1px solid rgba(239, 100, 83, 0.34);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 25px;
+}
+
+.opportunity-empty h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.opportunity-empty p {
+  margin: 12px 0 22px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.opportunity-editor {
+  display: grid;
+  gap: 14px;
+}
+
+.opportunity-event-sheet {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: var(--ink-raised);
+}
+
+.opportunity-event-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.opportunity-event-kicker {
+  color: var(--red);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.opportunity-event-head h2 {
+  margin: 7px 0 0;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.opportunity-event-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.opportunity-save-state {
+  color: var(--muted);
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.opportunity-save-state.is-saved {
+  color: var(--mint);
+}
+
+.opportunity-delete-event,
+.opportunity-delete-card {
+  border: 1px solid rgba(239, 100, 83, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--red);
+  cursor: pointer;
+}
+
+.opportunity-delete-event {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 8px;
+}
+
+.opportunity-fields {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.opportunity-field-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 12px;
+}
+
+.opportunity-field {
+  display: grid;
+  gap: 6px;
+}
+
+.opportunity-field > span {
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.05em;
+}
+
+.opportunity-field input,
+.opportunity-field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.022);
+  color: var(--white);
+  line-height: 1.65;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.opportunity-field input {
+  min-height: 39px;
+  padding: 0 11px;
+  font-size: 11px;
+}
+
+.opportunity-field textarea {
+  padding: 10px 11px;
+  resize: vertical;
+  font-size: 11px;
+}
+
+.opportunity-field input:focus,
+.opportunity-field textarea:focus {
+  border-color: rgba(108, 218, 175, 0.32);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.opportunity-field input::placeholder,
+.opportunity-field textarea::placeholder {
+  color: #68746d;
+}
+
+.opportunity-event-fields {
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, 1fr);
+}
+
+.opportunity-event-title input {
+  min-height: 46px;
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+.opportunity-card-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.opportunity-card-section-head > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.opportunity-card-section-head span {
+  color: var(--gold);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.opportunity-card-section-head h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.opportunity-add-card {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(108, 218, 175, 0.24);
+  border-radius: 9px;
+  background: var(--mint-soft);
+  color: var(--mint);
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.opportunity-cards {
+  display: grid;
+  gap: 10px;
+}
+
+.opportunity-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(17, 24, 21, 0.92);
+  overflow: hidden;
+}
+
+.opportunity-card.is-expanded {
+  border-color: var(--line-strong);
+}
+
+.opportunity-card-head {
+  min-height: 58px;
+  padding: 9px 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.opportunity-card-toggle {
+  min-width: 0;
+  padding: 7px 4px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.opportunity-card-index {
+  color: var(--red);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 9px;
+}
+
+.opportunity-card-summary {
+  min-width: 0;
+}
+
+.opportunity-card-summary strong {
+  display: block;
+  overflow: hidden;
+  color: var(--white);
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.opportunity-card-summary span {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.opportunity-card-chevron {
+  color: var(--muted);
+  font-size: 12px;
+  transition: transform 160ms ease;
+}
+
+.opportunity-card.is-expanded .opportunity-card-chevron {
+  transform: rotate(180deg);
+}
+
+.opportunity-delete-card {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 15px;
+}
+
+.opportunity-card-body {
+  padding: 0 16px 18px;
+  border-top: 1px solid var(--line);
+}
+
+.opportunity-card-body[hidden] {
+  display: none;
+}
+
+.opportunity-card-body .opportunity-fields:first-child {
+  margin-top: 15px;
+}
+
+.opportunity-condition-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.opportunity-card-empty {
+  padding: 26px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 13px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.opportunity-import-input {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .opportunity-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+
+  .opportunity-event-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .opportunity-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-history {
+    position: static;
+  }
+
+  .opportunity-event-list {
+    max-height: 225px;
+  }
+
+  .opportunity-event-head,
+  .opportunity-card-section-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .opportunity-event-tools {
+    justify-content: space-between;
+  }
+
+  .opportunity-field-row,
+  .opportunity-condition-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-event-sheet {
+    padding: 17px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -4558,6 +5110,10 @@ textarea:focus-visible {
         <button class="nav-item" type="button" data-view="sector">
           <span class="nav-index">03</span>
           <span>板块发酵</span>
+        </button>
+        <button class="nav-item" type="button" data-view="opportunities">
+          <span class="nav-index">04</span>
+          <span>机会推演</span>
         </button>
       </nav>
 
@@ -4790,6 +5346,99 @@ textarea:focus-visible {
         <div class="sector-method">
           <span>口径</span>
           <p>板块成员来自当日文章明确归类；高度来自连板梯队。当前不把单一“主力净流入”当作资金事实。</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-opportunities" role="tabpanel" aria-label="机会推演" hidden>
+        <div class="view-heading opportunity-view-heading">
+          <div>
+            <span class="eyebrow">TRADING OPPORTUNITY ANALYSIS</span>
+            <h2>机会推演</h2>
+          </div>
+          <p>从一个市场事件出发，把自己的交易路径、成立条件和失效条件拆开记录。系统不替你生成交易结论。</p>
+        </div>
+
+        <div class="opportunity-layout">
+          <aside class="opportunity-history" aria-label="历史推演事件">
+            <header class="opportunity-history-head">
+              <div class="opportunity-history-title">
+                <div>
+                  <span>历史事件</span>
+                  <strong>推演档案</strong>
+                </div>
+                <button class="opportunity-new-button" id="opportunityNewEvent" type="button" aria-label="新建推演事件">＋</button>
+              </div>
+              <p class="opportunity-history-caption">事件与机会独立保存。修改一条机会，不会影响同一事件下的其他机会。</p>
+            </header>
+            <div class="opportunity-event-list" id="opportunityEventList"></div>
+            <div class="opportunity-data-tools">
+              <button id="opportunityExport" type="button">导出备份</button>
+              <button id="opportunityImport" type="button">导入备份</button>
+              <input class="opportunity-import-input" id="opportunityImportInput" type="file" accept="application/json,.json">
+            </div>
+          </aside>
+
+          <div class="opportunity-workspace">
+            <section class="opportunity-empty" id="opportunityEmpty">
+              <div class="opportunity-empty-inner">
+                <div class="opportunity-empty-mark">演</div>
+                <h2>从市场事件开始</h2>
+                <p>例如“四进五竞争”：晋级票的高度延续、板块扩散、断板修复、同身位竞争者，都可以成为独立机会方向。</p>
+                <button class="primary-button" id="opportunityEmptyNew" type="button">新建第一个事件</button>
+              </div>
+            </section>
+
+            <div class="opportunity-editor" id="opportunityEditor" hidden>
+              <section class="opportunity-event-sheet">
+                <header class="opportunity-event-head">
+                  <div>
+                    <span class="opportunity-event-kicker">MARKET EVENT</span>
+                    <h2 id="opportunityEventHeading">未命名事件</h2>
+                  </div>
+                  <div class="opportunity-event-tools">
+                    <span class="opportunity-save-state is-saved" id="opportunitySaveState" aria-live="polite">尚未保存</span>
+                    <button class="opportunity-delete-event" id="opportunityDeleteEvent" type="button">删除事件</button>
+                  </div>
+                </header>
+
+                <div class="opportunity-fields opportunity-event-fields">
+                  <label class="opportunity-field opportunity-event-title">
+                    <span>事件标题</span>
+                    <input id="opportunityEventTitle" type="text" data-event-field="title" placeholder="例如：高位四进五竞争">
+                  </label>
+                  <label class="opportunity-field">
+                    <span>事件日期</span>
+                    <input id="opportunityEventDate" type="date" data-event-field="date">
+                  </label>
+                </div>
+                <div class="opportunity-fields">
+                  <label class="opportunity-field">
+                    <span>事件背景</span>
+                    <textarea id="opportunityEventBackground" rows="3" data-event-field="background" placeholder="发生了什么？谁晋级、谁失败，市场当时处于什么情绪阶段？"></textarea>
+                  </label>
+                  <div class="opportunity-field-row">
+                    <label class="opportunity-field">
+                      <span>涉及股票</span>
+                      <input id="opportunityEventStocks" type="text" data-event-field="stocks" placeholder="用逗号或顿号分隔，例如：A股票、B股票">
+                    </label>
+                    <label class="opportunity-field">
+                      <span>相关板块</span>
+                      <input id="opportunityEventSectors" type="text" data-event-field="sectors" placeholder="例如：机器人、航天">
+                    </label>
+                  </div>
+                </div>
+              </section>
+
+              <div class="opportunity-card-section-head">
+                <div>
+                  <span>OPPORTUNITY MAP</span>
+                  <h3 id="opportunityCount">0 个机会方向</h3>
+                </div>
+                <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增机会</button>
+              </div>
+              <div class="opportunity-cards" id="opportunityCards"></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -379050,7 +379699,7 @@ $("#metricStrip").innerHTML = review.metrics.map((metric) => `
 const viewButtons = $$("[data-view]");
 const views = $$(".view");
 const tabs = $$(".view-tab");
-const viewOrder = ["today", "screen", "sector", "article", "questions"];
+const viewOrder = ["today", "screen", "sector", "opportunities", "article", "questions"];
 
 function switchView(viewName) {
   if (!viewOrder.includes(viewName)) return;
@@ -379080,7 +379729,7 @@ function switchView(viewName) {
 
   document.body.classList.toggle(
     "is-module-view",
-    ["screen", "sector"].includes(viewName)
+    ["screen", "sector", "opportunities"].includes(viewName)
   );
   updateIndexCoverage(viewName);
   if (viewName === "screen" && screenSnapshot) {
@@ -379111,6 +379760,16 @@ function switchView(viewName) {
     setText(
       "#reviewSummary",
       `涨停 ${sectorSnapshot.market.limitUpCount} 只，最高 ${sectorSnapshot.market.maxHeight} 板；航天宽度第一，消费高度第一。`
+    );
+  } else if (viewName === "opportunities") {
+    setText("#pageTitle", "机会推演");
+    setText("#headerDate", "市场事件 · 个人交易路径");
+    setText("#publishedAt", "浏览器本地保存");
+    setText("#syncTitle", "推演记录独立保存");
+    setText("#sidebarPublishedAt", "不覆盖每日复盘数据");
+    setText(
+      "#reviewSummary",
+      "把市场事件拆成多个机会方向，记录推演逻辑、观察对象、成立条件与失效条件。"
     );
   } else {
     setText("#pageTitle", "刺大复盘");
@@ -379945,6 +380604,477 @@ $("#saveAnswers").addEventListener("click", () => {
   localStorage.setItem(answerStorageKey, JSON.stringify({ answers, savedAt }));
   saveStatus.textContent = `已保存 ${new Date(savedAt).toLocaleString("zh-CN", { hour12: false })}`;
 });
+
+  </script>
+  <script>
+(() => {
+  const STORAGE_KEY = "pan-eye-opportunities-v1";
+  const SELECTED_KEY = "pan-eye-opportunities-selected-v1";
+  const root = document.getElementById("view-opportunities");
+  if (!root) return;
+
+  const eventList = document.getElementById("opportunityEventList");
+  const emptyState = document.getElementById("opportunityEmpty");
+  const editor = document.getElementById("opportunityEditor");
+  const eventTitleHeading = document.getElementById("opportunityEventHeading");
+  const saveState = document.getElementById("opportunitySaveState");
+  const opportunityCount = document.getElementById("opportunityCount");
+  const cardsRoot = document.getElementById("opportunityCards");
+  const importInput = document.getElementById("opportunityImportInput");
+
+  const escaped = (value) =>
+    String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  const uid = (prefix) =>
+    `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+
+  const shanghaiDate = () => {
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Shanghai",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(new Date());
+    const value = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+    return `${value.year}-${value.month}-${value.day}`;
+  };
+
+  const formatSavedAt = (value) => {
+    if (!value) return "尚未保存";
+    return `已保存 ${new Date(value).toLocaleString("zh-CN", {
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    })}`;
+  };
+
+  const normalizeOpportunity = (item = {}) => ({
+    id: item.id || uid("opportunity"),
+    name: String(item.name || ""),
+    logic: String(item.logic || ""),
+    targets: String(item.targets || ""),
+    trigger: String(item.trigger || ""),
+    invalidation: String(item.invalidation || ""),
+    notes: String(item.notes || ""),
+    createdAt: item.createdAt || new Date().toISOString(),
+    updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
+  });
+
+  const normalizeEvent = (item = {}) => ({
+    id: item.id || uid("event"),
+    title: String(item.title || ""),
+    date: String(item.date || shanghaiDate()).slice(0, 10),
+    background: String(item.background || ""),
+    stocks: Array.isArray(item.stocks) ? item.stocks.join("、") : String(item.stocks || ""),
+    sectors: Array.isArray(item.sectors) ? item.sectors.join("、") : String(item.sectors || ""),
+    opportunities: Array.isArray(item.opportunities)
+      ? item.opportunities.map(normalizeOpportunity)
+      : [],
+    createdAt: item.createdAt || new Date().toISOString(),
+    updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
+  });
+
+  const loadState = () => {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      return {
+        version: 1,
+        events: Array.isArray(parsed.events) ? parsed.events.map(normalizeEvent) : []
+      };
+    } catch {
+      return { version: 1, events: [] };
+    }
+  };
+
+  let state = loadState();
+  let selectedId = localStorage.getItem(SELECTED_KEY);
+  const expanded = new Set();
+  let saveTimer = null;
+  let lastStorageError = "";
+
+  if (!state.events.some((event) => event.id === selectedId)) {
+    selectedId = state.events[0]?.id || null;
+  }
+
+  const selectedEvent = () =>
+    state.events.find((event) => event.id === selectedId) || null;
+
+  const setSaveState = (message, saved = false) => {
+    saveState.textContent = message;
+    saveState.classList.toggle("is-saved", saved);
+  };
+
+  const persist = ({ refreshList = true } = {}) => {
+    window.clearTimeout(saveTimer);
+    saveTimer = null;
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      if (selectedId) localStorage.setItem(SELECTED_KEY, selectedId);
+      else localStorage.removeItem(SELECTED_KEY);
+      lastStorageError = "";
+      const now = state.events.find((event) => event.id === selectedId)?.updatedAt;
+      setSaveState(formatSavedAt(now), true);
+    } catch {
+      lastStorageError = "浏览器存储不可用，请先导出备份";
+      setSaveState(lastStorageError, false);
+    }
+    if (refreshList) renderHistory();
+  };
+
+  const scheduleSave = () => {
+    setSaveState("正在保存…", false);
+    window.clearTimeout(saveTimer);
+    saveTimer = window.setTimeout(() => persist(), 260);
+  };
+
+  const touchEvent = (event) => {
+    event.updatedAt = new Date().toISOString();
+  };
+
+  const sortedEvents = () =>
+    [...state.events].sort((a, b) => {
+      const byDate = b.date.localeCompare(a.date);
+      return byDate || b.updatedAt.localeCompare(a.updatedAt);
+    });
+
+  const renderHistory = () => {
+    const events = sortedEvents();
+    if (!events.length) {
+      eventList.innerHTML = '<p class="opportunity-event-empty">还没有推演事件。<br>从一次晋级竞争、断板或板块异动开始记录。</p>';
+      return;
+    }
+
+    eventList.innerHTML = events.map((event) => `
+      <button class="opportunity-event-item ${event.id === selectedId ? "is-active" : ""}"
+        type="button" data-opportunity-event="${escaped(event.id)}">
+        <span class="opportunity-event-item-top">
+          <span>${escaped(event.date)}</span>
+          <em>${event.opportunities.length} 个方向</em>
+        </span>
+        <strong>${escaped(event.title || "未命名事件")}</strong>
+        <p>${escaped(event.background || "尚无事件背景")}</p>
+      </button>
+    `).join("");
+  };
+
+  const fieldValue = (name, value) => `value="${escaped(value || "")}"`;
+  const textValue = (text) => escaped(text || "");
+
+  const renderOpportunityCard = (opportunity, index) => {
+    const isExpanded = expanded.has(opportunity.id);
+    return `
+      <article class="opportunity-card ${isExpanded ? "is-expanded" : ""}"
+        data-opportunity-id="${escaped(opportunity.id)}">
+        <header class="opportunity-card-head">
+          <button class="opportunity-card-toggle" type="button"
+            data-opportunity-toggle="${escaped(opportunity.id)}"
+            aria-expanded="${isExpanded}">
+            <span class="opportunity-card-index">${String(index + 1).padStart(2, "0")}</span>
+            <span class="opportunity-card-summary">
+              <strong>${escaped(opportunity.name || "未命名机会")}</strong>
+              <span>${escaped(opportunity.targets || "尚未填写观察对象")}</span>
+            </span>
+            <span class="opportunity-card-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <button class="opportunity-delete-card" type="button"
+            data-opportunity-delete="${escaped(opportunity.id)}"
+            aria-label="删除这条机会">×</button>
+        </header>
+        <div class="opportunity-card-body" ${isExpanded ? "" : "hidden"}>
+          <div class="opportunity-fields">
+            <label class="opportunity-field">
+              <span>机会名称</span>
+              <input type="text" data-opportunity-field="name"
+                ${fieldValue("name", opportunity.name)}
+                placeholder="例如：观察晋级票的高度延续">
+            </label>
+            <label class="opportunity-field">
+              <span>推演逻辑</span>
+              <textarea rows="4" data-opportunity-field="logic"
+                placeholder="为什么这个市场事件可能产生这种机会？">${textValue(opportunity.logic)}</textarea>
+            </label>
+            <label class="opportunity-field">
+              <span>观察对象</span>
+              <textarea rows="2" data-opportunity-field="targets"
+                placeholder="股票、板块、同身位竞争者或市场指标">${textValue(opportunity.targets)}</textarea>
+            </label>
+            <div class="opportunity-condition-grid">
+              <label class="opportunity-field">
+                <span>成立条件</span>
+                <textarea rows="3" data-opportunity-field="trigger"
+                  placeholder="出现什么盘面现象，说明逻辑正在兑现？">${textValue(opportunity.trigger)}</textarea>
+              </label>
+              <label class="opportunity-field">
+                <span>失效条件</span>
+                <textarea rows="3" data-opportunity-field="invalidation"
+                  placeholder="出现什么现象，说明原逻辑不再成立？">${textValue(opportunity.invalidation)}</textarea>
+              </label>
+            </div>
+            <label class="opportunity-field">
+              <span>补充思考</span>
+              <textarea rows="3" data-opportunity-field="notes"
+                placeholder="后续盘面观察、竞价表现或需要验证的细节">${textValue(opportunity.notes)}</textarea>
+            </label>
+          </div>
+        </div>
+      </article>
+    `;
+  };
+
+  const renderEditor = () => {
+    const event = selectedEvent();
+    emptyState.hidden = Boolean(event);
+    editor.hidden = !event;
+    if (!event) return;
+
+    eventTitleHeading.textContent = event.title || "未命名事件";
+    document.getElementById("opportunityEventTitle").value = event.title;
+    document.getElementById("opportunityEventDate").value = event.date;
+    document.getElementById("opportunityEventBackground").value = event.background;
+    document.getElementById("opportunityEventStocks").value = event.stocks;
+    document.getElementById("opportunityEventSectors").value = event.sectors;
+    opportunityCount.textContent = `${event.opportunities.length} 个机会方向`;
+    setSaveState(
+      lastStorageError || formatSavedAt(event.updatedAt),
+      !lastStorageError
+    );
+
+    cardsRoot.innerHTML = event.opportunities.length
+      ? event.opportunities.map(renderOpportunityCard).join("")
+      : '<div class="opportunity-card-empty">这个事件还没有机会方向。点击“新增机会”，从一个观察角度开始推演。</div>';
+  };
+
+  const renderAll = () => {
+    renderHistory();
+    renderEditor();
+  };
+
+  const createEvent = () => {
+    const timestamp = new Date().toISOString();
+    const event = normalizeEvent({
+      id: uid("event"),
+      title: "",
+      date: shanghaiDate(),
+      background: "",
+      stocks: "",
+      sectors: "",
+      opportunities: [],
+      createdAt: timestamp,
+      updatedAt: timestamp
+    });
+    state.events.unshift(event);
+    selectedId = event.id;
+    expanded.clear();
+    persist({ refreshList: false });
+    renderAll();
+    requestAnimationFrame(() => {
+      document.getElementById("opportunityEventTitle").focus();
+    });
+  };
+
+  const addOpportunity = () => {
+    const event = selectedEvent();
+    if (!event) return;
+    const timestamp = new Date().toISOString();
+    const opportunity = normalizeOpportunity({
+      id: uid("opportunity"),
+      createdAt: timestamp,
+      updatedAt: timestamp
+    });
+    event.opportunities.push(opportunity);
+    expanded.add(opportunity.id);
+    touchEvent(event);
+    persist({ refreshList: false });
+    renderHistory();
+    renderEditor();
+    requestAnimationFrame(() => {
+      const card = [...cardsRoot.querySelectorAll("[data-opportunity-id]")]
+        .find((item) => item.dataset.opportunityId === opportunity.id);
+      card?.querySelector('[data-opportunity-field="name"]')?.focus();
+      card?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    });
+  };
+
+  const deleteOpportunity = (id) => {
+    const event = selectedEvent();
+    if (!event) return;
+    const target = event.opportunities.find((item) => item.id === id);
+    if (!target) return;
+    const confirmed = window.confirm(
+      `删除“${target.name || "未命名机会"}”？同一事件下的其他机会不会受到影响。`
+    );
+    if (!confirmed) return;
+    event.opportunities = event.opportunities.filter((item) => item.id !== id);
+    expanded.delete(id);
+    touchEvent(event);
+    persist({ refreshList: false });
+    renderHistory();
+    renderEditor();
+  };
+
+  const deleteEvent = () => {
+    const event = selectedEvent();
+    if (!event) return;
+    if (!window.confirm(`删除事件“${event.title || "未命名事件"}”及其全部机会推演？`)) {
+      return;
+    }
+    state.events = state.events.filter((item) => item.id !== event.id);
+    selectedId = sortedEvents()[0]?.id || null;
+    expanded.clear();
+    persist({ refreshList: false });
+    renderAll();
+  };
+
+  const updateEventField = (field, value) => {
+    const event = selectedEvent();
+    if (!event || !(field in event)) return;
+    event[field] = value;
+    touchEvent(event);
+    if (field === "title") eventTitleHeading.textContent = value || "未命名事件";
+    scheduleSave();
+  };
+
+  const updateOpportunityField = (card, field, value) => {
+    const event = selectedEvent();
+    if (!event || !field) return;
+    const opportunity = event.opportunities.find(
+      (item) => item.id === card?.dataset.opportunityId
+    );
+    if (!opportunity || !(field in opportunity)) return;
+    opportunity[field] = value;
+    opportunity.updatedAt = new Date().toISOString();
+    touchEvent(event);
+    if (field === "name") {
+      card.querySelector(".opportunity-card-summary strong").textContent =
+        value || "未命名机会";
+    }
+    if (field === "targets") {
+      card.querySelector(".opportunity-card-summary span").textContent =
+        value || "尚未填写观察对象";
+    }
+    scheduleSave();
+  };
+
+  const exportData = () => {
+    const payload = {
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      events: state.events
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json;charset=utf-8"
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `pan-eye-opportunities-${shanghaiDate()}.json`;
+    link.click();
+    window.setTimeout(() => URL.revokeObjectURL(url), 0);
+    setSaveState("备份已导出", true);
+  };
+
+  const importData = async (file) => {
+    if (!file) return;
+    try {
+      const parsed = JSON.parse(await file.text());
+      const incoming = Array.isArray(parsed.events) ? parsed.events : [];
+      if (!incoming.length) throw new Error("文件中没有事件");
+      if (!window.confirm(`导入 ${incoming.length} 个事件并替换当前记录？`)) return;
+      state = { version: 1, events: incoming.map(normalizeEvent) };
+      selectedId = sortedEvents()[0]?.id || null;
+      persist({ refreshList: false });
+      renderAll();
+      setSaveState("备份已导入", true);
+    } catch (error) {
+      setSaveState(
+        `导入失败：${error instanceof Error ? error.message : "文件格式错误"}`,
+        false
+      );
+    } finally {
+      importInput.value = "";
+    }
+  };
+
+  document.getElementById("opportunityNewEvent").addEventListener("click", createEvent);
+  document.getElementById("opportunityEmptyNew").addEventListener("click", createEvent);
+  document.getElementById("opportunityAddCard").addEventListener("click", addOpportunity);
+  document.getElementById("opportunityDeleteEvent").addEventListener("click", deleteEvent);
+  document.getElementById("opportunityExport").addEventListener("click", exportData);
+  document.getElementById("opportunityImport").addEventListener("click", () => {
+    importInput.click();
+  });
+  importInput.addEventListener("change", () => importData(importInput.files?.[0]));
+
+  eventList.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-opportunity-event]");
+    if (!button) return;
+    selectedId = button.dataset.opportunityEvent;
+    expanded.clear();
+    localStorage.setItem(SELECTED_KEY, selectedId);
+    renderAll();
+  });
+
+  cardsRoot.addEventListener("click", (event) => {
+    const toggle = event.target.closest("[data-opportunity-toggle]");
+    if (toggle) {
+      const id = toggle.dataset.opportunityToggle;
+      if (expanded.has(id)) expanded.delete(id);
+      else expanded.add(id);
+      renderEditor();
+      return;
+    }
+    const remove = event.target.closest("[data-opportunity-delete]");
+    if (remove) deleteOpportunity(remove.dataset.opportunityDelete);
+  });
+
+  editor.addEventListener("input", (event) => {
+    const eventField = event.target.closest("[data-event-field]");
+    if (eventField) {
+      updateEventField(eventField.dataset.eventField, eventField.value);
+      return;
+    }
+    const opportunityField = event.target.closest("[data-opportunity-field]");
+    if (opportunityField) {
+      updateOpportunityField(
+        opportunityField.closest("[data-opportunity-id]"),
+        opportunityField.dataset.opportunityField,
+        opportunityField.value
+      );
+    }
+  });
+
+  editor.addEventListener("change", () => persist());
+  window.addEventListener("beforeunload", () => {
+    if (saveTimer) persist({ refreshList: false });
+  });
+
+  window.addEventListener("storage", (event) => {
+    if (event.key !== STORAGE_KEY) return;
+    state = loadState();
+    if (!state.events.some((item) => item.id === selectedId)) {
+      selectedId = state.events[0]?.id || null;
+    }
+    renderAll();
+  });
+
+  renderAll();
+
+  const requestedView =
+    new URLSearchParams(window.location.search).get("view") ||
+    window.location.hash.replace(/^#/, "");
+  if (requestedView === "opportunities") {
+    requestAnimationFrame(() => {
+      document.querySelector('[data-view="opportunities"]')?.click();
+    });
+  }
+})();
 
   </script>
 </body>

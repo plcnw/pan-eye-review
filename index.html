@@ -11,6 +11,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="opportunities.css">
 </head>
 <body>
   <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -39,6 +40,10 @@
           <span class="nav-index">03</span>
           <span>板块发酵</span>
         </button>
+        <button class="nav-item" type="button" data-view="opportunities">
+          <span class="nav-index">04</span>
+          <span>机会推演</span>
+        </button>
       </nav>
 
       <div class="sidebar-note">
@@ -55,7 +60,7 @@
         <div class="breadcrumb">
           <span>复盘台</span>
           <span class="slash">/</span>
-          <span id="breadcrumbDate">2026.10.29</span>
+          <span id="breadcrumbDate">--.--</span>
           <span class="slash">/</span>
           <span>收盘</span>
         </div>
@@ -92,7 +97,7 @@
           <div class="calendar-control">
             <button class="quiet-button calendar-trigger" id="calendarButton" type="button" aria-expanded="false" aria-controls="calendarPopover">
               日历
-              <span id="calendarDateLabel">10.29</span>
+              <span id="calendarDateLabel">--.--</span>
             </button>
             <div class="calendar-popover" id="calendarPopover" hidden>
               <div class="calendar-head">
@@ -100,7 +105,7 @@
                   <span>复盘日历</span>
                   <div class="calendar-month-line">
                     <button type="button" id="calendarPrev" aria-label="上个月">‹</button>
-                    <strong id="calendarMonthLabel">2026年10月</strong>
+                    <strong id="calendarMonthLabel">加载中</strong>
                     <button type="button" id="calendarNext" aria-label="下个月">›</button>
                   </div>
                 </div>
@@ -132,8 +137,8 @@
         <div>
           <div class="review-kicker">
             <span class="live-mark" aria-hidden="true"></span>
-            <span id="headerDate">2026.10.29 · 收盘复盘</span>
-            <span id="publishedAt">15:55 已抓取</span>
+            <span id="headerDate">复盘加载中</span>
+            <span id="publishedAt">加载中</span>
           </div>
           <h1 id="pageTitle">刺大复盘</h1>
           <p id="reviewSummary">机器人不及预期，资金转向航天；消费、冰雪和应用处于轮动试错。</p>
@@ -273,6 +278,99 @@
         </div>
       </section>
 
+      <section class="view" id="view-opportunities" role="tabpanel" aria-label="机会推演" hidden>
+        <div class="view-heading opportunity-view-heading">
+          <div>
+            <span class="eyebrow">TRADING OPPORTUNITY ANALYSIS</span>
+            <h2>机会推演</h2>
+          </div>
+          <p>从一个市场事件出发，把自己的交易路径、成立条件和失效条件拆开记录。系统不替你生成交易结论。</p>
+        </div>
+
+        <div class="opportunity-layout">
+          <aside class="opportunity-history" aria-label="历史推演事件">
+            <header class="opportunity-history-head">
+              <div class="opportunity-history-title">
+                <div>
+                  <span>历史事件</span>
+                  <strong>推演档案</strong>
+                </div>
+                <button class="opportunity-new-button" id="opportunityNewEvent" type="button" aria-label="新建推演事件">＋</button>
+              </div>
+              <p class="opportunity-history-caption">事件与机会独立保存。修改一条机会，不会影响同一事件下的其他机会。</p>
+            </header>
+            <div class="opportunity-event-list" id="opportunityEventList"></div>
+            <div class="opportunity-data-tools">
+              <button id="opportunityExport" type="button">导出备份</button>
+              <button id="opportunityImport" type="button">导入备份</button>
+              <input class="opportunity-import-input" id="opportunityImportInput" type="file" accept="application/json,.json">
+            </div>
+          </aside>
+
+          <div class="opportunity-workspace">
+            <section class="opportunity-empty" id="opportunityEmpty">
+              <div class="opportunity-empty-inner">
+                <div class="opportunity-empty-mark">演</div>
+                <h2>从市场事件开始</h2>
+                <p>例如“四进五竞争”：晋级票的高度延续、板块扩散、断板修复、同身位竞争者，都可以成为独立机会方向。</p>
+                <button class="primary-button" id="opportunityEmptyNew" type="button">新建第一个事件</button>
+              </div>
+            </section>
+
+            <div class="opportunity-editor" id="opportunityEditor" hidden>
+              <section class="opportunity-event-sheet">
+                <header class="opportunity-event-head">
+                  <div>
+                    <span class="opportunity-event-kicker">MARKET EVENT</span>
+                    <h2 id="opportunityEventHeading">未命名事件</h2>
+                  </div>
+                  <div class="opportunity-event-tools">
+                    <span class="opportunity-save-state is-saved" id="opportunitySaveState" aria-live="polite">尚未保存</span>
+                    <button class="opportunity-delete-event" id="opportunityDeleteEvent" type="button">删除事件</button>
+                  </div>
+                </header>
+
+                <div class="opportunity-fields opportunity-event-fields">
+                  <label class="opportunity-field opportunity-event-title">
+                    <span>事件标题</span>
+                    <input id="opportunityEventTitle" type="text" data-event-field="title" placeholder="例如：高位四进五竞争">
+                  </label>
+                  <label class="opportunity-field">
+                    <span>事件日期</span>
+                    <input id="opportunityEventDate" type="date" data-event-field="date">
+                  </label>
+                </div>
+                <div class="opportunity-fields">
+                  <label class="opportunity-field">
+                    <span>事件背景</span>
+                    <textarea id="opportunityEventBackground" rows="3" data-event-field="background" placeholder="发生了什么？谁晋级、谁失败，市场当时处于什么情绪阶段？"></textarea>
+                  </label>
+                  <div class="opportunity-field-row">
+                    <label class="opportunity-field">
+                      <span>涉及股票</span>
+                      <input id="opportunityEventStocks" type="text" data-event-field="stocks" placeholder="用逗号或顿号分隔，例如：A股票、B股票">
+                    </label>
+                    <label class="opportunity-field">
+                      <span>相关板块</span>
+                      <input id="opportunityEventSectors" type="text" data-event-field="sectors" placeholder="例如：机器人、航天">
+                    </label>
+                  </div>
+                </div>
+              </section>
+
+              <div class="opportunity-card-section-head">
+                <div>
+                  <span>OPPORTUNITY MAP</span>
+                  <h3 id="opportunityCount">0 个机会方向</h3>
+                </div>
+                <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增机会</button>
+              </div>
+              <div class="opportunity-cards" id="opportunityCards"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="view" id="view-article" role="tabpanel" aria-labelledby="tab-article" hidden>
         <div class="article-layout">
           <aside class="article-index">
@@ -284,8 +382,8 @@
           </aside>
           <article class="article-paper">
             <header class="paper-header">
-              <span class="paper-date" id="paperDate">2026.10.29 · 15:55</span>
-              <h2 id="paperTitle">1029</h2>
+              <span class="paper-date" id="paperDate">--.--</span>
+              <h2 id="paperTitle">复盘加载中</h2>
               <p id="paperAuthor">延边刺客</p>
             </header>
             <div id="originalArticle"></div>
@@ -401,5 +499,6 @@
   <script src="calendar-data.js"></script>
   <script src="refresh-config.js"></script>
   <script src="app-daily.js"></script>
+  <script src="opportunities.js"></script>
 </body>
 </html>

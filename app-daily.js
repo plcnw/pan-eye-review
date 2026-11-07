@@ -420,7 +420,7 @@ $("#metricStrip").innerHTML = review.metrics.map((metric) => `
 const viewButtons = $$("[data-view]");
 const views = $$(".view");
 const tabs = $$(".view-tab");
-const viewOrder = ["today", "screen", "sector", "article", "questions"];
+const viewOrder = ["today", "screen", "sector", "opportunities", "article", "questions"];
 
 function switchView(viewName) {
   if (!viewOrder.includes(viewName)) return;
@@ -450,7 +450,7 @@ function switchView(viewName) {
 
   document.body.classList.toggle(
     "is-module-view",
-    ["screen", "sector"].includes(viewName)
+    ["screen", "sector", "opportunities"].includes(viewName)
   );
   updateIndexCoverage(viewName);
   if (viewName === "screen" && screenSnapshot) {
@@ -481,6 +481,16 @@ function switchView(viewName) {
     setText(
       "#reviewSummary",
       `涨停 ${sectorSnapshot.market.limitUpCount} 只，最高 ${sectorSnapshot.market.maxHeight} 板；航天宽度第一，消费高度第一。`
+    );
+  } else if (viewName === "opportunities") {
+    setText("#pageTitle", "机会推演");
+    setText("#headerDate", "市场事件 · 个人交易路径");
+    setText("#publishedAt", "浏览器本地保存");
+    setText("#syncTitle", "推演记录独立保存");
+    setText("#sidebarPublishedAt", "不覆盖每日复盘数据");
+    setText(
+      "#reviewSummary",
+      "把市场事件拆成多个机会方向，记录推演逻辑、观察对象、成立条件与失效条件。"
     );
   } else {
     setText("#pageTitle", "刺大复盘");
