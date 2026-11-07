@@ -18,8 +18,10 @@ on:
         default: ""
         type: string
   schedule:
-    # 17:00 Asia/Shanghai, Monday to Friday
-    - cron: "0 9 * * 1-5"
+    # 17:35 and 18:20 Asia/Shanghai, Monday to Friday.
+    # Cloudflare is the 17:05 primary trigger; these are delayed backups.
+    - cron: "35 9 * * 1-5"
+    - cron: "20 10 * * 1-5"
 
 permissions:
   contents: write
@@ -62,42 +64,52 @@ jobs:
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Resolve review date
+        id: review-date
+        run: |
+          TRIAL_DATE="${{ inputs.review_date }}"
+          if [ -z "$TRIAL_DATE" ]; then
+            if [ "${{ github.event_name }}" = "schedule" ]; then
+              # Scheduled runs can start hours late. The UTC date remains stable
+              # even when Beijing time has already crossed midnight.
+              TRIAL_DATE=$(date -u +%F)
+            else
+              TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
+            fi
+          fi
+          echo "date=$TRIAL_DATE" >> "$GITHUB_OUTPUT"
+          echo "Target review date: $TRIAL_DATE" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Decide whether this scheduled run is still needed
+        id: refresh-guard
+        run: |
+          TRIAL_DATE="${{ steps.review-date.outputs.date }}"
+          SHOULD_RUN=true
+          if [ "${{ github.event_name }}" = "schedule" ] \
+            && [ -f "data/review/$TRIAL_DATE.json" ]; then
+            SHOULD_RUN=false
+            echo "$TRIAL_DATE 已由主调度生成，本次备份任务跳过。" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "should_run=$SHOULD_RUN" >> "$GITHUB_OUTPUT"
+
       - name: Build daily review
-        if: steps.ai-config.outputs.ready == 'true'
+        if: steps.ai-config.outputs.ready == 'true' && steps.refresh-guard.outputs.should_run == 'true'
         env:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_API_URL: ${{ vars.AI_API_URL }}
           AI_MODEL: ${{ vars.AI_MODEL }}
         run: |
-          TRIAL_DATE="${{ inputs.review_date }}"
-          if [ -z "$TRIAL_DATE" ]; then
-            TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
-          fi
           REFRESH_SCOPE="${{ inputs.refresh_scope || 'all' }}"
           python scripts/update_daily.py \
-            --date "$TRIAL_DATE" \
+            --date "${{ steps.review-date.outputs.date }}" \
             --scope "$REFRESH_SCOPE" \
             --wait-retries 5 \
             --wait-seconds 300
 
-      - name: Normalize AI output and rebuild site
-        if: steps.ai-config.outputs.ready == 'true'
-        run: |
-          TRIAL_DATE="${{ inputs.review_date }}"
-          if [ -z "$TRIAL_DATE" ]; then
-            TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
-          fi
-          python normalize_review.py --date "$TRIAL_DATE" --root .
-          python scripts/build_review_data.py --date "$TRIAL_DATE" --root .
-          python scripts/build_standalone.py --date "$TRIAL_DATE"
-
       - name: Persist review data and archive
-        if: steps.ai-config.outputs.ready == 'true'
+        if: steps.ai-config.outputs.ready == 'true' && steps.refresh-guard.outputs.should_run == 'true'
         run: |
-          TRIAL_DATE="${{ inputs.review_date }}"
-          if [ -z "$TRIAL_DATE" ]; then
-            TRIAL_DATE=$(TZ=Asia/Shanghai date +%F)
-          fi
+          TRIAL_DATE="${{ steps.review-date.outputs.date }}"
           git config user.name "pan-eye-bot"
           git config user.email "pan-eye-bot@users.noreply.github.com"
           git add data docs archive calendar-data.js review-data.js market-data.js history-data.js screen-data.js sector-data.js refresh-config.js
