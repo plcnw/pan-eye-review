@@ -284,7 +284,7 @@
             <span class="eyebrow">TRADING OPPORTUNITY ANALYSIS</span>
             <h2>涨停路径推演</h2>
           </div>
-          <p>从今日涨停池选取结构事件，建立多条交易路径；次日用真实盘面逐条验证，而不是事后写日记。</p>
+          <p>先预演明日个股结果（晋级或断板），再基于这个情景假设建立多条交易分支；次日逐条验证。</p>
         </div>
 
         <section class="opportunity-verification" aria-label="次日验证队列">
@@ -302,8 +302,8 @@
           <header class="opportunity-pool-head">
             <div>
               <span id="opportunityPoolDate">今日涨停池</span>
-              <h3>选择要推演的结构事件</h3>
-              <p>可多选同身位、同板块或晋级/断板组合。事件名称与上下文由所选股票自动生成。</p>
+              <h3>建立明日情景预演</h3>
+              <p>先选第一只股票，设定晋级或断板；系统会自动切到同梯队，继续添加第二只及后续条件。</p>
             </div>
             <button class="opportunity-pool-close" id="opportunityPoolClose" type="button" aria-label="关闭涨停池">×</button>
           </header>
@@ -314,6 +314,7 @@
               <button type="button" data-pool-filter="first">首板</button>
               <button type="button" data-pool-filter="second">二板+</button>
               <button type="button" data-pool-filter="high">三板+</button>
+              <button type="button" data-pool-filter="same">同梯队</button>
             </div>
           </div>
           <div class="opportunity-pool-list" id="opportunityPoolList"></div>
@@ -322,7 +323,7 @@
               <span>已选 <strong id="opportunityPoolSelectedCount">0</strong> 只</span>
               <div class="opportunity-pool-selected" id="opportunityPoolSelected"></div>
             </div>
-            <button class="primary-button" id="opportunityCreateFromPool" type="button" disabled>建立推演</button>
+            <button class="primary-button" id="opportunityCreateFromPool" type="button" disabled>建立明日预演</button>
           </footer>
         </section>
 
@@ -351,7 +352,7 @@
               <div class="opportunity-empty-inner">
                 <div class="opportunity-empty-mark">演</div>
                 <h2>从今日涨停池选股</h2>
-                <p>例如选择四板晋级票和同身位断板票，自动形成“同身位竞争”事件，再分别推演高度、扩散、修复和情绪传导路径。</p>
+                <p>例如：闽发晋级、同梯队浙文断板。先把这个明日情景搭建出来，再围绕它添加多条交易分支。</p>
                 <button class="primary-button" id="opportunityEmptyNew" type="button">打开今日涨停池</button>
               </div>
             </section>
@@ -370,6 +371,7 @@
                   </div>
                 </header>
                 <div class="opportunity-event-stocks" id="opportunityEventStocks"></div>
+                <button class="opportunity-edit-scenario" id="opportunityEditScenario" type="button">调整预演节点</button>
               </section>
 
               <div class="opportunity-card-section-head">

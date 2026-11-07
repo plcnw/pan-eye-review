@@ -151,6 +151,22 @@
     return `${shortNames(names)} · 涨停结构推演`;
   };
 
+  const normalizeOutcome = (value) =>
+    value === "break" ? "break" : value === "promote" ? "promote" : null;
+
+  const outcomeLabel = (outcome) =>
+    outcome === "break" ? "断板" : outcome === "promote" ? "晋级" : "待选择";
+
+  const suggestScenarioTitle = (scenario) => {
+    if (!scenario.length) return "未命名明日预演";
+    const names = scenario.map((node) => node.stockName);
+    const outcomes = scenario.map((node) => outcomeLabel(node.outcome));
+    if (scenario.length === 1) {
+      return `${scenario[0].stockName}${outcomes[0]} · 明日预演`;
+    }
+    return `${shortNames(names, 2)} · ${outcomes.join(" / ")}`;
+  };
+
   const buildEventContext = (stocks) => {
     const groups = stocks.map(
       (stock) =>
@@ -162,6 +178,14 @@
     return `${poolDate} 涨停池：${groups.join("、")}${
       relatedSectors.length ? `。相关方向：${relatedSectors.join("、")}` : ""
     }。`;
+  };
+
+  const buildScenarioContext = (scenario) => {
+    const nodes = scenario.map(
+      (node) =>
+        `${node.stockName}（${node.boardHeight || 1}板）${outcomeLabel(node.outcome)}`
+    );
+    return `${poolDate} 涨停池 · 明日预演：${nodes.join(" → ")}。`;
   };
 
   const normalizeOpportunity = (item = {}) => {
@@ -189,7 +213,7 @@
     const names = normalizeNameList(
       item.selectedStocks?.map?.((stock) => stock.name) || item.stocks
     );
-    const selectedStocks = (
+    const baseStocks = (
       Array.isArray(item.selectedStocks) && item.selectedStocks.length
         ? item.selectedStocks
         : names.map((name) => poolByName.get(name) || { name, boardHeight: 1, sectors: [] })
@@ -199,14 +223,33 @@
       boardHeight: Number(stock.boardHeight) || 1,
       sectors: Array.isArray(stock.sectors) ? stock.sectors : []
     }));
-    const fallbackTitle = selectedStocks.length
-      ? suggestTitle(selectedStocks)
+    const scenario = (
+      Array.isArray(item.scenario) && item.scenario.length
+        ? item.scenario
+        : baseStocks.map((stock) => ({ ...stock, outcome: "promote" }))
+    ).map((node, index) => ({
+      stockName: String(node.stockName || node.name || ""),
+      code: String(node.code || ""),
+      boardHeight: Number(node.boardHeight) || 1,
+      sector: String(node.sector || node.sectors?.[0] || ""),
+      outcome: normalizeOutcome(node.outcome) || "promote",
+      order: Number(node.order) || index + 1
+    }));
+    const selectedStocks = scenario.map((node) => ({
+      name: node.stockName,
+      code: node.code,
+      boardHeight: node.boardHeight,
+      sectors: node.sector ? [node.sector] : []
+    }));
+    const fallbackTitle = scenario.length
+      ? suggestScenarioTitle(scenario)
       : "未命名涨停事件";
     return {
       id: item.id || uid("event"),
       title: String(item.title || fallbackTitle),
       sourceDate: String(item.sourceDate || item.date || poolDate || shanghaiDate()).slice(0, 10),
-      context: String(item.context || item.background || buildEventContext(selectedStocks)),
+      context: String(item.context || item.background || buildScenarioContext(scenario)),
+      scenario,
       selectedStocks,
       opportunities: Array.isArray(item.opportunities)
         ? item.opportunities.map(normalizeOpportunity)
@@ -238,7 +281,8 @@
   let saveTimer = null;
   let lastStorageError = "";
   let poolFilter = "all";
-  const selectedPool = new Set();
+  const selectedPool = new Map();
+  let poolEditEventId = null;
 
   if (!state.events.some((event) => event.id === selectedId)) {
     selectedId = state.events[0]?.id || null;
@@ -308,7 +352,7 @@
             <em>${counts.pending} 待验证 · ${counts.confirmed} 兑现</em>
           </span>
           <strong>${escaped(event.title)}</strong>
-          <p>${escaped(event.selectedStocks.map((stock) => stock.name).join(" / ") || "未选择标的")}</p>
+          <p>${escaped(event.scenario.map((node) => `${node.stockName}${outcomeLabel(node.outcome)}`).join(" → ") || "未选择预演节点")}</p>
         </button>
       `;
     }).join("");
@@ -451,11 +495,13 @@
 
     eventTitleHeading.textContent = event.title;
     eventContext.textContent = event.context;
-    eventStocksRoot.innerHTML = event.selectedStocks.map((stock) => `
+    eventStocksRoot.innerHTML = event.scenario.map((node, index) => `
+      ${index ? '<span class="opportunity-scenario-arrow">→</span>' : ""}
       <span class="opportunity-event-stock">
-        <strong>${escaped(stock.name)}</strong>
-        <span>${escaped(stock.code || "")}</span>
-        <em>${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}</em>
+        <strong>${escaped(node.stockName)}</strong>
+        <span>${escaped(node.code || "")}</span>
+        <em>${node.boardHeight}板${node.sector ? ` · ${escaped(node.sector)}` : ""}</em>
+        <b class="is-${escaped(node.outcome)}">${outcomeLabel(node.outcome)}</b>
       </span>
     `).join("");
     const counts = statusCounts(event);
@@ -478,6 +524,10 @@
 
   const renderPool = () => {
     const term = poolSearch.value.trim().toLowerCase();
+    const firstSelected = [...selectedPool.keys()]
+      .map((name) => poolByName.get(name))
+      .find(Boolean);
+    const referenceBoard = firstSelected?.boardHeight || null;
     const filtered = limitUpPool.filter((stock) => {
       const matchesTerm =
         !term ||
@@ -488,7 +538,8 @@
         poolFilter === "all" ||
         (poolFilter === "first" && board === 1) ||
         (poolFilter === "second" && board >= 2) ||
-        (poolFilter === "high" && board >= 3);
+        (poolFilter === "high" && board >= 3) ||
+        (poolFilter === "same" && referenceBoard !== null && board === referenceBoard);
       return matchesTerm && matchesFilter;
     });
 
@@ -508,23 +559,43 @@
   };
 
   const renderPoolSelected = () => {
-    const chosen = [...selectedPool]
-      .map((name) => poolByName.get(name))
-      .filter(Boolean);
+    const chosen = [...selectedPool.entries()]
+      .map(([name, outcome]) => ({ stock: poolByName.get(name), outcome }))
+      .filter((item) => item.stock);
     poolSelectedCount.textContent = String(chosen.length);
     poolSelectedRoot.innerHTML = chosen
-      .map((stock) => `<span>${escaped(stock.name)} · ${stock.boardHeight}板</span>`)
+      .map(({ stock, outcome }) => `
+        <div class="opportunity-scenario-row">
+          <span>${escaped(stock.name)} <em>${stock.boardHeight}板</em></span>
+          <div class="scenario-outcomes">
+            <button type="button" data-scenario-outcome="promote"
+              data-stock-name="${escaped(stock.name)}"
+              class="${outcome === "promote" ? "is-active" : ""}">晋级</button>
+            <button type="button" data-scenario-outcome="break"
+              data-stock-name="${escaped(stock.name)}"
+              class="${outcome === "break" ? "is-active" : ""}">断板</button>
+          </div>
+          <button class="opportunity-scenario-remove" type="button"
+            data-scenario-remove="${escaped(stock.name)}" aria-label="移除${escaped(stock.name)}">×</button>
+        </div>
+      `)
       .join("");
-    createFromPoolButton.disabled = chosen.length === 0;
+    createFromPoolButton.disabled =
+      chosen.length === 0 || chosen.some((item) => !item.outcome);
   };
 
-  const openPool = () => {
+  const openPool = (event = null) => {
     selectedPool.clear();
+    poolEditEventId = event?.id || null;
+    for (const node of event?.scenario || []) {
+      selectedPool.set(node.stockName, node.outcome);
+    }
     poolSearch.value = "";
-    poolFilter = "all";
+    poolFilter = selectedPool.size ? "same" : "all";
     document.querySelectorAll("[data-pool-filter]").forEach((button) => {
-      button.classList.toggle("is-active", button.dataset.poolFilter === "all");
+      button.classList.toggle("is-active", button.dataset.poolFilter === poolFilter);
     });
+    createFromPoolButton.textContent = event ? "更新明日预演" : "建立明日预演";
     poolPanel.hidden = false;
     renderPool();
     requestAnimationFrame(() => {
@@ -559,10 +630,16 @@
   const templateOpportunity = (template, event) => {
     const selectedNames = event.selectedStocks.map((stock) => stock.name);
     const maxBoard = Math.max(...event.selectedStocks.map((stock) => stock.boardHeight), 1);
+    const promotedNames = event.scenario
+      .filter((node) => node.outcome === "promote")
+      .map((node) => node.stockName);
+    const brokenNames = event.scenario
+      .filter((node) => node.outcome === "break")
+      .map((node) => node.stockName);
     const configs = {
       core: {
         name: "核心高度延续",
-        targets: selectedNames.join("、"),
+        targets: (promotedNames.length ? promotedNames : selectedNames).join("、"),
         logic: "",
         trigger: "",
         invalidation: ""
@@ -583,7 +660,7 @@
       },
       repair: {
         name: "分歧后的修复",
-        targets: selectedNames.join("、"),
+        targets: (brokenNames.length ? brokenNames : selectedNames).join("、"),
         logic: "",
         trigger: "",
         invalidation: ""
@@ -634,38 +711,67 @@
   };
 
   const createEventFromPool = () => {
-    const selectedStocks = [...selectedPool]
-      .map((name) => poolByName.get(name))
-      .filter(Boolean)
-      .map((stock) => ({
-        name: stock.name,
-        code: stock.code || "",
-        boardHeight: Number(stock.boardHeight) || 1,
-        sectors: stock.sectors || []
-      }));
-    if (!selectedStocks.length) return;
+    const scenario = [...selectedPool.entries()]
+      .map(([name, outcome], index) => {
+        const stock = poolByName.get(name);
+        if (!stock) return null;
+        return {
+          stockName: stock.name,
+          code: stock.code || "",
+          boardHeight: Number(stock.boardHeight) || 1,
+          sector: stock.sectors?.[0] || "",
+          outcome: normalizeOutcome(outcome),
+          order: index + 1
+        };
+      })
+      .filter(Boolean);
+    if (!scenario.length || scenario.some((node) => !node.outcome)) return;
+    const selectedStocks = scenario.map((node) => ({
+      name: node.stockName,
+      code: node.code,
+      boardHeight: node.boardHeight,
+      sectors: node.sector ? [node.sector] : []
+    }));
+    const title = suggestScenarioTitle(scenario);
+    const context = buildScenarioContext(scenario);
+
+    if (poolEditEventId) {
+      const event = state.events.find((item) => item.id === poolEditEventId);
+      if (!event) return;
+      event.scenario = scenario;
+      event.selectedStocks = selectedStocks;
+      event.title = title;
+      event.context = context;
+      touchEvent(event);
+      selectedId = event.id;
+      persist({ refreshList: false });
+      closePool();
+      renderAll();
+      return;
+    }
 
     const timestamp = new Date().toISOString();
     const event = normalizeEvent({
       id: uid("event"),
-      title: suggestTitle(selectedStocks),
+      title,
       sourceDate: poolDate || shanghaiDate(),
-      context: buildEventContext(selectedStocks),
+      context,
+      scenario,
       selectedStocks,
       opportunities: [],
       createdAt: timestamp,
       updatedAt: timestamp
     });
-    const initialTemplate =
-      selectedStocks.length > 1 &&
-      new Set(selectedStocks.map((stock) => stock.boardHeight)).size === 1
-        ? "peer"
-        : "core";
-    event.opportunities.push(templateOpportunity(initialTemplate, event));
+    const hasPromote = scenario.some((node) => node.outcome === "promote");
+    const hasBreak = scenario.some((node) => node.outcome === "break");
+    const templates = hasPromote && hasBreak ? ["core", "repair"] : ["core"];
+    event.opportunities.push(
+      ...templates.map((template) => templateOpportunity(template, event))
+    );
     state.events.unshift(event);
     selectedId = event.id;
     expanded.clear();
-    expanded.add(event.opportunities[0].id);
+    event.opportunities.forEach((item) => expanded.add(item.id));
     persist({ refreshList: false, refreshQueue: false });
     closePool();
     renderAll();
@@ -775,8 +881,12 @@
     }
   };
 
-  document.getElementById("opportunityNewEvent").addEventListener("click", openPool);
-  document.getElementById("opportunityEmptyNew").addEventListener("click", openPool);
+  document.getElementById("opportunityNewEvent").addEventListener("click", () => openPool());
+  document.getElementById("opportunityEmptyNew").addEventListener("click", () => openPool());
+  document.getElementById("opportunityEditScenario").addEventListener("click", () => {
+    const event = selectedEvent();
+    if (event) openPool(event);
+  });
   document.getElementById("opportunityPoolClose").addEventListener("click", closePool);
   document.getElementById("opportunityCreateFromPool").addEventListener(
     "click",
@@ -807,8 +917,43 @@
     if (!button) return;
     const name = button.dataset.poolStock;
     if (selectedPool.has(name)) selectedPool.delete(name);
-    else selectedPool.add(name);
+    else {
+      selectedPool.set(name, null);
+      if (selectedPool.size === 1) {
+        poolFilter = "same";
+        document.querySelectorAll("[data-pool-filter]").forEach((item) => {
+          item.classList.toggle(
+            "is-active",
+            item.dataset.poolFilter === "same"
+          );
+        });
+      }
+    }
     renderPool();
+  });
+
+  poolSelectedRoot.addEventListener("click", (event) => {
+    const outcomeButton = event.target.closest("[data-scenario-outcome]");
+    if (outcomeButton) {
+      const name = outcomeButton.dataset.stockName;
+      selectedPool.set(name, outcomeButton.dataset.scenarioOutcome);
+      renderPoolSelected();
+      return;
+    }
+    const remove = event.target.closest("[data-scenario-remove]");
+    if (remove) {
+      selectedPool.delete(remove.dataset.scenarioRemove);
+      if (!selectedPool.size) {
+        poolFilter = "all";
+        document.querySelectorAll("[data-pool-filter]").forEach((item) => {
+          item.classList.toggle(
+            "is-active",
+            item.dataset.poolFilter === "all"
+          );
+        });
+      }
+      renderPool();
+    }
   });
 
   eventList.addEventListener("click", (event) => {

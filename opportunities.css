@@ -282,18 +282,74 @@
 
 .opportunity-pool-selected {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 5px;
   margin-top: 7px;
 }
 
-.opportunity-pool-selected span {
-  padding: 5px 8px;
-  border: 1px solid rgba(108, 218, 175, 0.25);
-  border-radius: 999px;
-  background: var(--mint-soft);
-  color: var(--mint);
+.opportunity-scenario-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.opportunity-scenario-row > span {
+  min-width: 0;
+  color: var(--muted-strong);
+  font-family: var(--serif);
+  font-size: 12px;
+}
+
+.opportunity-scenario-row > span em {
+  margin-left: 6px;
+  color: var(--gold);
+  font-family: var(--sans);
   font-size: 8px;
+  font-style: normal;
+}
+
+.opportunity-scenario-row .scenario-outcomes {
+  display: flex;
+  gap: 4px;
+}
+
+.opportunity-scenario-row .scenario-outcomes button {
+  min-height: 27px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.opportunity-scenario-row .scenario-outcomes button[data-outcome="promote"].is-active {
+  color: var(--mint);
+  border-color: rgba(108, 218, 175, 0.3);
+  background: var(--mint-soft);
+}
+
+.opportunity-scenario-row .scenario-outcomes button[data-outcome="break"].is-active {
+  color: var(--red);
+  border-color: rgba(239, 100, 83, 0.3);
+  background: var(--red-soft);
+}
+
+.opportunity-scenario-remove {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
 }
 
 .opportunity-layout {
@@ -557,8 +613,9 @@
 
 .opportunity-event-stocks {
   display: flex;
+  align-items: stretch;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
   margin-top: 16px;
 }
 
@@ -567,9 +624,10 @@
   border: 1px solid var(--line);
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.025);
-  display: flex;
-  align-items: baseline;
-  gap: 7px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3px 8px;
+  min-width: 128px;
 }
 
 .opportunity-event-stock strong {
@@ -587,6 +645,34 @@
   color: var(--gold);
   font-size: 8px;
   font-style: normal;
+}
+
+.opportunity-event-stock b {
+  grid-column: 1 / -1;
+  padding-top: 4px;
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.opportunity-event-stock b.is-promote { color: var(--mint); }
+.opportunity-event-stock b.is-break { color: var(--red); }
+
+.opportunity-scenario-arrow {
+  align-self: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.opportunity-edit-scenario {
+  margin-top: 10px;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 8px;
+  cursor: pointer;
 }
 
 .opportunity-event-tools {
@@ -1007,6 +1093,15 @@
   .opportunity-pool-footer {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .opportunity-scenario-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .opportunity-scenario-row .scenario-outcomes {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
   .opportunity-pool-list {
