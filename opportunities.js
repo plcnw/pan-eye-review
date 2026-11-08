@@ -186,7 +186,7 @@
       (node) =>
         `${node.stockName}（${node.boardHeight || 1}板）${outcomeLabel(node.outcome)}`
     );
-    return `${poolDate} 涨停池 · 明日预演：${nodes.join(" → ")}。`;
+    return `${poolDate} 涨停池 · 明日并列预演：${nodes.join("；")}。`;
   };
 
   const normalizeOpportunity = (item = {}) => {
@@ -245,11 +245,20 @@
     const fallbackTitle = scenario.length
       ? suggestScenarioTitle(scenario)
       : "未命名涨停事件";
+    const migratedLogic = Array.isArray(item.opportunities)
+      ? item.opportunities
+          .map((opportunity) => String(opportunity.logic || "").trim())
+          .filter(Boolean)
+          .join("\n\n")
+      : "";
     return {
       id: item.id || uid("event"),
       title: String(item.title || fallbackTitle),
       sourceDate: String(item.sourceDate || item.date || poolDate || shanghaiDate()).slice(0, 10),
-      context: String(item.context || item.background || buildScenarioContext(scenario)),
+      context: String(
+        item.context || item.background || buildScenarioContext(scenario)
+      ).replaceAll(" → ", "；"),
+      reasoning: String(item.reasoning || migratedLogic || ""),
       scenario,
       selectedStocks,
       opportunities: Array.isArray(item.opportunities)
@@ -353,7 +362,7 @@
             <em>${counts.pending} 待验证 · ${counts.confirmed} 兑现</em>
           </span>
           <strong>${escaped(event.title)}</strong>
-          <p>${escaped(event.scenario.map((node) => `${node.stockName}${outcomeLabel(node.outcome)}`).join(" → ") || "未选择预演节点")}</p>
+          <p>${escaped(event.scenario.map((node) => `${node.stockName}${outcomeLabel(node.outcome)}`).join("；") || "未选择预演节点")}</p>
         </button>
       `;
     }).join("");
@@ -407,7 +416,7 @@
             aria-expanded="${isExpanded}">
             <span class="opportunity-card-index">${String(index + 1).padStart(2, "0")}</span>
             <span class="opportunity-card-summary">
-              <strong>${escaped(opportunity.name || "未命名路径")}</strong>
+              <strong>${escaped(opportunity.name || "未命名标的")}</strong>
               <span>${escaped(opportunity.targets || "尚未填写观察对象")}</span>
             </span>
             <span class="opportunity-path-status is-${escaped(opportunity.status)}">
@@ -417,25 +426,20 @@
           </button>
           <button class="opportunity-delete-card" type="button"
             data-opportunity-delete="${escaped(opportunity.id)}"
-            aria-label="删除这条路径">×</button>
+            aria-label="删除这个交易标的">×</button>
         </header>
         <div class="opportunity-card-body" ${isExpanded ? "" : "hidden"}>
-          <div class="opportunity-chain-stage">01 · 路径假设</div>
+          <div class="opportunity-chain-stage">交易标的</div>
           <div class="opportunity-fields">
             <label class="opportunity-field">
-              <span>路径名称</span>
+              <span>标的名称</span>
               <input type="text" data-opportunity-field="name"
                 ${fieldValue(opportunity.name)}
-                placeholder="例如：晋级票高度延续">
-            </label>
-            <label class="opportunity-field">
-              <span>推演逻辑</span>
-              <textarea rows="4" data-opportunity-field="logic"
-                placeholder="为什么这个涨停结构可能产生这种交易路径？">${textValue(opportunity.logic)}</textarea>
+                placeholder="例如：闽发铝业 / 板块低位补涨">
             </label>
           </div>
 
-          <div class="opportunity-chain-stage">02 · 观察与证伪</div>
+          <div class="opportunity-chain-stage">观察与证伪</div>
           <div class="opportunity-fields">
             <label class="opportunity-field">
               <span>观察对象</span>
@@ -456,9 +460,9 @@
             </div>
           </div>
 
-          <div class="opportunity-chain-stage is-verify">03 · 次日验证</div>
+          <div class="opportunity-chain-stage is-verify">次日验证</div>
           <div class="opportunity-verification-editor">
-            <div class="opportunity-status-controls" role="group" aria-label="路径验证状态">
+            <div class="opportunity-status-controls" role="group" aria-label="标的验证状态">
               ${[
                 ["pending", "待验证"],
                 ["confirmed", "已兑现"],
@@ -477,7 +481,7 @@
             ${opportunity.verifiedAt ? `<small class="opportunity-verified-at">最后验证：${escaped(formatSavedAt(opportunity.verifiedAt))}</small>` : ""}
           </div>
 
-          <div class="opportunity-chain-stage">04 · 补充思考</div>
+          <div class="opportunity-chain-stage">补充思考</div>
           <label class="opportunity-field">
             <span>复盘补充</span>
             <textarea rows="3" data-opportunity-field="notes"
@@ -496,8 +500,8 @@
 
     eventTitleHeading.textContent = event.title;
     eventContext.textContent = event.context;
-    eventStocksRoot.innerHTML = event.scenario.map((node, index) => `
-      ${index ? '<span class="opportunity-scenario-arrow">→</span>' : ""}
+    document.getElementById("opportunityEventReasoning").value = event.reasoning;
+    eventStocksRoot.innerHTML = event.scenario.map((node) => `
       <span class="opportunity-event-stock">
         <strong>${escaped(node.stockName)}</strong>
         <span>${escaped(node.code || "")}</span>
@@ -507,14 +511,14 @@
     `).join("");
     const counts = statusCounts(event);
     opportunityCount.textContent =
-      `${event.opportunities.length} 条路径 · ${counts.pending} 待验证 / ${counts.confirmed} 兑现 / ${counts.invalid} 失效`;
+      `${event.opportunities.length} 个标的 · ${counts.pending} 待验证 / ${counts.confirmed} 兑现 / ${counts.invalid} 失效`;
     setSaveState(
       lastStorageError || formatSavedAt(event.updatedAt),
       !lastStorageError
     );
     cardsRoot.innerHTML = event.opportunities.length
       ? event.opportunities.map(renderOpportunityCard).join("")
-      : '<div class="opportunity-card-empty">这个事件还没有路径。用上方模板快速建立，也可以添加自由路径。</div>';
+      : '<div class="opportunity-card-empty">这个预演还没有交易标的。用上方模板快速建立，也可以自由新增。</div>';
   };
 
   const renderAll = () => {
@@ -600,7 +604,7 @@
       scenarioFeedback.classList.add("is-waiting");
     } else {
       scenarioFeedback.textContent =
-        `情景已设置：${chosen.map((item) => `${item.stock.name}${outcomeLabel(item.outcome)}`).join(" → ")}。`;
+        `并列预演已设置：${chosen.map((item) => `${item.stock.name}${outcomeLabel(item.outcome)}`).join("；")}。`;
       scenarioFeedback.classList.add("is-ready");
     }
   };
@@ -659,35 +663,35 @@
       .map((node) => node.stockName);
     const configs = {
       core: {
-        name: "核心高度延续",
+        name: "晋级核心标的",
         targets: (promotedNames.length ? promotedNames : selectedNames).join("、"),
         logic: "",
         trigger: "",
         invalidation: ""
       },
       peer: {
-        name: "同身位竞争",
+        name: "同身位备选标的",
         targets: desiredPeers(event).join("、"),
         logic: "",
         trigger: "",
         invalidation: ""
       },
       sector: {
-        name: "板块扩散与补涨",
+        name: "板块扩散标的",
         targets: desiredSectorTargets(event).slice(0, 20).join("、"),
         logic: "",
         trigger: "",
         invalidation: ""
       },
       repair: {
-        name: "分歧后的修复",
+        name: "断板修复标的",
         targets: (brokenNames.length ? brokenNames : selectedNames).join("、"),
         logic: "",
         trigger: "",
         invalidation: ""
       },
       emotion: {
-        name: "市场情绪传导",
+        name: "情绪传导观察",
         targets: `最高板 ${maxBoard} 板 / 同身位溢价 / 断板反馈`,
         logic: "",
         trigger: "",
@@ -837,7 +841,7 @@
     touchEvent(event);
     if (field === "name") {
       card.querySelector(".opportunity-card-summary strong").textContent =
-        value || "未命名路径";
+        value || "未命名标的";
     }
     if (field === "targets") {
       card.querySelector(".opportunity-card-summary span").textContent =
@@ -1025,6 +1029,15 @@
   });
 
   editor.addEventListener("input", (event) => {
+    const eventField = event.target.closest("[data-event-field]");
+    if (eventField) {
+      const current = selectedEvent();
+      if (!current) return;
+      current[eventField.dataset.eventField] = eventField.value;
+      touchEvent(current);
+      scheduleSave();
+      return;
+    }
     const opportunityField = event.target.closest("[data-opportunity-field]");
     if (!opportunityField) return;
     updateOpportunityField(

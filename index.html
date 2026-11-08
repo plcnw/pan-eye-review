@@ -362,6 +362,13 @@
 
             <div class="opportunity-editor" id="opportunityEditor" hidden>
               <section class="opportunity-event-sheet">
+                <div class="opportunity-stage-heading">
+                  <span>01</span>
+                  <div>
+                    <strong>明日情况预演</strong>
+                    <em>以下条件为并列关系，不代表先后因果</em>
+                  </div>
+                </div>
                 <header class="opportunity-event-head">
                   <div>
                     <span class="opportunity-event-kicker">LIMIT-UP EVENT</span>
@@ -377,22 +384,43 @@
                 <button class="opportunity-edit-scenario" id="opportunityEditScenario" type="button">调整预演节点</button>
               </section>
 
-              <div class="opportunity-card-section-head">
-                <div>
-                  <span>LOGIC CHAINS</span>
-                  <h3 id="opportunityCount">0 条推演路径</h3>
+              <div class="opportunity-stage-connector" aria-hidden="true">↓</div>
+
+              <section class="opportunity-reasoning-panel">
+                <div class="opportunity-stage-heading">
+                  <span>02</span>
+                  <div>
+                    <strong>推演逻辑</strong>
+                    <em>为什么这组并列条件会导出后面的交易标的</em>
+                  </div>
                 </div>
-                <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 自由路径</button>
-              </div>
-              <div class="opportunity-path-templates" id="opportunityPathTemplates">
-                <span>快速建立路径</span>
-                <button type="button" data-path-template="core">核心高度</button>
-                <button type="button" data-path-template="peer">同身位竞争</button>
-                <button type="button" data-path-template="sector">板块扩散</button>
-                <button type="button" data-path-template="repair">分歧修复</button>
-                <button type="button" data-path-template="emotion">情绪传导</button>
-              </div>
-              <div class="opportunity-cards" id="opportunityCards"></div>
+                <label class="opportunity-field">
+                  <span>事件级推演理由</span>
+                  <textarea id="opportunityEventReasoning" rows="5" data-event-field="reasoning"
+                    placeholder="例如：闽发晋级代表高位核心仍被承接，而浙文断板说明同身位开始淘汰；如果板块内出现新的主动响应，资金可能转向补涨或断板修复。"></textarea>
+                </label>
+              </section>
+
+              <div class="opportunity-stage-connector" aria-hidden="true">↓</div>
+
+              <section class="opportunity-target-panel">
+                <div class="opportunity-card-section-head">
+                  <div>
+                    <span>03 · TRADE TARGETS</span>
+                    <h3 id="opportunityCount">0 个交易标的</h3>
+                  </div>
+                  <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增标的</button>
+                </div>
+                <div class="opportunity-path-templates" id="opportunityPathTemplates">
+                  <span>从预演快速建立标的</span>
+                  <button type="button" data-path-template="core">晋级主标的</button>
+                  <button type="button" data-path-template="peer">同身位标的</button>
+                  <button type="button" data-path-template="sector">板块扩散标的</button>
+                  <button type="button" data-path-template="repair">断板修复标的</button>
+                  <button type="button" data-path-template="emotion">情绪观察标的</button>
+                </div>
+                <div class="opportunity-cards" id="opportunityCards"></div>
+              </section>
             </div>
           </div>
         </div>

@@ -617,11 +617,75 @@
   gap: 14px;
 }
 
+.opportunity-stage-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.opportunity-stage-heading > span {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border: 1px solid rgba(239, 100, 83, 0.32);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--red);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 8px;
+}
+
+.opportunity-stage-heading > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.opportunity-stage-heading strong {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.opportunity-stage-heading em {
+  color: var(--muted);
+  font-size: 8px;
+  font-style: normal;
+}
+
+.opportunity-reasoning-panel,
+.opportunity-target-panel {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--ink-raised);
+}
+
+.opportunity-reasoning-panel .opportunity-field {
+  margin-top: 13px;
+}
+
+.opportunity-stage-connector {
+  height: 18px;
+  margin: -6px 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .opportunity-event-sheet {
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 17px;
   background: var(--ink-raised);
+}
+
+.opportunity-event-sheet > .opportunity-stage-heading {
+  margin-bottom: 17px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
 }
 
 .opportunity-event-head {
@@ -699,9 +763,7 @@
 .opportunity-event-stock b.is-break { color: var(--red); }
 
 .opportunity-scenario-arrow {
-  align-self: center;
-  color: var(--muted);
-  font-size: 13px;
+  display: none;
 }
 
 .opportunity-edit-scenario {
