@@ -316,7 +316,7 @@
 
 .opportunity-scenario-row {
   display: grid;
-  grid-template-columns: minmax(140px, 1fr) auto auto;
+  grid-template-columns: minmax(140px, 1fr) auto;
   align-items: center;
   gap: 8px;
   padding: 7px 9px;
@@ -679,14 +679,15 @@
 }
 
 .opportunity-flow-scenario {
+  position: relative;
   padding-right: 4px;
 }
 
 .opportunity-flow-bridge {
   position: relative;
   align-self: start;
-  margin-top: 36px;
-  padding: 0 4px 29px;
+  margin-top: 0;
+  padding: 0 4px;
 }
 
 .opportunity-flow-bridge .opportunity-field {
@@ -710,6 +711,17 @@
   left: 4px;
   height: 1px;
   background: linear-gradient(90deg, rgba(214, 183, 110, 0.24), var(--gold));
+}
+
+.opportunity-flow-scenario::after,
+.opportunity-flow-bridge::after {
+  content: "→";
+  position: absolute;
+  z-index: 2;
+  top: 31px;
+  right: -14px;
+  color: var(--gold);
+  font-size: 13px;
 }
 
 .opportunity-flow-arrow::after {
@@ -793,6 +805,194 @@
   max-height: none;
   overflow: visible;
   padding-right: 0;
+}
+
+.decision-reason-field {
+  margin-top: 10px;
+}
+
+.decision-reason-field input {
+  height: 34px;
+  font-size: 10px;
+}
+
+.decision-reason-field input::placeholder {
+  color: var(--muted);
+  opacity: 0.55;
+}
+
+.decision-condition-card {
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.decision-condition-card + .decision-condition-card {
+  margin-top: 7px;
+}
+
+.decision-condition-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.decision-condition-head > span {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  color: var(--red);
+  background: var(--red-soft);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 8px;
+}
+
+.decision-condition-head > div {
+  min-width: 0;
+}
+
+.decision-condition-head strong {
+  display: block;
+  overflow: hidden;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.decision-condition-head small {
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.decision-outcome-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 9px;
+}
+
+.decision-outcome-buttons button {
+  min-height: 29px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.decision-outcome-buttons button[data-outcome="promote"].is-active {
+  color: var(--mint);
+  border-color: rgba(108, 218, 175, 0.34);
+  background: var(--mint-soft);
+  box-shadow: 0 0 16px rgba(108, 218, 175, 0.08);
+}
+
+.decision-outcome-buttons button[data-outcome="break"].is-active {
+  color: var(--red);
+  border-color: rgba(239, 100, 83, 0.34);
+  background: var(--red-soft);
+  box-shadow: 0 0 16px rgba(239, 100, 83, 0.08);
+}
+
+.decision-result-cards {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.decision-result-card {
+  position: relative;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.022);
+  opacity: 0.68;
+  transition: opacity 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.decision-result-card.is-active {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+.decision-result-card.tone-mint.is-active {
+  border-color: rgba(108, 218, 175, 0.42);
+  background: linear-gradient(105deg, rgba(108, 218, 175, 0.11), rgba(255,255,255,.022));
+  box-shadow: 0 0 24px rgba(108, 218, 175, 0.07);
+}
+
+.decision-result-card.tone-gold.is-active {
+  border-color: rgba(214, 183, 110, 0.42);
+  background: linear-gradient(105deg, rgba(214, 183, 110, 0.11), rgba(255,255,255,.022));
+  box-shadow: 0 0 24px rgba(214, 183, 110, 0.07);
+}
+
+.decision-result-card.tone-red.is-active {
+  border-color: rgba(239, 100, 83, 0.4);
+  background: linear-gradient(105deg, rgba(239, 100, 83, 0.1), rgba(255,255,255,.022));
+  box-shadow: 0 0 24px rgba(239, 100, 83, 0.06);
+}
+
+.decision-result-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.decision-result-card header strong {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.decision-result-card header em {
+  color: var(--muted);
+  font-size: 7px;
+  font-style: normal;
+}
+
+.decision-result-card.is-active header em {
+  color: var(--gold);
+}
+
+.decision-result-maps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 7px;
+}
+
+.decision-result-maps span {
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted-strong);
+  font-size: 7px;
+}
+
+.decision-result-card footer {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.decision-action-context {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.decision-action-context strong {
+  color: var(--white);
+  font-weight: 500;
 }
 
 .opportunity-stage-heading {
@@ -1367,6 +1567,11 @@
 
   .opportunity-flow-targets {
     padding-left: 0;
+  }
+
+  .opportunity-flow-scenario::after,
+  .opportunity-flow-bridge::after {
+    display: none;
   }
 
   .opportunity-flow-targets .opportunity-cards {

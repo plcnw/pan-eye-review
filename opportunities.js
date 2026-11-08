@@ -1,8 +1,8 @@
 (() => {
-  const STORAGE_KEY = "pan-eye-opportunities-v2";
-  const LEGACY_STORAGE_KEY = "pan-eye-opportunities-v1";
-  const SELECTED_KEY = "pan-eye-opportunities-selected-v2";
-  const LEGACY_SELECTED_KEY = "pan-eye-opportunities-selected-v1";
+  const STORAGE_KEY = "pan-eye-opportunities-v3";
+  const LEGACY_STORAGE_KEY = "pan-eye-opportunities-v2";
+  const SELECTED_KEY = "pan-eye-opportunities-selected-v3";
+  const LEGACY_SELECTED_KEY = "pan-eye-opportunities-selected-v2";
   const root = document.getElementById("view-opportunities");
   if (!root) return;
 
@@ -20,6 +20,8 @@
   const saveState = document.getElementById("opportunitySaveState");
   const opportunityCount = document.getElementById("opportunityCount");
   const cardsRoot = document.getElementById("opportunityCards");
+  const resultCardsRoot = document.getElementById("decisionResultCards");
+  const actionContext = document.getElementById("decisionActionContext");
   const importInput = document.getElementById("opportunityImportInput");
   const poolPanel = document.getElementById("opportunityPoolPanel");
   const poolList = document.getElementById("opportunityPoolList");
@@ -195,6 +197,7 @@
       : "pending";
     return {
       id: item.id || uid("path"),
+      resultId: String(item.resultId || "r1"),
       template: String(item.template || "free"),
       name: String(item.name || ""),
       logic: String(item.logic || ""),
@@ -208,6 +211,79 @@
       createdAt: item.createdAt || new Date().toISOString(),
       updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
     };
+  };
+
+  const makeAction = (resultId, name, targets, template = "free") => {
+    const now = new Date().toISOString();
+    return normalizeOpportunity({
+      id: uid("action"),
+      resultId,
+      template,
+      name,
+      targets,
+      status: "pending",
+      createdAt: now,
+      updatedAt: now
+    });
+  };
+
+  const createDefaultResults = (dimensions, legacyActions = []) => {
+    const [first, second] = dimensions;
+    const firstTarget = first?.stockName || "条件 A";
+    const secondTarget = second?.stockName || "条件 B";
+    const sectorTargets = [
+      ...new Set(
+        dimensions.flatMap((dimension) =>
+          dimension.sector ? [dimension.sector] : []
+        )
+      )
+    ].join("、");
+    const defaults = [
+      {
+        id: "r1",
+        name: "双强共振",
+        tone: "mint",
+        combinations: ["promote:promote"],
+        actions: [
+          makeAction("r1", "核心确认", `${firstTarget}、${secondTarget}`, "core"),
+          makeAction("r1", "板块扩散", sectorTargets, "sector")
+        ]
+      },
+      {
+        id: "r2",
+        name: "竞争分化",
+        tone: "gold",
+        combinations: ["promote:break", "break:promote"],
+        actions: [
+          makeAction("r2", "胜出方核心", `${firstTarget}、${secondTarget}`, "peer"),
+          makeAction("r2", "淘汰方修复", `${firstTarget}、${secondTarget}`, "repair")
+        ]
+      },
+      {
+        id: "r3",
+        name: "梯队退潮",
+        tone: "red",
+        combinations: ["break:break"],
+        actions: [
+          makeAction("r3", "高位退潮防守", `${firstTarget}、${secondTarget}`, "emotion"),
+          makeAction("r3", "低位切换", sectorTargets, "sector")
+        ]
+      }
+    ];
+
+    if (!legacyActions.length) return defaults;
+    const mapped = defaults.map((result) => ({ ...result, actions: [] }));
+    for (const action of legacyActions) {
+      const targetResult =
+        action.template === "repair" || action.template === "emotion"
+          ? "r3"
+          : action.template === "peer" || action.template === "sector"
+            ? "r2"
+            : "r1";
+      const result = mapped.find((item) => item.id === targetResult);
+      result.actions.push(normalizeOpportunity({ ...action, resultId: targetResult }));
+    }
+    return mapped;
   };
 
   const normalizeEvent = (item = {}) => {
@@ -224,46 +300,85 @@
       boardHeight: Number(stock.boardHeight) || 1,
       sectors: Array.isArray(stock.sectors) ? stock.sectors : []
     }));
-    const scenario = (
-      Array.isArray(item.scenario) && item.scenario.length
-        ? item.scenario
-        : baseStocks.map((stock) => ({ ...stock, outcome: "promote" }))
-    ).map((node, index) => ({
+    const sourceDimensions =
+      Array.isArray(item.dimensions) && item.dimensions.length
+        ? item.dimensions
+        : Array.isArray(item.scenario) && item.scenario.length
+          ? item.scenario
+          : baseStocks;
+    const dimensions = sourceDimensions.slice(0, 2).map((node, index) => ({
+      key: index === 0 ? "a" : "b",
       stockName: String(node.stockName || node.name || ""),
       code: String(node.code || ""),
       boardHeight: Number(node.boardHeight) || 1,
-      sector: String(node.sector || node.sectors?.[0] || ""),
-      outcome: normalizeOutcome(node.outcome) || "promote",
-      order: Number(node.order) || index + 1
+      sector: String(node.sector || node.sectors?.[0] || "")
     }));
-    const selectedStocks = scenario.map((node) => ({
+    const selectedStocks = dimensions.map((node) => ({
       name: node.stockName,
       code: node.code,
       boardHeight: node.boardHeight,
       sectors: node.sector ? [node.sector] : []
     }));
-    const fallbackTitle = scenario.length
-      ? suggestScenarioTitle(scenario)
-      : "未命名涨停事件";
+    const scenario = dimensions.map((node, index) => ({
+      ...node,
+      outcome:
+        normalizeOutcome(item.activeOutcomes?.[node.key]) ||
+        normalizeOutcome(item.scenario?.[index]?.outcome) ||
+        "promote",
+      order: index + 1
+    }));
+    const fallbackTitle = dimensions.length
+      ? `${shortNames(dimensions.map((node) => node.stockName), 2)} · 2×2 决策链`
+      : "未命名决策链";
     const migratedLogic = Array.isArray(item.opportunities)
       ? item.opportunities
           .map((opportunity) => String(opportunity.logic || "").trim())
           .filter(Boolean)
           .join("\n\n")
       : "";
+    const legacyActions = Array.isArray(item.opportunities)
+      ? item.opportunities.map(normalizeOpportunity)
+      : item.results?.flatMap((result) => result.actions || []) || [];
+    const defaultResults = createDefaultResults(dimensions, legacyActions);
+    const results = Array.isArray(item.results) && item.results.length
+      ? item.results.slice(0, 3).map((result, index) => {
+          const fallback = defaultResults[index] || defaultResults[0];
+          return {
+            id: String(result.id || fallback.id),
+            name: String(result.name || fallback.name),
+            tone: String(result.tone || fallback.tone),
+            combinations: Array.isArray(result.combinations)
+              ? result.combinations
+              : fallback.combinations,
+            actions: Array.isArray(result.actions)
+              ? result.actions.map((action) =>
+                  normalizeOpportunity({
+                    ...action,
+                    resultId: String(result.id || fallback.id)
+                  })
+                )
+              : fallback.actions
+          };
+        })
+      : defaultResults;
     return {
       id: item.id || uid("event"),
       title: String(item.title || fallbackTitle),
       sourceDate: String(item.sourceDate || item.date || poolDate || shanghaiDate()).slice(0, 10),
       context: String(
-        item.context || item.background || buildScenarioContext(scenario)
+        item.context ||
+          item.background ||
+          `${poolDate} 涨停池 · 双条件决策链：${dimensions.map((node) => node.stockName).join(" × ")}。`
       ).replaceAll(" → ", "；"),
       reasoning: String(item.reasoning || migratedLogic || ""),
       scenario,
       selectedStocks,
-      opportunities: Array.isArray(item.opportunities)
-        ? item.opportunities.map(normalizeOpportunity)
-        : [],
+      dimensions,
+      activeOutcomes: {
+        a: normalizeOutcome(item.activeOutcomes?.a) || scenario[0]?.outcome || "promote",
+        b: normalizeOutcome(item.activeOutcomes?.b) || scenario[1]?.outcome || "promote"
+      },
+      results,
       createdAt: item.createdAt || new Date().toISOString(),
       updatedAt: item.updatedAt || item.createdAt || new Date().toISOString()
     };
@@ -275,11 +390,11 @@
       const legacy = current ? null : localStorage.getItem(LEGACY_STORAGE_KEY);
       const parsed = JSON.parse(current || legacy || "{}");
       return {
-        version: 2,
+        version: 3,
         events: Array.isArray(parsed.events) ? parsed.events.map(normalizeEvent) : []
       };
     } catch {
-      return { version: 2, events: [] };
+      return { version: 3, events: [] };
     }
   };
 
@@ -340,10 +455,21 @@
       return byDate || b.updatedAt.localeCompare(a.updatedAt);
     });
 
+  const allActions = (event) =>
+    event.results.flatMap((result) => result.actions || []);
+
+  const activeCombination = (event) =>
+    `${event.activeOutcomes.a}:${event.activeOutcomes.b}`;
+
+  const activeResult = (event) =>
+    event.results.find((result) =>
+      result.combinations.includes(activeCombination(event))
+    ) || event.results[0];
+
   const statusCounts = (event) => ({
-    pending: event.opportunities.filter((item) => item.status === "pending").length,
-    confirmed: event.opportunities.filter((item) => item.status === "confirmed").length,
-    invalid: event.opportunities.filter((item) => item.status === "invalid").length
+    pending: allActions(event).filter((item) => item.status === "pending").length,
+    confirmed: allActions(event).filter((item) => item.status === "confirmed").length,
+    invalid: allActions(event).filter((item) => item.status === "invalid").length
   });
 
   const renderHistory = () => {
@@ -362,7 +488,7 @@
             <em>${counts.pending} 待验证 · ${counts.confirmed} 兑现</em>
           </span>
           <strong>${escaped(event.title)}</strong>
-          <p>${escaped(event.scenario.map((node) => `${node.stockName}${outcomeLabel(node.outcome)}`).join("；") || "未选择预演节点")}</p>
+          <p>${escaped(event.dimensions.map((node) => node.stockName).join(" × ") || "未选择条件")}</p>
         </button>
       `;
     }).join("");
@@ -372,7 +498,7 @@
     const today = shanghaiDate();
     const pendingItems = sortedEvents().flatMap((event) => {
       if (event.sourceDate >= today) return [];
-      return event.opportunities
+      return allActions(event)
         .filter((item) => item.status === "pending")
         .map((item) => ({ event, item }));
     });
@@ -501,24 +627,53 @@
     eventTitleHeading.textContent = event.title;
     eventContext.textContent = event.context;
     document.getElementById("opportunityEventReasoning").value = event.reasoning;
-    eventStocksRoot.innerHTML = event.scenario.map((node) => `
-      <span class="opportunity-event-stock">
-        <strong>${escaped(node.stockName)}</strong>
-        <span>${escaped(node.code || "")}</span>
-        <em>${node.boardHeight}板${node.sector ? ` · ${escaped(node.sector)}` : ""}</em>
-        <b class="is-${escaped(node.outcome)}">${outcomeLabel(node.outcome)}</b>
-      </span>
+    eventStocksRoot.innerHTML = event.dimensions.map((node) => `
+      <article class="decision-condition-card">
+        <div class="decision-condition-head">
+          <span>${node.key.toUpperCase()}</span>
+          <div>
+            <strong>${escaped(node.stockName || `条件 ${node.key.toUpperCase()}`)}</strong>
+            <small>${node.boardHeight}板${node.sector ? ` · ${escaped(node.sector)}` : ""}</small>
+          </div>
+        </div>
+        <div class="decision-outcome-buttons">
+          <button type="button" data-condition="${escaped(node.key)}" data-outcome="promote"
+            class="${event.activeOutcomes[node.key] === "promote" ? "is-active" : ""}">晋级</button>
+          <button type="button" data-condition="${escaped(node.key)}" data-outcome="break"
+            class="${event.activeOutcomes[node.key] === "break" ? "is-active" : ""}">断板</button>
+        </div>
+      </article>
     `).join("");
+
+    const currentResult = activeResult(event);
+    resultCardsRoot.innerHTML = event.results.map((result) => `
+      <article class="decision-result-card tone-${escaped(result.tone)} ${result.id === currentResult.id ? "is-active" : ""}">
+        <header>
+          <strong>${escaped(result.name)}</strong>
+          <em>${result.id === currentResult.id ? "当前命中" : ""}</em>
+        </header>
+        <div class="decision-result-maps">
+          ${result.combinations.map((combination) => {
+            const [a, b] = combination.split(":");
+            return `<span>A ${outcomeLabel(a)} · B ${outcomeLabel(b)}</span>`;
+          }).join("")}
+        </div>
+        <footer>${result.actions.length} 个执行行为</footer>
+      </article>
+    `).join("");
+
     const counts = statusCounts(event);
     opportunityCount.textContent =
-      `${event.opportunities.length} 个标的 · ${counts.pending} 待验证 / ${counts.confirmed} 兑现 / ${counts.invalid} 失效`;
+      `${currentResult.actions.length} 个行为 · ${counts.pending} 待验证 / ${counts.confirmed} 兑现 / ${counts.invalid} 失效`;
+    actionContext.innerHTML =
+      `当前结果：<strong>${escaped(currentResult.name)}</strong> · 展示这组条件下对应的执行行为`;
     setSaveState(
       lastStorageError || formatSavedAt(event.updatedAt),
       !lastStorageError
     );
-    cardsRoot.innerHTML = event.opportunities.length
-      ? event.opportunities.map(renderOpportunityCard).join("")
-      : '<div class="opportunity-card-empty">这个预演还没有交易标的。用上方模板快速建立，也可以自由新增。</div>';
+    cardsRoot.innerHTML = currentResult.actions.length
+      ? currentResult.actions.map(renderOpportunityCard).join("")
+      : '<div class="opportunity-card-empty">这个结果还没有执行行为。可以新增标的或使用快捷模板。</div>';
   };
 
   const renderAll = () => {
@@ -552,7 +707,7 @@
       ? filtered.map((stock) => {
           const outcome = selectedPool.get(stock.name);
           const selectedClass = selectedPool.has(stock.name)
-            ? `is-selected ${outcome ? `is-selected-${outcome}` : ""}`
+            ? "is-selected"
             : "";
           return `
           <button class="opportunity-pool-stock ${selectedClass}"
@@ -560,7 +715,7 @@
             <strong>${escaped(stock.name)}</strong>
             <span>
               <span>${escaped(stock.code || "")}</span>
-              <em>${selectedPool.has(stock.name) ? `已选 · ${outcomeLabel(outcome)}` : `${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}`}</em>
+              <em>${selectedPool.has(stock.name) ? "已选" : `${stock.boardHeight}板${stock.sectors?.[0] ? ` · ${escaped(stock.sectors[0])}` : ""}`}</em>
             </span>
           </button>
         `;
@@ -571,40 +726,29 @@
 
   const renderPoolSelected = () => {
     const chosen = [...selectedPool.entries()]
-      .map(([name, outcome]) => ({ stock: poolByName.get(name), outcome }))
+      .map(([name]) => ({ stock: poolByName.get(name) }))
       .filter((item) => item.stock);
     poolSelectedCount.textContent = String(chosen.length);
     poolSelectedRoot.innerHTML = chosen
-      .map(({ stock, outcome }) => `
-        <div class="opportunity-scenario-row ${outcome ? `is-${outcome}` : ""}">
-          <span>${escaped(stock.name)} <em>${stock.boardHeight}板</em></span>
-          <div class="scenario-outcomes">
-            <button type="button" data-scenario-outcome="promote"
-              data-stock-name="${escaped(stock.name)}"
-              aria-pressed="${outcome === "promote"}"
-              class="${outcome === "promote" ? "is-active" : ""}">${outcome === "promote" ? "✓ " : ""}晋级</button>
-            <button type="button" data-scenario-outcome="break"
-              data-stock-name="${escaped(stock.name)}"
-              aria-pressed="${outcome === "break"}"
-              class="${outcome === "break" ? "is-active" : ""}">${outcome === "break" ? "✓ " : ""}断板</button>
-          </div>
+      .map(({ stock }, index) => `
+        <div class="opportunity-scenario-row">
+          <span><b>${index === 0 ? "A" : "B"}</b> ${escaped(stock.name)} <em>${stock.boardHeight}板</em></span>
           <button class="opportunity-scenario-remove" type="button"
             data-scenario-remove="${escaped(stock.name)}" aria-label="移除${escaped(stock.name)}">×</button>
         </div>
       `)
       .join("");
-    createFromPoolButton.disabled =
-      chosen.length === 0 || chosen.some((item) => !item.outcome);
+    createFromPoolButton.disabled = chosen.length !== 2;
     scenarioFeedback.classList.remove("is-ready", "is-waiting");
     if (!chosen.length) {
-      scenarioFeedback.textContent = "先选择第一只股票，再设置晋级或断板。";
-    } else if (chosen.some((item) => !item.outcome)) {
-      const waiting = chosen.find((item) => !item.outcome)?.stock.name;
-      scenarioFeedback.textContent = `已选 ${chosen.length} 只，请为${waiting ? `“${waiting}”` : "剩余股票"}设置晋级或断板。`;
+      scenarioFeedback.textContent = "先选择条件 A 的股票。";
+      scenarioFeedback.classList.add("is-waiting");
+    } else if (chosen.length === 1) {
+      scenarioFeedback.textContent = `已选条件 A：${chosen[0].stock.name}。请再选择同梯队条件 B。`;
       scenarioFeedback.classList.add("is-waiting");
     } else {
       scenarioFeedback.textContent =
-        `并列预演已设置：${chosen.map((item) => `${item.stock.name}${outcomeLabel(item.outcome)}`).join("；")}。`;
+        `双条件已建立：A ${chosen[0].stock.name} × B ${chosen[1].stock.name}。`;
       scenarioFeedback.classList.add("is-ready");
     }
   };
@@ -612,15 +756,15 @@
   const openPool = (event = null) => {
     selectedPool.clear();
     poolEditEventId = event?.id || null;
-    for (const node of event?.scenario || []) {
-      selectedPool.set(node.stockName, node.outcome);
+    for (const node of event?.dimensions || []) {
+      selectedPool.set(node.stockName, null);
     }
     poolSearch.value = "";
     poolFilter = selectedPool.size ? "same" : "all";
     document.querySelectorAll("[data-pool-filter]").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.poolFilter === poolFilter);
     });
-    createFromPoolButton.textContent = event ? "更新明日预演" : "建立明日预演";
+    createFromPoolButton.textContent = event ? "更新决策链" : "建立决策链";
     poolPanel.hidden = false;
     renderPool();
     requestAnimationFrame(() => {
@@ -720,8 +864,10 @@
   const addPath = (template = "free") => {
     const event = selectedEvent();
     if (!event) return;
+    const result = activeResult(event);
     const opportunity = templateOpportunity(template, event);
-    event.opportunities.push(opportunity);
+    opportunity.resultId = result.id;
+    result.actions.push(opportunity);
     expanded.clear();
     expanded.add(opportunity.id);
     touchEvent(event);
@@ -737,34 +883,36 @@
   };
 
   const createEventFromPool = () => {
-    const scenario = [...selectedPool.entries()]
-      .map(([name, outcome], index) => {
+    const dimensions = [...selectedPool.keys()]
+      .map((name, index) => {
         const stock = poolByName.get(name);
         if (!stock) return null;
         return {
+          key: index === 0 ? "a" : "b",
           stockName: stock.name,
           code: stock.code || "",
           boardHeight: Number(stock.boardHeight) || 1,
-          sector: stock.sectors?.[0] || "",
-          outcome: normalizeOutcome(outcome),
-          order: index + 1
+          sector: stock.sectors?.[0] || ""
         };
       })
       .filter(Boolean);
-    if (!scenario.length || scenario.some((node) => !node.outcome)) return;
-    const selectedStocks = scenario.map((node) => ({
+    if (dimensions.length !== 2) return;
+    const selectedStocks = dimensions.map((node) => ({
       name: node.stockName,
       code: node.code,
       boardHeight: node.boardHeight,
       sectors: node.sector ? [node.sector] : []
     }));
-    const title = suggestScenarioTitle(scenario);
-    const context = buildScenarioContext(scenario);
+    const title = `${shortNames(dimensions.map((node) => node.stockName), 2)} · 2×2 决策链`;
+    const context =
+      `${poolDate} 涨停池 · 双条件决策链：` +
+      dimensions.map((node) => `${node.stockName}（${node.boardHeight}板）`).join(" × ") +
+      "。";
 
     if (poolEditEventId) {
       const event = state.events.find((item) => item.id === poolEditEventId);
       if (!event) return;
-      event.scenario = scenario;
+      event.dimensions = dimensions;
       event.selectedStocks = selectedStocks;
       event.title = title;
       event.context = context;
@@ -782,18 +930,13 @@
       title,
       sourceDate: poolDate || shanghaiDate(),
       context,
-      scenario,
+      dimensions,
       selectedStocks,
-      opportunities: [],
+      activeOutcomes: { a: "promote", b: "promote" },
+      results: createDefaultResults(dimensions),
       createdAt: timestamp,
       updatedAt: timestamp
     });
-    const hasPromote = scenario.some((node) => node.outcome === "promote");
-    const hasBreak = scenario.some((node) => node.outcome === "break");
-    const templates = hasPromote && hasBreak ? ["core", "repair"] : ["core"];
-    event.opportunities.push(
-      ...templates.map((template) => templateOpportunity(template, event))
-    );
     state.events.unshift(event);
     selectedId = event.id;
     expanded.clear();
@@ -805,12 +948,15 @@
   const deleteOpportunity = (id) => {
     const event = selectedEvent();
     if (!event) return;
-    const target = event.opportunities.find((item) => item.id === id);
+    const result = event.results.find((item) =>
+      item.actions.some((action) => action.id === id)
+    );
+    const target = result?.actions.find((item) => item.id === id);
     if (!target) return;
     if (!window.confirm(`删除路径“${target.name || "未命名路径"}”？其他路径不会受到影响。`)) {
       return;
     }
-    event.opportunities = event.opportunities.filter((item) => item.id !== id);
+    result.actions = result.actions.filter((item) => item.id !== id);
     expanded.delete(id);
     touchEvent(event);
     persist({ refreshList: false });
@@ -832,7 +978,7 @@
   const updateOpportunityField = (card, field, value) => {
     const event = selectedEvent();
     if (!event || !field) return;
-    const opportunity = event.opportunities.find(
+    const opportunity = allActions(event).find(
       (item) => item.id === card?.dataset.opportunityId
     );
     if (!opportunity || !(field in opportunity)) return;
@@ -853,7 +999,7 @@
   const updateStatus = (id, status) => {
     const event = selectedEvent();
     if (!event) return;
-    const opportunity = event.opportunities.find((item) => item.id === id);
+    const opportunity = allActions(event).find((item) => item.id === id);
     if (!opportunity) return;
     opportunity.status = status;
     opportunity.verifiedAt = new Date().toISOString();
@@ -942,6 +1088,11 @@
     const name = button.dataset.poolStock;
     if (selectedPool.has(name)) selectedPool.delete(name);
     else {
+      if (selectedPool.size >= 2) {
+        scenarioFeedback.textContent = "决策链只使用两个条件，请先移除一个已选股票。";
+        scenarioFeedback.classList.add("is-waiting");
+        return;
+      }
       selectedPool.set(name, null);
       if (selectedPool.size === 1) {
         poolFilter = "same";
@@ -980,6 +1131,20 @@
     }
   });
 
+  eventStocksRoot.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-condition][data-outcome]");
+    if (!button) return;
+    const current = selectedEvent();
+    if (!current) return;
+    current.activeOutcomes[button.dataset.condition] =
+      normalizeOutcome(button.dataset.outcome) || "promote";
+    expanded.clear();
+    touchEvent(current);
+    persist({ refreshList: false });
+    renderHistory();
+    renderEditor();
+  });
+
   eventList.addEventListener("click", (event) => {
     const button = event.target.closest("[data-opportunity-event]");
     if (!button) return;
@@ -995,9 +1160,19 @@
     selectedId = button.dataset.verificationEvent;
     const target = selectedEvent();
     expanded.clear();
-    const firstPending = target?.opportunities.find(
+    const firstPending = target ? allActions(target).find(
       (item) => item.status === "pending"
-    );
+    ) : null;
+    if (firstPending) {
+      const pendingResult = target.results.find((result) =>
+        result.actions.some((action) => action.id === firstPending.id)
+      );
+      const combination = pendingResult?.combinations?.[0];
+      if (combination) {
+        const [a, b] = combination.split(":");
+        target.activeOutcomes = { a, b };
+      }
+    }
     if (firstPending) expanded.add(firstPending.id);
     localStorage.setItem(SELECTED_KEY, selectedId);
     renderAll();

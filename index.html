@@ -373,15 +373,21 @@
                       </div>
                     </div>
                     <div class="opportunity-event-stocks" id="opportunityEventStocks"></div>
+                    <label class="opportunity-field decision-reason-field">
+                      <input id="opportunityEventReasoning" type="text" data-event-field="reasoning"
+                        placeholder="理由...">
+                    </label>
                     <button class="opportunity-edit-scenario" id="opportunityEditScenario" type="button">调整预演节点</button>
                   </section>
 
                   <div class="opportunity-flow-bridge">
-                    <label class="opportunity-field">
-                      <input id="opportunityEventReasoning" type="text" data-event-field="reasoning"
-                        placeholder="理由...">
-                    </label>
-                    <div class="opportunity-flow-arrow" aria-hidden="true"><i></i></div>
+                    <div class="opportunity-stage-heading">
+                      <span>02</span>
+                      <div>
+                        <strong>三种结果</strong>
+                      </div>
+                    </div>
+                    <div class="decision-result-cards" id="decisionResultCards"></div>
                   </div>
 
                   <section class="opportunity-flow-column opportunity-flow-targets">
@@ -395,6 +401,7 @@
                       </div>
                       <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增标的</button>
                     </div>
+                    <p class="decision-action-context" id="decisionActionContext"></p>
                     <div class="opportunity-path-templates" id="opportunityPathTemplates">
                       <span>快速建立标的</span>
                       <button type="button" data-path-template="core">晋级主标的</button>
