@@ -400,6 +400,18 @@
   align-items: start;
 }
 
+.opportunity-layout.is-empty {
+  grid-template-columns: 1fr;
+}
+
+.opportunity-layout.is-empty .opportunity-history {
+  position: static;
+}
+
+.opportunity-layout.is-empty .opportunity-workspace {
+  display: none;
+}
+
 .opportunity-history {
   position: sticky;
   top: 62px;

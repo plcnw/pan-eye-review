@@ -12,7 +12,7 @@
   const poolDate = screen?.date || review.meta?.date || "";
 
   const eventList = document.getElementById("opportunityEventList");
-  const emptyState = document.getElementById("opportunityEmpty");
+  const opportunityLayout = document.getElementById("opportunityLayout");
   const editor = document.getElementById("opportunityEditor");
   const eventTitleHeading = document.getElementById("opportunityEventHeading");
   const eventContext = document.getElementById("opportunityEventContext");
@@ -349,7 +349,7 @@
   const renderHistory = () => {
     const events = sortedEvents();
     if (!events.length) {
-      eventList.innerHTML = '<p class="opportunity-event-empty">还没有涨停路径。先从今日涨停池选出一组结构事件。</p>';
+      eventList.innerHTML = '<p class="opportunity-event-empty">还没有推演记录。点击右上角“＋”建立明日预演。</p>';
       return;
     }
     eventList.innerHTML = events.map((event) => {
@@ -494,7 +494,7 @@
 
   const renderEditor = () => {
     const event = selectedEvent();
-    emptyState.hidden = Boolean(event);
+    opportunityLayout.classList.toggle("is-empty", !event);
     editor.hidden = !event;
     if (!event) return;
 
@@ -907,7 +907,6 @@
   };
 
   document.getElementById("opportunityNewEvent").addEventListener("click", () => openPool());
-  document.getElementById("opportunityEmptyNew").addEventListener("click", () => openPool());
   document.getElementById("opportunityEditScenario").addEventListener("click", () => {
     const event = selectedEvent();
     if (event) openPool(event);

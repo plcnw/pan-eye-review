@@ -4932,6 +4932,18 @@ textarea:focus-visible {
   align-items: start;
 }
 
+.opportunity-layout.is-empty {
+  grid-template-columns: 1fr;
+}
+
+.opportunity-layout.is-empty .opportunity-history {
+  position: static;
+}
+
+.opportunity-layout.is-empty .opportunity-workspace {
+  display: none;
+}
+
 .opportunity-history {
   position: sticky;
   top: 62px;
@@ -6218,7 +6230,7 @@ textarea:focus-visible {
           </footer>
         </section>
 
-        <div class="opportunity-layout">
+        <div class="opportunity-layout" id="opportunityLayout">
           <aside class="opportunity-history" aria-label="历史推演事件">
             <header class="opportunity-history-head">
               <div class="opportunity-history-title">
@@ -6238,15 +6250,7 @@ textarea:focus-visible {
             </div>
           </aside>
 
-          <div class="opportunity-workspace">
-            <section class="opportunity-empty" id="opportunityEmpty">
-              <div class="opportunity-empty-inner">
-                <div class="opportunity-empty-mark">演</div>
-                <h2>从今日涨停池选股</h2>
-                <button class="primary-button" id="opportunityEmptyNew" type="button">打开今日涨停池</button>
-              </div>
-            </section>
-
+          <div class="opportunity-workspace" id="opportunityWorkspace">
             <div class="opportunity-editor" id="opportunityEditor" hidden>
               <section class="opportunity-flow-frame">
                 <header class="opportunity-event-head opportunity-flow-frame-head">
@@ -182366,7 +182370,7 @@ $("#saveAnswers").addEventListener("click", () => {
   const poolDate = screen?.date || review.meta?.date || "";
 
   const eventList = document.getElementById("opportunityEventList");
-  const emptyState = document.getElementById("opportunityEmpty");
+  const opportunityLayout = document.getElementById("opportunityLayout");
   const editor = document.getElementById("opportunityEditor");
   const eventTitleHeading = document.getElementById("opportunityEventHeading");
   const eventContext = document.getElementById("opportunityEventContext");
@@ -182703,7 +182707,7 @@ $("#saveAnswers").addEventListener("click", () => {
   const renderHistory = () => {
     const events = sortedEvents();
     if (!events.length) {
-      eventList.innerHTML = '<p class="opportunity-event-empty">还没有涨停路径。先从今日涨停池选出一组结构事件。</p>';
+      eventList.innerHTML = '<p class="opportunity-event-empty">还没有推演记录。点击右上角“＋”建立明日预演。</p>';
       return;
     }
     eventList.innerHTML = events.map((event) => {
@@ -182848,7 +182852,7 @@ $("#saveAnswers").addEventListener("click", () => {
 
   const renderEditor = () => {
     const event = selectedEvent();
-    emptyState.hidden = Boolean(event);
+    opportunityLayout.classList.toggle("is-empty", !event);
     editor.hidden = !event;
     if (!event) return;
 
@@ -183261,7 +183265,6 @@ $("#saveAnswers").addEventListener("click", () => {
   };
 
   document.getElementById("opportunityNewEvent").addEventListener("click", () => openPool());
-  document.getElementById("opportunityEmptyNew").addEventListener("click", () => openPool());
   document.getElementById("opportunityEditScenario").addEventListener("click", () => {
     const event = selectedEvent();
     if (event) openPool(event);
