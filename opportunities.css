@@ -651,6 +651,12 @@
   line-height: 1.35;
 }
 
+.opportunity-flow-frame .opportunity-flow-frame-head h2 {
+  margin-top: 4px;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
 .opportunity-flow-frame-head .opportunity-event-context {
   margin-top: 5px;
   font-size: 8px;
@@ -663,7 +669,7 @@
     minmax(210px, 1fr)
     minmax(320px, 1.45fr);
   gap: 14px;
-  align-items: stretch;
+  align-items: start;
   margin-top: 16px;
 }
 
@@ -678,11 +684,13 @@
 
 .opportunity-flow-bridge {
   position: relative;
-  padding: 0 4px 30px;
+  align-self: start;
+  margin-top: 36px;
+  padding: 0 4px 29px;
 }
 
 .opportunity-flow-bridge .opportunity-field {
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .opportunity-flow-bridge input {
@@ -741,9 +749,40 @@
   margin-top: 0;
 }
 
-.opportunity-flow-targets .opportunity-card-section-head h3 {
-  font-size: 16px;
-  line-height: 1.35;
+.opportunity-target-head-copy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.opportunity-target-head-copy > span {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border: 1px solid rgba(239, 100, 83, 0.32);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--red);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 8px;
+}
+
+.opportunity-target-head-copy > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.opportunity-target-head-copy strong {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.opportunity-target-head-copy small {
+  color: var(--muted);
+  font-size: 8px;
 }
 
 .opportunity-flow-targets .opportunity-path-templates {
@@ -751,10 +790,9 @@
 }
 
 .opportunity-flow-targets .opportunity-cards {
-  max-height: min(620px, calc(100vh - 300px));
-  overflow-y: auto;
-  padding-right: 4px;
-  scrollbar-width: thin;
+  max-height: none;
+  overflow: visible;
+  padding-right: 0;
 }
 
 .opportunity-stage-heading {
@@ -1314,6 +1352,7 @@
   }
 
   .opportunity-flow-bridge {
+    margin-top: 0;
     padding: 0;
   }
 

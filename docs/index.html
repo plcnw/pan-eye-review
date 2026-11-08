@@ -5183,6 +5183,12 @@ textarea:focus-visible {
   line-height: 1.35;
 }
 
+.opportunity-flow-frame .opportunity-flow-frame-head h2 {
+  margin-top: 4px;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
 .opportunity-flow-frame-head .opportunity-event-context {
   margin-top: 5px;
   font-size: 8px;
@@ -5195,7 +5201,7 @@ textarea:focus-visible {
     minmax(210px, 1fr)
     minmax(320px, 1.45fr);
   gap: 14px;
-  align-items: stretch;
+  align-items: start;
   margin-top: 16px;
 }
 
@@ -5210,11 +5216,13 @@ textarea:focus-visible {
 
 .opportunity-flow-bridge {
   position: relative;
-  padding: 0 4px 30px;
+  align-self: start;
+  margin-top: 36px;
+  padding: 0 4px 29px;
 }
 
 .opportunity-flow-bridge .opportunity-field {
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .opportunity-flow-bridge input {
@@ -5273,9 +5281,40 @@ textarea:focus-visible {
   margin-top: 0;
 }
 
-.opportunity-flow-targets .opportunity-card-section-head h3 {
-  font-size: 16px;
-  line-height: 1.35;
+.opportunity-target-head-copy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.opportunity-target-head-copy > span {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  border: 1px solid rgba(239, 100, 83, 0.32);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--red);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 8px;
+}
+
+.opportunity-target-head-copy > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.opportunity-target-head-copy strong {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.opportunity-target-head-copy small {
+  color: var(--muted);
+  font-size: 8px;
 }
 
 .opportunity-flow-targets .opportunity-path-templates {
@@ -5283,10 +5322,9 @@ textarea:focus-visible {
 }
 
 .opportunity-flow-targets .opportunity-cards {
-  max-height: min(620px, calc(100vh - 300px));
-  overflow-y: auto;
-  padding-right: 4px;
-  scrollbar-width: thin;
+  max-height: none;
+  overflow: visible;
+  padding-right: 0;
 }
 
 .opportunity-stage-heading {
@@ -5846,6 +5884,7 @@ textarea:focus-visible {
   }
 
   .opportunity-flow-bridge {
+    margin-top: 0;
     padding: 0;
   }
 
@@ -6301,12 +6340,6 @@ textarea:focus-visible {
                   </section>
 
                   <div class="opportunity-flow-bridge">
-                    <div class="opportunity-stage-heading">
-                      <span>02</span>
-                      <div>
-                        <strong>推演逻辑 / 理由</strong>
-                      </div>
-                    </div>
                     <label class="opportunity-field">
                       <input id="opportunityEventReasoning" type="text" data-event-field="reasoning"
                         placeholder="理由...">
@@ -6316,9 +6349,12 @@ textarea:focus-visible {
 
                   <section class="opportunity-flow-column opportunity-flow-targets">
                     <div class="opportunity-card-section-head">
-                      <div>
-                        <span>03 · TRADE TARGETS</span>
-                        <h3 id="opportunityCount">0 个交易标的</h3>
+                      <div class="opportunity-target-head-copy">
+                        <span>03</span>
+                        <div>
+                          <strong>交易标的</strong>
+                          <small id="opportunityCount">0 个标的</small>
+                        </div>
                       </div>
                       <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增标的</button>
                     </div>
@@ -183102,6 +183138,7 @@ $("#saveAnswers").addEventListener("click", () => {
     if (!event) return;
     const opportunity = templateOpportunity(template, event);
     event.opportunities.push(opportunity);
+    expanded.clear();
     expanded.add(opportunity.id);
     touchEvent(event);
     persist({ refreshList: false });
@@ -183374,9 +183411,10 @@ $("#saveAnswers").addEventListener("click", () => {
     selectedId = button.dataset.verificationEvent;
     const target = selectedEvent();
     expanded.clear();
-    target?.opportunities
-      .filter((item) => item.status === "pending")
-      .forEach((item) => expanded.add(item.id));
+    const firstPending = target?.opportunities.find(
+      (item) => item.status === "pending"
+    );
+    if (firstPending) expanded.add(firstPending.id);
     localStorage.setItem(SELECTED_KEY, selectedId);
     renderAll();
     editor.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -183391,8 +183429,12 @@ $("#saveAnswers").addEventListener("click", () => {
     const toggle = event.target.closest("[data-opportunity-toggle]");
     if (toggle) {
       const id = toggle.dataset.opportunityToggle;
-      if (expanded.has(id)) expanded.delete(id);
-      else expanded.add(id);
+      if (expanded.has(id)) {
+        expanded.delete(id);
+      } else {
+        expanded.clear();
+        expanded.add(id);
+      }
       renderEditor();
       return;
     }

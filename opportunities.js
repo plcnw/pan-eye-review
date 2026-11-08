@@ -722,6 +722,7 @@
     if (!event) return;
     const opportunity = templateOpportunity(template, event);
     event.opportunities.push(opportunity);
+    expanded.clear();
     expanded.add(opportunity.id);
     touchEvent(event);
     persist({ refreshList: false });
@@ -994,9 +995,10 @@
     selectedId = button.dataset.verificationEvent;
     const target = selectedEvent();
     expanded.clear();
-    target?.opportunities
-      .filter((item) => item.status === "pending")
-      .forEach((item) => expanded.add(item.id));
+    const firstPending = target?.opportunities.find(
+      (item) => item.status === "pending"
+    );
+    if (firstPending) expanded.add(firstPending.id);
     localStorage.setItem(SELECTED_KEY, selectedId);
     renderAll();
     editor.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -1011,8 +1013,12 @@
     const toggle = event.target.closest("[data-opportunity-toggle]");
     if (toggle) {
       const id = toggle.dataset.opportunityToggle;
-      if (expanded.has(id)) expanded.delete(id);
-      else expanded.add(id);
+      if (expanded.has(id)) {
+        expanded.delete(id);
+      } else {
+        expanded.clear();
+        expanded.add(id);
+      }
       renderEditor();
       return;
     }
