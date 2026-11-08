@@ -796,7 +796,6 @@
     state.events.unshift(event);
     selectedId = event.id;
     expanded.clear();
-    event.opportunities.forEach((item) => expanded.add(item.id));
     persist({ refreshList: false, refreshQueue: false });
     closePool();
     renderAll();

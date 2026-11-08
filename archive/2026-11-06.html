@@ -5195,7 +5195,7 @@ textarea:focus-visible {
     minmax(210px, 1fr)
     minmax(320px, 1.45fr);
   gap: 14px;
-  align-items: start;
+  align-items: stretch;
   margin-top: 16px;
 }
 
@@ -5217,8 +5217,14 @@ textarea:focus-visible {
   margin-top: 12px;
 }
 
-.opportunity-flow-bridge textarea {
-  min-height: 128px;
+.opportunity-flow-bridge input {
+  height: 38px;
+  font-size: 11px;
+}
+
+.opportunity-flow-bridge input::placeholder {
+  color: var(--muted);
+  opacity: 0.55;
 }
 
 .opportunity-flow-arrow {
@@ -5267,8 +5273,20 @@ textarea:focus-visible {
   margin-top: 0;
 }
 
+.opportunity-flow-targets .opportunity-card-section-head h3 {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
 .opportunity-flow-targets .opportunity-path-templates {
   margin-top: 10px;
+}
+
+.opportunity-flow-targets .opportunity-cards {
+  max-height: min(620px, calc(100vh - 300px));
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
 }
 
 .opportunity-stage-heading {
@@ -5843,6 +5861,12 @@ textarea:focus-visible {
   .opportunity-flow-targets {
     padding-left: 0;
   }
+
+  .opportunity-flow-targets .opportunity-cards {
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 760px) {
@@ -6267,8 +6291,7 @@ textarea:focus-visible {
                     <div class="opportunity-stage-heading">
                       <span>01</span>
                       <div>
-                        <strong>明日情况预演</strong>
-                        <em>个股与板块结果并列</em>
+                        <strong>预演</strong>
                       </div>
                     </div>
                     <div class="opportunity-event-stocks" id="opportunityEventStocks"></div>
@@ -6280,12 +6303,11 @@ textarea:focus-visible {
                       <span>02</span>
                       <div>
                         <strong>推演逻辑 / 理由</strong>
-                        <em>写下并列条件为何指向右侧标的</em>
                       </div>
                     </div>
                     <label class="opportunity-field">
-                      <textarea id="opportunityEventReasoning" rows="5" data-event-field="reasoning"
-                        placeholder="记录推演逻辑与理由"></textarea>
+                      <input id="opportunityEventReasoning" type="text" data-event-field="reasoning"
+                        placeholder="理由...">
                     </label>
                     <div class="opportunity-flow-arrow" aria-hidden="true"><i></i></div>
                   </div>
@@ -183152,7 +183174,6 @@ $("#saveAnswers").addEventListener("click", () => {
     state.events.unshift(event);
     selectedId = event.id;
     expanded.clear();
-    event.opportunities.forEach((item) => expanded.add(item.id));
     persist({ refreshList: false, refreshQueue: false });
     closePool();
     renderAll();
