@@ -435,7 +435,7 @@
               <span>标的名称</span>
               <input type="text" data-opportunity-field="name"
                 ${fieldValue(opportunity.name)}
-                placeholder="例如：闽发铝业 / 板块低位补涨">
+                placeholder="填写具体交易标的">
             </label>
           </div>
 

@@ -355,21 +355,13 @@
               <div class="opportunity-empty-inner">
                 <div class="opportunity-empty-mark">演</div>
                 <h2>从今日涨停池选股</h2>
-                <p>例如：闽发晋级、同梯队浙文断板。先把这个明日情景搭建出来，再围绕它添加多条交易分支。</p>
                 <button class="primary-button" id="opportunityEmptyNew" type="button">打开今日涨停池</button>
               </div>
             </section>
 
             <div class="opportunity-editor" id="opportunityEditor" hidden>
-              <section class="opportunity-event-sheet">
-                <div class="opportunity-stage-heading">
-                  <span>01</span>
-                  <div>
-                    <strong>明日情况预演</strong>
-                    <em>以下条件为并列关系，不代表先后因果</em>
-                  </div>
-                </div>
-                <header class="opportunity-event-head">
+              <section class="opportunity-flow-frame">
+                <header class="opportunity-event-head opportunity-flow-frame-head">
                   <div>
                     <span class="opportunity-event-kicker">LIMIT-UP EVENT</span>
                     <h2 id="opportunityEventHeading">未命名事件</h2>
@@ -380,46 +372,53 @@
                     <button class="opportunity-delete-event" id="opportunityDeleteEvent" type="button">删除事件</button>
                   </div>
                 </header>
-                <div class="opportunity-event-stocks" id="opportunityEventStocks"></div>
-                <button class="opportunity-edit-scenario" id="opportunityEditScenario" type="button">调整预演节点</button>
-              </section>
+                <div class="opportunity-flow-grid">
+                  <section class="opportunity-flow-column opportunity-flow-scenario">
+                    <div class="opportunity-stage-heading">
+                      <span>01</span>
+                      <div>
+                        <strong>明日情况预演</strong>
+                        <em>个股与板块结果并列</em>
+                      </div>
+                    </div>
+                    <div class="opportunity-event-stocks" id="opportunityEventStocks"></div>
+                    <button class="opportunity-edit-scenario" id="opportunityEditScenario" type="button">调整预演节点</button>
+                  </section>
 
-              <div class="opportunity-stage-connector" aria-hidden="true">↓</div>
-
-              <section class="opportunity-reasoning-panel">
-                <div class="opportunity-stage-heading">
-                  <span>02</span>
-                  <div>
-                    <strong>推演逻辑</strong>
-                    <em>为什么这组并列条件会导出后面的交易标的</em>
+                  <div class="opportunity-flow-bridge">
+                    <div class="opportunity-stage-heading">
+                      <span>02</span>
+                      <div>
+                        <strong>推演逻辑 / 理由</strong>
+                        <em>写下并列条件为何指向右侧标的</em>
+                      </div>
+                    </div>
+                    <label class="opportunity-field">
+                      <textarea id="opportunityEventReasoning" rows="5" data-event-field="reasoning"
+                        placeholder="记录推演逻辑与理由"></textarea>
+                    </label>
+                    <div class="opportunity-flow-arrow" aria-hidden="true"><i></i></div>
                   </div>
-                </div>
-                <label class="opportunity-field">
-                  <span>事件级推演理由</span>
-                  <textarea id="opportunityEventReasoning" rows="5" data-event-field="reasoning"
-                    placeholder="例如：闽发晋级代表高位核心仍被承接，而浙文断板说明同身位开始淘汰；如果板块内出现新的主动响应，资金可能转向补涨或断板修复。"></textarea>
-                </label>
-              </section>
 
-              <div class="opportunity-stage-connector" aria-hidden="true">↓</div>
-
-              <section class="opportunity-target-panel">
-                <div class="opportunity-card-section-head">
-                  <div>
-                    <span>03 · TRADE TARGETS</span>
-                    <h3 id="opportunityCount">0 个交易标的</h3>
-                  </div>
-                  <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增标的</button>
+                  <section class="opportunity-flow-column opportunity-flow-targets">
+                    <div class="opportunity-card-section-head">
+                      <div>
+                        <span>03 · TRADE TARGETS</span>
+                        <h3 id="opportunityCount">0 个交易标的</h3>
+                      </div>
+                      <button class="opportunity-add-card" id="opportunityAddCard" type="button">＋ 新增标的</button>
+                    </div>
+                    <div class="opportunity-path-templates" id="opportunityPathTemplates">
+                      <span>快速建立标的</span>
+                      <button type="button" data-path-template="core">晋级主标的</button>
+                      <button type="button" data-path-template="peer">同身位标的</button>
+                      <button type="button" data-path-template="sector">板块扩散标的</button>
+                      <button type="button" data-path-template="repair">断板修复标的</button>
+                      <button type="button" data-path-template="emotion">情绪观察标的</button>
+                    </div>
+                    <div class="opportunity-cards" id="opportunityCards"></div>
+                  </section>
                 </div>
-                <div class="opportunity-path-templates" id="opportunityPathTemplates">
-                  <span>从预演快速建立标的</span>
-                  <button type="button" data-path-template="core">晋级主标的</button>
-                  <button type="button" data-path-template="peer">同身位标的</button>
-                  <button type="button" data-path-template="sector">板块扩散标的</button>
-                  <button type="button" data-path-template="repair">断板修复标的</button>
-                  <button type="button" data-path-template="emotion">情绪观察标的</button>
-                </div>
-                <div class="opportunity-cards" id="opportunityCards"></div>
               </section>
             </div>
           </div>

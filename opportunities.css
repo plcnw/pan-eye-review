@@ -569,8 +569,8 @@
 }
 
 .opportunity-empty {
-  min-height: 480px;
-  padding: 52px 30px;
+  min-height: 260px;
+  padding: 28px 24px;
   border: 1px solid var(--line);
   border-radius: 18px;
   background:
@@ -586,22 +586,22 @@
 }
 
 .opportunity-empty-mark {
-  width: 54px;
-  height: 54px;
-  margin: 0 auto 18px;
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 12px;
   border: 1px solid rgba(239, 100, 83, 0.34);
   border-radius: 50%;
   display: grid;
   place-items: center;
   color: var(--red);
   font-family: var(--serif);
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .opportunity-empty h2 {
   margin: 0;
   font-family: var(--serif);
-  font-size: 30px;
+  font-size: 23px;
   font-weight: 500;
 }
 
@@ -612,9 +612,119 @@
   line-height: 1.8;
 }
 
+.opportunity-empty .primary-button {
+  margin-top: 16px;
+}
+
 .opportunity-editor {
   display: grid;
   gap: 14px;
+}
+
+.opportunity-flow-frame {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  background: var(--ink-raised);
+}
+
+.opportunity-flow-frame-head {
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.opportunity-flow-frame-head h2 {
+  margin-top: 5px;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.opportunity-flow-frame-head .opportunity-event-context {
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+.opportunity-flow-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(180px, 0.85fr)
+    minmax(210px, 1fr)
+    minmax(320px, 1.45fr);
+  gap: 14px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+.opportunity-flow-column,
+.opportunity-flow-bridge {
+  min-width: 0;
+}
+
+.opportunity-flow-scenario {
+  padding-right: 4px;
+}
+
+.opportunity-flow-bridge {
+  position: relative;
+  padding: 0 4px 30px;
+}
+
+.opportunity-flow-bridge .opportunity-field {
+  margin-top: 12px;
+}
+
+.opportunity-flow-bridge textarea {
+  min-height: 128px;
+}
+
+.opportunity-flow-arrow {
+  position: absolute;
+  right: -18px;
+  bottom: 9px;
+  left: 4px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(214, 183, 110, 0.24), var(--gold));
+}
+
+.opportunity-flow-arrow::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+.opportunity-flow-arrow i {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  padding: 0 7px;
+  background: var(--ink-raised);
+  color: var(--gold);
+  font-size: 8px;
+  font-style: normal;
+  transform: translateX(-50%);
+}
+
+.opportunity-flow-arrow i::after {
+  content: "从预演指向交易";
+  white-space: nowrap;
+}
+
+.opportunity-flow-targets {
+  padding-left: 4px;
+}
+
+.opportunity-flow-targets .opportunity-card-section-head {
+  margin-top: 0;
+}
+
+.opportunity-flow-targets .opportunity-path-templates {
+  margin-top: 10px;
 }
 
 .opportunity-stage-heading {
@@ -717,9 +827,8 @@
 }
 
 .opportunity-event-stocks {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 6px;
   margin-top: 16px;
 }
@@ -732,7 +841,8 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 3px 8px;
-  min-width: 128px;
+  width: 100%;
+  min-width: 0;
 }
 
 .opportunity-event-stock strong {
@@ -1166,6 +1276,28 @@
 
   .opportunity-verification-list {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .opportunity-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .opportunity-flow-bridge {
+    padding: 0;
+  }
+
+  .opportunity-flow-arrow {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    margin: 17px 0 5px;
+  }
+
+  .opportunity-flow-targets {
+    padding-left: 0;
   }
 }
 
