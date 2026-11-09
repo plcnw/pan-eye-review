@@ -1,170 +1,172 @@
 window.SECTOR_DATA = {
-  "date": "2026-11-06",
+  "date": "2026-11-09",
   "market": {
-    "limitUpCount": 41,
-    "firstBoardCount": 21,
-    "maxHeight": 5,
-    "articleCoveredLimitUps": 32
+    "limitUpCount": 68,
+    "firstBoardCount": 45,
+    "maxHeight": 6,
+    "articleCoveredLimitUps": 55
   },
   "ladderFunnel": [
     {
       "from": "1板",
       "to": "2板",
-      "base": 62,
-      "promoted": 4,
-      "rate": 6.45
+      "base": 21,
+      "promoted": 8,
+      "rate": 38.1
     },
     {
       "from": "2板",
       "to": "3板",
-      "base": 17,
-      "promoted": 3,
-      "rate": 17.65
+      "base": 4,
+      "promoted": 0,
+      "rate": 0.0
     },
     {
       "from": "3板",
       "to": "4板",
-      "base": 2,
-      "promoted": 2,
-      "rate": 100.0
+      "base": 3,
+      "promoted": 0,
+      "rate": 0.0
     },
     {
       "from": "4板",
       "to": "5板",
       "base": 2,
-      "promoted": 2,
-      "rate": 100.0
+      "promoted": 0,
+      "rate": 0.0
+    },
+    {
+      "from": "5板",
+      "to": "6板",
+      "base": 2,
+      "promoted": 1,
+      "rate": 50.0
     }
   ],
   "sectors": [
     {
-      "id": "media",
-      "name": "传媒",
+      "id": "aerospace",
+      "name": "航天",
+      "stage": "启动",
+      "count": 10,
+      "firstBoardCount": 10,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "苏州科达",
+        "西部材料",
+        "腾达科技",
+        "泰尔股份",
+        "盛洋科技",
+        "世运电路",
+        "东方通信",
+        "通则康威",
+        "顺灏股份",
+        "飞亚达"
+      ],
+      "evidence": "发酵原因不清楚，起码算力不作为是真的。午后未续强，有一日游风格。",
+      "nextWatch": "想做自己会高溢价表态，一般客观一点，套不了你。"
+    },
+    {
+      "id": "robot",
+      "name": "机器人",
+      "stage": "轮动",
+      "count": 11,
+      "firstBoardCount": 11,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "华培动力",
+        "日盈电子",
+        "光洋股份",
+        "信通电子",
+        "晶华新材",
+        "祥明智能",
+        "锋龙股份",
+        "胜通能源",
+        "上纬新材",
+        "金固股份",
+        "金杯汽车"
+      ],
+      "evidence": "宇树动，直接板块异动。宇树不动，直接变孙子。题材多次异动变轮动脉冲，新鲜感一般，都是作为算力不及预期时的掩护动作，帮科技争脸用。",
+      "nextWatch": "持续性不明，新鲜感问题+无法脱离宇树。"
+    },
+    {
+      "id": "application",
+      "name": "应用",
       "stage": "分歧",
       "count": 3,
       "firstBoardCount": 3,
-      "maxHeight": 5,
-      "tone": "mixed",
-      "members": [
-        "城市传媒",
-        "上海电影",
-        "思美传媒"
-      ],
-      "evidence": "浙文最大单发酵。算力影响，可信度不高，发酵不多。吹的什么算力云服务，短剧出海通通没看到响应，浪费美股app大涨的量能。持续性角度看，浙文能行就行，不行就不行。",
-      "nextWatch": "观察浙文能否弱转强，以及传媒方向能否继续发酵。"
-    },
-    {
-      "id": "solar",
-      "name": "光伏",
-      "stage": "分歧",
-      "count": 5,
-      "firstBoardCount": 5,
-      "maxHeight": 5,
-      "tone": "mixed",
-      "members": [
-        "新能股份",
-        "安彩高科",
-        "立新能源",
-        "日出东方",
-        "东方新能"
-      ],
-      "evidence": "闽发回封，刺激回流。闽发没干掉浙文，有点可惜了这个节点机会。实际发酵低于预期，打60±5分。提防美股反弹，不然逻辑会刺激到跷跷板。理论上是新题材，不清楚哪里错了，如果市场上的资金一直抱着算力不动摇，那无所谓。持续性不明，因为今天该发力没发力，板块效应缺点霸气，如果想做下去，起码得有加分项做抗压能力。",
-      "nextWatch": "观察闽发铝业能否继续走强，以及光伏板块能否出现加分项抗压。"
-    },
-    {
-      "id": "northeast",
-      "name": "东北",
-      "stage": "启动",
-      "count": 2,
-      "firstBoardCount": 2,
-      "maxHeight": 1,
-      "tone": "rotation",
-      "members": [
-        "万向德农",
-        "龙江交通"
-      ],
-      "evidence": "农业冰雪理论上都是避险品种，不纠结。",
-      "nextWatch": "避险属性，观察轮动机会。"
-    },
-    {
-      "id": "edge",
-      "name": "端侧",
-      "stage": "启动",
-      "count": 3,
-      "firstBoardCount": 3,
-      "maxHeight": 1,
-      "tone": "rotation",
-      "members": [
-        "润贝航科",
-        "康冠科技",
-        "智动力"
-      ],
-      "evidence": "消费电子角度，国光炸板，补华升进来。持续性不明，依旧试错或者暗示中。",
-      "nextWatch": "观察消费电子方向能否持续。"
-    },
-    {
-      "id": "east",
-      "name": "东方",
-      "stage": "启动",
-      "count": 5,
-      "firstBoardCount": 5,
-      "maxHeight": 1,
-      "tone": "rotation",
-      "members": [
-        "日出东方",
-        "东方新能",
-        "大东方",
-        "东方创业",
-        "东方嘉盛"
-      ],
-      "evidence": "玄学炒作，东升西落。东升西落的前提是摆脱算力影响，日出有新能源属性，所以发酵新能源是可以的。日出得大单，其他东方才能套利。持续性角度看，两个反包羊需要日出大单，仅此而已。",
-      "nextWatch": "观察日出东方能否获得大单，带动东方系套利。"
-    },
-    {
-      "id": "agriculture",
-      "name": "农业",
-      "stage": "启动",
-      "count": 3,
-      "firstBoardCount": 3,
-      "maxHeight": 1,
-      "tone": "rotation",
-      "members": [
-        "万向德农",
-        "新赛股份",
-        "红太阳"
-      ],
-      "evidence": "避险属性，仅此而已。不排除是东方海洋发酵。等板块轮动做悟道板。持续性角度看，曾经也是没有痛打落水狗，导致崩盘。",
-      "nextWatch": "观察轮动机会，注意避险属性持续性。"
-    },
-    {
-      "id": "environment",
-      "name": "环保",
-      "stage": "启动",
-      "count": 2,
-      "firstBoardCount": 2,
       "maxHeight": 1,
       "tone": "weak",
       "members": [
-        "侨银股份",
-        "美晨科技"
+        "郑中设计",
+        "文投控股",
+        "大晟文化"
       ],
-      "evidence": "除了想暗示鲁阳节能外，找不到其他拉升理由。工具人概率大。",
-      "nextWatch": "工具人属性，观察是否与鲁阳节能联动。"
+      "evidence": "浙文利空能翻红，刺激发酵。实际5板直接被盯死，食之无味，弃之可惜。",
+      "nextWatch": "只能趋势型玩法，信连板来一次输一次。"
+    },
+    {
+      "id": "coldwave",
+      "name": "寒潮+冰雪",
+      "stage": "发酵",
+      "count": 10,
+      "firstBoardCount": 10,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "冰山冷热",
+        "安泰集团",
+        "郑州煤电",
+        "东方环宇",
+        "龙建股份",
+        "古麒绒材",
+        "云煤能源",
+        "盘龙药业",
+        "雪人集团",
+        "晶雪节能"
+      ],
+      "evidence": "日出东方空气能热泵发酵。那年没寒潮？和夏天炒空调用电一个道理。但是电能叠加算力缺电。",
+      "nextWatch": "日出东方大单就行，但是日出发酵这种，估计有点低于市场预期，30亿封单让你玩寒潮，有点德不配位。"
+    },
+    {
+      "id": "computing",
+      "name": "算力硬件",
+      "stage": "回流",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "声讯股份",
+        "超声电子",
+        "奥士康",
+        "亚振家居"
+      ],
+      "evidence": "外围算力止跌，正常回流。算力预期被外围绑架，无法分析。",
+      "nextWatch": "算力预期被外围绑架，无法分析。"
     },
     {
       "id": "single",
       "name": "其余形式独苗",
-      "stage": "启动",
-      "count": 1,
-      "firstBoardCount": 1,
+      "stage": "轮动",
+      "count": 7,
+      "firstBoardCount": 7,
       "maxHeight": 1,
       "tone": "rotation",
       "members": [
-        "华升股份"
+        "保利联合",
+        "天邦食品",
+        "澳洋健康",
+        "海南瑞泽",
+        "勤上股份",
+        "拓山重工",
+        "上海九百"
       ],
-      "evidence": "华升股份，不好评价，我说现在去信算力你也不信，想做自己会高开。",
-      "nextWatch": "观察华升股份能否高开。"
+      "evidence": "独苗多指引为主，无特殊挖掘。",
+      "nextWatch": "独苗多指引为主，无特殊挖掘。"
     }
   ],
-  "capturedAt": "2026-11-07T21:06:08+08:00"
+  "capturedAt": "2026-11-09T17:26:35+08:00"
 };

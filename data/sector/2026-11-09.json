@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-09",
+  "market": {
+    "limitUpCount": 68,
+    "firstBoardCount": 45,
+    "maxHeight": 6,
+    "articleCoveredLimitUps": 55
+  },
+  "ladderFunnel": [
+    {
+      "from": "1板",
+      "to": "2板",
+      "base": 21,
+      "promoted": 8,
+      "rate": 38.1
+    },
+    {
+      "from": "2板",
+      "to": "3板",
+      "base": 4,
+      "promoted": 0,
+      "rate": 0.0
+    },
+    {
+      "from": "3板",
+      "to": "4板",
+      "base": 3,
+      "promoted": 0,
+      "rate": 0.0
+    },
+    {
+      "from": "4板",
+      "to": "5板",
+      "base": 2,
+      "promoted": 0,
+      "rate": 0.0
+    },
+    {
+      "from": "5板",
+      "to": "6板",
+      "base": 2,
+      "promoted": 1,
+      "rate": 50.0
+    }
+  ],
+  "sectors": [
+    {
+      "id": "aerospace",
+      "name": "航天",
+      "stage": "启动",
+      "count": 10,
+      "firstBoardCount": 10,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "苏州科达",
+        "西部材料",
+        "腾达科技",
+        "泰尔股份",
+        "盛洋科技",
+        "世运电路",
+        "东方通信",
+        "通则康威",
+        "顺灏股份",
+        "飞亚达"
+      ],
+      "evidence": "发酵原因不清楚，起码算力不作为是真的。午后未续强，有一日游风格。",
+      "nextWatch": "想做自己会高溢价表态，一般客观一点，套不了你。"
+    },
+    {
+      "id": "robot",
+      "name": "机器人",
+      "stage": "轮动",
+      "count": 11,
+      "firstBoardCount": 11,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "华培动力",
+        "日盈电子",
+        "光洋股份",
+        "信通电子",
+        "晶华新材",
+        "祥明智能",
+        "锋龙股份",
+        "胜通能源",
+        "上纬新材",
+        "金固股份",
+        "金杯汽车"
+      ],
+      "evidence": "宇树动，直接板块异动。宇树不动，直接变孙子。题材多次异动变轮动脉冲，新鲜感一般，都是作为算力不及预期时的掩护动作，帮科技争脸用。",
+      "nextWatch": "持续性不明，新鲜感问题+无法脱离宇树。"
+    },
+    {
+      "id": "application",
+      "name": "应用",
+      "stage": "分歧",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 1,
+      "tone": "weak",
+      "members": [
+        "郑中设计",
+        "文投控股",
+        "大晟文化"
+      ],
+      "evidence": "浙文利空能翻红，刺激发酵。实际5板直接被盯死，食之无味，弃之可惜。",
+      "nextWatch": "只能趋势型玩法，信连板来一次输一次。"
+    },
+    {
+      "id": "coldwave",
+      "name": "寒潮+冰雪",
+      "stage": "发酵",
+      "count": 10,
+      "firstBoardCount": 10,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "冰山冷热",
+        "安泰集团",
+        "郑州煤电",
+        "东方环宇",
+        "龙建股份",
+        "古麒绒材",
+        "云煤能源",
+        "盘龙药业",
+        "雪人集团",
+        "晶雪节能"
+      ],
+      "evidence": "日出东方空气能热泵发酵。那年没寒潮？和夏天炒空调用电一个道理。但是电能叠加算力缺电。",
+      "nextWatch": "日出东方大单就行，但是日出发酵这种，估计有点低于市场预期，30亿封单让你玩寒潮，有点德不配位。"
+    },
+    {
+      "id": "computing",
+      "name": "算力硬件",
+      "stage": "回流",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "声讯股份",
+        "超声电子",
+        "奥士康",
+        "亚振家居"
+      ],
+      "evidence": "外围算力止跌，正常回流。算力预期被外围绑架，无法分析。",
+      "nextWatch": "算力预期被外围绑架，无法分析。"
+    },
+    {
+      "id": "single",
+      "name": "其余形式独苗",
+      "stage": "轮动",
+      "count": 7,
+      "firstBoardCount": 7,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "保利联合",
+        "天邦食品",
+        "澳洋健康",
+        "海南瑞泽",
+        "勤上股份",
+        "拓山重工",
+        "上海九百"
+      ],
+      "evidence": "独苗多指引为主，无特殊挖掘。",
+      "nextWatch": "独苗多指引为主，无特殊挖掘。"
+    }
+  ],
+  "capturedAt": "2026-11-09T17:26:35+08:00"
+}
