@@ -74,7 +74,7 @@ window.SECTOR_DATA = {
       "count": 11,
       "firstBoardCount": 11,
       "maxHeight": 1,
-      "tone": "rotation",
+      "tone": "mixed",
       "members": [
         "华培动力",
         "日盈电子",
@@ -88,7 +88,7 @@ window.SECTOR_DATA = {
         "金固股份",
         "金杯汽车"
       ],
-      "evidence": "宇树动，直接板块异动。宇树不动，直接变孙子。题材多次异动变轮动脉冲，新鲜感一般，都是作为算力不及预期时的掩护动作，帮科技争脸用。",
+      "evidence": "宇树动，直接板块异动。宇树不动，直接变孙子。题材多次异动变轮动脉冲，新鲜感一般。",
       "nextWatch": "持续性不明，新鲜感问题+无法脱离宇树。"
     },
     {
@@ -114,7 +114,7 @@ window.SECTOR_DATA = {
       "count": 10,
       "firstBoardCount": 10,
       "maxHeight": 1,
-      "tone": "mixed",
+      "tone": "active",
       "members": [
         "冰山冷热",
         "安泰集团",
@@ -127,7 +127,7 @@ window.SECTOR_DATA = {
         "雪人集团",
         "晶雪节能"
       ],
-      "evidence": "日出东方空气能热泵发酵。那年没寒潮？和夏天炒空调用电一个道理。但是电能叠加算力缺电。",
+      "evidence": "日出东方空气能热泵发酵。那年没寒潮？和夏天炒空调用电一个道理。",
       "nextWatch": "日出东方大单就行，但是日出发酵这种，估计有点低于市场预期，30亿封单让你玩寒潮，有点德不配位。"
     },
     {
@@ -137,7 +137,7 @@ window.SECTOR_DATA = {
       "count": 4,
       "firstBoardCount": 4,
       "maxHeight": 1,
-      "tone": "mixed",
+      "tone": "rotation",
       "members": [
         "声讯股份",
         "超声电子",
@@ -154,7 +154,7 @@ window.SECTOR_DATA = {
       "count": 7,
       "firstBoardCount": 7,
       "maxHeight": 1,
-      "tone": "rotation",
+      "tone": "mixed",
       "members": [
         "保利联合",
         "天邦食品",
@@ -168,5 +168,5 @@ window.SECTOR_DATA = {
       "nextWatch": "独苗多指引为主，无特殊挖掘。"
     }
   ],
-  "capturedAt": "2026-11-09T17:26:35+08:00"
+  "capturedAt": "2026-11-09T18:21:02+08:00"
 };

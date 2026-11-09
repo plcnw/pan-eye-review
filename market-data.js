@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
   "date": "2026-11-09",
-  "capturedAt": "2026-11-09T17:26:46+08:00",
+  "capturedAt": "2026-11-09T18:21:17+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -402,6 +402,28 @@ window.MARKET_DATA = {
       "quoteTime": "20261109161458"
     },
     {
+      "name": "华升股份",
+      "code": "600156",
+      "quoteId": "1.600156",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "华升股份",
+          "code": "600156"
+        }
+      ],
+      "requestedName": "华升股份",
+      "apiName": "华升股份",
+      "price": 7.36,
+      "previousClose": 7.07,
+      "changePercent": 4.1,
+      "turnoverRate": 16.67,
+      "totalMarketCapYi": 29.6,
+      "floatMarketCapYi": 29.6,
+      "inFloatCapRange": false,
+      "quoteTime": "20261109161458"
+    },
+    {
       "name": "华培动力",
       "code": "603121",
       "quoteId": "1.603121",
@@ -708,28 +730,6 @@ window.MARKET_DATA = {
       "floatMarketCapYi": 28.31,
       "inFloatCapRange": false,
       "quoteTime": "20261109161457"
-    },
-    {
-      "name": "永臻股份",
-      "code": "603381",
-      "quoteId": "1.603381",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "永臻股份",
-          "code": "603381"
-        }
-      ],
-      "requestedName": "永臻股份",
-      "apiName": "永臻股份",
-      "price": 19.9,
-      "previousClose": 20.74,
-      "changePercent": -4.05,
-      "turnoverRate": 31.23,
-      "totalMarketCapYi": 47.21,
-      "floatMarketCapYi": 28.29,
-      "inFloatCapRange": false,
-      "quoteTime": "20261109161449"
     },
     {
       "name": "上海沪工",
@@ -1280,28 +1280,6 @@ window.MARKET_DATA = {
       "floatMarketCapYi": 73.58,
       "inFloatCapRange": true,
       "quoteTime": "20261109161445"
-    },
-    {
-      "name": "鲁阳节能",
-      "code": "002088",
-      "quoteId": "0.002088",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "鲁阳节能",
-          "code": "002088"
-        }
-      ],
-      "requestedName": "鲁阳节能",
-      "apiName": "鲁阳节能",
-      "price": 11.08,
-      "previousClose": 11.09,
-      "changePercent": -0.09,
-      "turnoverRate": 12.8,
-      "totalMarketCapYi": 56.45,
-      "floatMarketCapYi": 56.06,
-      "inFloatCapRange": true,
-      "quoteTime": "20261109161500"
     },
     {
       "name": "龙建股份",
