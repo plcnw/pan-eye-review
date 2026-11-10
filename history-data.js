@@ -1,6 +1,6 @@
 window.HISTORY_DATA = {
   "date": "2026-11-10",
-  "capturedAt": "2026-11-10T17:27:42+08:00",
+  "capturedAt": "2026-11-10T18:22:16+08:00",
   "source": "腾讯历史日线（前复权）",
   "method": "连续至少两个涨停后，断板日下跌超过5%、高开后盘中回落超过5%，或断板后两日累计下跌超过8%。结果仅作为疑似证据。",
   "stocks": [
@@ -349262,7 +349262,7 @@ window.HISTORY_DATA = {
       "apiName": "达 意 隆",
       "code": "002209",
       "quoteId": "0.002209",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -349281,22 +349281,13 @@ window.HISTORY_DATA = {
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-11",
-          "open": 7.568,
-          "close": 7.518,
-          "high": 7.648,
-          "low": 7.498,
-          "volume": 24043.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-12",
           "open": 7.518,
           "close": 7.508,
           "high": 7.618,
           "low": 7.478,
           "volume": 21353.0,
-          "changePercent": -0.13
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-13",

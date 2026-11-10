@@ -1,6 +1,6 @@
 {
   "date": "2026-11-10",
-  "capturedAt": "2026-11-10T17:27:23+08:00",
+  "capturedAt": "2026-11-10T18:21:55+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -41,7 +41,7 @@
       "changePercent": 1.46,
       "turnoverRate": 3.21,
       "totalMarketCapYi": 152785.56,
-      "floatMarketCapYi": 121526.76,
+      "floatMarketCapYi": 121526.72,
       "inFloatCapRange": false,
       "quoteTime": "20261110161442",
       "name": "创业板指",
@@ -2035,9 +2035,11 @@
     "视涯科技",
     "华智传媒",
     "杭州柯林",
-    "双十一",
     "易中天",
-    "青岛九百",
-    "宇树"
+    "双十一",
+    "闽铝",
+    "核心",
+    "宇树",
+    "青岛九百"
   ]
 }

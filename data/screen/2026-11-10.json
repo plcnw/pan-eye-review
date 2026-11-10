@@ -1,13 +1,13 @@
 {
   "date": "2026-11-10",
-  "capturedAt": "2026-11-10T17:29:15+08:00",
+  "capturedAt": "2026-11-10T18:24:12+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
   "marketCount": 5579,
   "limitUpCount": 104,
   "capPassCount": 81,
-  "hardExcludedCount": 39,
-  "candidateCount": 41,
-  "exceptionCount": 19,
+  "hardExcludedCount": 32,
+  "candidateCount": 37,
+  "exceptionCount": 18,
   "rules": {
     "floatMarketCapYi": [
       30,
@@ -624,54 +624,6 @@
       "historySource": "cached"
     },
     {
-      "symbol": "sh603843",
-      "code": "603843",
-      "name": "*ST正平",
-      "price": 5.18,
-      "changePercent": 5.285,
-      "turnoverRate": 2.7986,
-      "amount": 98656795.0,
-      "floatMarketCapYi": 36.24,
-      "totalMarketCapYi": 36.24,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-03-11",
-          "runEnd": "2026-03-17",
-          "runLength": 5,
-          "breakDate": "2026-03-18",
-          "evidence": [
-            "断板日高开 5.01% 后盘中回落 -5.28%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-03-26",
-          "runEnd": "2026-04-03",
-          "runLength": 2,
-          "breakDate": "2026-04-07",
-          "evidence": [
-            "断板后两日累计下跌 -9.69%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-07-10",
-          "runEnd": "2026-07-13",
-          "runLength": 2,
-          "breakDate": "2026-07-14",
-          "evidence": [
-            "断板当日下跌 -5.45%"
-          ],
-          "confidence": "medium"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
-    },
-    {
       "symbol": "sz300613",
       "code": "300613",
       "name": "富瀚微",
@@ -689,23 +641,6 @@
       "historySource": "cached"
     },
     {
-      "symbol": "sh688611",
-      "code": "688611",
-      "name": "杭州柯林",
-      "price": 79.06,
-      "changePercent": 20.006,
-      "turnoverRate": 3.80942,
-      "amount": 438836062.0,
-      "floatMarketCapYi": 121.27,
-      "totalMarketCapYi": 121.27,
-      "lookbackDays": 520,
-      "boardHeight": 1,
-      "limitThreshold": 19.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "live"
-    },
-    {
       "symbol": "sz300052",
       "code": "300052",
       "name": "中青宝",
@@ -721,23 +656,6 @@
       "aKillEvents": [],
       "hasSuspectedAKill": false,
       "historySource": "cached"
-    },
-    {
-      "symbol": "sz300426",
-      "code": "300426",
-      "name": "华智数媒",
-      "price": 11.47,
-      "changePercent": 19.979,
-      "turnoverRate": 27.55871,
-      "amount": 1150421294.0,
-      "floatMarketCapYi": 45.88,
-      "totalMarketCapYi": 51.66,
-      "lookbackDays": 520,
-      "boardHeight": 1,
-      "limitThreshold": 19.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "live"
     },
     {
       "symbol": "sz002631",
@@ -1027,23 +945,6 @@
       "aKillEvents": [],
       "hasSuspectedAKill": false,
       "historySource": "cached"
-    },
-    {
-      "symbol": "sz002102",
-      "code": "002102",
-      "name": "ST能特",
-      "price": 2.59,
-      "changePercent": 7.917,
-      "turnoverRate": 1.04392,
-      "amount": 54752946.0,
-      "floatMarketCapYi": 53.63,
-      "totalMarketCapYi": 62.58,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 4.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "live"
     }
   ],
   "hardExcluded": [
@@ -1924,35 +1825,6 @@
       "historySource": "cached"
     },
     {
-      "symbol": "sh605398",
-      "code": "605398",
-      "name": "新炬网络",
-      "price": 25.75,
-      "changePercent": 9.996,
-      "turnoverRate": 5.00831,
-      "amount": 207525743.0,
-      "floatMarketCapYi": 41.9,
-      "totalMarketCapYi": 41.9,
-      "lookbackDays": 520,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-09-10",
-          "runEnd": "2025-09-12",
-          "runLength": 3,
-          "breakDate": "2025-09-15",
-          "evidence": [
-            "断板当日下跌 -10.01%",
-            "断板后两日累计下跌 -11.76%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
-    },
-    {
       "symbol": "sz002905",
       "code": "002905",
       "name": "金逸影视",
@@ -1980,55 +1852,6 @@
       ],
       "hasSuspectedAKill": true,
       "historySource": "cached"
-    },
-    {
-      "symbol": "sz300147",
-      "code": "300147",
-      "name": "*ST香雪",
-      "price": 5.61,
-      "changePercent": 9.357,
-      "turnoverRate": 5.36156,
-      "amount": 196176566.0,
-      "floatMarketCapYi": 36.89,
-      "totalMarketCapYi": 37.1,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-09-27",
-          "runEnd": "2024-10-08",
-          "runLength": 3,
-          "breakDate": "2024-10-09",
-          "evidence": [
-            "断板当日下跌 -19.40%"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "runStart": "2024-10-28",
-          "runEnd": "2024-10-30",
-          "runLength": 3,
-          "breakDate": "2024-10-31",
-          "evidence": [
-            "断板后两日累计下跌 -17.83%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-10-27",
-          "runEnd": "2026-10-28",
-          "runLength": 2,
-          "breakDate": "2026-10-29",
-          "evidence": [
-            "断板当日下跌 -5.45%",
-            "断板后两日累计下跌 -15.04%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
     },
     {
       "symbol": "sh603215",
@@ -2274,249 +2097,6 @@
       ],
       "hasSuspectedAKill": true,
       "historySource": "cached"
-    },
-    {
-      "symbol": "sz002501",
-      "code": "002501",
-      "name": "*ST利源",
-      "price": 1.2,
-      "changePercent": 10.092,
-      "turnoverRate": 2.92799,
-      "amount": 122699528.0,
-      "floatMarketCapYi": 42.54,
-      "totalMarketCapYi": 42.6,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-11-05",
-          "runEnd": "2024-11-11",
-          "runLength": 5,
-          "breakDate": "2024-11-12",
-          "evidence": [
-            "断板日高开 8.74% 后盘中回落 -16.96%",
-            "断板当日下跌 -9.71%",
-            "断板后两日累计下跌 -15.05%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-02-21",
-          "runEnd": "2025-02-26",
-          "runLength": 4,
-          "breakDate": "2025-02-27",
-          "evidence": [
-            "断板日高开 3.26% 后盘中回落 -12.98%",
-            "断板当日下跌 -10.14%",
-            "断板后两日累计下跌 -19.20%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-05-11",
-          "runEnd": "2026-05-14",
-          "runLength": 4,
-          "breakDate": "2026-05-15",
-          "evidence": [
-            "断板当日下跌 -5.19%"
-          ],
-          "confidence": "medium"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
-    },
-    {
-      "symbol": "sz000078",
-      "code": "000078",
-      "name": "ST海王",
-      "price": 1.34,
-      "changePercent": 4.688,
-      "turnoverRate": 2.82424,
-      "amount": 98827027.0,
-      "floatMarketCapYi": 35.24,
-      "totalMarketCapYi": 35.26,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-05-28",
-          "runEnd": "2026-06-02",
-          "runLength": 4,
-          "breakDate": "2026-06-03",
-          "evidence": [
-            "断板日高开 4.86% 后盘中回落 -8.25%",
-            "断板后两日累计下跌 -8.65%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-07-01",
-          "runEnd": "2026-07-08",
-          "runLength": 6,
-          "breakDate": "2026-07-09",
-          "evidence": [
-            "断板日高开 10.10% 后盘中回落 -14.68%",
-            "断板当日下跌 -6.06%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-07-13",
-          "runEnd": "2026-07-14",
-          "runLength": 2,
-          "breakDate": "2026-07-15",
-          "evidence": [
-            "断板当日下跌 -8.30%"
-          ],
-          "confidence": "medium"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
-    },
-    {
-      "symbol": "sh603595",
-      "code": "603595",
-      "name": "ST东尼",
-      "price": 29.28,
-      "changePercent": 7.292,
-      "turnoverRate": 1.30312,
-      "amount": 87130973.0,
-      "floatMarketCapYi": 68.06,
-      "totalMarketCapYi": 68.06,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-09-27",
-          "runEnd": "2024-10-08",
-          "runLength": 3,
-          "breakDate": "2024-10-09",
-          "evidence": [
-            "断板当日下跌 -8.76%",
-            "断板后两日累计下跌 -11.23%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-06-18",
-          "runEnd": "2026-06-26",
-          "runLength": 6,
-          "breakDate": "2026-06-29",
-          "evidence": [
-            "断板日高开 3.70% 后盘中回落 -8.40%",
-            "断板当日下跌 -5.00%",
-            "断板后两日累计下跌 -9.76%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
-    },
-    {
-      "symbol": "sh605255",
-      "code": "605255",
-      "name": "天普股份",
-      "price": 55.46,
-      "changePercent": 9.996,
-      "turnoverRate": 1.09263,
-      "amount": 78432465.0,
-      "floatMarketCapYi": 74.36,
-      "totalMarketCapYi": 74.36,
-      "lookbackDays": 520,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-08-22",
-          "runEnd": "2025-09-23",
-          "runLength": 15,
-          "breakDate": "2025-10-16",
-          "evidence": [
-            "断板当日下跌 -10.01%",
-            "断板后两日累计下跌 -19.01%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-12-29",
-          "runEnd": "2025-12-30",
-          "runLength": 2,
-          "breakDate": "2026-01-12",
-          "evidence": [
-            "断板当日下跌 -10.00%",
-            "断板后两日累计下跌 -19.00%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-07-14",
-          "runEnd": "2026-07-15",
-          "runLength": 2,
-          "breakDate": "2026-07-16",
-          "evidence": [
-            "断板当日下跌 -10.00%",
-            "断板后两日累计下跌 -19.00%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
-    },
-    {
-      "symbol": "sh600530",
-      "code": "600530",
-      "name": "ST交昂",
-      "price": 4.43,
-      "changePercent": 9.926,
-      "turnoverRate": 0.86835,
-      "amount": 28718861.0,
-      "floatMarketCapYi": 34.33,
-      "totalMarketCapYi": 34.33,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-12-30",
-          "runEnd": "2025-01-03",
-          "runLength": 4,
-          "breakDate": "2025-01-06",
-          "evidence": [
-            "断板当日下跌 -9.95%",
-            "断板后两日累计下跌 -19.05%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-05-09",
-          "runEnd": "2025-05-15",
-          "runLength": 5,
-          "breakDate": "2025-05-16",
-          "evidence": [
-            "断板日高开 6.68% 后盘中回落 -10.02%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-07-09",
-          "runEnd": "2025-07-10",
-          "runLength": 2,
-          "breakDate": "2025-07-11",
-          "evidence": [
-            "断板后两日累计下跌 -11.75%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
     }
   ],
   "exceptions": [
@@ -3124,57 +2704,20 @@
       "aKillEvents": [],
       "hasSuspectedAKill": false,
       "historySource": "cached"
-    },
-    {
-      "symbol": "sh603843",
-      "code": "603843",
-      "name": "*ST正平",
-      "price": 5.18,
-      "changePercent": 5.285,
-      "turnoverRate": 2.7986,
-      "amount": 98656795.0,
-      "floatMarketCapYi": 36.24,
-      "totalMarketCapYi": 36.24,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-03-11",
-          "runEnd": "2026-03-17",
-          "runLength": 5,
-          "breakDate": "2026-03-18",
-          "evidence": [
-            "断板日高开 5.01% 后盘中回落 -5.28%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-03-26",
-          "runEnd": "2026-04-03",
-          "runLength": 2,
-          "breakDate": "2026-04-07",
-          "evidence": [
-            "断板后两日累计下跌 -9.69%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-07-10",
-          "runEnd": "2026-07-13",
-          "runLength": 2,
-          "breakDate": "2026-07-14",
-          "evidence": [
-            "断板当日下跌 -5.45%"
-          ],
-          "confidence": "medium"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
     }
   ],
   "failures": [
-    "ST豆神: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz300010,day,,,520,qfq"
+    "*ST正平: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh603843,day,,,520,qfq",
+    "ST交昂: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600530,day,,,520,qfq",
+    "ST东尼: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh603595,day,,,520,qfq",
+    "杭州柯林: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh688611,day,,,520,qfq",
+    "天普股份: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh605255,day,,,520,qfq",
+    "新炬网络: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh605398,day,,,520,qfq",
+    "*ST利源: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz002501,day,,,520,qfq",
+    "ST能特: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz002102,day,,,520,qfq",
+    "ST海王: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz000078,day,,,520,qfq",
+    "ST豆神: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz300010,day,,,520,qfq",
+    "华智数媒: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz300426,day,,,520,qfq",
+    "*ST香雪: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz300147,day,,,520,qfq"
   ]
 }
