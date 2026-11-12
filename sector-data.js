@@ -50,7 +50,7 @@ window.SECTOR_DATA = {
       "stage": "分歧",
       "count": 6,
       "firstBoardCount": 6,
-      "maxHeight": 5,
+      "maxHeight": 1,
       "tone": "mixed",
       "members": [
         "东方海洋",
@@ -60,7 +60,7 @@ window.SECTOR_DATA = {
         "安阳钢铁",
         "九牧王"
       ],
-      "evidence": "东方海洋一字板开，刺激发酵。一致性太强，午后分歧。",
+      "evidence": "东方海洋一字板开，刺激发酵。一致性太强，午后分歧。玄学炒作，除了监管打压控制+偷鸡加速，基本无天敌能抗衡。",
       "nextWatch": "观察羊系列溢价表态情况。"
     },
     {
@@ -70,7 +70,7 @@ window.SECTOR_DATA = {
       "count": 3,
       "firstBoardCount": 3,
       "maxHeight": 1,
-      "tone": "rotation",
+      "tone": "weak",
       "members": [
         "国统股份",
         "龙建股份",
@@ -85,14 +85,14 @@ window.SECTOR_DATA = {
       "stage": "轮动",
       "count": 3,
       "firstBoardCount": 3,
-      "maxHeight": 5,
+      "maxHeight": 1,
       "tone": "rotation",
       "members": [
         "广百股份",
         "宁波中百",
         "皇台酒业"
       ],
-      "evidence": "给大东方上板做铺垫。消费有惠发也是身位。",
+      "evidence": "给大东方上板做铺垫。脱离大东方再考虑独立补涨。消费有惠发也是身位。理论上别指望能发酵多好，毕竟羊还在，羊不允许那么多牛逼题材存在争辨识度。",
       "nextWatch": "脱离大东方再考虑独立补涨。"
     },
     {
@@ -101,7 +101,7 @@ window.SECTOR_DATA = {
       "stage": "退潮",
       "count": 5,
       "firstBoardCount": 5,
-      "maxHeight": 2,
+      "maxHeight": 1,
       "tone": "weak",
       "members": [
         "粤宏远A",
@@ -110,8 +110,8 @@ window.SECTOR_DATA = {
         "中捷资源",
         "起帆电缆"
       ],
-      "evidence": "宇树不作为，难有板块效应。持续性不明，连板角度高度越来越低。",
-      "nextWatch": "假如算力反弹我只信机器人，机器人身位是天安。"
+      "evidence": "这属于翻箱倒柜找出来的品种了，股性存疑。宇树不作为，难有板块效应。就算有宇树配合，也只是维持现状。持续性不明，连板角度高度越来越低。",
+      "nextWatch": "宇树不作为，难有板块效应。"
     },
     {
       "id": "single",
@@ -135,5 +135,5 @@ window.SECTOR_DATA = {
       "nextWatch": "独苗多指引为主，针对性字母挖掘。"
     }
   ],
-  "capturedAt": "2026-11-12T17:26:37+08:00"
+  "capturedAt": "2026-11-12T18:21:04+08:00"
 };

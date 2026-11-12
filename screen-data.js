@@ -1,13 +1,13 @@
 window.SCREEN_DATA = {
   "date": "2026-11-12",
-  "capturedAt": "2026-11-12T17:28:11+08:00",
+  "capturedAt": "2026-11-12T18:23:17+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
   "marketCount": 5579,
   "limitUpCount": 41,
   "capPassCount": 35,
-  "hardExcludedCount": 18,
-  "candidateCount": 17,
-  "exceptionCount": 11,
+  "hardExcludedCount": 16,
+  "candidateCount": 16,
+  "exceptionCount": 10,
   "rules": {
     "floatMarketCapYi": [
       30,
@@ -207,55 +207,6 @@ window.SCREEN_DATA = {
       ],
       "hasSuspectedAKill": true,
       "historySource": "cached"
-    },
-    {
-      "symbol": "sh600530",
-      "code": "600530",
-      "name": "ST交昂",
-      "price": 5.06,
-      "changePercent": 7.431,
-      "turnoverRate": 1.86359,
-      "amount": 71603924.0,
-      "floatMarketCapYi": 39.21,
-      "totalMarketCapYi": 39.21,
-      "lookbackDays": 520,
-      "boardHeight": 3,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-12-30",
-          "runEnd": "2025-01-03",
-          "runLength": 4,
-          "breakDate": "2025-01-06",
-          "evidence": [
-            "断板当日下跌 -9.95%",
-            "断板后两日累计下跌 -19.05%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-05-09",
-          "runEnd": "2025-05-15",
-          "runLength": 5,
-          "breakDate": "2025-05-16",
-          "evidence": [
-            "断板日高开 6.68% 后盘中回落 -10.02%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-07-09",
-          "runEnd": "2025-07-10",
-          "runLength": 2,
-          "breakDate": "2025-07-11",
-          "evidence": [
-            "断板后两日累计下跌 -11.75%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
     },
     {
       "symbol": "sh603135",
@@ -1024,96 +975,6 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sz300123",
-      "code": "300123",
-      "name": "ST亚光",
-      "price": 4.04,
-      "changePercent": 4.935,
-      "turnoverRate": 3.5532,
-      "amount": 143600659.0,
-      "floatMarketCapYi": 41.23,
-      "totalMarketCapYi": 41.28,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-09-27",
-          "runEnd": "2024-10-08",
-          "runLength": 3,
-          "breakDate": "2024-10-09",
-          "evidence": [
-            "断板当日下跌 -8.76%",
-            "断板后两日累计下跌 -8.05%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2024-10-18",
-          "runEnd": "2024-10-21",
-          "runLength": 2,
-          "breakDate": "2024-10-22",
-          "evidence": [
-            "断板日高开 10.91% 后盘中回落 -12.04%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
-    },
-    {
-      "symbol": "sh605169",
-      "code": "605169",
-      "name": "洪通燃气",
-      "price": 13.55,
-      "changePercent": 9.984,
-      "turnoverRate": 3.21702,
-      "amount": 119277660.0,
-      "floatMarketCapYi": 38.23,
-      "totalMarketCapYi": 39.72,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-05-15",
-          "runEnd": "2025-05-16",
-          "runLength": 2,
-          "breakDate": "2025-05-19",
-          "evidence": [
-            "断板日高开 10.35% 后盘中回落 -14.34%",
-            "断板当日下跌 -5.47%",
-            "断板后两日累计下跌 -11.02%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-08-05",
-          "runEnd": "2025-08-08",
-          "runLength": 4,
-          "breakDate": "2025-08-11",
-          "evidence": [
-            "断板日高开 3.59% 后盘中回落 -6.70%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-08-12",
-          "runEnd": "2025-08-13",
-          "runLength": 2,
-          "breakDate": "2025-08-14",
-          "evidence": [
-            "断板日高开 6.08% 后盘中回落 -15.27%",
-            "断板当日下跌 -10.12%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
-    },
-    {
       "symbol": "sz002628",
       "code": "002628",
       "name": "成都路桥",
@@ -1462,56 +1323,11 @@ window.SCREEN_DATA = {
       "aKillEvents": [],
       "hasSuspectedAKill": false,
       "historySource": "cached"
-    },
-    {
-      "symbol": "sh600530",
-      "code": "600530",
-      "name": "ST交昂",
-      "price": 5.06,
-      "changePercent": 7.431,
-      "turnoverRate": 1.86359,
-      "amount": 71603924.0,
-      "floatMarketCapYi": 39.21,
-      "totalMarketCapYi": 39.21,
-      "lookbackDays": 520,
-      "boardHeight": 3,
-      "limitThreshold": 4.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-12-30",
-          "runEnd": "2025-01-03",
-          "runLength": 4,
-          "breakDate": "2025-01-06",
-          "evidence": [
-            "断板当日下跌 -9.95%",
-            "断板后两日累计下跌 -19.05%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-05-09",
-          "runEnd": "2025-05-15",
-          "runLength": 5,
-          "breakDate": "2025-05-16",
-          "evidence": [
-            "断板日高开 6.68% 后盘中回落 -10.02%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-07-09",
-          "runEnd": "2025-07-10",
-          "runLength": 2,
-          "breakDate": "2025-07-11",
-          "evidence": [
-            "断板后两日累计下跌 -11.75%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "live"
     }
   ],
-  "failures": []
+  "failures": [
+    "ST亚光: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz300123,day,,,520,qfq",
+    "ST交昂: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600530,day,,,520,qfq",
+    "洪通燃气: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh605169,day,,,520,qfq"
+  ]
 };
