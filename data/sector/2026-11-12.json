@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-12",
+  "market": {
+    "limitUpCount": 41,
+    "firstBoardCount": 25,
+    "maxHeight": 5,
+    "articleCoveredLimitUps": 36
+  },
+  "ladderFunnel": [
+    {
+      "from": "1板",
+      "to": "2板",
+      "base": 66,
+      "promoted": 5,
+      "rate": 7.58
+    },
+    {
+      "from": "2板",
+      "to": "3板",
+      "base": 12,
+      "promoted": 2,
+      "rate": 16.67
+    },
+    {
+      "from": "3板",
+      "to": "4板",
+      "base": 5,
+      "promoted": 2,
+      "rate": 40.0
+    },
+    {
+      "from": "4板",
+      "to": "5板",
+      "base": 2,
+      "promoted": 2,
+      "rate": 100.0
+    },
+    {
+      "from": "7板",
+      "to": "8板",
+      "base": 1,
+      "promoted": 0,
+      "rate": 0.0
+    }
+  ],
+  "sectors": [
+    {
+      "id": "sheep",
+      "name": "羊",
+      "stage": "分歧",
+      "count": 6,
+      "firstBoardCount": 6,
+      "maxHeight": 5,
+      "tone": "mixed",
+      "members": [
+        "东方海洋",
+        "百洋股份",
+        "大西洋",
+        "澳洋健康",
+        "安阳钢铁",
+        "九牧王"
+      ],
+      "evidence": "东方海洋一字板开，刺激发酵。一致性太强，午后分歧。",
+      "nextWatch": "观察羊系列溢价表态情况。"
+    },
+    {
+      "id": "infrastructure",
+      "name": "基建",
+      "stage": "启动",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "国统股份",
+        "龙建股份",
+        "福建水泥"
+      ],
+      "evidence": "拉升原因不明，无法给与评价。",
+      "nextWatch": "拉升原因不明，无法给与评价。"
+    },
+    {
+      "id": "consumption",
+      "name": "消费",
+      "stage": "轮动",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 5,
+      "tone": "rotation",
+      "members": [
+        "广百股份",
+        "宁波中百",
+        "皇台酒业"
+      ],
+      "evidence": "给大东方上板做铺垫。消费有惠发也是身位。",
+      "nextWatch": "脱离大东方再考虑独立补涨。"
+    },
+    {
+      "id": "robot",
+      "name": "机器人",
+      "stage": "退潮",
+      "count": 5,
+      "firstBoardCount": 5,
+      "maxHeight": 2,
+      "tone": "weak",
+      "members": [
+        "粤宏远A",
+        "成都路桥",
+        "哈森股份",
+        "中捷资源",
+        "起帆电缆"
+      ],
+      "evidence": "宇树不作为，难有板块效应。持续性不明，连板角度高度越来越低。",
+      "nextWatch": "假如算力反弹我只信机器人，机器人身位是天安。"
+    },
+    {
+      "id": "single",
+      "name": "其余形式独苗",
+      "stage": "轮动",
+      "count": 8,
+      "firstBoardCount": 8,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "超颖电子",
+        "兴欣新材",
+        "吉视传媒",
+        "龙江交通",
+        "双成药业",
+        "好当家",
+        "沈鼓集团",
+        "长城军工"
+      ],
+      "evidence": "独苗多指引为主，针对性字母挖掘。",
+      "nextWatch": "独苗多指引为主，针对性字母挖掘。"
+    }
+  ],
+  "capturedAt": "2026-11-12T17:26:37+08:00"
+}
