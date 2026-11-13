@@ -1,139 +1,169 @@
 window.SECTOR_DATA = {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "market": {
-    "limitUpCount": 41,
-    "firstBoardCount": 25,
-    "maxHeight": 5,
+    "limitUpCount": 42,
+    "firstBoardCount": 29,
+    "maxHeight": 4,
     "articleCoveredLimitUps": 36
   },
   "ladderFunnel": [
     {
       "from": "1板",
       "to": "2板",
-      "base": 66,
-      "promoted": 5,
-      "rate": 7.58
+      "base": 25,
+      "promoted": 4,
+      "rate": 16.0
     },
     {
       "from": "2板",
       "to": "3板",
-      "base": 12,
-      "promoted": 2,
-      "rate": 16.67
-    },
-    {
-      "from": "3板",
-      "to": "4板",
       "base": 5,
       "promoted": 2,
       "rate": 40.0
     },
     {
+      "from": "3板",
+      "to": "4板",
+      "base": 2,
+      "promoted": 1,
+      "rate": 50.0
+    },
+    {
       "from": "4板",
       "to": "5板",
       "base": 2,
-      "promoted": 2,
-      "rate": 100.0
+      "promoted": 0,
+      "rate": 0.0
     },
     {
-      "from": "7板",
-      "to": "8板",
-      "base": 1,
+      "from": "5板",
+      "to": "6板",
+      "base": 2,
       "promoted": 0,
       "rate": 0.0
     }
   ],
   "sectors": [
     {
-      "id": "sheep",
-      "name": "羊",
-      "stage": "分歧",
-      "count": 6,
-      "firstBoardCount": 6,
+      "id": "chip",
+      "name": "芯片",
+      "stage": "启动",
+      "count": 5,
+      "firstBoardCount": 5,
+      "maxHeight": 1,
+      "tone": "active",
+      "members": [
+        "华东重机",
+        "东方中科",
+        "兴业股份",
+        "皮阿诺",
+        "飞乐音响"
+      ],
+      "evidence": "华东一字板+天普秒板晋级，刺激发酵。算力硬件跳水，影响发酵。前三个都是好词，和北纬跷跷板对应。持续性不明，天普虽然连板，但是存在感还是差点意思，缺芯片大屁股助力，得改善。",
+      "nextWatch": "观察一字板助攻方向，天普勇气值及芯片大屁股助力情况。"
+    },
+    {
+      "id": "media",
+      "name": "传媒应用",
+      "stage": "发酵",
+      "count": 9,
+      "firstBoardCount": 9,
       "maxHeight": 1,
       "tone": "mixed",
       "members": [
-        "东方海洋",
-        "百洋股份",
-        "大西洋",
-        "澳洋健康",
-        "安阳钢铁",
-        "九牧王"
+        "文投控股",
+        "金逸影视",
+        "横店影视",
+        "凯撒文化",
+        "湖北广电",
+        "中国电影",
+        "幸福蓝海",
+        "儒意电影",
+        "南威软件"
       ],
-      "evidence": "东方海洋一字板开，刺激发酵。一致性太强，午后分歧。玄学炒作，除了监管打压控制+偷鸡加速，基本无天敌能抗衡。",
-      "nextWatch": "观察羊系列溢价表态情况。"
-    },
-    {
-      "id": "infrastructure",
-      "name": "基建",
-      "stage": "启动",
-      "count": 3,
-      "firstBoardCount": 3,
-      "maxHeight": 1,
-      "tone": "weak",
-      "members": [
-        "国统股份",
-        "龙建股份",
-        "福建水泥"
-      ],
-      "evidence": "拉升原因不明，无法给与评价。",
-      "nextWatch": "拉升原因不明，无法给与评价。"
-    },
-    {
-      "id": "consumption",
-      "name": "消费",
-      "stage": "轮动",
-      "count": 3,
-      "firstBoardCount": 3,
-      "maxHeight": 1,
-      "tone": "rotation",
-      "members": [
-        "广百股份",
-        "宁波中百",
-        "皇台酒业"
-      ],
-      "evidence": "给大东方上板做铺垫。脱离大东方再考虑独立补涨。消费有惠发也是身位。理论上别指望能发酵多好，毕竟羊还在，羊不允许那么多牛逼题材存在争辨识度。",
-      "nextWatch": "脱离大东方再考虑独立补涨。"
+      "evidence": "不清楚什么脑回路，昨天拼命砸，今天又突然批量发酵，可能传媒救过主控他妈妈。趋势型玩法，连板角度无法给与预期+评价。",
+      "nextWatch": "观察北纬科技能否独立发酵确认主升气质，或传媒批量跟风。"
     },
     {
       "id": "robot",
       "name": "机器人",
-      "stage": "退潮",
+      "stage": "轮动",
       "count": 5,
       "firstBoardCount": 5,
       "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "中马传动",
+        "福达股份",
+        "福龙马",
+        "日发精机",
+        "日盈电子"
+      ],
+      "evidence": "马推羊，针对性选股。F推谁不知道，也是针对性选股。持续性和传媒差不多，大差不差的，一块反复很久了。",
+      "nextWatch": "观察持续性是否与传媒同步，以及马推羊针对性选股发酵情况。"
+    },
+    {
+      "id": "compute_rental",
+      "name": "算力租赁",
+      "stage": "轮动",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 1,
       "tone": "weak",
       "members": [
-        "粤宏远A",
-        "成都路桥",
-        "哈森股份",
-        "中捷资源",
-        "起帆电缆"
+        "华胜天成",
+        "华孚时尚",
+        "法狮龙"
       ],
-      "evidence": "这属于翻箱倒柜找出来的品种了，股性存疑。宇树不作为，难有板块效应。就算有宇树配合，也只是维持现状。持续性不明，连板角度高度越来越低。",
-      "nextWatch": "宇树不作为，难有板块效应。"
+      "evidence": "又是F选股多。又是周五拉算力租赁，华升一字板的时候不助攻，现在回档上周五，其实最怕回档了，一旦认定回档那日出涨停的概率很小，因为高低切嘛。从华升定律看，直接跳过，不可能华升盘子那么小不做，做华胜的。。。除非主控是。。。",
+      "nextWatch": "观察是否回档上周五，以及华升定律是否继续压制。"
+    },
+    {
+      "id": "agriculture",
+      "name": "农业",
+      "stage": "启动",
+      "count": 2,
+      "firstBoardCount": 2,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "金新农",
+        "天邦食品"
+      ],
+      "evidence": "猪肉，避险逻辑。持续性不明，推好当家养殖业也有可能。",
+      "nextWatch": "观察避险逻辑持续性及好当家养殖业补涨可能。"
+    },
+    {
+      "id": "solar",
+      "name": "光伏",
+      "stage": "轮动",
+      "count": 2,
+      "firstBoardCount": 2,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "维通利",
+        "岳阳兴长"
+      ],
+      "evidence": "午前光伏给日出翻红做铺垫，午后确实拉升了。倾向于工具人为主，主角永远都是抱团股。",
+      "nextWatch": "观察光伏是否继续作为日出翻红工具人，以及抱团股溢价表态。"
     },
     {
       "id": "single",
       "name": "其余形式独苗",
       "stage": "轮动",
-      "count": 8,
-      "firstBoardCount": 8,
+      "count": 3,
+      "firstBoardCount": 3,
       "maxHeight": 1,
-      "tone": "rotation",
+      "tone": "mixed",
       "members": [
-        "超颖电子",
-        "兴欣新材",
-        "吉视传媒",
-        "龙江交通",
-        "双成药业",
-        "好当家",
-        "沈鼓集团",
-        "长城军工"
+        "通化金马",
+        "美晨科技",
+        "世龙实业"
       ],
-      "evidence": "独苗多指引为主，针对性字母挖掘。",
-      "nextWatch": "独苗多指引为主，针对性字母挖掘。"
+      "evidence": "通化金马，马推羊，除此之外找不到任何逻辑。美晨科技，也是上周五品种，回档机制。世龙实业，涨停后各种F异动，世龙=是龙，指引为主，非锂电主升。",
+      "nextWatch": "观察独苗暗示方向及回档机制是否延续。"
     }
   ],
-  "capturedAt": "2026-11-12T18:21:04+08:00"
+  "capturedAt": "2026-11-14T01:22:07+08:00"
 };

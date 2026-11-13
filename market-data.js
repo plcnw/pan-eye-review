@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
-  "date": "2026-11-12",
-  "capturedAt": "2026-11-12T18:21:15+08:00",
+  "date": "2026-11-13",
+  "capturedAt": "2026-11-14T01:22:17+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -10,45 +10,89 @@ window.MARKET_DATA = {
   "indices": [
     {
       "apiName": "上证指数",
-      "price": 3655.83,
-      "previousClose": 3680.64,
-      "changePercent": -0.67,
-      "turnoverRate": 1.02,
-      "totalMarketCapYi": 642315.87,
-      "floatMarketCapYi": 574837.86,
+      "price": 3634.35,
+      "previousClose": 3655.83,
+      "changePercent": -0.59,
+      "turnoverRate": 0.97,
+      "totalMarketCapYi": 638206.59,
+      "floatMarketCapYi": 571738.29,
       "inFloatCapRange": false,
-      "quoteTime": "20261112161427",
+      "quoteTime": "20261113161427",
       "name": "上证指数",
       "code": "000001"
     },
     {
       "apiName": "深证成指",
-      "price": 11197.98,
-      "previousClose": 11389.74,
-      "changePercent": -1.68,
-      "turnoverRate": 2.56,
-      "totalMarketCapYi": 379733.78,
-      "floatMarketCapYi": 322034.06,
+      "price": 10968.79,
+      "previousClose": 11197.98,
+      "changePercent": -2.05,
+      "turnoverRate": 2.27,
+      "totalMarketCapYi": 371696.0,
+      "floatMarketCapYi": 315532.57,
       "inFloatCapRange": false,
-      "quoteTime": "20261112161412",
+      "quoteTime": "20261113161451",
       "name": "深证成指",
       "code": "399001"
     },
     {
       "apiName": "创业板指",
-      "price": 2509.43,
-      "previousClose": 2572.07,
-      "changePercent": -2.44,
-      "turnoverRate": 3.63,
-      "totalMarketCapYi": 152858.37,
-      "floatMarketCapYi": 121458.68,
+      "price": 2426.08,
+      "previousClose": 2509.43,
+      "changePercent": -3.32,
+      "turnoverRate": 3.14,
+      "totalMarketCapYi": 148244.05,
+      "floatMarketCapYi": 117823.67,
       "inFloatCapRange": false,
-      "quoteTime": "20261112161427",
+      "quoteTime": "20261113161406",
       "name": "创业板指",
       "code": "399006"
     }
   ],
   "stocks": [
+    {
+      "name": "世龙实业",
+      "code": "002748",
+      "quoteId": "0.002748",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "世龙实业",
+          "code": "002748"
+        }
+      ],
+      "requestedName": "世龙实业",
+      "apiName": "世龙实业",
+      "price": 12.39,
+      "previousClose": 11.26,
+      "changePercent": 10.04,
+      "turnoverRate": 11.79,
+      "totalMarketCapYi": 29.74,
+      "floatMarketCapYi": 29.74,
+      "inFloatCapRange": false,
+      "quoteTime": "20261113161451"
+    },
+    {
+      "name": "东方中科",
+      "code": "002819",
+      "quoteId": "0.002819",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "东方中科",
+          "code": "002819"
+        }
+      ],
+      "requestedName": "东方中科",
+      "apiName": "东方中科",
+      "price": 21.7,
+      "previousClose": 19.73,
+      "changePercent": 9.98,
+      "turnoverRate": 3.69,
+      "totalMarketCapYi": 64.68,
+      "floatMarketCapYi": 51.26,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161457"
+    },
     {
       "name": "东方海洋",
       "code": "002086",
@@ -62,124 +106,124 @@ window.MARKET_DATA = {
       ],
       "requestedName": "东方海洋",
       "apiName": "东方海洋",
-      "price": 5.16,
-      "previousClose": 4.69,
-      "changePercent": 10.02,
-      "turnoverRate": 35.14,
-      "totalMarketCapYi": 101.08,
-      "floatMarketCapYi": 81.58,
+      "price": 4.82,
+      "previousClose": 5.16,
+      "changePercent": -6.59,
+      "turnoverRate": 38.74,
+      "totalMarketCapYi": 94.42,
+      "floatMarketCapYi": 76.2,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161430"
+      "quoteTime": "20261113161430"
     },
     {
-      "name": "东方环宇",
-      "code": "603706",
-      "quoteId": "1.603706",
+      "name": "中国电影",
+      "code": "600977",
+      "quoteId": "1.600977",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "东方环宇",
-          "code": "603706"
+          "name": "中国电影",
+          "code": "600977"
         }
       ],
-      "requestedName": "东方环宇",
-      "apiName": "东方环宇",
-      "price": 26.87,
-      "previousClose": 24.43,
-      "changePercent": 9.99,
-      "turnoverRate": 8.81,
-      "totalMarketCapYi": 50.89,
-      "floatMarketCapYi": 50.89,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161458"
+      "requestedName": "中国电影",
+      "apiName": "中国电影",
+      "price": 17.05,
+      "previousClose": 15.5,
+      "changePercent": 10.0,
+      "turnoverRate": 6.07,
+      "totalMarketCapYi": 318.32,
+      "floatMarketCapYi": 318.32,
+      "inFloatCapRange": false,
+      "quoteTime": "20261113161452"
     },
     {
-      "name": "中捷资源",
-      "code": "002021",
-      "quoteId": "0.002021",
+      "name": "中马传动",
+      "code": "603767",
+      "quoteId": "1.603767",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "中捷资源",
-          "code": "002021"
+          "name": "中马传动",
+          "code": "603767"
         }
       ],
-      "requestedName": "中捷资源",
-      "apiName": "中捷资源",
-      "price": 2.63,
-      "previousClose": 2.39,
-      "changePercent": 10.04,
-      "turnoverRate": 8.63,
-      "totalMarketCapYi": 31.44,
-      "floatMarketCapYi": 31.44,
+      "requestedName": "中马传动",
+      "apiName": "中马传动",
+      "price": 17.74,
+      "previousClose": 16.13,
+      "changePercent": 9.98,
+      "turnoverRate": 6.96,
+      "totalMarketCapYi": 54.75,
+      "floatMarketCapYi": 54.75,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161445"
+      "quoteTime": "20261113161452"
     },
     {
-      "name": "中重科技",
-      "code": "603135",
-      "quoteId": "1.603135",
+      "name": "九阳股份",
+      "code": "002242",
+      "quoteId": "0.002242",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "中重科技",
-          "code": "603135"
+          "name": "九阳股份",
+          "code": "002242"
         }
       ],
-      "requestedName": "中重科技",
-      "apiName": "中重科技",
-      "price": 10.18,
-      "previousClose": 9.25,
-      "changePercent": 10.05,
-      "turnoverRate": 11.24,
-      "totalMarketCapYi": 64.71,
-      "floatMarketCapYi": 64.09,
+      "requestedName": "九阳股份",
+      "apiName": "九阳股份",
+      "price": 26.75,
+      "previousClose": 26.65,
+      "changePercent": 0.38,
+      "turnoverRate": 10.78,
+      "totalMarketCapYi": 204.11,
+      "floatMarketCapYi": 203.77,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161459"
+      "quoteTime": "20261113161430"
     },
     {
-      "name": "九牧王",
-      "code": "601566",
-      "quoteId": "1.601566",
+      "name": "儒意电影",
+      "code": "002739",
+      "quoteId": "0.002739",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "九牧王",
-          "code": "601566"
+          "name": "儒意电影",
+          "code": "002739"
         }
       ],
-      "requestedName": "九牧王",
-      "apiName": "九牧王",
-      "price": 12.47,
-      "previousClose": 11.34,
+      "requestedName": "儒意电影",
+      "apiName": "儒意电影",
+      "price": 10.05,
+      "previousClose": 9.14,
       "changePercent": 9.96,
-      "turnoverRate": 12.94,
-      "totalMarketCapYi": 71.66,
-      "floatMarketCapYi": 71.66,
+      "turnoverRate": 7.57,
+      "totalMarketCapYi": 212.23,
+      "floatMarketCapYi": 211.04,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161452"
+      "quoteTime": "20261113161409"
     },
     {
-      "name": "亚玛顿",
-      "code": "002623",
-      "quoteId": "0.002623",
+      "name": "兴业股份",
+      "code": "603928",
+      "quoteId": "1.603928",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "亚玛顿",
-          "code": "002623"
+          "name": "兴业股份",
+          "code": "603928"
         }
       ],
-      "requestedName": "亚玛顿",
-      "apiName": "亚玛顿",
-      "price": 25.66,
-      "previousClose": 23.33,
-      "changePercent": 9.99,
-      "turnoverRate": 0.79,
-      "totalMarketCapYi": 49.54,
-      "floatMarketCapYi": 49.43,
+      "requestedName": "兴业股份",
+      "apiName": "兴业股份",
+      "price": 11.96,
+      "previousClose": 10.87,
+      "changePercent": 10.03,
+      "turnoverRate": 3.65,
+      "totalMarketCapYi": 40.75,
+      "floatMarketCapYi": 40.75,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161418"
+      "quoteTime": "20261113161500"
     },
     {
       "name": "兴欣新材",
@@ -194,14 +238,36 @@ window.MARKET_DATA = {
       ],
       "requestedName": "兴欣新材",
       "apiName": "兴欣新材",
-      "price": 24.22,
-      "previousClose": 22.02,
+      "price": 26.64,
+      "previousClose": 24.22,
       "changePercent": 9.99,
-      "turnoverRate": 5.63,
-      "totalMarketCapYi": 29.84,
-      "floatMarketCapYi": 12.35,
+      "turnoverRate": 3.04,
+      "totalMarketCapYi": 32.82,
+      "floatMarketCapYi": 13.58,
       "inFloatCapRange": false,
-      "quoteTime": "20261112161430"
+      "quoteTime": "20261113161430"
+    },
+    {
+      "name": "凯撒文化",
+      "code": "002425",
+      "quoteId": "0.002425",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "凯撒文化",
+          "code": "002425"
+        }
+      ],
+      "requestedName": "凯撒文化",
+      "apiName": "凯撒文化",
+      "price": 3.96,
+      "previousClose": 3.6,
+      "changePercent": 10.0,
+      "turnoverRate": 13.7,
+      "totalMarketCapYi": 37.88,
+      "floatMarketCapYi": 36.44,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161436"
     },
     {
       "name": "北纬科技",
@@ -216,80 +282,124 @@ window.MARKET_DATA = {
       ],
       "requestedName": "北纬科技",
       "apiName": "北纬科技",
-      "price": 7.23,
-      "previousClose": 6.57,
-      "changePercent": 10.05,
-      "turnoverRate": 30.01,
-      "totalMarketCapYi": 40.4,
-      "floatMarketCapYi": 32.61,
+      "price": 7.95,
+      "previousClose": 7.23,
+      "changePercent": 9.96,
+      "turnoverRate": 11.64,
+      "totalMarketCapYi": 44.42,
+      "floatMarketCapYi": 35.86,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161430"
+      "quoteTime": "20261113161430"
     },
     {
-      "name": "双成药业",
-      "code": "002693",
-      "quoteId": "0.002693",
+      "name": "华东重机",
+      "code": "002685",
+      "quoteId": "0.002685",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "双成药业",
-          "code": "002693"
+          "name": "华东重机",
+          "code": "002685"
         }
       ],
-      "requestedName": "双成药业",
-      "apiName": "双成药业",
-      "price": 8.73,
-      "previousClose": 7.94,
+      "requestedName": "华东重机",
+      "apiName": "华东重机",
+      "price": 5.54,
+      "previousClose": 5.04,
+      "changePercent": 9.92,
+      "turnoverRate": 11.09,
+      "totalMarketCapYi": 55.83,
+      "floatMarketCapYi": 55.82,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161415"
+    },
+    {
+      "name": "华升股份",
+      "code": "600156",
+      "quoteId": "1.600156",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "华升股份",
+          "code": "600156"
+        }
+      ],
+      "requestedName": "华升",
+      "apiName": "华升股份",
+      "price": 7.09,
+      "previousClose": 7.05,
+      "changePercent": 0.57,
+      "turnoverRate": 7.42,
+      "totalMarketCapYi": 28.51,
+      "floatMarketCapYi": 28.51,
+      "inFloatCapRange": false,
+      "quoteTime": "20261113161456"
+    },
+    {
+      "name": "华孚时尚",
+      "code": "002042",
+      "quoteId": "0.002042",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "华孚时尚",
+          "code": "002042"
+        }
+      ],
+      "requestedName": "华孚时尚",
+      "apiName": "华孚时尚",
+      "price": 3.62,
+      "previousClose": 3.29,
+      "changePercent": 10.03,
+      "turnoverRate": 7.54,
+      "totalMarketCapYi": 61.56,
+      "floatMarketCapYi": 61.56,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161500"
+    },
+    {
+      "name": "华胜天成",
+      "code": "600410",
+      "quoteId": "1.600410",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "华胜天成",
+          "code": "600410"
+        }
+      ],
+      "requestedName": "华胜天成",
+      "apiName": "华胜天成",
+      "price": 14.3,
+      "previousClose": 13.0,
+      "changePercent": 10.0,
+      "turnoverRate": 16.32,
+      "totalMarketCapYi": 156.8,
+      "floatMarketCapYi": 156.8,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161454"
+    },
+    {
+      "name": "南威软件",
+      "code": "603636",
+      "quoteId": "1.603636",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "南威软件",
+          "code": "603636"
+        }
+      ],
+      "requestedName": "南威软件",
+      "apiName": "南威软件",
+      "price": 9.5,
+      "previousClose": 8.64,
       "changePercent": 9.95,
-      "turnoverRate": 11.82,
-      "totalMarketCapYi": 36.2,
-      "floatMarketCapYi": 35.88,
+      "turnoverRate": 15.89,
+      "totalMarketCapYi": 55.13,
+      "floatMarketCapYi": 55.13,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161457"
-    },
-    {
-      "name": "吉视传媒",
-      "code": "601929",
-      "quoteId": "1.601929",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "吉视传媒",
-          "code": "601929"
-        }
-      ],
-      "requestedName": "吉视传媒",
-      "apiName": "吉视传媒",
-      "price": 2.81,
-      "previousClose": 2.55,
-      "changePercent": 10.2,
-      "turnoverRate": 20.26,
-      "totalMarketCapYi": 98.06,
-      "floatMarketCapYi": 98.06,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161452"
-    },
-    {
-      "name": "哈森股份",
-      "code": "603958",
-      "quoteId": "1.603958",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "哈森股份",
-          "code": "603958"
-        }
-      ],
-      "requestedName": "哈森股份",
-      "apiName": "哈森股份",
-      "price": 18.38,
-      "previousClose": 16.71,
-      "changePercent": 9.99,
-      "turnoverRate": 4.49,
-      "totalMarketCapYi": 40.32,
-      "floatMarketCapYi": 40.32,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161455"
+      "quoteTime": "20261113161457"
     },
     {
       "name": "国统股份",
@@ -304,58 +414,14 @@ window.MARKET_DATA = {
       ],
       "requestedName": "国统股份",
       "apiName": "国统股份",
-      "price": 11.75,
-      "previousClose": 10.68,
-      "changePercent": 10.02,
-      "turnoverRate": 6.64,
-      "totalMarketCapYi": 21.84,
-      "floatMarketCapYi": 21.84,
+      "price": 12.93,
+      "previousClose": 11.75,
+      "changePercent": 10.04,
+      "turnoverRate": 15.77,
+      "totalMarketCapYi": 24.03,
+      "floatMarketCapYi": 24.03,
       "inFloatCapRange": false,
-      "quoteTime": "20261112161500"
-    },
-    {
-      "name": "大东方",
-      "code": "600327",
-      "quoteId": "1.600327",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "大东方",
-          "code": "600327"
-        }
-      ],
-      "requestedName": "大东方",
-      "apiName": "大东方",
-      "price": 7.18,
-      "previousClose": 6.53,
-      "changePercent": 9.95,
-      "turnoverRate": 38.62,
-      "totalMarketCapYi": 63.53,
-      "floatMarketCapYi": 63.53,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161458"
-    },
-    {
-      "name": "大西洋",
-      "code": "600558",
-      "quoteId": "1.600558",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "大西洋",
-          "code": "600558"
-        }
-      ],
-      "requestedName": "大西洋",
-      "apiName": "大西洋",
-      "price": 5.96,
-      "previousClose": 5.42,
-      "changePercent": 9.96,
-      "turnoverRate": 19.09,
-      "totalMarketCapYi": 53.5,
-      "floatMarketCapYi": 53.5,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161443"
+      "quoteTime": "20261113161445"
     },
     {
       "name": "天安新材",
@@ -370,14 +436,14 @@ window.MARKET_DATA = {
       ],
       "requestedName": "天安新材",
       "apiName": "天安新材",
-      "price": 13.16,
-      "previousClose": 11.96,
-      "changePercent": 10.03,
-      "turnoverRate": 5.96,
-      "totalMarketCapYi": 40.12,
-      "floatMarketCapYi": 40.12,
+      "price": 12.38,
+      "previousClose": 13.16,
+      "changePercent": -5.93,
+      "turnoverRate": 19.55,
+      "totalMarketCapYi": 37.74,
+      "floatMarketCapYi": 37.74,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161435"
+      "quoteTime": "20261113161448"
     },
     {
       "name": "天普股份",
@@ -392,36 +458,36 @@ window.MARKET_DATA = {
       ],
       "requestedName": "天普股份",
       "apiName": "天普股份",
-      "price": 67.11,
-      "previousClose": 61.01,
+      "price": 73.82,
+      "previousClose": 67.11,
       "changePercent": 10.0,
-      "turnoverRate": 1.44,
-      "totalMarketCapYi": 89.98,
-      "floatMarketCapYi": 89.98,
+      "turnoverRate": 1.83,
+      "totalMarketCapYi": 98.98,
+      "floatMarketCapYi": 98.98,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161500"
+      "quoteTime": "20261113161444"
     },
     {
-      "name": "天洋新材",
-      "code": "603330",
-      "quoteId": "1.603330",
+      "name": "天邦食品",
+      "code": "002124",
+      "quoteId": "0.002124",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "天洋新材",
-          "code": "603330"
+          "name": "天邦食品",
+          "code": "002124"
         }
       ],
-      "requestedName": "天洋新材",
-      "apiName": "天洋新材",
-      "price": 10.35,
-      "previousClose": 10.53,
-      "changePercent": -1.71,
-      "turnoverRate": 34.63,
-      "totalMarketCapYi": 44.78,
-      "floatMarketCapYi": 44.78,
+      "requestedName": "天邦食品",
+      "apiName": "天邦食品",
+      "price": 2.31,
+      "previousClose": 2.1,
+      "changePercent": 10.0,
+      "turnoverRate": 17.75,
+      "totalMarketCapYi": 51.33,
+      "floatMarketCapYi": 45.56,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161449"
+      "quoteTime": "20261113161500"
     },
     {
       "name": "好当家",
@@ -436,58 +502,58 @@ window.MARKET_DATA = {
       ],
       "requestedName": "好当家",
       "apiName": "好当家",
-      "price": 2.48,
-      "previousClose": 2.25,
-      "changePercent": 10.22,
-      "turnoverRate": 9.32,
-      "totalMarketCapYi": 36.23,
-      "floatMarketCapYi": 36.23,
+      "price": 2.73,
+      "previousClose": 2.48,
+      "changePercent": 10.08,
+      "turnoverRate": 18.69,
+      "totalMarketCapYi": 39.89,
+      "floatMarketCapYi": 39.89,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161439"
+      "quoteTime": "20261113161450"
     },
     {
-      "name": "宁波中百",
-      "code": "600857",
-      "quoteId": "1.600857",
+      "name": "岳阳兴长",
+      "code": "000819",
+      "quoteId": "0.000819",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "宁波中百",
-          "code": "600857"
+          "name": "岳阳兴长",
+          "code": "000819"
         }
       ],
-      "requestedName": "宁波中百",
-      "apiName": "宁波中百",
-      "price": 15.0,
-      "previousClose": 13.64,
-      "changePercent": 9.97,
-      "turnoverRate": 3.06,
-      "totalMarketCapYi": 33.65,
-      "floatMarketCapYi": 33.65,
+      "requestedName": "岳阳兴长",
+      "apiName": "岳阳兴长",
+      "price": 12.82,
+      "previousClose": 11.65,
+      "changePercent": 10.04,
+      "turnoverRate": 7.4,
+      "totalMarketCapYi": 46.92,
+      "floatMarketCapYi": 46.92,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161455"
+      "quoteTime": "20261113161500"
     },
     {
-      "name": "安阳钢铁",
-      "code": "600569",
-      "quoteId": "1.600569",
+      "name": "幸福蓝海",
+      "code": "300528",
+      "quoteId": "0.300528",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "安阳钢铁",
-          "code": "600569"
+          "name": "幸福蓝海",
+          "code": "300528"
         }
       ],
-      "requestedName": "安阳钢铁",
-      "apiName": "安阳钢铁",
-      "price": 2.0,
-      "previousClose": 1.82,
-      "changePercent": 9.89,
-      "turnoverRate": 4.48,
-      "totalMarketCapYi": 57.45,
-      "floatMarketCapYi": 57.45,
+      "requestedName": "幸福蓝海",
+      "apiName": "幸福蓝海",
+      "price": 17.99,
+      "previousClose": 14.99,
+      "changePercent": 20.01,
+      "turnoverRate": 16.3,
+      "totalMarketCapYi": 67.03,
+      "floatMarketCapYi": 67.03,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161440"
+      "quoteTime": "20261113161445"
     },
     {
       "name": "广百股份",
@@ -502,14 +568,14 @@ window.MARKET_DATA = {
       ],
       "requestedName": "广百股份",
       "apiName": "广百股份",
-      "price": 6.34,
-      "previousClose": 5.76,
-      "changePercent": 10.07,
-      "turnoverRate": 4.46,
-      "totalMarketCapYi": 44.44,
-      "floatMarketCapYi": 44.44,
+      "price": 6.97,
+      "previousClose": 6.34,
+      "changePercent": 9.94,
+      "turnoverRate": 16.08,
+      "totalMarketCapYi": 48.85,
+      "floatMarketCapYi": 48.85,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161424"
+      "quoteTime": "20261113161436"
     },
     {
       "name": "惠发食品",
@@ -524,58 +590,58 @@ window.MARKET_DATA = {
       ],
       "requestedName": "惠发食品",
       "apiName": "惠发食品",
-      "price": 13.04,
-      "previousClose": 11.85,
-      "changePercent": 10.04,
-      "turnoverRate": 24.03,
-      "totalMarketCapYi": 31.37,
-      "floatMarketCapYi": 31.37,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161453"
-    },
-    {
-      "name": "成都路桥",
-      "code": "002628",
-      "quoteId": "0.002628",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "成都路桥",
-          "code": "002628"
-        }
-      ],
-      "requestedName": "成都路桥",
-      "apiName": "成都路桥",
-      "price": 4.74,
-      "previousClose": 4.31,
-      "changePercent": 9.98,
-      "turnoverRate": 3.05,
-      "totalMarketCapYi": 35.89,
-      "floatMarketCapYi": 35.8,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161430"
-    },
-    {
-      "name": "日上集团",
-      "code": "002593",
-      "quoteId": "0.002593",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "日上集团",
-          "code": "002593"
-        }
-      ],
-      "requestedName": "日上集团",
-      "apiName": "日上集团",
-      "price": 5.23,
-      "previousClose": 4.75,
-      "changePercent": 10.11,
-      "turnoverRate": 31.26,
-      "totalMarketCapYi": 42.04,
-      "floatMarketCapYi": 29.31,
+      "price": 11.74,
+      "previousClose": 13.04,
+      "changePercent": -9.97,
+      "turnoverRate": 18.72,
+      "totalMarketCapYi": 28.24,
+      "floatMarketCapYi": 28.24,
       "inFloatCapRange": false,
-      "quoteTime": "20261112161454"
+      "quoteTime": "20261113161436"
+    },
+    {
+      "name": "慈文传媒",
+      "code": "002343",
+      "quoteId": "0.002343",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "慈文传媒",
+          "code": "002343"
+        }
+      ],
+      "requestedName": "慈文",
+      "apiName": "慈文传媒",
+      "price": 9.6,
+      "previousClose": 10.04,
+      "changePercent": -4.38,
+      "turnoverRate": 29.99,
+      "totalMarketCapYi": 45.47,
+      "floatMarketCapYi": 45.47,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161445"
+    },
+    {
+      "name": "文投控股",
+      "code": "600715",
+      "quoteId": "1.600715",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "文投控股",
+          "code": "600715"
+        }
+      ],
+      "requestedName": "文投控股",
+      "apiName": "文投控股",
+      "price": 3.4,
+      "previousClose": 3.09,
+      "changePercent": 10.03,
+      "turnoverRate": 10.9,
+      "totalMarketCapYi": 138.04,
+      "floatMarketCapYi": 97.32,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161445"
     },
     {
       "name": "日出东方",
@@ -590,212 +656,322 @@ window.MARKET_DATA = {
       ],
       "requestedName": "日出东方",
       "apiName": "日出东方",
-      "price": 13.17,
-      "previousClose": 11.97,
-      "changePercent": 10.03,
-      "turnoverRate": 19.86,
-      "totalMarketCapYi": 107.08,
-      "floatMarketCapYi": 107.08,
+      "price": 13.9,
+      "previousClose": 13.17,
+      "changePercent": 5.54,
+      "turnoverRate": 26.91,
+      "totalMarketCapYi": 113.01,
+      "floatMarketCapYi": 113.01,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161500"
+      "quoteTime": "20261113161441"
     },
     {
-      "name": "沈鼓集团",
-      "code": "601091",
-      "quoteId": "1.601091",
+      "name": "日发精机",
+      "code": "002520",
+      "quoteId": "0.002520",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "沈鼓集团",
-          "code": "601091"
+          "name": "日发精机",
+          "code": "002520"
         }
       ],
-      "requestedName": "沈鼓集团",
-      "apiName": "沈鼓集团",
-      "price": 20.92,
-      "previousClose": 19.02,
-      "changePercent": 9.99,
-      "turnoverRate": 32.92,
-      "totalMarketCapYi": 650.61,
-      "floatMarketCapYi": 44.18,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161455"
-    },
-    {
-      "name": "澳洋健康",
-      "code": "002172",
-      "quoteId": "0.002172",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "澳洋健康",
-          "code": "002172"
-        }
-      ],
-      "requestedName": "澳洋健康",
-      "apiName": "澳洋健康",
-      "price": 6.66,
-      "previousClose": 6.05,
-      "changePercent": 10.08,
-      "turnoverRate": 29.27,
-      "totalMarketCapYi": 51.0,
-      "floatMarketCapYi": 50.96,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161430"
-    },
-    {
-      "name": "百洋股份",
-      "code": "002696",
-      "quoteId": "0.002696",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "百洋股份",
-          "code": "002696"
-        }
-      ],
-      "requestedName": "百洋股份",
-      "apiName": "百洋股份",
-      "price": 11.68,
-      "previousClose": 10.62,
-      "changePercent": 9.98,
-      "turnoverRate": 36.51,
-      "totalMarketCapYi": 40.38,
-      "floatMarketCapYi": 39.04,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161445"
-    },
-    {
-      "name": "皇台酒业",
-      "code": "000995",
-      "quoteId": "0.000995",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "皇台酒业",
-          "code": "000995"
-        }
-      ],
-      "requestedName": "皇台酒业",
-      "apiName": "皇台酒业",
-      "price": 18.32,
-      "previousClose": 16.65,
-      "changePercent": 10.03,
-      "turnoverRate": 38.2,
-      "totalMarketCapYi": 32.5,
-      "floatMarketCapYi": 32.5,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161445"
-    },
-    {
-      "name": "福建水泥",
-      "code": "600802",
-      "quoteId": "1.600802",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "福建水泥",
-          "code": "600802"
-        }
-      ],
-      "requestedName": "福建水泥",
-      "apiName": "福建水泥",
-      "price": 8.59,
-      "previousClose": 7.81,
-      "changePercent": 9.99,
-      "turnoverRate": 43.75,
-      "totalMarketCapYi": 39.36,
-      "floatMarketCapYi": 39.36,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161450"
-    },
-    {
-      "name": "粤宏远A",
-      "code": "000573",
-      "quoteId": "0.000573",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "粤宏远A",
-          "code": "000573"
-        }
-      ],
-      "requestedName": "粤宏远A",
-      "apiName": "粤宏远Ａ",
-      "price": 4.35,
-      "previousClose": 3.95,
-      "changePercent": 10.13,
-      "turnoverRate": 0.98,
-      "totalMarketCapYi": 27.77,
-      "floatMarketCapYi": 27.52,
-      "inFloatCapRange": false,
-      "quoteTime": "20261112161430"
-    },
-    {
-      "name": "起帆电缆",
-      "code": "605222",
-      "quoteId": "1.605222",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "起帆电缆",
-          "code": "605222"
-        }
-      ],
-      "requestedName": "起帆电缆",
-      "apiName": "起帆电缆",
-      "price": 20.55,
-      "previousClose": 18.68,
-      "changePercent": 10.01,
-      "turnoverRate": 2.82,
-      "totalMarketCapYi": 84.85,
-      "floatMarketCapYi": 84.85,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161454"
-    },
-    {
-      "name": "超颖电子",
-      "code": "603175",
-      "quoteId": "1.603175",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "超颖电子",
-          "code": "603175"
-        }
-      ],
-      "requestedName": "超颖电子",
-      "apiName": "超颖电子",
-      "price": 99.54,
-      "previousClose": 90.49,
+      "requestedName": "日发精机",
+      "apiName": "日发精机",
+      "price": 7.7,
+      "previousClose": 7.0,
       "changePercent": 10.0,
-      "turnoverRate": 5.03,
-      "totalMarketCapYi": 435.02,
-      "floatMarketCapYi": 60.47,
+      "turnoverRate": 28.87,
+      "totalMarketCapYi": 57.77,
+      "floatMarketCapYi": 54.31,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161442"
+      "quoteTime": "20261113161430"
     },
     {
-      "name": "达意隆",
-      "code": "002209",
-      "quoteId": "0.002209",
+      "name": "日盈电子",
+      "code": "603286",
+      "quoteId": "1.603286",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "达意隆",
-          "code": "002209"
+          "name": "日盈电子",
+          "code": "603286"
         }
       ],
-      "requestedName": "达意隆",
-      "apiName": "达 意 隆",
-      "price": 13.47,
-      "previousClose": 13.96,
-      "changePercent": -3.51,
-      "turnoverRate": 24.91,
-      "totalMarketCapYi": 27.55,
-      "floatMarketCapYi": 21.26,
+      "requestedName": "日盈电子",
+      "apiName": "日盈电子",
+      "price": 64.91,
+      "previousClose": 59.01,
+      "changePercent": 10.0,
+      "turnoverRate": 9.15,
+      "totalMarketCapYi": 76.59,
+      "floatMarketCapYi": 75.87,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161454"
+    },
+    {
+      "name": "横店影视",
+      "code": "603103",
+      "quoteId": "1.603103",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "横店影视",
+          "code": "603103"
+        }
+      ],
+      "requestedName": "横店影视",
+      "apiName": "横店影视",
+      "price": 19.31,
+      "previousClose": 17.55,
+      "changePercent": 10.03,
+      "turnoverRate": 1.11,
+      "totalMarketCapYi": 122.46,
+      "floatMarketCapYi": 122.46,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161453"
+    },
+    {
+      "name": "法狮龙",
+      "code": "605318",
+      "quoteId": "1.605318",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "法狮龙",
+          "code": "605318"
+        }
+      ],
+      "requestedName": "法狮龙",
+      "apiName": "法狮龙",
+      "price": 84.26,
+      "previousClose": 76.6,
+      "changePercent": 10.0,
+      "turnoverRate": 3.32,
+      "totalMarketCapYi": 105.94,
+      "floatMarketCapYi": 105.94,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161443"
+    },
+    {
+      "name": "泰嘉股份",
+      "code": "002843",
+      "quoteId": "0.002843",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "泰嘉股份",
+          "code": "002843"
+        }
+      ],
+      "requestedName": "泰嘉",
+      "apiName": "泰嘉股份",
+      "price": 15.0,
+      "previousClose": 14.42,
+      "changePercent": 4.02,
+      "turnoverRate": 20.59,
+      "totalMarketCapYi": 38.37,
+      "floatMarketCapYi": 37.56,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161500"
+    },
+    {
+      "name": "浙文互联",
+      "code": "600986",
+      "quoteId": "1.600986",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "浙文互联",
+          "code": "600986"
+        }
+      ],
+      "requestedName": "浙文",
+      "apiName": "浙文互联",
+      "price": 7.46,
+      "previousClose": 7.6,
+      "changePercent": -1.84,
+      "turnoverRate": 5.31,
+      "totalMarketCapYi": 110.96,
+      "floatMarketCapYi": 110.96,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161455"
+    },
+    {
+      "name": "湖北广电",
+      "code": "000665",
+      "quoteId": "0.000665",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "湖北广电",
+          "code": "000665"
+        }
+      ],
+      "requestedName": "湖北广电",
+      "apiName": "湖北广电",
+      "price": 4.58,
+      "previousClose": 4.16,
+      "changePercent": 10.1,
+      "turnoverRate": 4.72,
+      "totalMarketCapYi": 52.08,
+      "floatMarketCapYi": 52.08,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161445"
+    },
+    {
+      "name": "皮阿诺",
+      "code": "002853",
+      "quoteId": "0.002853",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "皮阿诺",
+          "code": "002853"
+        }
+      ],
+      "requestedName": "皮阿诺",
+      "apiName": "皮阿诺",
+      "price": 21.77,
+      "previousClose": 19.79,
+      "changePercent": 10.01,
+      "turnoverRate": 3.77,
+      "totalMarketCapYi": 39.82,
+      "floatMarketCapYi": 28.02,
       "inFloatCapRange": false,
-      "quoteTime": "20261112161454"
+      "quoteTime": "20261113161436"
+    },
+    {
+      "name": "福达股份",
+      "code": "603166",
+      "quoteId": "1.603166",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "福达股份",
+          "code": "603166"
+        }
+      ],
+      "requestedName": "福达股份",
+      "apiName": "福达股份",
+      "price": 11.84,
+      "previousClose": 10.76,
+      "changePercent": 10.04,
+      "turnoverRate": 4.23,
+      "totalMarketCapYi": 76.36,
+      "floatMarketCapYi": 76.1,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161443"
+    },
+    {
+      "name": "福龙马",
+      "code": "603686",
+      "quoteId": "1.603686",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "福龙马",
+          "code": "603686"
+        }
+      ],
+      "requestedName": "福龙马",
+      "apiName": "福龙马",
+      "price": 13.6,
+      "previousClose": 12.36,
+      "changePercent": 10.03,
+      "turnoverRate": 12.73,
+      "totalMarketCapYi": 56.5,
+      "floatMarketCapYi": 56.5,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161459"
+    },
+    {
+      "name": "维通利",
+      "code": "001393",
+      "quoteId": "0.001393",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "维通利",
+          "code": "001393"
+        }
+      ],
+      "requestedName": "维通利",
+      "apiName": "维通利",
+      "price": 43.14,
+      "previousClose": 39.22,
+      "changePercent": 9.99,
+      "turnoverRate": 19.68,
+      "totalMarketCapYi": 107.56,
+      "floatMarketCapYi": 20.72,
+      "inFloatCapRange": false,
+      "quoteTime": "20261113161445"
+    },
+    {
+      "name": "美晨科技",
+      "code": "300237",
+      "quoteId": "0.300237",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "美晨科技",
+          "code": "300237"
+        }
+      ],
+      "requestedName": "美晨科技",
+      "apiName": "美晨科技",
+      "price": 3.26,
+      "previousClose": 2.72,
+      "changePercent": 19.85,
+      "turnoverRate": 14.31,
+      "totalMarketCapYi": 47.01,
+      "floatMarketCapYi": 47.01,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161445"
+    },
+    {
+      "name": "通化金马",
+      "code": "000766",
+      "quoteId": "0.000766",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "通化金马",
+          "code": "000766"
+        }
+      ],
+      "requestedName": "通化金马",
+      "apiName": "通化金马",
+      "price": 16.5,
+      "previousClose": 15.0,
+      "changePercent": 10.0,
+      "turnoverRate": 5.19,
+      "totalMarketCapYi": 159.47,
+      "floatMarketCapYi": 159.33,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161415"
+    },
+    {
+      "name": "金新农",
+      "code": "002548",
+      "quoteId": "0.002548",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "金新农",
+          "code": "002548"
+        }
+      ],
+      "requestedName": "金新农",
+      "apiName": "金新农",
+      "price": 3.83,
+      "previousClose": 3.48,
+      "changePercent": 10.06,
+      "turnoverRate": 4.54,
+      "totalMarketCapYi": 31.72,
+      "floatMarketCapYi": 30.81,
+      "inFloatCapRange": true,
+      "quoteTime": "20261113161445"
     },
     {
       "name": "金辰股份",
@@ -810,127 +986,85 @@ window.MARKET_DATA = {
       ],
       "requestedName": "金辰股份",
       "apiName": "金辰股份",
-      "price": 32.11,
-      "previousClose": 29.19,
+      "price": 35.32,
+      "previousClose": 32.11,
       "changePercent": 10.0,
-      "turnoverRate": 0.89,
-      "totalMarketCapYi": 44.48,
-      "floatMarketCapYi": 44.48,
+      "turnoverRate": 14.29,
+      "totalMarketCapYi": 48.93,
+      "floatMarketCapYi": 48.93,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161500"
+      "quoteTime": "20261113161450"
     },
     {
-      "name": "长城军工",
-      "code": "601606",
-      "quoteId": "1.601606",
+      "name": "金逸影视",
+      "code": "002905",
+      "quoteId": "0.002905",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "长城军工",
-          "code": "601606"
+          "name": "金逸影视",
+          "code": "002905"
         }
       ],
-      "requestedName": "长城军工",
-      "apiName": "长城军工",
-      "price": 32.62,
-      "previousClose": 29.65,
-      "changePercent": 10.02,
-      "turnoverRate": 9.51,
-      "totalMarketCapYi": 236.24,
-      "floatMarketCapYi": 236.24,
+      "requestedName": "金逸影视",
+      "apiName": "金逸影视",
+      "price": 9.9,
+      "previousClose": 9.0,
+      "changePercent": 10.0,
+      "turnoverRate": 2.36,
+      "totalMarketCapYi": 37.26,
+      "floatMarketCapYi": 34.59,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161500"
+      "quoteTime": "20261113161500"
     },
     {
-      "name": "青山纸业",
-      "code": "600103",
-      "quoteId": "1.600103",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "青山纸业",
-          "code": "600103"
-        }
-      ],
-      "requestedName": "青山纸业",
-      "apiName": "青山纸业",
-      "price": 3.33,
-      "previousClose": 3.28,
-      "changePercent": 1.52,
-      "turnoverRate": 20.09,
-      "totalMarketCapYi": 73.67,
-      "floatMarketCapYi": 73.67,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161459"
-    },
-    {
-      "name": "鲁阳节能",
-      "code": "002088",
-      "quoteId": "0.002088",
+      "name": "青岛啤酒",
+      "code": "600600",
+      "quoteId": "1.600600",
       "matchType": "prefix",
       "alternatives": [
         {
-          "name": "鲁阳节能",
-          "code": "002088"
+          "name": "青岛啤酒",
+          "code": "600600"
         }
       ],
-      "requestedName": "鲁阳",
-      "apiName": "鲁阳节能",
-      "price": 10.15,
-      "previousClose": 11.0,
-      "changePercent": -7.73,
-      "turnoverRate": 9.28,
-      "totalMarketCapYi": 51.71,
-      "floatMarketCapYi": 51.36,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161445"
+      "requestedName": "青岛",
+      "apiName": "青岛啤酒",
+      "price": 52.49,
+      "previousClose": 51.73,
+      "changePercent": 1.47,
+      "turnoverRate": 0.68,
+      "totalMarketCapYi": 716.07,
+      "floatMarketCapYi": 372.22,
+      "inFloatCapRange": false,
+      "quoteTime": "20261113161500"
     },
     {
-      "name": "龙建股份",
-      "code": "600853",
-      "quoteId": "1.600853",
+      "name": "飞乐音响",
+      "code": "600651",
+      "quoteId": "1.600651",
       "matchType": "exact",
       "alternatives": [
         {
-          "name": "龙建股份",
-          "code": "600853"
+          "name": "飞乐音响",
+          "code": "600651"
         }
       ],
-      "requestedName": "龙建股份",
-      "apiName": "龙建股份",
-      "price": 4.21,
-      "previousClose": 3.83,
-      "changePercent": 9.92,
-      "turnoverRate": 9.81,
-      "totalMarketCapYi": 42.68,
-      "floatMarketCapYi": 42.68,
+      "requestedName": "飞乐音响",
+      "apiName": "飞乐音响",
+      "price": 5.18,
+      "previousClose": 4.71,
+      "changePercent": 9.98,
+      "turnoverRate": 1.92,
+      "totalMarketCapYi": 129.86,
+      "floatMarketCapYi": 129.86,
       "inFloatCapRange": true,
-      "quoteTime": "20261112161446"
-    },
-    {
-      "name": "龙江交通",
-      "code": "601188",
-      "quoteId": "1.601188",
-      "matchType": "exact",
-      "alternatives": [
-        {
-          "name": "龙江交通",
-          "code": "601188"
-        }
-      ],
-      "requestedName": "龙江交通",
-      "apiName": "龙江交通",
-      "price": 4.72,
-      "previousClose": 4.29,
-      "changePercent": 10.02,
-      "turnoverRate": 26.41,
-      "totalMarketCapYi": 61.62,
-      "floatMarketCapYi": 61.62,
-      "inFloatCapRange": true,
-      "quoteTime": "20261112161445"
+      "quoteTime": "20261113161448"
     }
   ],
   "unmatched": [
-    "宇树"
+    "易中天",
+    "闽铝",
+    "新华"
   ]
 };
