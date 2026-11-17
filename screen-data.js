@@ -1,6 +1,6 @@
 window.SCREEN_DATA = {
   "date": "2026-11-17",
-  "capturedAt": "2026-11-17T17:28:27+08:00",
+  "capturedAt": "2026-11-17T18:23:17+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
   "marketCount": 5579,
   "limitUpCount": 39,
@@ -28,7 +28,7 @@ window.SCREEN_DATA = {
       "amount": 227901016.0,
       "floatMarketCapYi": 67.51,
       "totalMarketCapYi": 67.52,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 3,
       "limitThreshold": 9.5,
       "aKillEvents": [
@@ -1065,7 +1065,7 @@ window.SCREEN_DATA = {
       "amount": 227901016.0,
       "floatMarketCapYi": 67.51,
       "totalMarketCapYi": 67.52,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 3,
       "limitThreshold": 9.5,
       "aKillEvents": [

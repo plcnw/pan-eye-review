@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
   "date": "2026-11-17",
-  "capturedAt": "2026-11-17T17:26:46+08:00",
+  "capturedAt": "2026-11-17T18:21:31+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -730,6 +730,28 @@ window.MARKET_DATA = {
       "floatMarketCapYi": 15.73,
       "inFloatCapRange": false,
       "quoteTime": "20261117161454"
+    },
+    {
+      "name": "瀛通通讯",
+      "code": "002861",
+      "quoteId": "0.002861",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "瀛通通讯",
+          "code": "002861"
+        }
+      ],
+      "requestedName": "瀛通",
+      "apiName": "瀛通通讯",
+      "price": 14.96,
+      "previousClose": 13.6,
+      "changePercent": 10.0,
+      "turnoverRate": 21.05,
+      "totalMarketCapYi": 27.87,
+      "floatMarketCapYi": 21.24,
+      "inFloatCapRange": false,
+      "quoteTime": "20261117161418"
     },
     {
       "name": "瀛通通讯",
