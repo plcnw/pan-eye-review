@@ -1,13 +1,13 @@
 window.SCREEN_DATA = {
-  "date": "2026-11-16",
-  "capturedAt": "2026-11-16T17:31:05+08:00",
+  "date": "2026-11-17",
+  "capturedAt": "2026-11-17T17:28:27+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
-  "marketCount": 5578,
-  "limitUpCount": 38,
-  "capPassCount": 31,
-  "hardExcludedCount": 12,
-  "candidateCount": 17,
-  "exceptionCount": 10,
+  "marketCount": 5579,
+  "limitUpCount": 39,
+  "capPassCount": 26,
+  "hardExcludedCount": 17,
+  "candidateCount": 9,
+  "exceptionCount": 5,
   "rules": {
     "floatMarketCapYi": [
       30,
@@ -19,276 +19,17 @@ window.SCREEN_DATA = {
   },
   "candidates": [
     {
-      "symbol": "sz002148",
-      "code": "002148",
-      "name": "北纬科技",
-      "price": 8.75,
-      "changePercent": 10.063,
-      "turnoverRate": 42.58537,
-      "amount": 1653207435.0,
-      "floatMarketCapYi": 39.46,
-      "totalMarketCapYi": 48.89,
-      "lookbackDays": 521,
-      "boardHeight": 4,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-08-04",
-          "runEnd": "2025-08-07",
-          "runLength": 4,
-          "breakDate": "2025-08-08",
-          "evidence": [
-            "断板日高开 6.08% 后盘中回落 -14.00%",
-            "断板当日下跌 -8.78%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002187",
-      "code": "002187",
-      "name": "广百股份",
-      "price": 7.67,
-      "changePercent": 10.043,
-      "turnoverRate": 6.13867,
-      "amount": 328578042.0,
-      "floatMarketCapYi": 53.76,
-      "totalMarketCapYi": 53.76,
-      "lookbackDays": 521,
-      "boardHeight": 3,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-01-07",
-          "runEnd": "2025-01-08",
-          "runLength": 2,
-          "breakDate": "2025-01-09",
-          "evidence": [
-            "断板当日下跌 -5.32%"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "runStart": "2025-01-15",
-          "runEnd": "2025-01-16",
-          "runLength": 2,
-          "breakDate": "2025-01-17",
-          "evidence": [
-            "断板日高开 4.59% 后盘中回落 -10.77%",
-            "断板当日下跌 -6.68%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002425",
-      "code": "002425",
-      "name": "凯撒文化",
-      "price": 4.36,
-      "changePercent": 10.101,
-      "turnoverRate": 20.27204,
-      "amount": 804825457.0,
-      "floatMarketCapYi": 40.12,
-      "totalMarketCapYi": 41.71,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-08-04",
-          "runEnd": "2026-08-06",
-          "runLength": 3,
-          "breakDate": "2026-08-07",
-          "evidence": [
-            "断板当日下跌 -8.90%",
-            "断板后两日累计下跌 -13.35%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-11-10",
-          "runEnd": "2026-11-11",
-          "runLength": 2,
-          "breakDate": "2026-11-12",
-          "evidence": [
-            "断板日高开 9.92% 后盘中回落 -14.49%",
-            "断板当日下跌 -6.01%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002748",
-      "code": "002748",
-      "name": "世龙实业",
-      "price": 13.63,
-      "changePercent": 10.008,
-      "turnoverRate": 13.25425,
-      "amount": 418309480.0,
-      "floatMarketCapYi": 32.71,
-      "totalMarketCapYi": 32.71,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-10-21",
-          "runEnd": "2025-10-27",
-          "runLength": 5,
-          "breakDate": "2025-10-28",
-          "evidence": [
-            "断板当日下跌 -8.43%",
-            "断板后两日累计下跌 -17.63%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sh600715",
-      "code": "600715",
-      "name": "文投控股",
-      "price": 3.74,
-      "changePercent": 10.0,
-      "turnoverRate": 37.81856,
-      "amount": 3957287488.0,
-      "floatMarketCapYi": 107.05,
-      "totalMarketCapYi": 151.84,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-10-27",
-          "runEnd": "2026-10-29",
-          "runLength": 3,
-          "breakDate": "2026-10-30",
-          "evidence": [
-            "断板当日下跌 -10.13%"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "runStart": "2026-11-09",
-          "runEnd": "2026-11-11",
-          "runLength": 3,
-          "breakDate": "2026-11-12",
-          "evidence": [
-            "断板日高开 6.69% 后盘中回落 -7.76%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002905",
-      "code": "002905",
-      "name": "金逸影视",
-      "price": 10.89,
-      "changePercent": 10.0,
-      "turnoverRate": 1.29322,
-      "amount": 49212215.0,
-      "floatMarketCapYi": 38.05,
-      "totalMarketCapYi": 40.98,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-03-12",
-          "runEnd": "2025-03-17",
-          "runLength": 4,
-          "breakDate": "2025-03-18",
-          "evidence": [
-            "断板当日下跌 -9.96%",
-            "断板后两日累计下跌 -19.00%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz000819",
-      "code": "000819",
-      "name": "岳阳兴长",
-      "price": 14.1,
-      "changePercent": 9.984,
-      "turnoverRate": 15.95663,
-      "amount": 819767343.0,
-      "floatMarketCapYi": 51.61,
-      "totalMarketCapYi": 51.61,
-      "lookbackDays": 520,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz000595",
-      "code": "000595",
-      "name": "新能股份",
-      "price": 6.08,
-      "changePercent": 9.946,
-      "turnoverRate": 13.84464,
-      "amount": 921459465.0,
-      "floatMarketCapYi": 69.23,
-      "totalMarketCapYi": 69.23,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-07-22",
-          "runEnd": "2026-07-24",
-          "runLength": 3,
-          "breakDate": "2026-07-27",
-          "evidence": [
-            "断板后两日累计下跌 -10.87%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-07-31",
-          "runEnd": "2026-08-04",
-          "runLength": 3,
-          "breakDate": "2026-08-05",
-          "evidence": [
-            "断板日高开 8.38% 后盘中回落 -6.19%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
       "symbol": "sz002685",
       "code": "002685",
       "name": "华东重机",
-      "price": 6.09,
-      "changePercent": 9.928,
-      "turnoverRate": 14.37398,
-      "amount": 861278016.0,
-      "floatMarketCapYi": 61.36,
-      "totalMarketCapYi": 61.37,
-      "lookbackDays": 520,
-      "boardHeight": 2,
+      "price": 6.7,
+      "changePercent": 10.016,
+      "turnoverRate": 3.37589,
+      "amount": 227901016.0,
+      "floatMarketCapYi": 67.51,
+      "totalMarketCapYi": 67.52,
+      "lookbackDays": 521,
+      "boardHeight": 3,
       "limitThreshold": 9.5,
       "aKillEvents": [
         {
@@ -329,16 +70,16 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sz002548",
-      "code": "002548",
-      "name": "金新农",
-      "price": 4.21,
-      "changePercent": 9.922,
-      "turnoverRate": 6.75351,
-      "amount": 228236128.0,
-      "floatMarketCapYi": 33.87,
-      "totalMarketCapYi": 34.87,
-      "lookbackDays": 520,
+      "symbol": "sz002959",
+      "code": "002959",
+      "name": "小熊电器",
+      "price": 39.9,
+      "changePercent": 10.008,
+      "turnoverRate": 7.64865,
+      "amount": 414319527.0,
+      "floatMarketCapYi": 55.78,
+      "totalMarketCapYi": 62.18,
+      "lookbackDays": 521,
       "boardHeight": 2,
       "limitThreshold": 9.5,
       "aKillEvents": [],
@@ -346,352 +87,17 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sz300530",
-      "code": "300530",
-      "name": "领湃科技",
-      "price": 27.83,
-      "changePercent": 20.009,
-      "turnoverRate": 10.42681,
-      "amount": 461090043.0,
-      "floatMarketCapYi": 47.85,
-      "totalMarketCapYi": 47.85,
-      "lookbackDays": 520,
-      "boardHeight": 1,
-      "limitThreshold": 19.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002035",
-      "code": "002035",
-      "name": "华帝股份",
-      "price": 4.68,
-      "changePercent": 10.118,
-      "turnoverRate": 8.93258,
-      "amount": 323247166.0,
-      "floatMarketCapYi": 36.6,
-      "totalMarketCapYi": 39.67,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sh600386",
-      "code": "600386",
-      "name": "北巴传媒",
-      "price": 3.81,
-      "changePercent": 10.116,
-      "turnoverRate": 4.37319,
-      "amount": 131616779.0,
-      "floatMarketCapYi": 30.72,
-      "totalMarketCapYi": 30.72,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002959",
-      "code": "002959",
-      "name": "小熊电器",
-      "price": 36.27,
-      "changePercent": 10.009,
-      "turnoverRate": 3.76361,
-      "amount": 184572282.0,
-      "floatMarketCapYi": 50.7,
-      "totalMarketCapYi": 56.52,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sh603983",
-      "code": "603983",
-      "name": "丸美生物",
-      "price": 26.73,
-      "changePercent": 10.0,
-      "turnoverRate": 2.05093,
-      "amount": 212221714.0,
-      "floatMarketCapYi": 107.19,
-      "totalMarketCapYi": 107.19,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002419",
-      "code": "002419",
-      "name": "天虹股份",
-      "price": 5.4,
-      "changePercent": 9.98,
-      "turnoverRate": 6.00717,
-      "amount": 366253488.0,
-      "floatMarketCapYi": 61.63,
-      "totalMarketCapYi": 61.63,
-      "lookbackDays": 520,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz000521",
-      "code": "000521",
-      "name": "长虹美菱",
-      "price": 4.31,
-      "changePercent": 9.949,
-      "turnoverRate": 3.57227,
-      "amount": 131913505.0,
-      "floatMarketCapYi": 37.72,
-      "totalMarketCapYi": 44.39,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
-      "historySource": "cached"
-    }
-  ],
-  "hardExcluded": [
-    {
-      "symbol": "sh603118",
-      "code": "603118",
-      "name": "共进股份",
-      "price": 14.71,
-      "changePercent": 10.022,
-      "turnoverRate": 19.16379,
-      "amount": 2150374878.0,
-      "floatMarketCapYi": 115.81,
-      "totalMarketCapYi": 115.81,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-01-08",
-          "runEnd": "2025-01-09",
-          "runLength": 2,
-          "breakDate": "2025-01-10",
-          "evidence": [
-            "断板当日下跌 -10.00%",
-            "断板后两日累计下跌 -19.05%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-08-13",
-          "runEnd": "2026-08-17",
-          "runLength": 3,
-          "breakDate": "2026-08-18",
-          "evidence": [
-            "断板日高开 4.30% 后盘中回落 -5.66%",
-            "断板后两日累计下跌 -11.44%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sh601929",
-      "code": "601929",
-      "name": "吉视传媒",
-      "price": 2.96,
-      "changePercent": 10.037,
-      "turnoverRate": 14.99059,
-      "amount": 1479940805.0,
-      "floatMarketCapYi": 103.3,
-      "totalMarketCapYi": 103.3,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-11-03",
-          "runEnd": "2025-11-05",
-          "runLength": 3,
-          "breakDate": "2025-11-06",
-          "evidence": [
-            "断板当日下跌 -9.94%",
-            "断板后两日累计下跌 -14.20%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sh601188",
-      "code": "601188",
-      "name": "龙江交通",
-      "price": 4.73,
-      "changePercent": 10.0,
-      "turnoverRate": 16.69388,
-      "amount": 1012325454.0,
-      "floatMarketCapYi": 61.75,
-      "totalMarketCapYi": 61.75,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-10-13",
-          "runEnd": "2026-10-14",
-          "runLength": 2,
-          "breakDate": "2026-10-15",
-          "evidence": [
-            "断板当日下跌 -9.92%",
-            "断板后两日累计下跌 -10.48%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-11-06",
-          "runEnd": "2026-11-10",
-          "runLength": 3,
-          "breakDate": "2026-11-11",
-          "evidence": [
-            "断板当日下跌 -6.94%"
-          ],
-          "confidence": "medium"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz000156",
-      "code": "000156",
-      "name": "华数传媒",
-      "price": 8.54,
-      "changePercent": 10.052,
-      "turnoverRate": 5.83867,
-      "amount": 821966354.0,
-      "floatMarketCapYi": 145.17,
-      "totalMarketCapYi": 158.24,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-02-11",
-          "runEnd": "2025-02-12",
-          "runLength": 2,
-          "breakDate": "2025-02-13",
-          "evidence": [
-            "断板日高开 10.24% 后盘中回落 -8.18%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz000628",
-      "code": "000628",
-      "name": "高新发展",
-      "price": 46.55,
-      "changePercent": 9.995,
-      "turnoverRate": 9.15752,
-      "amount": 786185717.0,
-      "floatMarketCapYi": 89.49,
-      "totalMarketCapYi": 163.99,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-10-14",
-          "runEnd": "2024-10-16",
-          "runLength": 3,
-          "breakDate": "2024-10-17",
-          "evidence": [
-            "断板当日下跌 -7.97%"
-          ],
-          "confidence": "medium"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz001318",
-      "code": "001318",
-      "name": "阳光乳业",
-      "price": 14.62,
-      "changePercent": 10.008,
-      "turnoverRate": 15.42475,
-      "amount": 620358520.0,
-      "floatMarketCapYi": 41.32,
-      "totalMarketCapYi": 41.32,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-07-29",
-          "runEnd": "2025-07-31",
-          "runLength": 3,
-          "breakDate": "2025-08-01",
-          "evidence": [
-            "断板当日下跌 -9.72%",
-            "断板后两日累计下跌 -18.54%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-11-28",
-          "runEnd": "2025-12-01",
-          "runLength": 2,
-          "breakDate": "2025-12-02",
-          "evidence": [
-            "断板后两日累计下跌 -9.52%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-10-13",
-          "runEnd": "2026-10-15",
-          "runLength": 3,
-          "breakDate": "2026-10-16",
-          "evidence": [
-            "断板当日下跌 -10.02%",
-            "断板后两日累计下跌 -19.03%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
       "symbol": "sz000533",
       "code": "000533",
       "name": "顺钠股份",
-      "price": 9.82,
-      "changePercent": 9.966,
-      "turnoverRate": 6.61308,
-      "amount": 428274184.0,
-      "floatMarketCapYi": 67.26,
-      "totalMarketCapYi": 67.84,
+      "price": 10.8,
+      "changePercent": 9.98,
+      "turnoverRate": 25.50903,
+      "amount": 1865144490.0,
+      "floatMarketCapYi": 73.97,
+      "totalMarketCapYi": 74.61,
       "lookbackDays": 521,
-      "boardHeight": 1,
+      "boardHeight": 2,
       "limitThreshold": 9.5,
       "aKillEvents": [
         {
@@ -732,106 +138,34 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sz002058",
-      "code": "002058",
-      "name": "紫竹高科",
-      "price": 22.4,
-      "changePercent": 10.02,
-      "turnoverRate": 10.21673,
-      "amount": 314846071.0,
-      "floatMarketCapYi": 32.11,
-      "totalMarketCapYi": 32.13,
-      "lookbackDays": 521,
-      "boardHeight": 1,
+      "symbol": "sz000521",
+      "code": "000521",
+      "name": "长虹美菱",
+      "price": 4.74,
+      "changePercent": 9.977,
+      "turnoverRate": 5.66151,
+      "amount": 229214229.0,
+      "floatMarketCapYi": 41.49,
+      "totalMarketCapYi": 48.82,
+      "lookbackDays": 520,
+      "boardHeight": 2,
       "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-02-17",
-          "runEnd": "2025-02-20",
-          "runLength": 4,
-          "breakDate": "2025-02-21",
-          "evidence": [
-            "断板当日下跌 -7.99%",
-            "断板后两日累计下跌 -16.04%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-04-01",
-          "runEnd": "2025-04-02",
-          "runLength": 2,
-          "breakDate": "2025-04-03",
-          "evidence": [
-            "断板后两日累计下跌 -9.45%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-11-02",
-          "runEnd": "2026-11-04",
-          "runLength": 3,
-          "breakDate": "2026-11-05",
-          "evidence": [
-            "断板当日下跌 -5.85%",
-            "断板后两日累计下跌 -12.61%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002356",
-      "code": "002356",
-      "name": "鹏飞绿能",
-      "price": 2.52,
-      "changePercent": 10.044,
-      "turnoverRate": 6.32973,
-      "amount": 205809543.0,
-      "floatMarketCapYi": 33.04,
-      "totalMarketCapYi": 33.04,
-      "lookbackDays": 521,
-      "boardHeight": 1,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2024-11-15",
-          "runEnd": "2024-11-18",
-          "runLength": 2,
-          "breakDate": "2024-11-19",
-          "evidence": [
-            "断板日高开 4.52% 后盘中回落 -7.93%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2025-07-09",
-          "runEnd": "2025-07-11",
-          "runLength": 3,
-          "breakDate": "2025-07-14",
-          "evidence": [
-            "断板当日下跌 -8.85%",
-            "断板后两日累计下跌 -14.00%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
+      "aKillEvents": [],
+      "hasSuspectedAKill": false,
       "historySource": "cached"
     },
     {
       "symbol": "sh600936",
       "code": "600936",
       "name": "北投科技",
-      "price": 4.02,
-      "changePercent": 10.137,
-      "turnoverRate": 2.77194,
-      "amount": 179720283.0,
-      "floatMarketCapYi": 67.18,
-      "totalMarketCapYi": 67.18,
+      "price": 4.42,
+      "changePercent": 9.95,
+      "turnoverRate": 14.41191,
+      "amount": 1051291304.0,
+      "floatMarketCapYi": 73.86,
+      "totalMarketCapYi": 73.86,
       "lookbackDays": 521,
-      "boardHeight": 1,
+      "boardHeight": 2,
       "limitThreshold": 9.5,
       "aKillEvents": [
         {
@@ -873,36 +207,134 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sh600822",
-      "code": "600822",
-      "name": "上海物贸",
-      "price": 9.45,
-      "changePercent": 10.012,
-      "turnoverRate": 4.10871,
-      "amount": 151709788.0,
-      "floatMarketCapYi": 37.44,
-      "totalMarketCapYi": 46.87,
+      "symbol": "sz301209",
+      "code": "301209",
+      "name": "联合化学",
+      "price": 52.96,
+      "changePercent": 20.009,
+      "turnoverRate": 9.3394,
+      "amount": 633270267.0,
+      "floatMarketCapYi": 70.94,
+      "totalMarketCapYi": 83.04,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 19.5,
+      "aKillEvents": [],
+      "hasSuspectedAKill": false,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sz301391",
+      "code": "301391",
+      "name": "卡莱特",
+      "price": 38.88,
+      "changePercent": 20.0,
+      "turnoverRate": 5.45499,
+      "amount": 180739934.0,
+      "floatMarketCapYi": 36.09,
+      "totalMarketCapYi": 36.94,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 19.5,
+      "aKillEvents": [],
+      "hasSuspectedAKill": false,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh603324",
+      "code": "603324",
+      "name": "盛剑科技",
+      "price": 20.82,
+      "changePercent": 9.984,
+      "turnoverRate": 1.6505,
+      "amount": 48438162.0,
+      "floatMarketCapYi": 30.37,
+      "totalMarketCapYi": 31.43,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [],
+      "hasSuspectedAKill": false,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sz002843",
+      "code": "002843",
+      "name": "泰嘉股份",
+      "price": 15.76,
+      "changePercent": 9.979,
+      "turnoverRate": 17.82445,
+      "amount": 691170434.0,
+      "floatMarketCapYi": 39.47,
+      "totalMarketCapYi": 40.31,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [],
+      "hasSuspectedAKill": false,
+      "historySource": "cached"
+    }
+  ],
+  "hardExcluded": [
+    {
+      "symbol": "sz002242",
+      "code": "002242",
+      "name": "九阳股份",
+      "price": 31.52,
+      "changePercent": 10.017,
+      "turnoverRate": 16.35063,
+      "amount": 3544078652.0,
+      "floatMarketCapYi": 240.11,
+      "totalMarketCapYi": 240.5,
       "lookbackDays": 521,
       "boardHeight": 1,
       "limitThreshold": 9.5,
       "aKillEvents": [
         {
-          "runStart": "2024-11-15",
-          "runEnd": "2024-11-18",
+          "runStart": "2025-11-13",
+          "runEnd": "2025-11-14",
           "runLength": 2,
-          "breakDate": "2024-11-19",
+          "breakDate": "2025-11-17",
           "evidence": [
-            "断板当日下跌 -9.97%"
+            "断板日高开 3.58% 后盘中回落 -8.27%"
           ],
-          "confidence": "medium"
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh600261",
+      "code": "600261",
+      "name": "阳光照明",
+      "price": 5.7,
+      "changePercent": 10.039,
+      "turnoverRate": 26.67552,
+      "amount": 1891768406.0,
+      "floatMarketCapYi": 76.1,
+      "totalMarketCapYi": 76.1,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2025-01-27",
+          "runEnd": "2025-02-05",
+          "runLength": 2,
+          "breakDate": "2025-02-06",
+          "evidence": [
+            "断板日高开 7.42% 后盘中回落 -9.46%"
+          ],
+          "confidence": "high"
         },
         {
-          "runStart": "2025-04-25",
-          "runEnd": "2025-04-28",
-          "runLength": 2,
-          "breakDate": "2025-04-29",
+          "runStart": "2026-10-29",
+          "runEnd": "2026-11-03",
+          "runLength": 4,
+          "breakDate": "2026-11-04",
           "evidence": [
-            "断板当日下跌 -5.26%"
+            "断板当日下跌 -9.90%"
           ],
           "confidence": "medium"
         }
@@ -911,29 +343,591 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sh605378",
-      "code": "605378",
-      "name": "野马电池",
-      "price": 15.52,
-      "changePercent": 9.993,
-      "turnoverRate": 2.34097,
-      "amount": 93320352.0,
-      "floatMarketCapYi": 40.56,
-      "totalMarketCapYi": 40.56,
+      "symbol": "sh600410",
+      "code": "600410",
+      "name": "华胜天成",
+      "price": 15.29,
+      "changePercent": 10.0,
+      "turnoverRate": 8.47171,
+      "amount": 1403187332.0,
+      "floatMarketCapYi": 167.65,
+      "totalMarketCapYi": 167.65,
       "lookbackDays": 521,
       "boardHeight": 1,
       "limitThreshold": 9.5,
       "aKillEvents": [
         {
-          "runStart": "2024-12-25",
-          "runEnd": "2024-12-26",
+          "runStart": "2025-05-06",
+          "runEnd": "2025-05-07",
           "runLength": 2,
-          "breakDate": "2024-12-27",
+          "breakDate": "2025-05-08",
           "evidence": [
-            "断板当日下跌 -6.25%",
-            "断板后两日累计下跌 -8.25%"
+            "断板日高开 2.55% 后盘中回落 -5.06%",
+            "断板后两日累计下跌 -9.28%"
           ],
           "confidence": "high"
+        },
+        {
+          "runStart": "2025-08-18",
+          "runEnd": "2025-08-19",
+          "runLength": 2,
+          "breakDate": "2025-08-20",
+          "evidence": [
+            "断板当日下跌 -7.30%",
+            "断板后两日累计下跌 -10.38%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-01-14",
+          "runEnd": "2026-01-15",
+          "runLength": 2,
+          "breakDate": "2026-01-16",
+          "evidence": [
+            "断板当日下跌 -9.95%",
+            "断板后两日累计下跌 -16.75%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh600467",
+      "code": "600467",
+      "name": "好当家",
+      "price": 2.75,
+      "changePercent": 10.0,
+      "turnoverRate": 16.65216,
+      "amount": 646744771.0,
+      "floatMarketCapYi": 40.18,
+      "totalMarketCapYi": 40.18,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2024-11-07",
+          "runEnd": "2024-11-08",
+          "runLength": 2,
+          "breakDate": "2024-11-11",
+          "evidence": [
+            "断板当日下跌 -5.98%",
+            "断板后两日累计下跌 -8.79%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-11-12",
+          "runEnd": "2026-11-13",
+          "runLength": 2,
+          "breakDate": "2026-11-16",
+          "evidence": [
+            "断板当日下跌 -8.42%"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh600619",
+      "code": "600619",
+      "name": "海立股份",
+      "price": 13.1,
+      "changePercent": 9.992,
+      "turnoverRate": 6.3263,
+      "amount": 639959384.0,
+      "floatMarketCapYi": 103.38,
+      "totalMarketCapYi": 140.61,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2024-10-08",
+          "runEnd": "2024-10-09",
+          "runLength": 2,
+          "breakDate": "2024-10-10",
+          "evidence": [
+            "断板日高开 6.10% 后盘中回落 -14.14%",
+            "断板当日下跌 -8.91%",
+            "断板后两日累计下跌 -13.26%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2025-08-11",
+          "runEnd": "2025-08-13",
+          "runLength": 3,
+          "breakDate": "2025-08-14",
+          "evidence": [
+            "断板当日下跌 -10.02%",
+            "断板后两日累计下跌 -11.88%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sz002226",
+      "code": "002226",
+      "name": "江南化工",
+      "price": 5.45,
+      "changePercent": 10.101,
+      "turnoverRate": 3.38598,
+      "amount": 478017148.0,
+      "floatMarketCapYi": 144.37,
+      "totalMarketCapYi": 144.37,
+      "lookbackDays": 520,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2025-07-21",
+          "runEnd": "2025-07-22",
+          "runLength": 2,
+          "breakDate": "2025-07-23",
+          "evidence": [
+            "断板日高开 9.37% 后盘中回落 -10.04%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh603297",
+      "code": "603297",
+      "name": "永新光学",
+      "price": 115.93,
+      "changePercent": 10.001,
+      "turnoverRate": 3.68559,
+      "amount": 453456546.0,
+      "floatMarketCapYi": 128.37,
+      "totalMarketCapYi": 128.37,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2025-09-17",
+          "runEnd": "2025-09-19",
+          "runLength": 3,
+          "breakDate": "2025-09-22",
+          "evidence": [
+            "断板当日下跌 -7.63%",
+            "断板后两日累计下跌 -9.93%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sz002889",
+      "code": "002889",
+      "name": "东方嘉盛",
+      "price": 15.21,
+      "changePercent": 9.978,
+      "turnoverRate": 11.415,
+      "amount": 414986838.0,
+      "floatMarketCapYi": 38.22,
+      "totalMarketCapYi": 57.44,
+      "lookbackDays": 520,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2024-11-08",
+          "runEnd": "2024-11-11",
+          "runLength": 2,
+          "breakDate": "2024-11-12",
+          "evidence": [
+            "断板当日下跌 -7.81%",
+            "断板后两日累计下跌 -11.23%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-10-15",
+          "runEnd": "2026-10-19",
+          "runLength": 3,
+          "breakDate": "2026-10-20",
+          "evidence": [
+            "断板当日下跌 -6.67%",
+            "断板后两日累计下跌 -12.13%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-11-06",
+          "runEnd": "2026-11-09",
+          "runLength": 2,
+          "breakDate": "2026-11-10",
+          "evidence": [
+            "断板日高开 10.00% 后盘中回落 -6.54%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh603078",
+      "code": "603078",
+      "name": "江化微",
+      "price": 24.54,
+      "changePercent": 9.996,
+      "turnoverRate": 4.24223,
+      "amount": 388058844.0,
+      "floatMarketCapYi": 94.64,
+      "totalMarketCapYi": 94.64,
+      "lookbackDays": 520,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2026-01-12",
+          "runEnd": "2026-01-23",
+          "runLength": 5,
+          "breakDate": "2026-01-26",
+          "evidence": [
+            "断板当日下跌 -6.27%"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sz002584",
+      "code": "002584",
+      "name": "西陇科学",
+      "price": 7.91,
+      "changePercent": 10.014,
+      "turnoverRate": 8.11989,
+      "amount": 303621751.0,
+      "floatMarketCapYi": 38.06,
+      "totalMarketCapYi": 46.29,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2026-06-23",
+          "runEnd": "2026-06-24",
+          "runLength": 2,
+          "breakDate": "2026-06-25",
+          "evidence": [
+            "断板日高开 6.62% 后盘中回落 -12.60%",
+            "断板当日下跌 -6.81%",
+            "断板后两日累计下跌 -12.70%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-09-15",
+          "runEnd": "2026-09-16",
+          "runLength": 2,
+          "breakDate": "2026-09-17",
+          "evidence": [
+            "断板日高开 7.33% 后盘中回落 -7.12%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sz002912",
+      "code": "002912",
+      "name": "中新赛克",
+      "price": 24.33,
+      "changePercent": 9.991,
+      "turnoverRate": 5.70632,
+      "amount": 220119678.0,
+      "floatMarketCapYi": 39.47,
+      "totalMarketCapYi": 41.54,
+      "lookbackDays": 520,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2024-10-25",
+          "runEnd": "2024-10-31",
+          "runLength": 5,
+          "breakDate": "2024-11-01",
+          "evidence": [
+            "断板日高开 10.17% 后盘中回落 -10.81%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-09-10",
+          "runEnd": "2026-09-15",
+          "runLength": 4,
+          "breakDate": "2026-09-16",
+          "evidence": [
+            "断板当日下跌 -9.98%",
+            "断板后两日累计下跌 -17.75%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-09-28",
+          "runEnd": "2026-09-29",
+          "runLength": 2,
+          "breakDate": "2026-09-30",
+          "evidence": [
+            "断板当日下跌 -8.65%",
+            "断板后两日累计下跌 -10.89%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh600770",
+      "code": "600770",
+      "name": "综艺股份",
+      "price": 5.53,
+      "changePercent": 9.94,
+      "turnoverRate": 2.70361,
+      "amount": 193051360.0,
+      "floatMarketCapYi": 71.89,
+      "totalMarketCapYi": 71.89,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2025-05-14",
+          "runEnd": "2025-05-15",
+          "runLength": 2,
+          "breakDate": "2025-05-16",
+          "evidence": [
+            "断板日高开 10.08% 后盘中回落 -5.68%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2025-05-19",
+          "runEnd": "2025-05-22",
+          "runLength": 4,
+          "breakDate": "2025-05-23",
+          "evidence": [
+            "断板当日下跌 -9.96%",
+            "断板后两日累计下跌 -18.86%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-04-23",
+          "runEnd": "2026-04-24",
+          "runLength": 2,
+          "breakDate": "2026-04-27",
+          "evidence": [
+            "断板日高开 8.03% 后盘中回落 -7.57%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "live"
+    },
+    {
+      "symbol": "sh603931",
+      "code": "603931",
+      "name": "格林达",
+      "price": 27.97,
+      "changePercent": 9.988,
+      "turnoverRate": 3.23605,
+      "amount": 174230109.0,
+      "floatMarketCapYi": 55.82,
+      "totalMarketCapYi": 55.82,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2024-09-30",
+          "runEnd": "2024-10-08",
+          "runLength": 2,
+          "breakDate": "2024-10-09",
+          "evidence": [
+            "断板当日下跌 -9.15%",
+            "断板后两日累计下跌 -9.24%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh603206",
+      "code": "603206",
+      "name": "嘉环科技",
+      "price": 14.66,
+      "changePercent": 9.977,
+      "turnoverRate": 3.53053,
+      "amount": 156232040.0,
+      "floatMarketCapYi": 44.74,
+      "totalMarketCapYi": 44.74,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2024-10-21",
+          "runEnd": "2024-10-23",
+          "runLength": 3,
+          "breakDate": "2024-10-24",
+          "evidence": [
+            "断板日高开 7.76% 后盘中回落 -16.49%",
+            "断板当日下跌 -10.01%",
+            "断板后两日累计下跌 -12.08%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2025-03-11",
+          "runEnd": "2025-03-13",
+          "runLength": 3,
+          "breakDate": "2025-03-14",
+          "evidence": [
+            "断板当日下跌 -10.04%",
+            "断板后两日累计下跌 -14.49%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-05-18",
+          "runEnd": "2026-05-19",
+          "runLength": 2,
+          "breakDate": "2026-05-20",
+          "evidence": [
+            "断板日高开 3.67% 后盘中回落 -8.05%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sz002983",
+      "code": "002983",
+      "name": "芯瑞达",
+      "price": 23.95,
+      "changePercent": 10.014,
+      "turnoverRate": 4.9272,
+      "amount": 151588926.0,
+      "floatMarketCapYi": 30.98,
+      "totalMarketCapYi": 53.28,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2024-09-30",
+          "runEnd": "2024-10-09",
+          "runLength": 3,
+          "breakDate": "2024-10-10",
+          "evidence": [
+            "断板日高开 2.92% 后盘中回落 -10.72%",
+            "断板当日下跌 -8.11%",
+            "断板后两日累计下跌 -14.92%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sh600881",
+      "code": "600881",
+      "name": "亚泰集团",
+      "price": 1.73,
+      "changePercent": 10.191,
+      "turnoverRate": 1.70047,
+      "amount": 95084089.0,
+      "floatMarketCapYi": 55.92,
+      "totalMarketCapYi": 55.92,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2024-12-11",
+          "runEnd": "2024-12-12",
+          "runLength": 2,
+          "breakDate": "2024-12-13",
+          "evidence": [
+            "断板日高开 6.90% 后盘中回落 -5.73%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2025-05-19",
+          "runEnd": "2025-05-20",
+          "runLength": 2,
+          "breakDate": "2025-05-21",
+          "evidence": [
+            "断板日高开 8.12% 后盘中回落 -8.45%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-08-11",
+          "runEnd": "2026-08-13",
+          "runLength": 3,
+          "breakDate": "2026-08-14",
+          "evidence": [
+            "断板日高开 8.37% 后盘中回落 -11.38%"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "hasSuspectedAKill": true,
+      "historySource": "cached"
+    },
+    {
+      "symbol": "sz002451",
+      "code": "002451",
+      "name": "摩恩电气",
+      "price": 7.13,
+      "changePercent": 10.031,
+      "turnoverRate": 1.19433,
+      "amount": 37396173.0,
+      "floatMarketCapYi": 31.31,
+      "totalMarketCapYi": 31.37,
+      "lookbackDays": 521,
+      "boardHeight": 1,
+      "limitThreshold": 9.5,
+      "aKillEvents": [
+        {
+          "runStart": "2025-11-04",
+          "runEnd": "2025-11-13",
+          "runLength": 8,
+          "breakDate": "2025-11-14",
+          "evidence": [
+            "断板当日下跌 -10.01%"
+          ],
+          "confidence": "medium"
         }
       ],
       "hasSuspectedAKill": true,
@@ -942,36 +936,50 @@ window.SCREEN_DATA = {
   ],
   "exceptions": [
     {
-      "symbol": "sh600715",
-      "code": "600715",
-      "name": "文投控股",
-      "price": 3.74,
-      "changePercent": 10.0,
-      "turnoverRate": 37.81856,
-      "amount": 3957287488.0,
-      "floatMarketCapYi": 107.05,
-      "totalMarketCapYi": 151.84,
+      "symbol": "sh600936",
+      "code": "600936",
+      "name": "北投科技",
+      "price": 4.42,
+      "changePercent": 9.95,
+      "turnoverRate": 14.41191,
+      "amount": 1051291304.0,
+      "floatMarketCapYi": 73.86,
+      "totalMarketCapYi": 73.86,
       "lookbackDays": 521,
       "boardHeight": 2,
       "limitThreshold": 9.5,
       "aKillEvents": [
         {
-          "runStart": "2026-10-27",
-          "runEnd": "2026-10-29",
-          "runLength": 3,
-          "breakDate": "2026-10-30",
+          "runStart": "2025-03-11",
+          "runEnd": "2025-03-12",
+          "runLength": 2,
+          "breakDate": "2025-03-13",
           "evidence": [
-            "断板当日下跌 -10.13%"
+            "断板当日下跌 -5.06%",
+            "断板后两日累计下跌 -10.36%"
           ],
-          "confidence": "medium"
+          "confidence": "high"
         },
         {
-          "runStart": "2026-11-09",
-          "runEnd": "2026-11-11",
+          "runStart": "2025-12-11",
+          "runEnd": "2025-12-15",
           "runLength": 3,
-          "breakDate": "2026-11-12",
+          "breakDate": "2025-12-16",
           "evidence": [
-            "断板日高开 6.69% 后盘中回落 -7.76%"
+            "断板日高开 6.19% 后盘中回落 -15.21%",
+            "断板当日下跌 -9.96%",
+            "断板后两日累计下跌 -14.82%"
+          ],
+          "confidence": "high"
+        },
+        {
+          "runStart": "2026-06-02",
+          "runEnd": "2026-06-03",
+          "runLength": 2,
+          "breakDate": "2026-06-04",
+          "evidence": [
+            "断板当日下跌 -5.22%",
+            "断板后两日累计下跌 -8.14%"
           ],
           "confidence": "high"
         }
@@ -980,53 +988,15 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sz000595",
-      "code": "000595",
-      "name": "新能股份",
-      "price": 6.08,
-      "changePercent": 9.946,
-      "turnoverRate": 13.84464,
-      "amount": 921459465.0,
-      "floatMarketCapYi": 69.23,
-      "totalMarketCapYi": 69.23,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-07-22",
-          "runEnd": "2026-07-24",
-          "runLength": 3,
-          "breakDate": "2026-07-27",
-          "evidence": [
-            "断板后两日累计下跌 -10.87%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-07-31",
-          "runEnd": "2026-08-04",
-          "runLength": 3,
-          "breakDate": "2026-08-05",
-          "evidence": [
-            "断板日高开 8.38% 后盘中回落 -6.19%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz000819",
-      "code": "000819",
-      "name": "岳阳兴长",
-      "price": 14.1,
-      "changePercent": 9.984,
-      "turnoverRate": 15.95663,
-      "amount": 819767343.0,
-      "floatMarketCapYi": 51.61,
-      "totalMarketCapYi": 51.61,
+      "symbol": "sz000521",
+      "code": "000521",
+      "name": "长虹美菱",
+      "price": 4.74,
+      "changePercent": 9.977,
+      "turnoverRate": 5.66151,
+      "amount": 229214229.0,
+      "floatMarketCapYi": 41.49,
+      "totalMarketCapYi": 48.82,
       "lookbackDays": 520,
       "boardHeight": 2,
       "limitThreshold": 9.5,
@@ -1035,142 +1005,68 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sz002148",
-      "code": "002148",
-      "name": "北纬科技",
-      "price": 8.75,
-      "changePercent": 10.063,
-      "turnoverRate": 42.58537,
-      "amount": 1653207435.0,
-      "floatMarketCapYi": 39.46,
-      "totalMarketCapYi": 48.89,
+      "symbol": "sz000533",
+      "code": "000533",
+      "name": "顺钠股份",
+      "price": 10.8,
+      "changePercent": 9.98,
+      "turnoverRate": 25.50903,
+      "amount": 1865144490.0,
+      "floatMarketCapYi": 73.97,
+      "totalMarketCapYi": 74.61,
       "lookbackDays": 521,
-      "boardHeight": 4,
+      "boardHeight": 2,
       "limitThreshold": 9.5,
       "aKillEvents": [
         {
-          "runStart": "2025-08-04",
-          "runEnd": "2025-08-07",
-          "runLength": 4,
-          "breakDate": "2025-08-08",
+          "runStart": "2024-12-26",
+          "runEnd": "2025-01-03",
+          "runLength": 6,
+          "breakDate": "2025-01-06",
           "evidence": [
-            "断板日高开 6.08% 后盘中回落 -14.00%",
-            "断板当日下跌 -8.78%"
+            "断板当日下跌 -7.77%"
           ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002187",
-      "code": "002187",
-      "name": "广百股份",
-      "price": 7.67,
-      "changePercent": 10.043,
-      "turnoverRate": 6.13867,
-      "amount": 328578042.0,
-      "floatMarketCapYi": 53.76,
-      "totalMarketCapYi": 53.76,
-      "lookbackDays": 521,
-      "boardHeight": 3,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
+          "confidence": "medium"
+        },
         {
           "runStart": "2025-01-07",
           "runEnd": "2025-01-08",
           "runLength": 2,
           "breakDate": "2025-01-09",
           "evidence": [
-            "断板当日下跌 -5.32%"
+            "断板日高开 3.41% 后盘中回落 -9.20%",
+            "断板当日下跌 -6.10%",
+            "断板后两日累计下跌 -15.49%"
           ],
-          "confidence": "medium"
+          "confidence": "high"
         },
         {
-          "runStart": "2025-01-15",
-          "runEnd": "2025-01-16",
+          "runStart": "2026-03-16",
+          "runEnd": "2026-03-17",
           "runLength": 2,
-          "breakDate": "2025-01-17",
+          "breakDate": "2026-03-18",
           "evidence": [
-            "断板日高开 4.59% 后盘中回落 -10.77%",
-            "断板当日下跌 -6.68%"
+            "断板日高开 2.05% 后盘中回落 -5.73%",
+            "断板后两日累计下跌 -9.50%"
           ],
           "confidence": "high"
         }
       ],
       "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002425",
-      "code": "002425",
-      "name": "凯撒文化",
-      "price": 4.36,
-      "changePercent": 10.101,
-      "turnoverRate": 20.27204,
-      "amount": 804825457.0,
-      "floatMarketCapYi": 40.12,
-      "totalMarketCapYi": 41.71,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2026-08-04",
-          "runEnd": "2026-08-06",
-          "runLength": 3,
-          "breakDate": "2026-08-07",
-          "evidence": [
-            "断板当日下跌 -8.90%",
-            "断板后两日累计下跌 -13.35%"
-          ],
-          "confidence": "high"
-        },
-        {
-          "runStart": "2026-11-10",
-          "runEnd": "2026-11-11",
-          "runLength": 2,
-          "breakDate": "2026-11-12",
-          "evidence": [
-            "断板日高开 9.92% 后盘中回落 -14.49%",
-            "断板当日下跌 -6.01%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002548",
-      "code": "002548",
-      "name": "金新农",
-      "price": 4.21,
-      "changePercent": 9.922,
-      "turnoverRate": 6.75351,
-      "amount": 228236128.0,
-      "floatMarketCapYi": 33.87,
-      "totalMarketCapYi": 34.87,
-      "lookbackDays": 520,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [],
-      "hasSuspectedAKill": false,
       "historySource": "cached"
     },
     {
       "symbol": "sz002685",
       "code": "002685",
       "name": "华东重机",
-      "price": 6.09,
-      "changePercent": 9.928,
-      "turnoverRate": 14.37398,
-      "amount": 861278016.0,
-      "floatMarketCapYi": 61.36,
-      "totalMarketCapYi": 61.37,
-      "lookbackDays": 520,
-      "boardHeight": 2,
+      "price": 6.7,
+      "changePercent": 10.016,
+      "turnoverRate": 3.37589,
+      "amount": 227901016.0,
+      "floatMarketCapYi": 67.51,
+      "totalMarketCapYi": 67.52,
+      "lookbackDays": 521,
+      "boardHeight": 3,
       "limitThreshold": 9.5,
       "aKillEvents": [
         {
@@ -1211,66 +1107,22 @@ window.SCREEN_DATA = {
       "historySource": "cached"
     },
     {
-      "symbol": "sz002748",
-      "code": "002748",
-      "name": "世龙实业",
-      "price": 13.63,
+      "symbol": "sz002959",
+      "code": "002959",
+      "name": "小熊电器",
+      "price": 39.9,
       "changePercent": 10.008,
-      "turnoverRate": 13.25425,
-      "amount": 418309480.0,
-      "floatMarketCapYi": 32.71,
-      "totalMarketCapYi": 32.71,
+      "turnoverRate": 7.64865,
+      "amount": 414319527.0,
+      "floatMarketCapYi": 55.78,
+      "totalMarketCapYi": 62.18,
       "lookbackDays": 521,
       "boardHeight": 2,
       "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-10-21",
-          "runEnd": "2025-10-27",
-          "runLength": 5,
-          "breakDate": "2025-10-28",
-          "evidence": [
-            "断板当日下跌 -8.43%",
-            "断板后两日累计下跌 -17.63%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
-      "historySource": "cached"
-    },
-    {
-      "symbol": "sz002905",
-      "code": "002905",
-      "name": "金逸影视",
-      "price": 10.89,
-      "changePercent": 10.0,
-      "turnoverRate": 1.29322,
-      "amount": 49212215.0,
-      "floatMarketCapYi": 38.05,
-      "totalMarketCapYi": 40.98,
-      "lookbackDays": 521,
-      "boardHeight": 2,
-      "limitThreshold": 9.5,
-      "aKillEvents": [
-        {
-          "runStart": "2025-03-12",
-          "runEnd": "2025-03-17",
-          "runLength": 4,
-          "breakDate": "2025-03-18",
-          "evidence": [
-            "断板当日下跌 -9.96%",
-            "断板后两日累计下跌 -19.00%"
-          ],
-          "confidence": "high"
-        }
-      ],
-      "hasSuspectedAKill": true,
+      "aKillEvents": [],
+      "hasSuspectedAKill": false,
       "historySource": "cached"
     }
   ],
-  "failures": [
-    "ST豆神: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz300010,day,,,520,qfq",
-    "ST交昂: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600530,day,,,520,qfq"
-  ]
+  "failures": []
 };
