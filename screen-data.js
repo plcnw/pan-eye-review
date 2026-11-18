@@ -1,6 +1,6 @@
 window.SCREEN_DATA = {
   "date": "2026-11-18",
-  "capturedAt": "2026-11-18T17:28:56+08:00",
+  "capturedAt": "2026-11-18T18:23:06+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
   "marketCount": 5579,
   "limitUpCount": 49,
@@ -324,7 +324,7 @@ window.SCREEN_DATA = {
       "amount": 2021234038.0,
       "floatMarketCapYi": 162.17,
       "totalMarketCapYi": 246.3,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 1,
       "limitThreshold": 19.5,
       "aKillEvents": [
@@ -724,7 +724,7 @@ window.SCREEN_DATA = {
       "amount": 381726887.0,
       "floatMarketCapYi": 49.25,
       "totalMarketCapYi": 49.25,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 1,
       "limitThreshold": 9.5,
       "aKillEvents": [
@@ -831,7 +831,7 @@ window.SCREEN_DATA = {
       "amount": 203075333.0,
       "floatMarketCapYi": 64.94,
       "totalMarketCapYi": 64.94,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 1,
       "limitThreshold": 9.5,
       "aKillEvents": [
@@ -1123,9 +1123,9 @@ window.SCREEN_DATA = {
     }
   ],
   "failures": [
-    "*ST高科: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600730,day,,,520,qfq",
-    "ST交昂: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600530,day,,,520,qfq",
     "胜科纳米: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh688757,day,,,520,qfq",
+    "ST交昂: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600530,day,,,520,qfq",
+    "*ST高科: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600730,day,,,520,qfq",
     "*ST香雪: 请求失败：https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz300147,day,,,520,qfq"
   ]
 };

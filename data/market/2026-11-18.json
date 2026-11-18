@@ -1,6 +1,6 @@
 {
   "date": "2026-11-18",
-  "capturedAt": "2026-11-18T17:27:08+08:00",
+  "capturedAt": "2026-11-18T18:21:25+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -14,8 +14,8 @@
       "previousClose": 3584.58,
       "changePercent": 0.09,
       "turnoverRate": 0.87,
-      "totalMarketCapYi": 628194.83,
-      "floatMarketCapYi": 565661.28,
+      "totalMarketCapYi": 628194.84,
+      "floatMarketCapYi": 565661.29,
       "inFloatCapRange": false,
       "quoteTime": "20261118161500",
       "name": "上证指数",
