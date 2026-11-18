@@ -1,126 +1,119 @@
 window.SECTOR_DATA = {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "market": {
-    "limitUpCount": 39,
-    "firstBoardCount": 31,
-    "maxHeight": 3,
-    "articleCoveredLimitUps": 37
+    "limitUpCount": 49,
+    "firstBoardCount": 33,
+    "maxHeight": 4,
+    "articleCoveredLimitUps": 41
   },
   "ladderFunnel": [
     {
       "from": "1板",
       "to": "2板",
-      "base": 21,
-      "promoted": 5,
-      "rate": 23.81
+      "base": 31,
+      "promoted": 7,
+      "rate": 22.58
     },
     {
       "from": "2板",
       "to": "3板",
-      "base": 8,
-      "promoted": 1,
-      "rate": 12.5
+      "base": 5,
+      "promoted": 0,
+      "rate": 0.0
     },
     {
       "from": "3板",
       "to": "4板",
-      "base": 2,
-      "promoted": 0,
-      "rate": 0.0
-    },
-    {
-      "from": "4板",
-      "to": "5板",
       "base": 1,
-      "promoted": 0,
-      "rate": 0.0
+      "promoted": 1,
+      "rate": 100.0
     }
   ],
   "sectors": [
     {
-      "id": "huawei_compute",
-      "name": "华为算力租赁",
-      "stage": "启动",
-      "count": 5,
-      "firstBoardCount": 5,
-      "maxHeight": 1,
-      "tone": "mixed",
-      "members": [
-        "华胜天成",
-        "泰嘉股份",
-        "嘉环科技",
-        "真视通",
-        "卡莱特"
-      ],
-      "evidence": "英伟达彻底封禁，国产算力发酵。华为题材为主，但是高新发展和华东重机的分时走势是两码事，认可度不高。持续性不明。",
-      "nextWatch": "观察一字板助攻方向，以及持续性是否证伪。"
-    },
-    {
-      "id": "chip",
-      "name": "芯片",
-      "stage": "发酵",
-      "count": 15,
-      "firstBoardCount": 14,
-      "maxHeight": 3,
-      "tone": "active",
-      "members": [
-        "园林科技",
-        "盛剑科技",
-        "西陇科学",
-        "芯瑞达",
-        "有研新材",
-        "联合化学",
-        "海立股份",
-        "江化微",
-        "格林达",
-        "东方嘉盛",
-        "佳先股份",
-        "永新光学",
-        "扬子新材",
-        "全筑股份",
-        "华东重机"
-      ],
-      "evidence": "华东重机一字板发酵。均是人家一字板发酵下的产物，有概率只是小弟角色，怕一日游。午后发酵突然中断。",
-      "nextWatch": "观察华东是否如期加速，8亿以上是正常预期；盛剑+西陇洁净室光刻胶逻辑是否被认可。"
-    },
-    {
-      "id": "grouping",
-      "name": "抱团",
+      "id": "home_appliance",
+      "name": "家电",
       "stage": "分歧",
       "count": 4,
       "firstBoardCount": 4,
       "maxHeight": 1,
       "tone": "mixed",
       "members": [
-        "中新赛克",
-        "好当家",
-        "阳光照明",
-        "九阳股份"
+        "春光科技",
+        "澳柯玛",
+        "爱仕达",
+        "四川长虹"
       ],
-      "evidence": "这种就是反复做，无逻辑可言。午后科技回落时板块里的老辨识度们未主动出击，反而回落跌停，这是最大的逻辑败笔。",
-      "nextWatch": "观察阳光九阳溢价表态情况，以及科技证伪时的主动性。"
+      "evidence": "九阳高开高走发酵，九阳炸板后停止发酵，九阳天地。",
+      "nextWatch": "九阳A杀直接影响预期，观察家电首板能否分离。"
     },
     {
-      "id": "single",
-      "name": "其余形式独苗",
-      "stage": "轮动",
-      "count": 8,
-      "firstBoardCount": 8,
+      "id": "compute_chip",
+      "name": "算力硬件+芯片",
+      "stage": "分歧",
+      "count": 10,
+      "firstBoardCount": 10,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "动力源",
+        "武汉凡谷",
+        "创益通",
+        "京蓝科技",
+        "旋极信息",
+        "鸿合科技",
+        "胜科纳米",
+        "深南电路",
+        "沪电股份",
+        "川润股份"
+      ],
+      "evidence": "1930后秒板行为，和华胜离不开发酵关系；强势的是算力租赁而不是国产芯片；先看一日游反抽。",
+      "nextWatch": "观察美系算力能否抢救，国产芯片一日游态势。"
+    },
+    {
+      "id": "compute_leasing",
+      "name": "算力租赁",
+      "stage": "发酵",
+      "count": 16,
+      "firstBoardCount": 16,
+      "maxHeight": 2,
+      "tone": "active",
+      "members": [
+        "中嘉博创",
+        "常山北明",
+        "美利云",
+        "证通电子",
+        "城地香江",
+        "香江控股",
+        "中贝通信",
+        "华升股份",
+        "润建股份",
+        "华孚时尚",
+        "利通电子",
+        "青云科技",
+        "广脉科技",
+        "恒润股份",
+        "莲花控股",
+        "宏景科技"
+      ],
+      "evidence": "几乎都是华胜回封后发酵，跟风状态；筹码相对干净，但无明显行业反转信号。",
+      "nextWatch": "观察华胜封单质量，10以上是目标。"
+    },
+    {
+      "id": "auto_parts",
+      "name": "汽配机加工",
+      "stage": "启动",
+      "count": 2,
+      "firstBoardCount": 2,
       "maxHeight": 1,
       "tone": "rotation",
       "members": [
-        "亚泰集团",
-        "摩恩电气",
-        "林州重机",
-        "双环科技",
-        "哈空调",
-        "清研环境",
-        "捷荣技术",
-        "江南化工"
+        "众泰汽车",
+        "沈阳机床"
       ],
-      "evidence": "独苗多指引指示用，无特殊挖掘。",
-      "nextWatch": "观察各自指引方向是否发酵。"
+      "evidence": "感觉是会错意拉机器人去了，但保留下来没炸。",
+      "nextWatch": "自己找找线索。"
     }
   ],
-  "capturedAt": "2026-11-17T18:21:18+08:00"
+  "capturedAt": "2026-11-18T17:26:56+08:00"
 };
