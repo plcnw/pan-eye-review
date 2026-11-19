@@ -1,119 +1,107 @@
 window.SECTOR_DATA = {
-  "date": "2026-11-18",
+  "date": "2026-11-19",
   "market": {
-    "limitUpCount": 49,
-    "firstBoardCount": 33,
-    "maxHeight": 4,
-    "articleCoveredLimitUps": 41
+    "limitUpCount": 35,
+    "firstBoardCount": 17,
+    "maxHeight": 3,
+    "articleCoveredLimitUps": 22
   },
   "ladderFunnel": [
     {
       "from": "1板",
       "to": "2板",
-      "base": 31,
-      "promoted": 7,
-      "rate": 22.58
+      "base": 33,
+      "promoted": 2,
+      "rate": 6.06
     },
     {
       "from": "2板",
       "to": "3板",
-      "base": 5,
-      "promoted": 0,
-      "rate": 0.0
+      "base": 7,
+      "promoted": 3,
+      "rate": 42.86
     },
     {
-      "from": "3板",
-      "to": "4板",
+      "from": "4板",
+      "to": "5板",
       "base": 1,
-      "promoted": 1,
-      "rate": 100.0
+      "promoted": 0,
+      "rate": 0.0
     }
   ],
   "sectors": [
     {
-      "id": "home_appliance",
-      "name": "家电",
-      "stage": "分歧",
-      "count": 4,
-      "firstBoardCount": 4,
-      "maxHeight": 1,
-      "tone": "mixed",
-      "members": [
-        "春光科技",
-        "澳柯玛",
-        "爱仕达",
-        "四川长虹"
-      ],
-      "evidence": "九阳高开高走发酵；九阳炸板后停止发酵；长虹美菱炸板没好下场，首板同理；首板有其他属性，比如机器人，算力等属性，这是长虹美菱不具备的因素；持续性不明，九阳A杀直接影响预期。",
-      "nextWatch": "观察九阳A杀对家电首板持续性的影响，以及首板其他属性（机器人、算力）能否分离出来。"
-    },
-    {
-      "id": "compute_hardware_chip",
-      "name": "算力硬件+芯片",
-      "stage": "分歧",
-      "count": 10,
-      "firstBoardCount": 10,
-      "maxHeight": 1,
-      "tone": "mixed",
-      "members": [
-        "动力源",
-        "武汉凡谷",
-        "创益通",
-        "京蓝科技",
-        "旋极信息",
-        "鸿合科技",
-        "胜科纳米",
-        "深南电路",
-        "沪电股份",
-        "川润股份"
-      ],
-      "evidence": "1930后就有秒板行为，但是是北京股。说明和华胜离不开发酵关系；强势的是算力租赁而不是国产芯片，那美系算力还能抢救；先看一日游反抽，英伟达业绩还不错。",
-      "nextWatch": "观察美系算力能否抢救，以及是否只是一日游反抽。"
-    },
-    {
-      "id": "compute_rental",
-      "name": "算力租赁",
+      "id": "robot",
+      "name": "机器人",
       "stage": "发酵",
-      "count": 16,
-      "firstBoardCount": 16,
-      "maxHeight": 2,
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 1,
+      "tone": "mixed",
+      "members": [
+        "毅昌科技",
+        "襄阳轴承",
+        "九阳股份"
+      ],
+      "evidence": "机器人\n毅昌科技，襄阳轴承，九阳股份；九阳混沌期主动反核，符合抱团原理。",
+      "nextWatch": "观察科技情绪，做九阳抱团避险延续。"
+    },
+    {
+      "id": "chip",
+      "name": "芯片",
+      "stage": "发酵",
+      "count": 12,
+      "firstBoardCount": 9,
+      "maxHeight": 3,
       "tone": "active",
       "members": [
-        "中嘉博创",
-        "常山北明",
-        "美利云",
-        "证通电子",
-        "城地香江",
-        "香江控股",
-        "中贝通信",
-        "华升股份",
-        "润建股份",
-        "华孚时尚",
-        "利通电子",
-        "青云科技",
-        "广脉科技",
-        "恒润股份",
-        "莲花控股",
-        "宏景科技"
+        "红宝丽",
+        "大港股份",
+        "三佳科技",
+        "蓝箭电子",
+        "海立股份",
+        "时空科技",
+        "江化微",
+        "兴欣新材",
+        "兴业股份",
+        "盛剑科技",
+        "全筑股份",
+        "京蓝科技"
       ],
-      "evidence": "几乎都是华胜回封后发酵，所以都是跟风状态；无非就是发酵多一点，身位股的封单大一点罢了；持续性角度看，算力租赁这块只是筹码相对干净一些，并没有明显的行业反转信号。",
-      "nextWatch": "观察华胜封单质量（10以上是目标），以及跟风股能否出现分化。"
+      "evidence": "盛剑是目前身位优势；华东让位盛剑，发酵芯片，超预期；毕竟是科技，受算力补跌影响，发酵有限。",
+      "nextWatch": "观察三板溢价表态情况，做情绪反转先锋龙；全筑必须一字板吗？那盛剑应该怎么开呢？"
     },
     {
-      "id": "auto_parts",
-      "name": "汽配机加工",
-      "stage": "启动",
+      "id": "compute_hardware",
+      "name": "算力硬件",
+      "stage": "反抽",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 1,
+      "tone": "weak",
+      "members": [
+        "康盛股份",
+        "广电电气",
+        "中京电子"
+      ],
+      "evidence": "芯片量能外溢；可信度啥的也不讲了，环境就这样吧。",
+      "nextWatch": "观察科技情绪，做九阳抱团避险延续。"
+    },
+    {
+      "id": "single",
+      "name": "其余形式独苗",
+      "stage": "轮动",
       "count": 2,
       "firstBoardCount": 2,
       "maxHeight": 1,
       "tone": "rotation",
       "members": [
-        "众泰汽车",
-        "沈阳机床"
+        "原尚股份",
+        "金科股份"
       ],
-      "evidence": "感觉是会错意，拉机器人去了；感觉又不是单纯的会错意，毕竟保留下来没炸；自己找找线索。",
-      "nextWatch": "观察是否与机器人方向形成联动，以及能否保留下来不炸。"
+      "evidence": "原尚股份，理论上是摘帽属性，而不是广东。金科股份，理论上是摘帽属性，给京蓝铺垫。",
+      "nextWatch": "理论上没有独苗，依旧以板块形式去推身位。"
     }
   ],
-  "capturedAt": "2026-11-18T18:21:12+08:00"
+  "capturedAt": "2026-11-19T17:26:40+08:00"
 };
