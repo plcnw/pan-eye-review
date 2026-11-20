@@ -1,107 +1,153 @@
 window.SECTOR_DATA = {
-  "date": "2026-11-19",
+  "date": "2026-11-20",
   "market": {
-    "limitUpCount": 35,
-    "firstBoardCount": 17,
-    "maxHeight": 3,
-    "articleCoveredLimitUps": 22
+    "limitUpCount": 36,
+    "firstBoardCount": 25,
+    "maxHeight": 4,
+    "articleCoveredLimitUps": 28
   },
   "ladderFunnel": [
     {
       "from": "1板",
       "to": "2板",
-      "base": 33,
-      "promoted": 2,
-      "rate": 6.06
+      "base": 17,
+      "promoted": 1,
+      "rate": 5.88
     },
     {
       "from": "2板",
       "to": "3板",
-      "base": 7,
-      "promoted": 3,
-      "rate": 42.86
-    },
-    {
-      "from": "4板",
-      "to": "5板",
-      "base": 1,
+      "base": 2,
       "promoted": 0,
       "rate": 0.0
+    },
+    {
+      "from": "3板",
+      "to": "4板",
+      "base": 3,
+      "promoted": 2,
+      "rate": 66.67
     }
   ],
   "sectors": [
     {
-      "id": "robot",
-      "name": "机器人",
-      "stage": "发酵",
+      "id": "application",
+      "name": "应用",
+      "stage": "启动",
       "count": 3,
       "firstBoardCount": 3,
       "maxHeight": 1,
       "tone": "mixed",
       "members": [
-        "毅昌科技",
-        "襄阳轴承",
-        "九阳股份"
+        "荣联科技",
+        "龙版传媒",
+        "华媒控股"
       ],
-      "evidence": "机器人\n毅昌科技，襄阳轴承，九阳股份；九阳混沌期主动反核，符合抱团原理。",
-      "nextWatch": "观察科技情绪，做九阳抱团避险延续。"
+      "evidence": "真视通秒板发酵应用；应用前期抱团久，还是有不少观众买单的；疑点就是高度几乎5板就问，难讲连板福利；无消息面刺激，无重大应用问世，基本都是一日游趋势型为主。",
+      "nextWatch": "观察应用方向能否有消息面刺激或重大应用问世，否则以一日游趋势型看待。"
     },
     {
       "id": "chip",
       "name": "芯片",
+      "stage": "分歧",
+      "count": 5,
+      "firstBoardCount": 4,
+      "maxHeight": 4,
+      "tone": "mixed",
+      "members": [
+        "华微电子",
+        "建业股份",
+        "易天股份",
+        "鼎龙科技",
+        "盛剑科技"
+      ],
+      "evidence": "盛剑一字板发酵；盛剑有烂板吸金，不清楚持续性；芯片和硬件不同，得爱果情怀加持才行；持续性角度看，只能熬，熬到科技回流。",
+      "nextWatch": "观察盛剑科技烂板后能否继续做多，以及科技回流情况。"
+    },
+    {
+      "id": "agriculture",
+      "name": "农业",
       "stage": "发酵",
-      "count": 12,
-      "firstBoardCount": 9,
-      "maxHeight": 3,
+      "count": 5,
+      "firstBoardCount": 5,
+      "maxHeight": 1,
       "tone": "active",
       "members": [
-        "红宝丽",
-        "大港股份",
-        "三佳科技",
-        "蓝箭电子",
-        "海立股份",
-        "时空科技",
-        "江化微",
-        "兴欣新材",
-        "兴业股份",
-        "盛剑科技",
-        "全筑股份",
-        "京蓝科技"
+        "东方海洋",
+        "国光股份",
+        "万向德农",
+        "金新农",
+        "好当家"
       ],
-      "evidence": "盛剑是目前身位优势；华东让位盛剑，发酵芯片，超预期；毕竟是科技，受算力补跌影响，发酵有限。",
-      "nextWatch": "观察三板溢价表态情况，做情绪反转先锋龙；全筑必须一字板吗？那盛剑应该怎么开呢？"
+      "evidence": "九阳折腾几天了，腰酸背痛，让海洋带领；既然龙头能换，那就没有纯意义上的总龙头，抱团股个个能当日内龙头，能发酵就行；无题材风口下，似乎只能这样抱团取暖做过度。",
+      "nextWatch": "观察东方海洋的溢价表态情况，以及农业抱团能否持续轮动。"
     },
     {
       "id": "compute_hardware",
       "name": "算力硬件",
-      "stage": "反抽",
-      "count": 3,
-      "firstBoardCount": 3,
-      "maxHeight": 1,
-      "tone": "weak",
+      "stage": "启动",
+      "count": 6,
+      "firstBoardCount": 5,
+      "maxHeight": 2,
+      "tone": "mixed",
       "members": [
-        "康盛股份",
-        "广电电气",
+        "超声电子",
+        "澳弘电子",
+        "骏亚科技",
+        "满坤科技",
+        "光华科技",
         "中京电子"
       ],
-      "evidence": "芯片量能外溢；可信度啥的也不讲了，环境就这样吧。",
-      "nextWatch": "观察科技情绪，做九阳抱团避险延续。"
+      "evidence": "中京秒板发酵；其中一半是债股，基本日内套利走人的意味大一些，没考虑太多持续性；持续性不明，这个比芯片差的地方就是主动权永远在美日韩身上，几乎无法脱离。",
+      "nextWatch": "观察中京电子二板后算力硬件持续性，以及美日韩相关消息影响。"
     },
     {
-      "id": "single",
-      "name": "其余形式独苗",
+      "id": "group_hug",
+      "name": "抱团",
       "stage": "轮动",
       "count": 2,
       "firstBoardCount": 2,
       "maxHeight": 1,
       "tone": "rotation",
       "members": [
-        "原尚股份",
-        "金科股份"
+        "冰山冷热",
+        "大东方"
       ],
-      "evidence": "原尚股份，理论上是摘帽属性，而不是广东。金科股份，理论上是摘帽属性，给京蓝铺垫。",
-      "nextWatch": "理论上没有独苗，依旧以板块形式去推身位。"
+      "evidence": "跟随东方海洋异动，前期同批不用我接受；冰雪的调整时间最短，主控对这个方向是很有好感的；持续性不明，先当诈尸一日游。",
+      "nextWatch": "观察抱团方向是否诈尸一日游，以及冰雪调整后的持续性。"
+    },
+    {
+      "id": "robot",
+      "name": "机器人",
+      "stage": "轮动",
+      "count": 4,
+      "firstBoardCount": 4,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "长华集团",
+        "克来机电",
+        "风语筑",
+        "凡拓数创"
+      ],
+      "evidence": "传媒同批，被刺激异动；跟随农业异动；克来的意义不用我特殊说明，曾经历史级表演者；持续性角度看，宇树得止跌企稳。",
+      "nextWatch": "观察宇树能否止跌企稳，以及机器人方向持续性。"
+    },
+    {
+      "id": "single",
+      "name": "其余形式独苗",
+      "stage": "启动",
+      "count": 2,
+      "firstBoardCount": 2,
+      "maxHeight": 1,
+      "tone": "weak",
+      "members": [
+        "东晶电子",
+        "德龙汇能"
+      ],
+      "evidence": "独苗多指引为主，无特殊挖掘；东晶电子，D，电子推电子；德龙汇能，D，拉升意义还在想，肯定不是白拉。",
+      "nextWatch": "观察独苗是否给出进一步指引。"
     }
   ],
-  "capturedAt": "2026-11-19T17:26:40+08:00"
+  "capturedAt": "2026-11-21T01:59:05+08:00"
 };
