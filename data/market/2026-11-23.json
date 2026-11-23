@@ -1,6 +1,6 @@
 {
   "date": "2026-11-23",
-  "capturedAt": "2026-11-23T17:28:11+08:00",
+  "capturedAt": "2026-11-23T18:22:27+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -27,8 +27,8 @@
       "previousClose": 10256.39,
       "changePercent": 1.93,
       "turnoverRate": 2.46,
-      "totalMarketCapYi": 348293.61,
-      "floatMarketCapYi": 296220.61,
+      "totalMarketCapYi": 348293.59,
+      "floatMarketCapYi": 296220.59,
       "inFloatCapRange": false,
       "quoteTime": "20261123161403",
       "name": "深证成指",
@@ -773,7 +773,7 @@
       "totalMarketCapYi": 25.95,
       "floatMarketCapYi": 25.95,
       "inFloatCapRange": false,
-      "quoteTime": "20261123161500"
+      "quoteTime": "20261123161418"
     },
     {
       "name": "华东重机",
@@ -1345,7 +1345,7 @@
       "totalMarketCapYi": 49.29,
       "floatMarketCapYi": 49.29,
       "inFloatCapRange": true,
-      "quoteTime": "20261123161455"
+      "quoteTime": "20261123161500"
     },
     {
       "name": "征和工业",
@@ -2841,7 +2841,7 @@
       "totalMarketCapYi": 85.75,
       "floatMarketCapYi": 85.75,
       "inFloatCapRange": true,
-      "quoteTime": "20261123161500"
+      "quoteTime": "20261123161448"
     },
     {
       "name": "风华高科",
@@ -2907,7 +2907,7 @@
       "totalMarketCapYi": 444.58,
       "floatMarketCapYi": 353.8,
       "inFloatCapRange": false,
-      "quoteTime": "20261123161500"
+      "quoteTime": "20261123161421"
     },
     {
       "name": "魅视科技",
@@ -3045,14 +3045,15 @@
   "unmatched": [
     "汇州智能",
     "菱电电控",
+    "杭州柯林",
     "捷众科技",
     "上纬新材",
-    "杭州柯林",
     "宇树科技",
     "敏芯股份",
     "新剧网络",
     "德林海",
     "博汇科技",
-    "海正新材"
+    "海正新材",
+    "克莱机电"
   ]
 }
