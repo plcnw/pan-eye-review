@@ -1,6 +1,6 @@
 window.MARKET_DATA = {
   "date": "2026-11-24",
-  "capturedAt": "2026-11-24T17:27:11+08:00",
+  "capturedAt": "2026-11-24T18:21:27+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -27,8 +27,8 @@ window.MARKET_DATA = {
       "previousClose": 10454.37,
       "changePercent": -0.29,
       "turnoverRate": 2.39,
-      "totalMarketCapYi": 347515.23,
-      "floatMarketCapYi": 295654.49,
+      "totalMarketCapYi": 347515.24,
+      "floatMarketCapYi": 295654.5,
       "inFloatCapRange": false,
       "quoteTime": "20261124161439",
       "name": "深证成指",
@@ -1394,6 +1394,7 @@ window.MARKET_DATA = {
   ],
   "unmatched": [
     "龙软科技",
+    "易中天",
     "宇树科技"
   ]
 };

@@ -1,6 +1,6 @@
 {
   "date": "2026-11-24",
-  "capturedAt": "2026-11-24T17:28:50+08:00",
+  "capturedAt": "2026-11-24T18:22:49+08:00",
   "source": "新浪 A 股行情与腾讯历史日线",
   "marketCount": 5580,
   "limitUpCount": 89,
@@ -829,7 +829,7 @@
       "amount": 99436426.0,
       "floatMarketCapYi": 80.1,
       "totalMarketCapYi": 80.1,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 1,
       "limitThreshold": 9.5,
       "aKillEvents": [],
@@ -1073,7 +1073,7 @@
       "amount": 414705919.0,
       "floatMarketCapYi": 63.44,
       "totalMarketCapYi": 63.44,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 1,
       "limitThreshold": 9.5,
       "aKillEvents": [
@@ -1219,7 +1219,7 @@
       "amount": 212464982.0,
       "floatMarketCapYi": 64.77,
       "totalMarketCapYi": 64.77,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 1,
       "limitThreshold": 9.5,
       "aKillEvents": [
@@ -1561,7 +1561,7 @@
       "amount": 38159302.0,
       "floatMarketCapYi": 32.48,
       "totalMarketCapYi": 32.48,
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "boardHeight": 1,
       "limitThreshold": 9.5,
       "aKillEvents": [

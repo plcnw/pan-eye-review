@@ -1,6 +1,6 @@
 {
   "date": "2026-11-24",
-  "capturedAt": "2026-11-24T17:27:25+08:00",
+  "capturedAt": "2026-11-24T18:21:39+08:00",
   "source": "腾讯历史日线（前复权）",
   "method": "连续至少两个涨停后，断板日下跌超过5%、高开后盘中回落超过5%，或断板后两日累计下跌超过8%。结果仅作为疑似证据。",
   "stocks": [
@@ -89605,7 +89605,7 @@
       "apiName": "天创股份",
       "code": "603608",
       "quoteId": "1.603608",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -89622,22 +89622,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-19",
-          "open": 2.99,
-          "close": 2.97,
-          "high": 2.99,
-          "low": 2.94,
-          "volume": 11632.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-20",
           "open": 2.97,
           "close": 3.06,
           "high": 3.06,
           "low": 2.97,
           "volume": 15364.0,
-          "changePercent": 3.03
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-23",
@@ -103717,20 +103708,11 @@
       "apiName": "天龙股份",
       "code": "603266",
       "quoteId": "1.603266",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [],
       "hasSuspectedAKill": false,
       "bars": [
-        {
-          "date": "2024-09-27",
-          "open": 15.2,
-          "close": 15.56,
-          "high": 15.59,
-          "low": 14.98,
-          "volume": 44963.0,
-          "changePercent": 0.0
-        },
         {
           "date": "2024-09-30",
           "open": 16.16,
@@ -103738,7 +103720,7 @@
           "high": 17.04,
           "low": 15.76,
           "volume": 114268.0,
-          "changePercent": 9.06
+          "changePercent": 0.0
         },
         {
           "date": "2024-10-08",
@@ -113123,7 +113105,7 @@
       "apiName": "奥康国际",
       "code": "603001",
       "quoteId": "1.603001",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -113140,22 +113122,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-04",
-          "open": 4.02,
-          "close": 3.96,
-          "high": 4.03,
-          "low": 3.94,
-          "volume": 10277.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-05",
           "open": 4.0,
           "close": 4.04,
           "high": 4.05,
           "low": 3.97,
           "volume": 14869.0,
-          "changePercent": 2.02
+          "changePercent": 0.0
         },
         {
           "date": "2024-09-06",
@@ -160290,7 +160263,7 @@
       "apiName": "泉阳泉",
       "code": "600189",
       "quoteId": "1.600189",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [
         {
@@ -160307,22 +160280,13 @@
       "hasSuspectedAKill": true,
       "bars": [
         {
-          "date": "2024-09-27",
-          "open": 8.24,
-          "close": 8.21,
-          "high": 8.37,
-          "low": 8.03,
-          "volume": 180704.0,
-          "changePercent": 0.0
-        },
-        {
           "date": "2024-09-30",
           "open": 8.4,
           "close": 8.84,
           "high": 8.98,
           "low": 8.18,
           "volume": 428072.0,
-          "changePercent": 7.67
+          "changePercent": 0.0
         },
         {
           "date": "2024-10-08",
@@ -233615,20 +233579,11 @@
       "apiName": "起帆电缆",
       "code": "605222",
       "quoteId": "1.605222",
-      "lookbackDays": 521,
+      "lookbackDays": 520,
       "limitThreshold": 9.5,
       "events": [],
       "hasSuspectedAKill": false,
       "bars": [
-        {
-          "date": "2024-09-27",
-          "open": 15.15,
-          "close": 15.81,
-          "high": 15.95,
-          "low": 15.14,
-          "volume": 52992.0,
-          "changePercent": 0.0
-        },
         {
           "date": "2024-09-30",
           "open": 16.5,
@@ -233636,7 +233591,7 @@
           "high": 17.25,
           "low": 16.08,
           "volume": 78041.0,
-          "changePercent": 7.97
+          "changePercent": 0.0
         },
         {
           "date": "2024-10-08",
