@@ -1,118 +1,183 @@
 window.SECTOR_DATA = {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "market": {
-    "limitUpCount": 89,
-    "firstBoardCount": 24,
-    "maxHeight": 4,
-    "articleCoveredLimitUps": 54
+    "limitUpCount": 72,
+    "firstBoardCount": 37,
+    "maxHeight": 5,
+    "articleCoveredLimitUps": 51
   },
   "ladderFunnel": [
     {
       "from": "1板",
       "to": "2板",
-      "base": 129,
-      "promoted": 24,
-      "rate": 18.6
+      "base": 24,
+      "promoted": 5,
+      "rate": 20.83
     },
     {
       "from": "2板",
       "to": "3板",
-      "base": 13,
-      "promoted": 3,
-      "rate": 23.08
+      "base": 25,
+      "promoted": 6,
+      "rate": 24.0
     },
     {
       "from": "3板",
       "to": "4板",
+      "base": 4,
+      "promoted": 2,
+      "rate": 50.0
+    },
+    {
+      "from": "4板",
+      "to": "5板",
       "base": 1,
       "promoted": 1,
       "rate": 100.0
-    },
-    {
-      "from": "5板",
-      "to": "6板",
-      "base": 2,
-      "promoted": 0,
-      "rate": 0.0
     }
   ],
   "sectors": [
     {
-      "id": "compute",
-      "name": "算力相关",
-      "stage": "分歧",
-      "count": 4,
-      "firstBoardCount": 4,
-      "maxHeight": 1,
-      "tone": "mixed",
-      "members": [
-        "威派格",
-        "天安新材",
-        "奥尼电子",
-        "高乐股份"
-      ],
-      "evidence": "英伟达刺激，但消息只能用一次，无法持续性刺激；市场担心订单持续性；基本上就是跌多了弹一下，高开跑光了；持续性不明。",
-      "nextWatch": "观察算力是否回流的可能性。"
-    },
-    {
-      "id": "robot",
-      "name": "机器人",
-      "stage": "发酵",
-      "count": 7,
-      "firstBoardCount": 7,
+      "id": "agriculture",
+      "name": "农业",
+      "stage": "启动",
+      "count": 3,
+      "firstBoardCount": 3,
       "maxHeight": 1,
       "tone": "active",
       "members": [
-        "起帆电缆",
-        "雷迪克",
-        "利君股份",
-        "红豆股份",
-        "天创股份",
-        "东方精工",
-        "天龙股份"
+        "正虹科技",
+        "好当家",
+        "獐子岛"
       ],
-      "evidence": "机器人该挖掘的都挖掘了，没必要纠结后排；克来一字板质量决定板块上限；机器人继续捡漏主线位置；机器人批量一字板，符合昨日发酵力度。",
-      "nextWatch": "观察克来和长华封单表现，做各自细分发酵的可能；观察宇树竞价表现及机器人后排主动性对比，做淘汰预期。"
+      "evidence": "农业首板正虹科技、好当家、獐子岛；金新农发酵，指数下跌符合避险属性，首板基本无法脱离金新农影响。",
+      "nextWatch": "观察金新农发酵持续性及首板对金新农的跟随程度。"
     },
     {
-      "id": "chip",
-      "name": "芯片",
-      "stage": "分歧",
+      "id": "chemical",
+      "name": "化工",
+      "stage": "启动",
       "count": 2,
       "firstBoardCount": 2,
       "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "钛能化学",
+        "赤天化"
+      ],
+      "evidence": "化工首板钛能化学、赤天化推金牛；化工是算力曾敌对，符合盘面环境；金牛成了也是20亿品种，食之无味弃之可惜。",
+      "nextWatch": "观察金牛化工能否带动化工持续，以及化工与算力的敌对关系变化。"
+    },
+    {
+      "id": "medicine",
+      "name": "医药",
+      "stage": "启动",
+      "count": 12,
+      "firstBoardCount": 12,
+      "maxHeight": 1,
+      "tone": "active",
+      "members": [
+        "特一药业",
+        "石药景峰",
+        "亨迪药业",
+        "哈三联",
+        "盘龙药业",
+        "拓新药业",
+        "桂林三金",
+        "双鹭药业",
+        "康芝药业",
+        "人民同泰",
+        "新华制药",
+        "合富中国"
+      ],
+      "evidence": "医药首板12只，发酵原因不明，符合短线及指数环境避险属性，不排除天圣身位压制；人民和合富更多是美好寓意；持续性不明，避险与指数跷跷板为主。",
+      "nextWatch": "观察医药一字板数量及指数回流对避险题材的影响，特一非一字板则多数强度有限。"
+    },
+    {
+      "id": "cosmetics",
+      "name": "化妆品",
+      "stage": "启动",
+      "count": 2,
+      "firstBoardCount": 2,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "丽人丽妆",
+        "福瑞达"
+      ],
+      "evidence": "化妆品首板丽人丽妆、福瑞达，上海+山东，知道差不多意思就行不必深究。",
+      "nextWatch": "观察化妆品是否形成持续发酵。"
+    },
+    {
+      "id": "consumption",
+      "name": "消费+美好寓意",
+      "stage": "发酵",
+      "count": 5,
+      "firstBoardCount": 5,
+      "maxHeight": 3,
+      "tone": "active",
+      "members": [
+        "中央商城",
+        "家家悦",
+        "国芳集团",
+        "万事利",
+        "桂发祥"
+      ],
+      "evidence": "消费+美好寓意首板中央商城、家家悦、国芳集团、万事利、桂发祥；解百可当消费身位但只限零售股；创源三连吃干抹净+午后0响应有概率一日游；首板供应无特殊逻辑外基本没有卡解百的必要。",
+      "nextWatch": "观察杭州解百溢价是否一字板，以及消费首板是否继续发酵。"
+    },
+    {
+      "id": "compute",
+      "name": "算力相关",
+      "stage": "分歧",
+      "count": 5,
+      "firstBoardCount": 5,
+      "maxHeight": 5,
       "tone": "mixed",
       "members": [
-        "全筑股份",
-        "百傲化学"
+        "青山纸业",
+        "证通电子",
+        "盛剑科技",
+        "城地香江",
+        "荣联科技"
       ],
-      "evidence": "盛剑喂饭不吃；盛剑有概率是左右手故意摁着不吃；后期国产替代这块不清楚会不会弥补。",
-      "nextWatch": "国产替代取代传媒应用，有当第二支线想法。"
+      "evidence": "算力相关首板青山纸业、证通电子、盛剑科技、城地香江、荣联科技；算力外围大跌反而拉算力有点头铁；中京偷鸡能红开那指定有大事发生；持续性预期参考第3点。",
+      "nextWatch": "观察中京电子是否有溢价，做科技硬件回流预期。"
+    },
+    {
+      "id": "application",
+      "name": "应用",
+      "stage": "轮动",
+      "count": 3,
+      "firstBoardCount": 3,
+      "maxHeight": 1,
+      "tone": "rotation",
+      "members": [
+        "中视传媒",
+        "城市传媒",
+        "龙版传媒"
+      ],
+      "evidence": "应用首板中视传媒、城市传媒、龙版传媒，上海+山东+L，克来应用发酵？传媒预期差并不多，不如算力角度逆势硬刚；持续性不明偏轮动趋势。",
+      "nextWatch": "观察应用是否跟随算力回流，以及克来应用发酵可能性。"
     },
     {
       "id": "single",
       "name": "其余形式独苗",
       "stage": "轮动",
-      "count": 11,
-      "firstBoardCount": 11,
+      "count": 5,
+      "firstBoardCount": 5,
       "maxHeight": 1,
-      "tone": "rotation",
+      "tone": "mixed",
       "members": [
-        "天圣制药",
-        "奥康国际",
-        "龙软科技",
-        "泉阳泉",
-        "原尚股份",
-        "嘉环科技",
-        "高争民爆",
-        "金牛化工",
-        "维信诺",
-        "阳光照明",
-        "文投控股"
+        "德龙汇能",
+        "海汽集团",
+        "瀛通通讯",
+        "新筑股份",
+        "宏达高科"
       ],
-      "evidence": "独苗多指引指示用，无特殊挖掘。",
-      "nextWatch": "观察一字板助攻方向。"
+      "evidence": "独苗德龙汇能、海汽集团、瀛通通讯、新筑股份、宏达高科，多指引指示为主，无特殊挖掘。",
+      "nextWatch": "观察独苗是否出现超预期发酵或联动。"
     }
   ],
-  "capturedAt": "2026-11-24T18:21:12+08:00"
+  "capturedAt": "2026-11-25T17:26:51+08:00"
 };
