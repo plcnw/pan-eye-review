@@ -1,6 +1,6 @@
 {
   "date": "2026-11-25",
-  "capturedAt": "2026-11-25T17:27:08+08:00",
+  "capturedAt": "2026-11-25T18:21:36+08:00",
   "source": "东方财富公开行情接口",
   "note": "免费行情快照；主力资金字段未使用，市值单位为亿元。",
   "floatMarketCapRangeYi": [
@@ -14,8 +14,8 @@
       "previousClose": 3548.37,
       "changePercent": -2.03,
       "turnoverRate": 0.97,
-      "totalMarketCapYi": 607080.65,
-      "floatMarketCapYi": 549163.56,
+      "totalMarketCapYi": 607080.53,
+      "floatMarketCapYi": 549163.47,
       "inFloatCapRange": false,
       "quoteTime": "20261125161427",
       "name": "上证指数",
@@ -27,7 +27,7 @@
       "previousClose": 10423.6,
       "changePercent": -3.24,
       "turnoverRate": 2.26,
-      "totalMarketCapYi": 335531.48,
+      "totalMarketCapYi": 335531.47,
       "floatMarketCapYi": 285934.02,
       "inFloatCapRange": false,
       "quoteTime": "20261125161448",
@@ -336,6 +336,28 @@
       "quoteTime": "20261125161430"
     },
     {
+      "name": "华东重机",
+      "code": "002685",
+      "quoteId": "0.002685",
+      "matchType": "exact",
+      "alternatives": [
+        {
+          "name": "华东重机",
+          "code": "002685"
+        }
+      ],
+      "requestedName": "华东重机",
+      "apiName": "华东重机",
+      "price": 8.99,
+      "previousClose": 8.95,
+      "changePercent": 0.45,
+      "turnoverRate": 39.81,
+      "totalMarketCapYi": 90.59,
+      "floatMarketCapYi": 90.58,
+      "inFloatCapRange": true,
+      "quoteTime": "20261125161433"
+    },
+    {
       "name": "华升股份",
       "code": "600156",
       "quoteId": "1.600156",
@@ -642,6 +664,28 @@
       "floatMarketCapYi": 73.63,
       "inFloatCapRange": true,
       "quoteTime": "20261125161436"
+    },
+    {
+      "name": "惠发食品",
+      "code": "603536",
+      "quoteId": "1.603536",
+      "matchType": "prefix",
+      "alternatives": [
+        {
+          "name": "惠发食品",
+          "code": "603536"
+        }
+      ],
+      "requestedName": "惠发",
+      "apiName": "惠发食品",
+      "price": 8.49,
+      "previousClose": 8.62,
+      "changePercent": -1.51,
+      "turnoverRate": 7.9,
+      "totalMarketCapYi": 20.42,
+      "floatMarketCapYi": 20.42,
+      "inFloatCapRange": false,
+      "quoteTime": "20261125161448"
     },
     {
       "name": "拓新药业",
@@ -1284,6 +1328,7 @@
   ],
   "unmatched": [
     "中央商城",
-    "东洋"
+    "东洋",
+    "青岛九百"
   ]
 }
